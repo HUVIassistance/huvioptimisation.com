@@ -33,7 +33,10 @@ import {
   Inbox,
   HelpCircle,
   UserPlus,
-  Eye
+  Eye,
+  Hammer,
+  Briefcase,
+  ClipboardCheck
 } from 'lucide-react';
 import Navbar from './components/Navbar';
 import InteractiveDiagram from './components/InteractiveDiagram';
@@ -153,10 +156,65 @@ export default function App() {
   const [calcHours, setCalcHours] = useState<number>(15);
   const [calcRate, setCalcRate] = useState<number>(75);
   const [calcEmployees, setCalcEmployees] = useState<number>(1);
+  const [keepOrEliminateTab, setKeepOrEliminateTab] = useState<'keep' | 'eliminate'>('keep');
 
   // Hero section InteractiveDiagram zoom control states
   const [isHeroZoomed, setIsHeroZoomed] = useState<boolean>(false);
   const [heroActiveTab, setHeroActiveTab] = useState<'airtable' | 'dashboard' | 'automation' | 'agent'>('airtable');
+
+  const approachRef = useRef<HTMLDivElement>(null);
+  const scrollApproach = (direction: 'left' | 'right') => {
+    if (approachRef.current) {
+      const scrollAmount = approachRef.current.clientWidth * 0.85;
+      approachRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const aiTeamsRef = useRef<HTMLDivElement>(null);
+  const scrollAiTeams = (direction: 'left' | 'right') => {
+    if (aiTeamsRef.current) {
+      const scrollAmount = aiTeamsRef.current.clientWidth * 0.85;
+      aiTeamsRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Auto-scroll effect for mobile sliders (Notre approche & AI Teams)
+  useEffect(() => {
+    const intervalApproach = setInterval(() => {
+      const el = approachRef.current;
+      if (el && window.innerWidth < 768) {
+        const scrollAmount = el.clientWidth * 0.85;
+        if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 30) {
+          el.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          el.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
+    }, 5000);
+
+    const intervalAiTeams = setInterval(() => {
+      const el = aiTeamsRef.current;
+      if (el && window.innerWidth < 768) {
+        const scrollAmount = el.clientWidth * 0.85;
+        if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 30) {
+          el.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          el.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
+    }, 6000);
+
+    return () => {
+      clearInterval(intervalApproach);
+      clearInterval(intervalAiTeams);
+    };
+  }, []);
 
   // Auto load submissions from localStorage + Seed if empty
   useEffect(() => {
@@ -320,6 +378,15 @@ export default function App() {
       metrics: "Compréhension globale"
     },
     {
+      num: "OPT",
+      icon: ClipboardCheck,
+      title: "Audit des processus",
+      tagline: "Analyse approfondie de chaque département.",
+      desc: "Étude complète et rigoureuse de tous vos départements pour cartographier vos flux de travail réels.",
+      metrics: "Document d'audit détaillé",
+      isOptional: true
+    },
+    {
       num: "02",
       icon: Search,
       title: "Analyse des opérations",
@@ -470,48 +537,6 @@ export default function App() {
               </span>
             </div>
 
-            {/* Pastilles sous les boutons CTA pour simuler un problème */}
-            <div className="pt-4 mt-4 border-t border-[#17243A]/60 space-y-2.5">
-              <div className="flex items-center gap-2">
-                <span className="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
-                <span className="text-[10px] font-mono font-semibold text-gray-400 uppercase tracking-wider">
-                  Simulation en direct : Choisissez un problème à résoudre
-                </span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  { id: 'airtable', label: 'Demandes oubliées', icon: Mail },
-                  { id: 'automation', label: 'Suivis manuels', icon: FileSpreadsheet },
-                  { id: 'dashboard', label: 'Excel dispersés', icon: FileText },
-                  { id: 'agent', label: 'Admin répétitive', icon: Bot }
-                ].map((prob) => {
-                  const isActive = isHeroZoomed && heroActiveTab === prob.id;
-                  const Icon = prob.icon;
-                  return (
-                    <button
-                      key={prob.id}
-                      onClick={() => {
-                        if (isActive) {
-                          setIsHeroZoomed(false);
-                        } else {
-                          setHeroActiveTab(prob.id as any);
-                          setIsHeroZoomed(true);
-                        }
-                      }}
-                      className={`px-3 py-1.5 rounded-lg border text-[11px] font-mono font-semibold flex items-center gap-1.5 transition-all duration-300 cursor-pointer ${
-                        isActive
-                           ? 'bg-red-500/20 border-red-500 text-white shadow-lg shadow-red-500/5'
-                           : 'bg-[#0d1321]/60 border-[#17243A]/60 text-gray-400 hover:text-white hover:border-red-500/40'
-                      }`}
-                    >
-                      <Icon className="w-3.5 h-3.5 text-red-400" />
-                      <span>{prob.label}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
             <div className="pt-6 border-t border-[#17243A]/60 grid grid-cols-3 gap-4 max-w-md text-left font-mono">
               <div>
                 <span className="block text-xl font-bold text-white">
@@ -561,47 +586,47 @@ export default function App() {
             </h3>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
-            <div className="flex flex-col items-start gap-4 p-6 rounded-2xl bg-[#111a2e]/60 border border-[#17243A] hover:border-red-500/30 hover:bg-[#111a2e]/80 transition-all duration-300 h-full">
-              <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0">
-                <FileStack className="w-6 h-6" />
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 pt-4">
+            <div className="flex flex-col items-start gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-[#111a2e]/60 border border-[#17243A] hover:border-red-500/30 hover:bg-[#111a2e]/80 transition-all duration-300 h-full text-left">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0">
+                <FileStack className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <span className="font-medium text-white text-sm sm:text-base text-left">Les soumissions s'empilent.</span>
+              <span className="font-medium text-white text-xs sm:text-sm md:text-base leading-snug">Les soumissions et suivis s'empilent.</span>
             </div>
 
-            <div className="flex flex-col items-start gap-4 p-6 rounded-2xl bg-[#111a2e]/60 border border-[#17243A] hover:border-red-500/30 hover:bg-[#111a2e]/80 transition-all duration-300 h-full">
-              <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0">
-                <Inbox className="w-6 h-6" />
+            <div className="flex flex-col items-start gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-[#111a2e]/60 border border-[#17243A] hover:border-red-500/30 hover:bg-[#111a2e]/80 transition-all duration-300 h-full text-left">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0">
+                <Inbox className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <span className="font-medium text-white text-sm sm:text-base text-left">Les courriels et les appels ne finissent jamais.</span>
+              <span className="font-medium text-white text-xs sm:text-sm md:text-base leading-snug">Les courriels et les appels ne finissent jamais.</span>
             </div>
 
-            <div className="flex flex-col items-start gap-4 p-6 rounded-2xl bg-[#111a2e]/60 border border-[#17243A] hover:border-red-500/30 hover:bg-[#111a2e]/80 transition-all duration-300 h-full">
-              <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0">
-                <FileSpreadsheet className="w-6 h-6" />
+            <div className="flex flex-col items-start gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-[#111a2e]/60 border border-[#17243A] hover:border-red-500/30 hover:bg-[#111a2e]/80 transition-all duration-300 h-full text-left">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0">
+                <FileSpreadsheet className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <span className="font-medium text-white text-sm sm:text-base text-left">Les informations importantes sont dispersées entre Excel, les téléphones et la tête de quelques personnes clés.</span>
+              <span className="font-medium text-white text-xs sm:text-sm md:text-base leading-snug">L’information est dispersée entre les personnes, les outils et les fichiers.</span>
             </div>
 
-            <div className="flex flex-col items-start gap-4 p-6 rounded-2xl bg-[#111a2e]/60 border border-[#17243A] hover:border-red-500/30 hover:bg-[#111a2e]/80 transition-all duration-300 h-full">
-              <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0">
-                <HelpCircle className="w-6 h-6" />
+            <div className="flex flex-col items-start gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-[#111a2e]/60 border border-[#17243A] hover:border-red-500/30 hover:bg-[#111a2e]/80 transition-all duration-300 h-full text-left">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0">
+                <HelpCircle className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <span className="font-medium text-white text-sm sm:text-base text-left">Les mêmes questions reviennent chaque semaine.</span>
+              <span className="font-medium text-white text-xs sm:text-sm md:text-base leading-snug">Les mêmes questions reviennent chaque semaine.</span>
             </div>
 
-            <div className="flex flex-col items-start gap-4 p-6 rounded-2xl bg-[#111a2e]/60 border border-[#17243A] hover:border-red-500/30 hover:bg-[#111a2e]/80 transition-all duration-300 h-full">
-              <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0">
-                <UserPlus className="w-6 h-6" />
+            <div className="flex flex-col items-start gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-[#111a2e]/60 border border-[#17243A] hover:border-red-500/30 hover:bg-[#111a2e]/80 transition-all duration-300 h-full text-left">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0">
+                <UserPlus className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <span className="font-medium text-white text-sm sm:text-base text-left">À chaque nouvelle embauche, tout est à recommencer.</span>
+              <span className="font-medium text-white text-xs sm:text-sm md:text-base leading-snug">À chaque nouvelle embauche, tout est à recommencer.</span>
             </div>
 
-            <div className="flex flex-col items-start gap-4 p-6 rounded-2xl bg-[#111a2e]/60 border border-[#17243A] hover:border-red-500/30 hover:bg-[#111a2e]/80 transition-all duration-300 h-full">
-              <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0">
-                <Eye className="w-6 h-6" />
+            <div className="flex flex-col items-start gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-[#111a2e]/60 border border-[#17243A] hover:border-red-500/30 hover:bg-[#111a2e]/80 transition-all duration-300 h-full text-left">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0">
+                <Eye className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <span className="font-medium text-white text-sm sm:text-base text-left">Malgré une équipe qui grandit, c'est encore toi qui dois garder un œil sur tout.</span>
+              <span className="font-medium text-white text-xs sm:text-sm md:text-base leading-snug">L’équipe grandit, mais tout remonte encore jusqu’à toi.</span>
             </div>
           </div>
 
@@ -626,37 +651,37 @@ export default function App() {
             </h3>
             <div className="text-gray-400 text-sm sm:text-base leading-relaxed space-y-4">
               <p>
-                On connaît la réalité des entreprises en croissance. Plus de clients, plus de projets, plus d'informations à gérer, et toujours moins de contrôle sur demain. Chez HUVI, on t'aide à simplifier le quotidien de ton équipe grâce à une structure intelligente qui connecte vos outils, automatise vos tâches et donne plus d'autonomie aux employés.
+                On connaît la réalité des entreprises en croissance : plus de clients, plus de projets, plus d’informations à gérer. Chez HUVI, on simplifie vos opérations en connectant vos outils, en automatisant vos tâches et en donnant plus d’autonomie à votre équipe.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            <div className="p-6 rounded-xl border border-[#17243A] bg-[#111a2e] hover:border-[#3A7697]/50 transition-all group" id="spec-construction">
-              <div className="w-10 h-10 rounded-lg bg-[#3A7697]/10 border border-[#3A7697]/20 flex items-center justify-center text-[#3A7697] mb-4 group-hover:bg-[#F47B20]/10 group-hover:border-[#F47B20]/40 group-hover:text-[#F47B20] transition-colors">
-                <Building className="w-5 h-5" />
+            <div className="p-6 rounded-xl border border-[#17243A] bg-[#111a2e] hover:border-amber-500/40 transition-all group" id="spec-construction">
+              <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 mb-4 group-hover:bg-amber-500/20 group-hover:border-amber-500/40 group-hover:text-amber-400 transition-colors">
+                <Hammer className="w-5 h-5" />
               </div>
-              <h4 className="font-display font-bold text-white text-base">Construction et métiers spécialisés</h4>
+              <h4 className="font-display font-bold text-white text-base group-hover:text-amber-400 transition-colors">Construction et métiers spécialisés</h4>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Suivis automatiques des soumissions, rapports de chantiers simplifiés, automatisation de la facturation et centralisation des données administratives.
               </p>
             </div>
 
-            <div className="p-6 rounded-xl border border-[#17243A] bg-[#111a2e] hover:border-[#3A7697]/50 transition-all group" id="spec-realestate">
-              <div className="w-10 h-10 rounded-lg bg-[#3A7697]/10 border border-[#3A7697]/20 flex items-center justify-center text-[#3A7697] mb-4 group-hover:bg-[#F47B20]/10 group-hover:border-[#F47B20]/40 group-hover:text-[#F47B20] transition-colors">
-                <Server className="w-5 h-5" />
+            <div className="p-6 rounded-xl border border-[#17243A] bg-[#111a2e] hover:border-blue-500/40 transition-all group" id="spec-realestate">
+              <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 group-hover:bg-blue-500/20 group-hover:border-blue-500/40 group-hover:text-blue-300 transition-colors">
+                <Building className="w-5 h-5" />
               </div>
-              <h4 className="font-display font-bold text-white text-base">Immobilier et courtage</h4>
+              <h4 className="font-display font-bold text-white text-base group-hover:text-blue-400 transition-colors">Immobilier et courtage</h4>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Suivis clients connectés, centralisation des documents légaux et qualification automatisée des prospects vendeurs et acheteurs.
               </p>
             </div>
 
-            <div className="p-6 rounded-xl border border-[#17243A] bg-[#111a2e] hover:border-[#3A7697]/50 transition-all group" id="spec-services">
-              <div className="w-10 h-10 rounded-lg bg-[#3A7697]/10 border border-[#3A7697]/20 flex items-center justify-center text-[#3A7697] mb-4 group-hover:bg-[#F47B20]/10 group-hover:border-[#F47B20]/40 group-hover:text-[#F47B20] transition-colors">
-                <Bot className="w-5 h-5" />
+            <div className="p-6 rounded-xl border border-[#17243A] bg-[#111a2e] hover:border-emerald-500/40 transition-all group" id="spec-services">
+              <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 group-hover:bg-emerald-500/20 group-hover:border-emerald-500/40 group-hover:text-emerald-300 transition-colors">
+                <Briefcase className="w-5 h-5" />
               </div>
-              <h4 className="font-display font-bold text-white text-base">PME et services professionnels</h4>
+              <h4 className="font-display font-bold text-white text-base group-hover:text-emerald-400 transition-colors">PME et services résidentiels</h4>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Planification intelligente de la charge d'équipe, automatisation de la facturation récurrente, portails d'échanges de fichiers et rapports de rentabilité par projet.
               </p>
@@ -681,10 +706,10 @@ export default function App() {
               Le problème n'est pas les outils. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F47B20] to-orange-400">C'est la façon dont ils travaillent ensemble.</span>
             </h3>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-              Ajouter de nouveaux logiciels ajoute souvent plus de complexité que de valeur. Sans structure, l'information reste coincée dans des fichiers Excel, des courriels et des conversations éparpillées.
+              Plus de logiciels ne veut pas dire plus d’efficacité. Sans structure, l’information reste éparpillée entre Excel, les courriels et les conversations.
             </p>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-              Notre travail, c'est de vous aider à tirer le maximum de vos outils actuels avant d'en ajouter de nouveaux.
+              Notre travail : vous aider à mieux exploiter vos outils actuels avant d’en ajouter de nouveaux.
             </p>
 
             {/* Selection tab buttons */}
@@ -836,7 +861,7 @@ export default function App() {
       <section className="bg-[#090D15] py-20 px-4 sm:px-6 lg:px-8 border-b border-[#17243A]/40" id="cost-calculator">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 max-w-3xl mx-auto mb-12">
-            <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Ce que votre entreprise perd chaque mois</span>
+            <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Ce que vous perdez chaque mois</span>
             <h3 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
               Le coût réel d’une entreprise mal structurée
             </h3>
@@ -990,10 +1015,10 @@ export default function App() {
               {/* Stat sources & validation */}
               <div className="border-t border-[#17243A]/60 pt-4 text-[10px] text-gray-500 space-y-2 text-left">
                 <p className="leading-normal">
-                  <span className="text-gray-400 font-bold">Source statistique de 15h :</span> Donnée basée sur la moyenne constatée de 15h d'administration, de saisie double et de relances manuelles économisées par semaine par nos clients PME de services lors des audits d'optimisation.
+                  <span className="text-gray-400 font-bold">Source statistique (15h) :</span> estimation basée sur les heures d’administration, de saisie double et de relances manuelles économisées en moyenne par semaine chez nos clients PME de services.
                 </p>
                 <p className="leading-normal">
-                  <span className="text-gray-400 font-bold">Source statistique de 60% :</span> Correspond à une réduction moyenne de 60% du temps consacré aux tâches administratives répétitives (saisie, classement, transcription de factures, transferts manuels d'informations) après la mise en place de la structure de centralisation HUVI.
+                  <span className="text-gray-400 font-bold">Source statistique (60%) :</span> réduction moyenne de 60 % du temps consacré aux tâches administratives répétitives après la mise en place de notre méthode CASA.
                 </p>
               </div>
             </div>
@@ -1008,15 +1033,45 @@ export default function App() {
           <h3 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white tracking-tight leading-[1.15]">
             Notre objectif n'est pas d'ajouter de la complexité à votre entreprise. C'est de la simplifier.
           </h3>
+          <p className="text-sm font-mono text-red-400 uppercase tracking-widest pt-2">
+            🚫 Ce que nous ne faisons pas
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+        {/* Navigation arrows (mobile only) */}
+        <div className="flex md:hidden items-center justify-end px-2 mb-4">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => scrollApproach('left')}
+              className="p-2 rounded-lg bg-[#111a2e] hover:bg-[#17243a] text-gray-300 border border-[#17243A] transition-all cursor-pointer"
+              aria-label="Précédent"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => scrollApproach('right')}
+              className="p-2 rounded-lg bg-[#111a2e] hover:bg-[#17243a] text-gray-300 border border-[#17243A] transition-all cursor-pointer"
+              aria-label="Suivant"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div 
+          ref={approachRef}
+          className="flex md:grid overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none gap-4 md:gap-6 pb-4 md:pb-0 md:grid-cols-2 lg:grid-cols-6 scrollbar-none"
+        >
           {/* Card 1 */}
-          <div className="lg:col-span-2 p-6 rounded-2xl bg-[#090D16] border border-[#17243A] hover:border-red-500/20 hover:shadow-lg hover:shadow-red-500/2 transition-all duration-300 flex flex-col gap-4 group">
+          <div className="min-w-[85vw] sm:min-w-[48vw] md:min-w-0 snap-center lg:col-span-2 p-6 rounded-2xl bg-[#090D16] border border-[#17243A] hover:border-red-500/20 hover:shadow-lg hover:shadow-red-500/2 transition-all duration-300 flex flex-col gap-4 group">
             <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 shrink-0">
               <X className="w-4 h-4 stroke-[3]" />
             </div>
-            <div>
+            <div className="text-left">
               <h4 className="font-display font-bold text-white text-base leading-snug">Installer des dizaines de logiciels</h4>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Plus d'outils ne règle pas un manque de structure. On préfère solidifier ce que vous avez déjà avant d'ajouter quoi que ce soit.
@@ -1025,11 +1080,11 @@ export default function App() {
           </div>
 
           {/* Card 2 */}
-          <div className="lg:col-span-2 p-6 rounded-2xl bg-[#090D16] border border-[#17243A] hover:border-red-500/20 hover:shadow-lg hover:shadow-red-500/2 transition-all duration-300 flex flex-col gap-4 group">
+          <div className="min-w-[85vw] sm:min-w-[48vw] md:min-w-0 snap-center lg:col-span-2 p-6 rounded-2xl bg-[#090D16] border border-[#17243A] hover:border-red-500/20 hover:shadow-lg hover:shadow-red-500/2 transition-all duration-300 flex flex-col gap-4 group">
             <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 shrink-0">
               <X className="w-4 h-4 stroke-[3]" />
             </div>
-            <div>
+            <div className="text-left">
               <h4 className="font-display font-bold text-white text-base leading-snug">Implanter une solution sans comprendre votre réalité</h4>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Chaque entreprise fonctionne différemment. On analyse d'abord vos façons de travailler avant de construire quoi que ce soit. Non négociable.
@@ -1038,11 +1093,11 @@ export default function App() {
           </div>
 
           {/* Card 3 */}
-          <div className="lg:col-span-2 p-6 rounded-2xl bg-[#090D16] border border-[#17243A] hover:border-red-500/20 hover:shadow-lg hover:shadow-red-500/2 transition-all duration-300 flex flex-col gap-4 group">
+          <div className="min-w-[85vw] sm:min-w-[48vw] md:min-w-0 snap-center lg:col-span-2 p-6 rounded-2xl bg-[#090D16] border border-[#17243A] hover:border-red-500/20 hover:shadow-lg hover:shadow-red-500/2 transition-all duration-300 flex flex-col gap-4 group">
             <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 shrink-0">
               <X className="w-4 h-4 stroke-[3]" />
             </div>
-            <div>
+            <div className="text-left">
               <h4 className="font-display font-bold text-white text-base leading-snug">Promettre de remplacer l'humain par l'IA</h4>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Personne ne veut parler à un robot. La technologie doit soutenir votre équipe, pas tenter de remplacer l'expertise et l'intelligence de vos employés.
@@ -1051,11 +1106,11 @@ export default function App() {
           </div>
 
           {/* Card 4 */}
-          <div className="md:col-span-1 lg:col-span-3 p-6 rounded-2xl bg-[#090D16] border border-[#17243A] hover:border-red-500/20 hover:shadow-lg hover:shadow-red-500/2 transition-all duration-300 flex flex-col gap-4 group">
+          <div className="min-w-[85vw] sm:min-w-[48vw] md:min-w-0 snap-center md:col-span-1 lg:col-span-3 p-6 rounded-2xl bg-[#090D16] border border-[#17243A] hover:border-red-500/20 hover:shadow-lg hover:shadow-red-500/2 transition-all duration-300 flex flex-col gap-4 group">
             <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 shrink-0">
               <X className="w-4 h-4 stroke-[3]" />
             </div>
-            <div>
+            <div className="text-left">
               <h4 className="font-display font-bold text-white text-base leading-snug">Vendre un outil parce qu'il est à la mode</h4>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 On recommande uniquement les solutions qui servent vos objectifs d'affaires. Ce n'est pas parce que c'est "sexy" que c'est une bonne idée.
@@ -1064,11 +1119,11 @@ export default function App() {
           </div>
 
           {/* Card 5 */}
-          <div className="md:col-span-2 lg:col-span-3 p-6 rounded-2xl bg-[#090D16] border border-[#17243A] hover:border-red-500/20 hover:shadow-lg hover:shadow-red-500/2 transition-all duration-300 flex flex-col gap-4 group">
+          <div className="min-w-[85vw] sm:min-w-[48vw] md:min-w-0 snap-center md:col-span-2 lg:col-span-3 p-6 rounded-2xl bg-[#090D16] border border-[#17243A] hover:border-red-500/20 hover:shadow-lg hover:shadow-red-500/2 transition-all duration-300 flex flex-col gap-4 group">
             <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 shrink-0">
               <X className="w-4 h-4 stroke-[3]" />
             </div>
-            <div>
+            <div className="text-left">
               <h4 className="font-display font-bold text-white text-base leading-snug">Promettre des résultats magiques</h4>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 La technologie est un levier. Les vrais résultats viennent d'une meilleure façon de travailler.
@@ -1088,9 +1143,48 @@ export default function App() {
             </p>
           </div>
 
+          {/* Mobile Selector Tab Switcher */}
+          <div className="flex md:hidden flex-col gap-2.5 w-full max-w-sm mx-auto my-6 p-2 bg-[#090D16] border border-[#17243A] rounded-2xl">
+            <span className="text-[10px] font-mono font-bold text-gray-500 uppercase tracking-widest text-center">
+              Choisissez ce que vous voulez voir :
+            </span>
+            <button
+              onClick={() => setKeepOrEliminateTab('keep')}
+              className={`w-full p-3.5 rounded-xl text-left transition-all cursor-pointer flex flex-col gap-1 ${
+                keepOrEliminateTab === 'keep'
+                  ? 'bg-green-500/10 border-2 border-green-500/50 text-green-400 shadow-lg shadow-green-500/5'
+                  : 'bg-transparent border border-[#17243A] text-gray-400 hover:text-white'
+              }`}
+            >
+              <span className="text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
+                💎 CE QUE L'ÉQUIPE GARDE
+              </span>
+              <span className="text-[10px] leading-snug opacity-90 font-sans">
+                La relation client, l'expertise technique et le contrôle final.
+              </span>
+            </button>
+            <button
+              onClick={() => setKeepOrEliminateTab('eliminate')}
+              className={`w-full p-3.5 rounded-xl text-left transition-all cursor-pointer flex flex-col gap-1 ${
+                keepOrEliminateTab === 'eliminate'
+                  ? 'bg-red-500/10 border-2 border-red-500/50 text-red-400 shadow-lg shadow-red-500/5'
+                  : 'bg-transparent border border-[#17243A] text-gray-400 hover:text-white'
+              }`}
+            >
+              <span className="text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
+                🗑️ CE QU'ON ÉLIMINE
+              </span>
+              <span className="text-[10px] leading-snug opacity-90 font-sans">
+                La double saisie, les relances manuelles et la paperasse.
+              </span>
+            </button>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch pt-2">
             {/* Left Box: Ce que l'équipe garde */}
-            <div className="p-6 rounded-xl bg-green-950/5 border border-green-950/30 flex flex-col justify-between space-y-4">
+            <div className={`p-6 rounded-xl bg-green-950/5 border border-green-950/30 flex flex-col justify-between space-y-4 ${
+              keepOrEliminateTab === 'keep' ? 'flex' : 'hidden md:flex'
+            }`}>
               <div>
                 <div className="flex items-center gap-2 border-b border-green-950/30 pb-3 mb-4">
                   <span className="text-xs">💎</span>
@@ -1135,12 +1229,14 @@ export default function App() {
             </div>
 
             {/* Right Box: Ce qu'on élimine */}
-            <div className="p-6 rounded-xl bg-red-950/5 border border-red-950/30 flex flex-col justify-between space-y-4">
+            <div className={`p-6 rounded-xl bg-red-950/5 border border-red-950/30 flex flex-col justify-between space-y-4 ${
+              keepOrEliminateTab === 'eliminate' ? 'flex' : 'hidden md:flex'
+            }`}>
               <div>
                 <div className="flex items-center gap-2 border-b border-red-950/30 pb-3 mb-4">
                   <span className="text-xs">🗑️</span>
                   <h5 className="font-display font-bold text-red-400 text-sm uppercase font-mono tracking-wider">
-                    Ce qu'on ÉLIMINE de leur quotidien
+                    Ce qu'on ÉLIMINE de leur journée
                   </h5>
                 </div>
                 <ul className="space-y-4 font-sans text-xs text-gray-400 text-left">
@@ -1207,12 +1303,16 @@ export default function App() {
                   onClick={() => setActiveApproachStep(idx)}
                   className={`text-left p-4 rounded-xl border transition-all duration-300 relative overflow-hidden flex items-center gap-4 ${
                     activeApproachStep === idx
-                      ? 'bg-[#17243A] border-[#F47B20] shadow-lg shadow-[#F47B20]/5 translate-x-2'
+                      ? 'bg-[#17243A] border-[#F47B20] shadow-lg shadow-[#F47B20]/5 md:translate-x-2'
                       : 'bg-[#111a2e] border-[#17243A] hover:bg-[#0D1527] hover:border-gray-700'
                   }`}
                   id={`methodology-btn-${idx}`}
                 >
-                  <span className={`font-mono text-sm font-bold ${activeApproachStep === idx ? 'text-[#F47B20]' : 'text-gray-500'}`}>
+                  <span className={`px-2 py-1 rounded text-xs font-mono font-bold transition-all ${
+                    activeApproachStep === idx 
+                      ? 'bg-[#F47B20]/20 text-[#F47B20] border border-[#F47B20]/30' 
+                      : 'bg-[#17243A]/40 text-gray-500 border border-[#17243A]/20'
+                  }`}>
                     {step.num}
                   </span>
                   <div className="flex-1">
@@ -1239,11 +1339,12 @@ export default function App() {
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
                   {/* Left part: Text details */}
-                  <div className="md:col-span-6 space-y-6 flex flex-col justify-between h-full">
+                  <div className="md:col-span-6 space-y-6 flex flex-col justify-between h-full order-2 md:order-1">
                     <div className="space-y-4">
                       <div className="flex items-center gap-3 border-b border-[#17243A] pb-4">
-                        <span className="text-xs font-mono bg-[#F47B20]/10 text-[#F47B20] px-3 py-1 rounded-full border border-[#F47B20]/20 shrink-0">
-                          Checkpoint {(casaSteps[activeApproachStep] || casaSteps[0]).num}
+                        <span className="text-[10px] font-mono font-bold bg-green-500/10 text-green-400 px-2.5 py-1 rounded-full border border-green-500/30 shrink-0 flex items-center gap-1.5 shadow-lg shadow-green-500/5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                          CHECKPOINT {(casaSteps[activeApproachStep] || casaSteps[0]).num}
                         </span>
                         <h4 className="font-display text-lg sm:text-xl font-bold text-white truncate">
                           {(casaSteps[activeApproachStep] || casaSteps[0]).title}
@@ -1260,13 +1361,16 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="pt-6 border-t border-[#17243A]/60 bg-[#090D16]/50">
-                      <span className="block text-[10px] font-mono text-gray-400 uppercase tracking-wider mb-2">LIVRABLE PRINCIPAL :</span>
-                      <div className="p-3 rounded-lg bg-[#111a2e] border border-[#17243A]/80 flex gap-2.5 items-center">
-                        <div className="p-1 rounded bg-[#F47B20]/10 text-[#F47B20] shrink-0">
-                          <Check className="w-4 h-4" />
+                    <div className="pt-6 border-t border-[#17243A]/60">
+                      <span className="block text-[9px] font-mono text-green-400/90 uppercase tracking-widest mb-2 font-bold flex items-center gap-1.5">
+                        <span className="w-1 h-1 rounded-full bg-green-400"></span>
+                        RÉSULTAT DU CHECKPOINT :
+                      </span>
+                      <div className="p-3 rounded-xl bg-green-500/5 border border-green-500/20 flex gap-2.5 items-center">
+                        <div className="p-1 rounded bg-green-500/10 text-green-400 shrink-0 border border-green-500/20">
+                          <Check className="w-4 h-4 stroke-[2.5]" />
                         </div>
-                        <span className="text-[11px] font-mono text-[#E2E8F0] font-medium leading-tight">
+                        <span className="text-[11px] font-sans text-gray-300 font-medium leading-tight">
                           {(casaSteps[activeApproachStep] || casaSteps[0]).metrics}
                         </span>
                       </div>
@@ -1274,7 +1378,7 @@ export default function App() {
                   </div>
 
                   {/* Right part: Animated graphics visualizer */}
-                  <div className="md:col-span-6 flex items-center justify-center">
+                  <div className="md:col-span-6 flex items-center justify-center order-1 md:order-2">
                     <CasaVisualizer activeStep={activeApproachStep} />
                   </div>
                 </div>
@@ -1380,35 +1484,59 @@ export default function App() {
           {/* Connector vertical line for mobile */}
           <div className="lg:hidden absolute left-6 top-6 bottom-6 w-[2px] bg-gradient-to-b from-[#17243A] via-[#F47B20]/20 to-[#17243A] z-0"></div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-6 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 relative z-10">
             {methodologySteps.map((step, idx) => {
               const StepIcon = step.icon || Sparkles;
               return (
                 <div 
                   key={idx} 
-                  className="relative flex flex-row lg:flex-col items-start text-left lg:text-center lg:items-center gap-4 lg:gap-6 group"
+                  className={`relative flex flex-row lg:flex-col items-start text-left lg:text-center lg:items-center gap-4 lg:gap-6 p-5 rounded-2xl bg-[#111a2e]/40 border transition-all duration-300 group overflow-hidden ${
+                    step.isOptional 
+                      ? 'border-[#3A7697]/30 hover:border-[#3A7697]/60 hover:bg-[#111a2e]/60' 
+                      : 'border-[#17243A]/70 hover:border-[#F47B20]/50 hover:bg-[#111a2e]/80'
+                  }`}
                 >
+                  {/* Ambient illumination glow on hover */}
+                  <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-28 h-28 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none ${
+                    step.isOptional ? 'bg-[#3A7697]/15' : 'bg-[#F47B20]/10'
+                  }`}></div>
                   
                   {/* Step icon container with step number badge */}
                   <div className="relative shrink-0 z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-[#111a2e] border-2 border-[#17243A] group-hover:border-[#F47B20] text-[#F47B20] group-hover:text-white flex items-center justify-center shadow-lg group-hover:shadow-[#F47B20]/20 transition-all duration-300">
+                    <div className={`w-14 h-14 rounded-2xl bg-[#090D15] border-2 flex items-center justify-center shadow-lg transition-all duration-300 ${
+                      step.isOptional 
+                        ? 'border-[#17243A] group-hover:border-[#3A7697] text-[#3A7697] group-hover:text-white group-hover:shadow-[#3A7697]/15' 
+                        : 'border-[#17243A] group-hover:border-[#F47B20] text-[#F47B20] group-hover:text-white group-hover:shadow-[#F47B20]/15'
+                    }`}>
                       <StepIcon className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     {/* Small step number badge */}
-                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-md bg-[#F47B20] text-white text-[9px] font-mono font-bold flex items-center justify-center shadow-md">
+                    <span className={`absolute -top-1.5 -right-1.5 px-1.5 py-0.5 min-w-[20px] h-5 rounded-md text-[8px] font-mono font-bold flex items-center justify-center shadow-md ${
+                      step.isOptional
+                        ? 'bg-gradient-to-r from-[#3A7697] to-blue-500 text-white'
+                        : 'bg-gradient-to-r from-[#F47B20] to-orange-500 text-white'
+                    }`}>
                       {step.num}
                     </span>
                     {/* Glowing ring */}
-                    <div className="absolute inset-0 rounded-2xl bg-[#F47B20]/10 scale-75 group-hover:scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10"></div>
+                    <div className={`absolute inset-0 rounded-2xl scale-75 group-hover:scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10 ${
+                      step.isOptional ? 'bg-[#3A7697]/10' : 'bg-[#F47B20]/10'
+                    }`}></div>
                   </div>
 
                   {/* Content */}
-                  <div className="space-y-2 lg:space-y-3 flex-1 lg:flex-none">
+                  <div className="space-y-2 lg:space-y-3 flex-1 lg:flex-none relative z-10 w-full">
                     <div className="space-y-1">
-                      <span className="inline-block text-[10px] font-mono text-[#F47B20] uppercase tracking-wider font-bold bg-[#F47B20]/5 px-2 py-0.5 rounded border border-[#F47B20]/10">
-                        Étape {step.num}
+                      <span className={`inline-block text-[10px] font-mono uppercase tracking-wider font-bold px-2 py-0.5 rounded border ${
+                        step.isOptional
+                          ? 'text-[#3A7697] bg-[#3A7697]/5 border-[#3A7697]/10'
+                          : 'text-[#F47B20] bg-[#F47B20]/5 border-[#F47B20]/10'
+                      }`}>
+                        {step.isOptional ? "Étape Optionnelle" : `Étape ${step.num}`}
                       </span>
-                      <h4 className="font-display font-bold text-white text-base sm:text-lg group-hover:text-[#F47B20] transition-colors pt-1">
+                      <h4 className={`font-display font-bold text-white text-base sm:text-lg transition-colors pt-1 ${
+                        step.isOptional ? 'group-hover:text-[#3A7697]' : 'group-hover:text-[#F47B20]'
+                      }`}>
                         {step.title}
                       </h4>
                       <p className="text-xs font-mono font-bold text-[#3A7697] leading-snug">
@@ -1419,8 +1547,10 @@ export default function App() {
                       {step.desc}
                     </p>
                     <div className="pt-1">
-                      <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-gray-500 bg-[#0D1527]/40 border border-[#17243A]/60 px-2.5 py-1 rounded-full">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#3A7697]"></span>
+                      <span className={`inline-flex items-center gap-1.5 text-[10px] font-mono bg-[#0D1527]/40 border px-2.5 py-1 rounded-full ${
+                        step.isOptional ? 'text-[#3A7697] border-[#3A7697]/30' : 'text-gray-500 border-[#17243A]/60'
+                      }`}>
+                        <span className={`w-1.5 h-1.5 rounded-full ${step.isOptional ? 'bg-[#3A7697]' : 'bg-[#3A7697]'}`}></span>
                         <span>{step.metrics}</span>
                       </span>
                     </div>
@@ -1455,14 +1585,41 @@ export default function App() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Navigation arrows (mobile only) */}
+        <div className="flex md:hidden items-center justify-end px-2 mb-6">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => scrollAiTeams('left')}
+              className="p-2 rounded-lg bg-[#111a2e] hover:bg-[#17243a] text-gray-300 border border-[#17243A] transition-all cursor-pointer"
+              aria-label="Précédent"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => scrollAiTeams('right')}
+              className="p-2 rounded-lg bg-[#111a2e] hover:bg-[#17243a] text-gray-300 border border-[#17243A] transition-all cursor-pointer"
+              aria-label="Suivant"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div 
+          ref={aiTeamsRef}
+          className="flex md:grid overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none gap-4 md:gap-6 pb-4 md:pb-0 md:grid-cols-2 lg:grid-cols-3 scrollbar-none"
+        >
           {aiTeams.map((agent, index) => {
             const IconComponent = agent.icon;
             const isCustom = 'custom' in agent && agent.custom;
             return (
               <div 
                 key={index} 
-                className={`p-6 rounded-2xl transition-all duration-300 flex flex-col justify-between group ${
+                className={`min-w-[85vw] sm:min-w-[48vw] md:min-w-0 snap-center p-6 rounded-2xl transition-all duration-300 flex flex-col justify-between group ${
                   isCustom 
                     ? 'bg-gradient-to-br from-[#090D16] to-[#121B2A] border-2 border-[#F47B20]/40 hover:border-[#F47B20] hover:shadow-xl hover:shadow-[#F47B20]/5 md:col-span-2 lg:col-span-2' 
                     : 'bg-[#090D16] border border-[#17243A] hover:border-[#F47B20]/50 hover:shadow-xl hover:shadow-[#F47B20]/2'
@@ -1475,18 +1632,18 @@ export default function App() {
                       <div className={`p-2 rounded-lg border text-[#F47B20] ${isCustom ? 'bg-[#F47B20]/20 border-[#F47B20]/40' : 'bg-[#F47B20]/10 border-[#F47B20]/20'}`}>
                         <IconComponent className="w-4 h-4 animate-pulse" />
                       </div>
-                      <h4 className="font-display font-bold text-white text-sm sm:text-base">{agent.name}</h4>
+                      <h4 className="font-display font-bold text-white text-sm sm:text-base text-left">{agent.name}</h4>
                     </div>
                     <span className={`text-[9px] font-mono font-bold uppercase tracking-wider ${isCustom ? 'text-[#F47B20]' : 'text-gray-500'}`}>
                       {isCustom ? '🚀 SUR MESURE' : 'AGENT ACTIF'}
                     </span>
                   </div>
 
-                  <p className="text-xs font-mono text-[#F47B20] font-medium">{agent.role}</p>
-                  <p className="text-xs text-gray-400 leading-relaxed font-sans">{agent.impact}</p>
+                  <p className="text-xs font-mono text-[#F47B20] font-medium text-left">{agent.role}</p>
+                  <p className="text-xs text-gray-400 leading-relaxed font-sans text-left">{agent.impact}</p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#17243A]/40 bg-[#090D16]/40">
+                <div className="mt-6 pt-4 border-t border-[#17243A]/40 bg-[#090D16]/40 text-left">
                   <span className="block text-[8px] font-mono text-gray-500 uppercase tracking-widest mb-1.5">FLUX AUTOMATISÉ :</span>
                   <p className="text-[10px] text-gray-300 font-mono leading-normal bg-[#111a2e] p-2 rounded-lg border border-[#17243A]/30">
                     {agent.flow}
@@ -1507,7 +1664,7 @@ export default function App() {
             ÉVALUATION & OPPORTUNITÉS
           </span>
           <h3 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
-            Votre plan d'action personnalisé commence ici
+            Votre plan d'action personnalisé
           </h3>
           <p className="text-gray-400 text-sm leading-relaxed max-w-2xl mx-auto">
             Faites le test pour voir rapidement où l’automatisation et l’IA peuvent vous faire gagner du temps.
@@ -1800,7 +1957,23 @@ export default function App() {
               En 2 minutes, le bilan calcule les pertes de temps et d'argent de ton entreprise, estime tes gains potentiels et te transmet un plan d'action sur-mesure selon ton niveau de maturité numérique .
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-left max-w-2xl mx-auto font-mono text-xs">
+            <div className="pt-4">
+              <a 
+                href="https://bilan.huvioptimisation.com" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl bg-[#F47B20] hover:bg-[#ff9242] text-white font-bold text-sm tracking-wider uppercase font-mono shadow-2xl shadow-[#F47B20]/20 transition-all duration-300 hover:-translate-y-0.5"
+                id="direct-bilan-btn"
+              >
+                <span>Démarrer mon Bilan IA maintenant</span>
+                <ArrowUpRight className="w-5 h-5" />
+              </a>
+              <span className="block text-[11px] text-gray-500 font-mono mt-3">
+                Ouvre notre questionnaire sécurisé dans un nouvel onglet
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 text-left max-w-2xl mx-auto font-mono text-xs">
               <div className="p-3.5 rounded-xl bg-[#111a2e]/60 border border-[#17243A] flex items-start gap-2.5">
                 <span className="text-lg">⏱️</span>
                 <div>
@@ -1822,22 +1995,6 @@ export default function App() {
                   <span className="text-[11px] text-gray-500 font-sans">Un plan d'action actionnable direct</span>
                 </div>
               </div>
-            </div>
-
-            <div className="pt-6">
-              <a 
-                href="https://bilan.huvioptimisation.com" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl bg-[#F47B20] hover:bg-[#ff9242] text-white font-bold text-sm tracking-wider uppercase font-mono shadow-2xl shadow-[#F47B20]/20 transition-all duration-300 hover:-translate-y-0.5"
-                id="direct-bilan-btn"
-              >
-                <span>Démarrer mon Bilan IA maintenant</span>
-                <ArrowUpRight className="w-5 h-5" />
-              </a>
-              <span className="block text-[11px] text-gray-500 font-mono mt-3">
-                Ouvre notre questionnaire sécurisé dans un nouvel onglet
-              </span>
             </div>
           </div>
         </div>
