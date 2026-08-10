@@ -38,7 +38,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
             <div className="flex items-center gap-x-3 gap-y-1 flex-wrap flex-1 min-w-0">
               <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#F47B20]/10 to-orange-500/10 border border-[#F47B20]/30 text-[#ff9242] font-mono font-bold text-[9px] sm:text-[10px] px-3 py-1 rounded-full tracking-wider uppercase select-none shrink-0">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#F47B20] animate-pulse"></span>
-                Tarif partenaire pionnier
+                Tarif pionnier
               </span>
               <p className={`text-xs sm:text-sm text-gray-300 font-sans leading-none flex items-center flex-wrap gap-x-1.5 gap-y-0.5 truncate transition-all duration-700 ease-in-out ${promoVisible ? 'opacity-100 translate-x-0' : 'opacity-30 sm:opacity-40 translate-x-0.5'}`}>
                 <span>Économisez 15 % sur la configuration</span>
@@ -69,7 +69,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             <a href="#" className="flex items-center gap-3 group">
               <Logo size="sm" showProgressBar={true} className="group-hover:scale-105 transition-transform duration-300" />
               <div className="border-l border-[#17243A] pl-3 py-1 hidden xs:block">
@@ -80,14 +80,14 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-6">
+          <nav className="hidden xl:flex items-center gap-3 xl:gap-3.5 2xl:gap-5 3xl:gap-6 shrink-0">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
-                className="font-sans text-[13px] font-medium text-gray-400 hover:text-white transition-colors duration-200 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#F47B20] hover:after:w-full after:transition-all after:duration-300"
+                className="font-sans text-xs xl:text-[11px] 2xl:text-xs 3xl:text-[13px] font-medium text-gray-400 hover:text-white transition-colors duration-200 relative py-1 whitespace-nowrap after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#F47B20] hover:after:w-full after:transition-all after:duration-300"
               >
                 {link.label}
               </a>
@@ -95,7 +95,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
           </nav>
 
           {/* Action Buttons */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 2xl:gap-3 shrink-0">
             {/* Admin toggle visualizer */}
             {showAdminButton && (
               <button
@@ -116,7 +116,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
 
             <a
               href="#builder"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#0D1527] hover:bg-[#F47B20] text-gray-300 hover:text-white text-[10px] font-mono tracking-wider uppercase font-bold border border-[#17243A] hover:border-[#F47B20] transition-all duration-300 shadow-sm shrink-0"
+              className="inline-flex items-center gap-1 xl:gap-1.5 px-2 xl:px-2.5 2xl:px-3 py-1.5 rounded-md bg-[#0D1527] hover:bg-[#F47B20] text-gray-300 hover:text-white text-[9px] xl:text-[10px] font-mono tracking-wider uppercase font-bold border border-[#17243A] hover:border-[#F47B20] transition-all duration-300 shadow-sm shrink-0"
               id="cta-analysis-nav"
             >
               <span>Calculer mes gains potentiels</span>

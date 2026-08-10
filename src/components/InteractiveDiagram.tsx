@@ -166,8 +166,8 @@ export default function InteractiveDiagram({
   const systemOutputs = [
     { id: 'systems', label: 'Hub centralisé', icon: Layers, desc: 'Toutes vos opportunités et données unifiées en direct.', delay: 1200 },
     { id: 'automation', label: 'Relance Automatique', icon: Zap, desc: 'Rappels automatisés rédigés par l\'IA pour vos impayés.', delay: 1400 },
-    { id: 'dashboards', label: 'Suivi des Marges', icon: TrendingUp, desc: 'Dashboard de rentabilité nette en temps réel.', delay: 1600 },
-    { id: 'aiTeams', label: 'Folder Agent IA', icon: Bot, desc: 'Classement, lecture et renommage automatique de vos fichiers.', delay: 1800 }
+    { id: 'dashboards', label: 'Suivi de rentabilité', icon: TrendingUp, desc: 'Dashboard de rentabilité nette en temps réel.', delay: 1600 },
+    { id: 'aiTeams', label: 'Gestion fichiers IA', icon: Bot, desc: 'Classement, lecture et renommage automatique de vos fichiers.', delay: 1800 }
   ];
 
   const triggerFlow = (sourceIndex: number) => {
@@ -346,50 +346,63 @@ export default function InteractiveDiagram({
   ];
 
   return (
-    <div id="interactive-diagram-container" className="relative w-full max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 rounded-2xl bg-[#090D16] border border-[#17243A]/80 shadow-2xl shadow-black overflow-hidden">
+    <div id="interactive-diagram-container" className="relative w-full max-w-7xl mx-auto p-3 sm:p-6 lg:p-8 rounded-2xl bg-[#090D16] border border-[#17243A]/80 shadow-2xl shadow-black overflow-hidden">
       {/* Background radial soft light */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#F47B20]/5 blur-[120px] pointer-events-none"></div>
 
       {/* Top Header Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#17243A]/60 pb-5 mb-8 gap-4 relative z-10">
-        <div>
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between border-b border-[#17243A]/60 pb-4 mb-4 gap-4 relative z-10">
+        <div className="flex-1 text-left">
           <span className="text-[10px] font-mono tracking-widest text-[#F47B20] uppercase font-semibold bg-[#F47B20]/10 px-2.5 py-1 rounded-full border border-[#F47B20]/20">
-            COMPACTEUR OPÉRATIONNEL
+            SIMULATEUR OPÉRATIONNEL
           </span>
-          <h3 className="font-display text-xl sm:text-2xl font-bold text-white mt-3">
+          <h3 className="font-display text-lg sm:text-xl lg:text-2xl font-bold text-white mt-2.5">
             Moins de désordre. Plus de contrôle.
           </h3>
-          <p className="text-xs text-gray-400 mt-1 max-w-2xl">
-            Voici concrètement comment HUVI transforme vos opérations. Cliquez sur un problème à gauche pour voir comment il est réglé par notre système.
+          <p className="text-xs text-gray-400 mt-1 max-w-2xl leading-relaxed">
+            Voici concrètement comment HUVI transforme vos opérations. Cliquez sur une situation pour voir comment notre système la règle.
           </p>
+
+          {/* Embedded Simulation Buttons inside the widget header */}
+          <div className="mt-3.5 flex flex-wrap gap-1.5 items-center">
+            <span className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider flex items-center gap-1 shrink-0">
+              <span className="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+              Simulation en direct :
+            </span>
+            {dataSources.map((source, idx) => {
+              const SourceIcon = source.icon;
+              const isCurrentActive = activePacket === idx;
+              return (
+                <button
+                  key={source.id}
+                  onClick={() => triggerFlow(idx)}
+                  className={`px-2.5 py-1.5 rounded-lg border text-[10px] font-mono font-semibold flex items-center gap-1.5 transition-all duration-300 cursor-pointer ${
+                    isCurrentActive
+                       ? 'bg-red-500/20 border-red-500 text-white shadow-lg shadow-red-500/5'
+                       : 'bg-[#0d1321]/60 border-[#17243A]/60 text-gray-400 hover:text-white hover:border-red-500/40'
+                  }`}
+                >
+                  <SourceIcon className="w-3 h-3 text-red-400" />
+                  <span>{source.label}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2.5 shrink-0 self-start sm:self-center bg-[#111a2e]/40 p-2 rounded-lg border border-[#17243A]/20">
           <div className="text-right">
-            <span className="block text-[10px] font-mono text-gray-500">TÂCHES OPÉRATIONNELLES</span>
+            <span className="block text-[9px] font-mono text-gray-500">TÂCHES OPÉRATIONNELLES</span>
             <span className="text-xs font-mono font-bold text-green-400">{processedCount} traitées aujourd'hui</span>
           </div>
-          <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></div>
+          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
         </div>
       </div>
 
       {!isZoomed ? (
         /* 3-COLUMN SYSTEM FLOW DIAGRAM (Default View) */
-        <div className="relative z-10 animate-fade-in flex flex-col space-y-8" id="before-after-flowchart">
-          
-          {/* Instructions banner */}
-          <div className="bg-[#111a2e]/60 border border-[#17243A]/60 rounded-xl p-3.5 flex items-center justify-between gap-3 text-xs text-gray-300">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-[#F47B20] shrink-0 animate-pulse" />
-              <span>
-                <strong>Simulez la transformation :</strong> Cliquez sur n'importe quel problème de la colonne de gauche (Avant) pour voir l'optimisation en direct.
-              </span>
-            </div>
-            <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest hidden md:inline">
-              Moteur actif
-            </span>
-          </div>
+        <div className="relative z-10 animate-fade-in flex flex-col space-y-4" id="before-after-flowchart">
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-4 items-center relative">
+          <div className="grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-4 items-center relative">
             
             {/* SVG Connector Lines (desktop only) */}
             <div className="absolute inset-0 pointer-events-none hidden lg:block z-0">
@@ -441,11 +454,11 @@ export default function InteractiveDiagram({
             </div>
 
             {/* Column 1: Sources (AVANT - Irritants) */}
-            <div className="lg:col-span-4 space-y-3 z-10">
-              <div className="flex items-center gap-2 pb-2 px-1 border-b border-[#17243A]/40 mb-3">
-                <AlertTriangle className="w-4 h-4 text-red-500" />
-                <span className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">
-                  DÉSORDRE OPÉRATIONNEL (AVANT)
+            <div className="col-span-1 lg:col-span-4 space-y-2 lg:space-y-3 z-10">
+              <div className="flex items-center gap-1.5 sm:gap-2 pb-2 px-1 border-b border-[#17243A]/40 mb-2 lg:mb-3">
+                <AlertTriangle className="w-3.5 h-3.5 text-red-500" />
+                <span className="text-[9px] sm:text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">
+                  DÉSORDRE (AVANT)
                 </span>
               </div>
               
@@ -457,7 +470,7 @@ export default function InteractiveDiagram({
                   <button
                     key={source.id}
                     onClick={() => triggerFlow(idx)}
-                    className={`w-full text-left p-3.5 rounded-xl border transition-all duration-300 relative group cursor-pointer ${
+                    className={`w-full text-left p-2 sm:p-3.5 rounded-xl border transition-all duration-300 relative group cursor-pointer ${
                       isCurrentActive
                         ? 'bg-red-500/15 border-red-500 shadow-lg shadow-red-500/10 scale-[1.02]'
                         : isFlashed
@@ -465,15 +478,17 @@ export default function InteractiveDiagram({
                         : 'bg-[#0d1321]/40 border-[#17243A]/60 hover:border-red-500/40 hover:bg-[#0d1321]/70'
                     }`}
                   >
-                    <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg bg-[#17243A]/60 ${isCurrentActive || isFlashed ? 'text-[#F47B20]' : 'text-gray-400 group-hover:text-red-400'} transition-colors`}>
-                        <SourceIcon className="w-4 h-4" />
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3">
+                      <div className="flex items-center gap-2 flex-1 min-w-0">
+                        <div className={`p-1.5 sm:p-2 rounded-lg bg-[#17243A]/60 ${isCurrentActive || isFlashed ? 'text-[#F47B20]' : 'text-gray-400 group-hover:text-red-400'} transition-colors shrink-0`}>
+                          <SourceIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                        </div>
+                        <h4 className="text-[10px] sm:text-xs font-bold text-white truncate">{source.label}</h4>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-xs font-bold text-white truncate">{source.label}</h4>
-                        <p className="text-[10px] text-gray-400 mt-0.5 truncate leading-relaxed">{source.description}</p>
+                        <p className="hidden md:block text-[10px] text-gray-400 mt-0.5 truncate leading-relaxed">{source.description}</p>
                       </div>
-                      <span className="text-[9px] font-mono font-bold uppercase text-red-400 opacity-60 group-hover:opacity-100 transition-opacity">
+                      <span className="hidden sm:inline-block text-[9px] font-mono font-bold uppercase text-red-400 opacity-60 group-hover:opacity-100 transition-opacity shrink-0">
                         Résoudre ➜
                       </span>
                     </div>
@@ -483,7 +498,7 @@ export default function InteractiveDiagram({
             </div>
 
             {/* Column 2: Central Router (HUVI Core) */}
-            <div className="lg:col-span-4 flex flex-col items-center justify-center py-6 lg:py-0 z-10">
+            <div className="hidden lg:flex lg:col-span-4 flex-col items-center justify-center py-6 lg:py-0 z-10">
               <div className="relative flex items-center justify-center w-24 h-24">
                 {/* Neon blur backing */}
                 <div className="absolute -inset-4 rounded-full bg-[#F47B20]/10 blur-md animate-pulse"></div>
@@ -513,11 +528,11 @@ export default function InteractiveDiagram({
             </div>
 
             {/* Column 3: Outcomes (APRÈS - Solutions) */}
-            <div className="lg:col-span-4 space-y-3 z-10">
-              <div className="flex items-center gap-2 pb-2 px-1 border-b border-[#17243A]/40 mb-3">
-                <ShieldCheck className="w-4 h-4 text-green-500" />
-                <span className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">
-                  STRUCTURE CENTRALISÉE (APRÈS)
+            <div className="col-span-1 lg:col-span-4 space-y-2 lg:space-y-3 z-10">
+              <div className="flex items-center gap-1.5 sm:gap-2 pb-2 px-1 border-b border-[#17243A]/40 mb-2 lg:mb-3">
+                <ShieldCheck className="w-3.5 h-3.5 text-green-500" />
+                <span className="text-[9px] sm:text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">
+                  STRUCTURE (APRÈS)
                 </span>
               </div>
 
@@ -530,7 +545,7 @@ export default function InteractiveDiagram({
                   <button
                     key={output.id}
                     onClick={() => handleOutputClick(output.id)}
-                    className={`w-full text-left p-3.5 rounded-xl border transition-all duration-300 relative group cursor-pointer ${
+                    className={`w-full text-left p-2 sm:p-3.5 rounded-xl border transition-all duration-300 relative group cursor-pointer ${
                       isCurrentActivated
                         ? 'bg-green-500/15 border-green-500 shadow-lg shadow-green-500/10 scale-[1.02]'
                         : isFlashed
@@ -538,13 +553,15 @@ export default function InteractiveDiagram({
                         : 'bg-[#0d1321]/40 border-[#17243A]/60 hover:border-[#F47B20]/40 hover:bg-[#0d1321]/70'
                     }`}
                   >
-                    <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg bg-[#17243A]/60 ${isCurrentActivated || isFlashed ? 'text-green-400' : 'text-gray-400 group-hover:text-green-400'} transition-colors`}>
-                        <OutputIcon className="w-4 h-4" />
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3">
+                      <div className="flex items-center gap-2 flex-1 min-w-0">
+                        <div className={`p-1.5 sm:p-2 rounded-lg bg-[#17243A]/60 ${isCurrentActivated || isFlashed ? 'text-green-400' : 'text-gray-400 group-hover:text-green-400'} transition-colors shrink-0`}>
+                          <OutputIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                        </div>
+                        <h4 className="text-[10px] sm:text-xs font-bold text-white truncate">{output.label}</h4>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-xs font-bold text-white truncate">{output.label}</h4>
-                        <p className="text-[10px] text-gray-400 mt-0.5 truncate leading-relaxed">{output.desc}</p>
+                        <p className="hidden md:block text-[10px] text-gray-400 mt-0.5 truncate leading-relaxed">{output.desc}</p>
                       </div>
                     </div>
                   </button>
@@ -591,7 +608,7 @@ export default function InteractiveDiagram({
           </div>
 
           <div 
-            className={`rounded-xl border-2 bg-[#0b1220]/95 p-4 sm:p-6 min-h-[500px] transition-all duration-700 ${
+            className={`rounded-xl border-2 bg-[#0b1220]/95 p-4 sm:p-6 min-h-[380px] sm:min-h-[500px] transition-all duration-700 ${
               flashShowcase 
                 ? 'border-[#F47B20] bg-[#F47B20]/[0.01] shadow-xl shadow-[#F47B20]/5' 
                 : 'border-[#17243A]/80 shadow-lg'
