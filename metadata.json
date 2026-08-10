@@ -1,0 +1,6 @@
+{
+  "name": "HUVI Optimisation",
+  "description": "HUVI Optimisation accompagne les entrepreneurs de la construction et de l'immobilier afin de structurer leurs opérations grâce à l'automatisation et à l'intelligence artificielle.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
