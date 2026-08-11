@@ -163,7 +163,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
           />
           
           {/* Sliding Sidebar */}
-          <div className="absolute inset-y-0 right-0 w-72 bg-[#111a2e] border-l border-[#17243A] p-6 flex flex-col justify-between shadow-2xl z-10">
+          <div className="absolute inset-y-0 right-0 w-72 bg-[#111a2e] border-l border-[#17243A] p-6 flex flex-col justify-between shadow-2xl z-20">
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b border-[#17243A]/40 pb-4">
                 <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">Menu</span>

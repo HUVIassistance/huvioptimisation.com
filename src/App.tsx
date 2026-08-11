@@ -496,7 +496,7 @@ export default function App() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Hero text */}
           <div className="lg:col-span-6 space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#17243A]/60 border border-[#3A7697]/30 text-[#E2E8F0] text-[10px] sm:text-xs font-mono max-w-full">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#17243A]/60 border border-[#3A7697]/30 text-[#E2E8F0] text-[9px] sm:text-xs font-mono whitespace-nowrap max-w-full overflow-hidden">
               <span className="flex h-2 w-2 rounded-full bg-[#F47B20] shrink-0"></span>
               <span className="truncate">HUVI Optimisation · Consultant d'affaires pour PME de services</span>
             </div>
