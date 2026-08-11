@@ -8,8 +8,8 @@ interface LogoProps {
 
 export default function Logo({ className = "", size = 'md', showProgressBar: _showProgressBar = true }: LogoProps) {
   const sizeClass = {
-    sm: 'h-8 w-auto',
-    md: 'h-14 w-auto',
+    sm: 'h-10 w-auto',
+    md: 'h-16 w-auto',
     lg: 'h-24 w-auto'
   }[size];
 
