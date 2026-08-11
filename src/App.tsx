@@ -498,8 +498,7 @@ export default function App() {
           <div className="lg:col-span-6 space-y-6 text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#17243A]/60 border border-[#3A7697]/30 text-[#E2E8F0] text-[9px] sm:text-xs font-mono whitespace-nowrap max-w-full overflow-hidden">
               <span className="flex h-2 w-2 rounded-full bg-[#F47B20] shrink-0"></span>
-              <span className="hidden sm:inline truncate">HUVI Optimisation · Consultant d'affaires pour PME de services</span>
-              <span className="sm:hidden truncate">HUVI Optimisation</span>
+              <span>HUVI Optimisation · Consultant d'affaires PME</span>
             </div>
 
             <h1 className="text-[2.5rem] sm:text-5xl lg:text-[3.5rem] font-display font-bold tracking-tight text-white leading-[1.1]">

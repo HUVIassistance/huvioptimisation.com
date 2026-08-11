@@ -158,7 +158,8 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
         <div className="xl:hidden fixed inset-0 z-50" id="mobile-menu-overlay">
           {/* Backdrop */}
           <div 
-            className="absolute inset-0 bg-[#111a2e] backdrop-blur-sm" 
+            className="absolute inset-0 backdrop-blur-sm" 
+            style={{backgroundColor: '#111a2e'}}
             onClick={() => setIsOpen(false)}
           />
           
