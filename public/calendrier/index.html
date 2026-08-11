@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planification du rendez-vous | HUVI Optimisation</title>
+  <meta name="description" content="Planifiez votre rendez-vous avec HUVI Optimisation.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://huvioptimisation.com/calendrier">
+  <meta property="og:title" content="Planification du rendez-vous | HUVI Optimisation">
+  <meta property="og:description" content="Sélectionnez la date et l'heure qui vous convient le mieux.">
+  <meta property="og:image" content="https://huvioptimisation.com/favicon.png">
+  <meta property="og:locale" content="fr_CA">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; }
+    body {
+      background: #253551;
+      color: #ffffff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 48px 24px 28px;
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    /* Logo */
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+      user-select: none;
+    }
+    .logo-wordmark-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-wordmark {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 2.5rem;
+      font-weight: normal;
+      letter-spacing: 0.1em;
+      line-height: 1;
+      color: #ffffff;
+    }
+    @media (min-width: 640px) {
+      .logo-wordmark { font-size: 3rem; }
+    }
+
+    /* Circular progress ring */
+    .logo-circle {
+      position: absolute;
+      width: 28px; height: 28px;
+      top: -14px; right: -24px;
+    }
+    @media (min-width: 640px) {
+      .logo-circle { width: 32px; height: 32px; top: -16px; right: -28px; }
+    }
+
+    /* Progress bar */
+    .logo-bar {
+      width: 112px; height: 8px;
+      margin-top: 12px;
+      background: #142032;
+      border-radius: 9999px;
+      overflow: hidden;
+      border: 1.5px solid rgba(28,44,66,0.5);
+      padding: 1.5px;
+    }
+    @media (min-width: 640px) {
+      .logo-bar { width: 128px; height: 10px; margin-top: 14px; }
+    }
+    .logo-bar-fill {
+      height: 100%; width: 60%;
+      background: linear-gradient(to right, #173A5E, #2F678E, #458BB4);
+      border-radius: 9999px;
+    }
+
+    /* Titles */
+    .title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    @media (min-width: 640px) {
+      .title { font-size: 1.6rem; }
+    }
+    .subtitle {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+    }
+    @media (min-width: 640px) {
+      .subtitle { font-size: 1rem; }
+    }
+
+    /* Calendar */
+    .calendar {
+      width: 100%;
+      flex-grow: 1;
+      position: relative;
+      overflow: hidden;
+    }
+    .calendar-inner {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo-container">
+      <div class="logo-wordmark-wrap">
+        <span class="logo-wordmark">HUVI</span>
+        <div class="logo-circle">
+          <svg viewBox="0 0 36 36" width="100%" height="100%">
+            <path stroke="#1C2C42" stroke-width="4" fill="none"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path stroke="#3A7697" stroke-width="4" stroke-linecap="round"
+              stroke-dasharray="65, 100" fill="none"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831"/>
+          </svg>
+        </div>
+      </div>
+      <div class="logo-bar">
+        <div class="logo-bar-fill"></div>
+      </div>
+    </div>
+
+    <h1 class="title">PLANIFICATION DU RENDEZ-VOUS</h1>
+    <p class="subtitle">Sélectionner la date et l'heure qui vous convient le mieux ci-dessous...</p>
+  </div>
+
+  <div class="calendar">
+    <div class="calendar-inner"
+      data-fillout-id="kpMEhrYBULus"
+      data-fillout-embed-type="fullscreen"
+      style="width:100%;height:100%;"
+      data-fillout-inherit-parameters></div>
+  </div>
+
+  <script src="https://server.fillout.com/embed/v1/"></script>
+</body>
+</html>
