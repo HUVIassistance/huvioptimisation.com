@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Database, Menu, X, ArrowRight } from 'lucide-react';
+import { Database, Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import Logo from './Logo';
 
 interface NavbarProps {
@@ -12,6 +12,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
   const [isOpen, setIsOpen] = useState(false);
   const [showBanner, setShowBanner] = useState(true);
   const [promoVisible, setPromoVisible] = useState(true);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,12 +24,24 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
   const navLinks: { label: string; href: string; external?: boolean }[] = [
     { label: 'Le VRAI diagnostic', href: '#problem' },
     { label: 'La méthode CASA', href: '#architecture' },
-    { label: 'Solutions concrètes', href: '#what-we-build' },
     { label: 'Comment on travaille', href: '#how-it-works' },
     { label: 'Vos agents IA', href: '#ai-teams' },
     { label: "Calculateur d'opportunités", href: '#builder' },
     { label: 'FAQ', href: '#faq' },
   ];
+
+  const solutionsLinks: { label: string; tagline: string; href: string }[] = [
+    { label: 'Audit des processus', tagline: "Rendre visible l'invisible", href: '/solutions/audit-des-processus/' },
+    { label: 'Centralisation & CRM', tagline: 'Une source unique de vérité', href: '/solutions/centralisation-crm/' },
+    { label: 'Suivis automatisés', tagline: 'Relances et suivis sans effort', href: '/solutions/suivis-automatises/' },
+    { label: 'Suivi des heures', tagline: 'Vos vraies heures, catégorisées', href: '/solutions/suivi-des-heures/' },
+    { label: 'Analyse & performance', tagline: 'Tableaux de bord et KPI', href: '/solutions/analyse-performance/' },
+    { label: 'Marges & rentabilité', tagline: 'Votre vrai argent, sous les yeux', href: '/solutions/marges-rentabilite/' },
+    { label: 'Onboarding & fidélisation', tagline: 'Des clients qui vous réfèrent', href: '/solutions/onboarding-fidelisation/' },
+    { label: 'Automatisation & IA', tagline: 'La couche qui décuple', href: '/solutions/automatisation-ia/' },
+  ];
+
+  const linkClass = "font-sans text-xs xl:text-[11px] 2xl:text-xs 3xl:text-[13px] font-medium text-gray-400 hover:text-white transition-colors duration-200 relative py-1 whitespace-nowrap after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#F47B20] hover:after:w-full after:transition-all after:duration-300";
 
   return (
     <>
@@ -82,14 +95,49 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
 
           {/* Desktop Navigation Links */}
           <nav className="hidden xl:flex items-center gap-3 xl:gap-3.5 2xl:gap-5 3xl:gap-6 shrink-0">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                target={link.external ? "_blank" : undefined}
-                rel={link.external ? "noopener noreferrer" : undefined}
-                className="font-sans text-xs xl:text-[11px] 2xl:text-xs 3xl:text-[13px] font-medium text-gray-400 hover:text-white transition-colors duration-200 relative py-1 whitespace-nowrap after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#F47B20] hover:after:w-full after:transition-all after:duration-300"
+            {navLinks.slice(0, 2).map((link) => (
+              <a key={link.href} href={link.href} className={linkClass}>
+                {link.label}
+              </a>
+            ))}
+
+            {/* Solutions dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setSolutionsOpen(true)}
+              onMouseLeave={() => setSolutionsOpen(false)}
+            >
+              <button
+                className={`${linkClass} flex items-center gap-1 cursor-pointer`}
+                onClick={() => setSolutionsOpen(true)}
+                aria-expanded={solutionsOpen}
               >
+                Solutions
+                <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {solutionsOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[560px] z-50">
+                  <div className="bg-[#0D1527] border border-[#17243A] rounded-xl shadow-2xl shadow-black/50 p-5">
+                    <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#F47B20] font-semibold mb-4">Nos solutions</p>
+                    <div className="grid grid-cols-2 gap-1">
+                      {solutionsLinks.map((l) => (
+                        <a
+                          key={l.href}
+                          href={l.href}
+                          className="flex flex-col gap-0.5 rounded-lg px-3 py-2.5 hover:bg-[#16213a] transition-colors"
+                        >
+                          <span className="text-[13px] font-medium text-gray-200">{l.label}</span>
+                          <span className="text-[11px] text-gray-500 leading-tight">{l.tagline}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {navLinks.slice(2).map((link) => (
+              <a key={link.href} href={link.href} className={linkClass}>
                 {link.label}
               </a>
             ))}
@@ -165,7 +213,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
         />
         
         {/* Sliding Sidebar */}
-        <div className="absolute inset-y-0 right-0 w-72 bg-[#111a2e] border-l border-[#17243A] p-6 flex flex-col justify-between shadow-2xl z-20">
+        <div className="absolute inset-y-0 right-0 w-72 bg-[#111a2e] border-l border-[#17243A] p-6 flex flex-col justify-between shadow-2xl z-20 overflow-y-auto">
           <div className="space-y-6">
             <div className="flex items-center justify-between border-b border-[#17243A]/40 pb-4">
               <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">Menu</span>
@@ -191,9 +239,27 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
                 </a>
               ))}
             </nav>
+
+            {/* Solutions section in mobile drawer */}
+            <div>
+              <span className="text-[10px] font-mono text-[#F47B20] uppercase tracking-[0.2em]">Solutions</span>
+              <div className="mt-2 flex flex-col">
+                {solutionsLinks.map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setIsOpen(false)}
+                    className="py-2 border-b border-[#17243A]/20 flex flex-col"
+                  >
+                    <span className="text-sm font-medium text-gray-200">{l.label}</span>
+                    <span className="text-[11px] text-gray-500">{l.tagline}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <div className="pt-6 border-t border-[#17243A]/40">
+          <div className="pt-6 border-t border-[#17243A]/40 mt-6">
             <a
               href="#builder"
               onClick={() => setIsOpen(false)}

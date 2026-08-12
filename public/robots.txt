@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /calendrier/
+
+Sitemap: https://www.huvioptimisation.com/sitemap.xml

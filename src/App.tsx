@@ -2260,7 +2260,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
           
           {/* Logo & Pitch */}
-          <div className="md:col-span-5 space-y-3">
+          <div className="md:col-span-3 space-y-3">
             <Logo size="sm" showProgressBar={true} className="items-start" />
             <p className="text-[10px] text-gray-500 leading-relaxed font-sans max-w-sm pt-1">
               HUVI Optimisation accompagne les entrepreneurs de la construction, de l'immobilier et des services à structurer leurs opérations grâce à l'automatisation et à l'intelligence artificielle.
@@ -2283,8 +2283,23 @@ export default function App() {
             </ul>
           </div>
  
+          {/* Solutions */}
+          <div className="md:col-span-3 space-y-2 text-left md:pt-2">
+            <h5 className="font-mono text-[10px] font-bold text-white uppercase tracking-wider">Nos solutions</h5>
+            <ul className="space-y-1.5 text-[10px] font-sans text-gray-500">
+              <li><a href="/solutions/audit-des-processus/" className="hover:text-white transition-colors">Audit des processus</a></li>
+              <li><a href="/solutions/centralisation-crm/" className="hover:text-white transition-colors">Centralisation &amp; CRM</a></li>
+              <li><a href="/solutions/suivis-automatises/" className="hover:text-white transition-colors">Suivis automatisés</a></li>
+              <li><a href="/solutions/suivi-des-heures/" className="hover:text-white transition-colors">Suivi des heures</a></li>
+              <li><a href="/solutions/analyse-performance/" className="hover:text-white transition-colors">Analyse &amp; performance</a></li>
+              <li><a href="/solutions/marges-rentabilite/" className="hover:text-white transition-colors">Marges &amp; rentabilité</a></li>
+              <li><a href="/solutions/onboarding-fidelisation/" className="hover:text-white transition-colors">Onboarding &amp; fidélisation</a></li>
+              <li><a href="/solutions/automatisation-ia/" className="hover:text-white transition-colors">Automatisation &amp; IA</a></li>
+            </ul>
+          </div>
+ 
           {/* Core values declaration */}
-          <div className="md:col-span-4 space-y-2 text-left md:pt-2">
+          <div className="md:col-span-3 space-y-2 text-left md:pt-2">
             <h5 className="font-mono text-[10px] font-bold text-white uppercase tracking-wider">Notre engagement</h5>
             <div className="p-3 rounded-lg bg-[#111a2e] border border-[#17243A] text-[9px] font-mono text-gray-500 leading-relaxed space-y-1">
               <p className="text-[#F47B20] font-bold">● Partenaire de votre croissance : la structure d'abord, la technologie ensuite.</p>
