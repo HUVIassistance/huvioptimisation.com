@@ -2280,6 +2280,7 @@ export default function App() {
               <li><a href="#ai-teams" className="hover:text-white transition-colors">Nos assistants IA</a></li>
               <li><a href="#what-we-build" className="hover:text-white transition-colors">Ce qu'on simplifie</a></li>
               <li><a href="https://huvioptimisation.fillout.com/rencontre-doptimisation-exploratoire" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Séance d'optimisation</a></li>
+              <li><a href="/ressources/" className="hover:text-white transition-colors">Ressources</a></li>
             </ul>
           </div>
  

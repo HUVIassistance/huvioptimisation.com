@@ -127,6 +127,11 @@ h1 {
   margin: 44px 0 14px;
 }
 .prose h2:first-child { margin-top: 0; }
+.prose h3 {
+  font-family: 'Space Grotesk', sans-serif; font-size: clamp(18px, 2.6vw, 22px);
+  color: #fff; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3;
+  margin: 34px 0 10px;
+}
 .prose p { color: var(--text); font-size: 16.5px; margin: 16px 0; }
 .prose p strong { color: #fff; font-weight: 600; }
 .prose a {
@@ -259,6 +264,25 @@ h1 {
   text-transform: uppercase; color: var(--orange); font-weight: 600;
 }
 .related a.card-link .rc-title { font-family: 'Space Grotesk', sans-serif; font-size: 16px; color: #fff; font-weight: 600; margin-top: 10px; line-height: 1.3; }
+.related a.card-link .rc-sub { display: block; color: var(--muted); font-size: 13px; margin-top: 8px; line-height: 1.55; }
+
+/* ---------- Page hub /ressources/ (liste des guides piliers) ---------- */
+.hub-lead { color: var(--text); font-size: 16.5px; margin: 16px 0; }
+.hub-lead a { color: var(--orange-light); border-bottom: 1px solid rgba(244,123,32,0.35); }
+.pillar-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
+@media (min-width: 640px) { .pillar-grid { grid-template-columns: 1fr 1fr; } }
+.pillar-card {
+  display: flex; flex-direction: column; gap: 6px;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 26px 24px; transition: border-color .25s, transform .25s;
+}
+.pillar-card:hover { border-color: var(--border-soft); transform: translateY(-3px); }
+.pillar-card .pc-num {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--orange); font-weight: 600;
+}
+.pillar-card .pc-title { font-family: 'Space Grotesk', sans-serif; font-size: 19px; color: #fff; font-weight: 700; line-height: 1.25; }
+.pillar-card .pc-sub { color: var(--muted); font-size: 13.5px; line-height: 1.6; }
 
 /* ---------- Footer minimal ---------- */
 .site-footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 40px; background: var(--bg-deep); }
