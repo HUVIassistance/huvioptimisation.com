@@ -79,7 +79,67 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/10-taches-adjointe-systeme/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/10-taches-adjointe-systeme-fait-mieux/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/10-taches-systeme-mieux-qu-adjointe/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/5-indicateurs-suivre-chaque-semaine/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/adjointe-administrative-ou-automatiser/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/agent-ia-prise-de-rendez-vous/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/agent-ia-repond-clients-construction/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/agent-ia-repondre-aux-clients/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/agent-ia-vs-employe-humain/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/airtable-ou-notion-pme/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/automatisation-vs-recrutement/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -139,6 +199,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/automatiser-rappels-paiement/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/automatiser-rappels-rendez-vous/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -158,6 +224,12 @@
   </url>
   <url>
     <loc>https://www.huvioptimisation.com/ressources/automatiser-reception-demandes-clients/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/automatiser-reception-demandes-clients-ia/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -277,7 +349,43 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/combien-coute-agent-ia/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/coordonner-equipes-plusieurs-chantiers/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/cout-adjointe-administrative-vs-automatisation/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/cout-adjointe-vs-automatisation/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/cout-agent-ia-vs-employe/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/creer-premier-agent-ia-pme/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/creer-premier-agent-ia-pme-construction/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -289,7 +397,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-cabinet-avocats/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/digitaliser-cabinet-comptable/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-cabinet-comptables/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-cabinet-notaires/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-cabinet-physiotherapie-chiropratique/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -301,7 +433,37 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-clinique-dentaire/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-clinique-esthetique-spa/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-clinique-veterinaire/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/digitaliser-entrepreneur-electricien/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-entrepreneur-garages-abris/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-entrepreneur-piscines-spas/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -313,7 +475,43 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-entrepreneur-renovation-cuisine-salle-de-bain/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-entrepreneur-services-residentiels/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-entreprise-couvreurs/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-entreprise-excavation-fondations/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-entreprise-fenetres-portes/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/digitaliser-entreprise-renovation/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-entreprise-thermopompes-cvac/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -331,13 +529,61 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-garage-automobile/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/digitaliser-paysagiste/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-peintre-en-batiment/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/digitaliser-prise-commandes/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/digitaliser-salon-coiffure-barbier/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/embaucher-adjointe-ou-automatiser/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/embaucher-adjointe-ou-automatiser-services/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/employe-ia-nouveau-stagiaire-pme/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/employe-ia-pme/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/estimer-agrandissement-maison/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -350,6 +596,12 @@
   </url>
   <url>
     <loc>https://www.huvioptimisation.com/ressources/eviter-erreurs-saisie/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/eviter-erreurs-systeme-gestion/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -403,7 +655,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/former-equipe-ia/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/former-equipe-nouveau-systeme/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/gerer-administration-cabinet-sans-secretaire/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/gerer-administration-construction-sans-secretaire/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/gerer-administration-pme-sans-embaucher/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -439,7 +715,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/gerer-contrats-piscine-depot-echeancier-paiements/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/gerer-delais-livraison-materiaux/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/gerer-demandes-installation-thermopompes/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -469,6 +757,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/gerer-permis-conformite-agrandissement/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/gerer-permis-conformite-rbq/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -476,6 +770,12 @@
   </url>
   <url>
     <loc>https://www.huvioptimisation.com/ressources/gerer-plusieurs-projets-sans-surcharger/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/gerer-projet-agrandissement-batiment/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -499,6 +799,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/gerer-retards-paiement-sans-perdre-client/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/gerer-sous-traitants-construction/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -517,6 +823,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/ia-repondre-plus-vite-clients/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/make-ou-zapier-pme/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -524,6 +836,12 @@
   </url>
   <url>
     <loc>https://www.huvioptimisation.com/ressources/mesurer-roi-automatisations/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/mesurer-temps-gagne-automatisation/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -548,6 +866,12 @@
   </url>
   <url>
     <loc>https://www.huvioptimisation.com/ressources/organiser-memoire-entreprise/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/planifier-agrandissement-sans-depasser-budget/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -595,6 +919,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/quest-ce-qu-un-agent-ia/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/quest-ce-qu-un-agent-ia-services/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/recolter-avis-google-clinique/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -613,6 +949,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/reduire-taches-administratives-cabinet-professionnel/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/reduire-temps-valorisation-service/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -620,6 +962,12 @@
   </url>
   <url>
     <loc>https://www.huvioptimisation.com/ressources/relancer-soumissions-sans-reponse/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/remplacer-paperasse-administrative-par-automatisation/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -649,6 +997,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/suivre-marge-entreprise-simplement/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/suivre-rentabilite-chantiers/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -673,6 +1027,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.huvioptimisation.com/ressources/taches-confier-agent-ia/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/taches-confier-agent-ia-services/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.huvioptimisation.com/ressources/transformer-client-construction-client-recurrent/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -680,6 +1046,12 @@
   </url>
   <url>
     <loc>https://www.huvioptimisation.com/ressources/transformer-client-satisfait-avis-5-etoiles/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.huvioptimisation.com/ressources/utiliser-agent-ia-entreprise-construction/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
