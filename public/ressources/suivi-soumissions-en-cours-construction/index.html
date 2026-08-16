@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suivi des soumissions en cours : le pipeline qui encaisse</title>
+  <meta name="description" content="Vous ne savez pas combien de soumissions sont « dans l'air » ? Voici comment suivre vos soumissions en cours en construction : pipeline, alertes, ratio.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.huvioptimisation.com/ressources/suivi-soumissions-en-cours-construction/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.huvioptimisation.com/ressources/suivi-soumissions-en-cours-construction/">
+  <meta property="og:title" content="Suivi des soumissions en cours : le pipeline qui encaisse">
+  <meta property="og:description" content="Vous ne savez pas combien de soumissions sont « dans l'air » ? Voici comment suivre vos soumissions en cours en construction : pipeline, alertes, ratio.">
+  <meta property="og:image" content="https://www.huvioptimisation.com/og-image.jpg">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="article:published_time" content="2026-08-16">
+  <meta property="article:modified_time" content="2026-08-16">
+  <meta property="article:author" content="Hugo Viens">
+  <meta property="article:section" content="Ventes">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Suivi des soumissions en cours : le pipeline qui encaisse">
+  <meta name="twitter:description" content="Vous ne savez pas combien de soumissions sont « dans l'air » ? Voici comment suivre vos soumissions en cours en construction : pipeline, alertes, ratio.">
+  <meta name="twitter:image" content="https://www.huvioptimisation.com/og-image.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Suivi des soumissions en cours : le pipeline qui encaisse",
+    "description": "Vous ne savez pas combien de soumissions sont « dans l'air » ? Voici comment suivre vos soumissions en cours en construction : pipeline, alertes, ratio.",
+    "image": "https://www.huvioptimisation.com/og-image.jpg",
+    "author": { "@type": "Person", "name": "Hugo Viens", "jobTitle": "Fondateur" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HUVI Optimisation Inc.",
+      "logo": { "@type": "ImageObject", "url": "https://www.huvioptimisation.com/logo.png" }
+    },
+    "datePublished": "2026-08-16",
+    "dateModified": "2026-08-16",
+    "mainEntityOfPage": "https://www.huvioptimisation.com/ressources/suivi-soumissions-en-cours-construction/",
+    "inLanguage": "fr-CA"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HUVI Optimisation Inc.",
+    "url": "https://www.huvioptimisation.com",
+    "logo": "https://www.huvioptimisation.com/logo.png",
+    "description": "HUVI Optimisation aide les entrepreneurs de la construction, de l'immobilier et des services au Québec à structurer et automatiser leurs opérations grâce à la méthode CASA et aux agents IA sur mesure.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Montréal", "addressRegion": "QC", "addressCountry": "CA" },
+    "areaServed": { "@type": "AdministrativeArea", "name": "Québec" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Hugo Viens",
+    "jobTitle": "Fondateur",
+    "worksFor": { "@type": "Organization", "name": "HUVI Optimisation Inc." },
+    "url": "https://www.huvioptimisation.com",
+    "description": "Hugo Viens est le fondateur de HUVI Optimisation, consultant en automatisation et intelligence artificielle pour PME de services au Québec."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.huvioptimisation.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Suivi des soumissions en cours", "item": "https://www.huvioptimisation.com/ressources/suivi-soumissions-en-cours-construction/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Comment suivre ses soumissions sans logiciel ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Au minimum, un tableau simple avec une ligne par soumission : client, montant, date d'envoi, statut (envoyée, relancée, signée, perdue), prochaine action datée. Tout projet doit avoir un statut précis, un responsable unique et une prochaine action claire avec une date. Ce tableau est le point de départ ; l'étape suivante est de le rendre vivant avec des alertes." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quel est le bon taux de conversion des soumissions en construction ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Les repères d'industrie : 10 à 20 % de taux de succès en appel d'offres public, 30 à 50 % en travaux négociés (ConstructConnect). Mais le vrai chiffre à connaître, c'est le vôtre : moins de 6 % des entreprises de construction connaissent et suivent leur ratio soumissions/contrats (Sunflower Bank, mai 2024). Si vous ne mesurez pas votre ratio, vous ne pouvez pas l'améliorer." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quand faut-il relancer une soumission ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La méthode HUVI « boomerang des ventes » : à J+2, un courriel « Avez-vous des questions sur l'estimation ? » ; à J+5, un autre suivi. Si une soumission de plus de 5 000 $ n'a pas de réponse après 48 heures, une tâche prioritaire se crée avec un script de relance." }
+      },
+      {
+        "@type": "Question",
+        "name": "Pourquoi je perds des soumissions même quand mon prix est bon ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Parce que le problème est rarement le prix : c'est le suivi. En vente en général (donc pas spécifiquement en construction), 80 % des ventes nécessitent en moyenne 5 suivis ou plus après le premier contact, mais 44 % des vendeurs abandonnent après une seule tentative (IRC Sales Solutions). Le cas type chez HUVI : une soumission de 25 000 $ est partie chez le compétiteur qui a eu le réflexe d'envoyer un texto 48 heures plus tard." }
+      },
+      {
+        "@type": "Question",
+        "name": "C'est quoi une soumission « dans l'air » ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "C'est une soumission envoyée qui n'a pas encore de réponse : ni signée, ni perdue. Le pipeline des ventes, c'est exactement ça : combien de soumissions sont « dans l'air » vs signées. Une soumission « dans l'air » a besoin d'une prochaine action et d'une date : sinon elle reste en suspens indéfiniment et l'argent qu'elle représente est invisible." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../ressources.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/logo.png" alt="HUVI Optimisation">
+      </a>
+      <a class="back-link" href="/">← huvioptimisation.com</a>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <div class="container article-head">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="/">Accueil</a><span class="sep">›</span><span class="here">Suivi des soumissions en cours</span>
+        </nav>
+        <p class="eyebrow"><span class="dot"></span> Consultant d'affaires</p>
+        <h1>Comment faire le suivi des soumissions en cours dans la construction ?</h1>
+        <div class="article-meta">
+          <span class="author"><span class="avatar">HV</span> Hugo Viens</span>
+          <span class="dot-sep">·</span>
+          <span>Fondateur, HUVI Optimisation</span>
+          <span class="dot-sep">·</span>
+          <span>16 août 2026</span>
+        </div>
+      </div>
+
+      <div class="container prose">
+        <p>Vous avez envoyé une soumission solide. Le client était intéressé, le prix était bon. Puis le téléphone a sonné, vous êtes parti sur une urgence de chantier, et personne n'a relancé. Deux jours plus tard, le contrat est parti chez un compétiteur qui a simplement eu le réflexe d'envoyer un texto.</p>
+        <p>Maintenant, posez-vous la question : combien de soumissions avez-vous « dans l'air » en ce moment ? Combien sont signées ? Combien sont en attente depuis plus d'une semaine ? Si vous ne pouvez pas répondre en quelques secondes, votre pipeline de revenus est piloté à l'aveugle.</p>
+        <p>Le suivi des soumissions en cours n'est pas un détail administratif. C'est le système qui transforme votre travail en contrats.</p>
+
+        <div class="direct-answer">
+          <span class="da-label">En bref</span>
+          Pour suivre vos soumissions en cours dans la construction, mettez en place un pipeline à statuts clairs : envoyée, relancée, signée, perdue. Ajoutez des alertes : soumission sans réponse après 48 heures pour les montants importants, en attente depuis plus de 4 jours. Suivez votre ratio soumissions/contrats, un KPI que moins de 6 % des entreprises mesurent. Chez <strong>HUVI Optimisation</strong>, au Québec, on automatise les relances pour que plus aucun contrat ne parte par oubli.
+        </div>
+
+        <h2>Pourquoi vos soumissions en cours sont un trou noir</h2>
+        <p>Les soumissions partent, et puis le silence. Les demandes entrent, vous faites la soumission, et ensuite ? Silence radio. C'est le « trou noir des ventes » : l'argent potentiel entre dans le vide sans que personne ne sache où il en est.</p>
+        <p>Le coût est invisible mais massif :</p>
+        <ul>
+          <li>Des contrats perdus par oubli banal, pas par le prix. Une soumission de 25 000 $ est partie chez le compétiteur qui a eu le réflexe d'envoyer un texto 48 heures plus tard. C'est un cas vécu chez HUVI.</li>
+          <li>Des prévisions impossibles : combien d'argent est en attente de signature ? Si vous ne le savez pas, vous ne pouvez ni planifier votre charge de travail, ni gérer votre trésorerie.</li>
+          <li>Un taux de closing bas sans explication : votre taux de closing est bas non pas parce que vous êtes trop cher, mais parce que vous ne faites pas de suivis.</li>
+        </ul>
+        <p>Le suivi des soumissions en cours, ce n'est pas de la paperasse. C'est le pipeline de revenus de votre entreprise.</p>
+
+        <h2>Le pipeline des soumissions : la vue qui change tout</h2>
+        <p>La première étape, c'est la vue d'ensemble : combien de soumissions sont « dans l'air » vs signées. C'est le pipeline des ventes appliqué à la construction.</p>
+        <p>Concrètement, chaque soumission devient une ligne avec des informations simples :</p>
+        <ul>
+          <li>Le client et le projet.</li>
+          <li>Le montant.</li>
+          <li>La date d'envoi.</li>
+          <li>Le statut : envoyée, relancée, signée, perdue, sans réponse.</li>
+          <li>La prochaine action, avec une date.</li>
+        </ul>
+        <p>La règle de pouce de HUVI s'applique ici : aucun projet ne doit exister dans votre système sans trois éléments vitaux, un statut précis, un responsable unique (un nom, pas un département), et une prochaine action claire avec une date précise. Une soumission « dans l'air » sans prochaine action, c'est une soumission qui va mourir en silence.</p>
+        <p>Le pipeline transforme la question « où est-ce que ça en est ? » en une réponse immédiate : la soumission Tremblay est en attente depuis 6 jours, la soumission Bouchard est signée, la soumission Gagnon est perdue. Plus rien ne se perd dans la mémoire du boss.</p>
+        <p>Pour automatiser la génération et l'envoi de la soumission en amont, voyez <a href="/ressources/automatiser-soumissions-construction/">notre article sur l'automatisation des soumissions en construction</a>.</p>
+
+        <figure class="figure">
+          <div class="diagram" role="img" aria-label="Le pipeline des soumissions : envoyée, relancée, puis signée, perdue ou sans réponse.">
+            <svg viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg">
+              <title>Le pipeline des soumissions : d'envoyée à signée, perdue ou sans réponse</title>
+              <defs>
+                <marker id="arrp" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6 z" fill="#F47B20"/></marker>
+              </defs>
+              <rect x="20" y="100" width="170" height="100" rx="12" fill="#16213a" stroke="#17243A" stroke-width="1.5"/>
+              <text x="105" y="144" text-anchor="middle" fill="#E2E8F0" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="700">Envoyée</text>
+              <text x="105" y="166" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="11">montant + date d'envoi</text>
+              <line x1="192" y1="150" x2="250" y2="150" stroke="#F47B20" stroke-width="2" marker-end="url(#arrp)"/>
+              <rect x="256" y="100" width="170" height="100" rx="12" fill="#241505" stroke="#F47B20" stroke-width="1.5"/>
+              <text x="341" y="144" text-anchor="middle" fill="#ff9242" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="700">Relancée</text>
+              <text x="341" y="166" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="11">J+2 · J+5</text>
+              <line x1="426" y1="120" x2="520" y2="60" stroke="#F47B20" stroke-width="2" marker-end="url(#arrp)"/>
+              <line x1="426" y1="150" x2="520" y2="150" stroke="#F47B20" stroke-width="2" marker-end="url(#arrp)"/>
+              <line x1="426" y1="180" x2="520" y2="240" stroke="#F47B20" stroke-width="2" marker-end="url(#arrp)"/>
+              <rect x="526" y="20" width="200" height="80" rx="12" fill="#0f1a14" stroke="#16a34a" stroke-width="1.5"/>
+              <text x="626" y="55" text-anchor="middle" fill="#4ade80" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="700">Signée</text>
+              <text x="626" y="78" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="11">contrat + projet créés</text>
+              <rect x="526" y="110" width="200" height="80" rx="12" fill="#1a1013" stroke="#7f1d1d" stroke-width="1.5"/>
+              <text x="626" y="145" text-anchor="middle" fill="#f87171" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="700">Perdue</text>
+              <text x="626" y="168" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="11">raison notée</text>
+              <rect x="526" y="200" width="200" height="80" rx="12" fill="#241a12" stroke="#b45309" stroke-width="1.5"/>
+              <text x="626" y="235" text-anchor="middle" fill="#fbbf24" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="700">Sans réponse</text>
+              <text x="626" y="258" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="11">occasion de relance</text>
+            </svg>
+          </div>
+          <figcaption>Le pipeline des soumissions : chaque soumission a un statut, une date et une prochaine action.</figcaption>
+        </figure>
+
+        <h2>Les alertes qui remplacent la mémoire</h2>
+        <p>Un pipeline, c'est bien. Un pipeline avec des alertes, c'est un système. Parce que la mémoire humaine ne survit pas aux urgences de chantier.</p>
+        <p>Deux alertes changent tout en construction :</p>
+        <p><strong>L'alerte 48 heures.</strong> Si une soumission de plus de 5 000 $ n'a pas de réponse après 48 heures, le système crée automatiquement une tâche prioritaire avec un script de relance prêt à envoyer. C'est le « boomerang des ventes » : dès qu'une soumission est envoyée, une séquence s'enclenche. À J+2, un courriel part : « Avez-vous des questions sur l'estimation ? ». À J+5, un autre suivi.</p>
+        <p><strong>L'alerte 4 jours.</strong> Combien de soumissions sont en attente d'une réponse client depuis plus de 4 jours ? Cette question devient une vue permanente de votre tableau de bord. Ce sont vos occasions de relance, celles qui ont le plus de chances de se transformer.</p>
+        <p>Ces alertes ne servent pas à harceler les clients. Elles servent à ce que plus aucune soumission ne meure par simple oubli. Le suivi devient systématique au lieu de dépendre de la mémoire.</p>
+
+        <div class="flow">
+          <div class="flow-step highlight">
+            <div class="fs-num">Alerte 48 h</div>
+            <div class="fs-name">Soumissions > 5 000 $</div>
+            <div class="fs-sub">tâche prioritaire + script de relance si aucune réponse après 48 h</div>
+          </div>
+          <div class="flow-step">
+            <div class="fs-num">Alerte 4 jours</div>
+            <div class="fs-name">En attente > 4 jours</div>
+            <div class="fs-sub">vue permanente de vos occasions de relance</div>
+          </div>
+        </div>
+
+        <h2>Le ratio soumissions/contrats : le KPI que personne ne suit</h2>
+        <p>Voici une statistique qui devrait vous surprendre : un sondage mené auprès de plus de 2 000 entreprises de construction (Sunflower Bank, mai 2024) indique que moins de 6 % d'entre elles connaissent et suivent leur ratio soumissions/contrats.</p>
+        <p>Le ratio soumissions/contrats, c'est le nombre de soumissions qu'il faut envoyer pour décrocher un contrat. Les repères d'industrie : 10 à 20 % de taux de succès en appel d'offres public (« hard bid »), 30 à 50 % en travaux négociés (ConstructConnect). Mais le chiffre qui compte, c'est le vôtre.</p>
+        <p>Pourquoi ce ratio est-il si important ? Parce qu'il éclaire une décision. C'est la règle d'or d'un bon KPI : il doit éclairer une décision. Si votre ratio est de 1 sur 10 en travaux négociés, le problème n'est peut-être pas le prix, c'est peut-être votre ciblage, ou votre suivi. Si votre ratio s'améliore après avoir systématisé les relances, vous savez quoi continuer de faire. Sans le ratio, vous pilotez au feeling, et au feeling, on ne corrige rien.</p>
+
+        <h2>Ce qui peut être automatisé dans le suivi (et ce qui doit rester humain)</h2>
+        <p>Tout le suivi répétitif peut être automatisé :</p>
+        <ul>
+          <li>Le changement de statut dans le pipeline (envoyée, relancée, signée, perdue).</li>
+          <li>Les notifications quand le prospect ouvre votre soumission : vous savez qu'il est intéressé au bon moment.</li>
+          <li>Les relances programmées (J+2, J+5).</li>
+          <li>Les tâches de suivi : si une soumission importante n'a pas de réponse après 48 heures, une tâche prioritaire se crée avec un script de relance.</li>
+          <li>Les rapports : combien de soumissions dans l'air, combien signées, combien en attente depuis plus de 4 jours.</li>
+        </ul>
+        <p>Doit rester humain : la conversation avec le client, la négociation, l'adaptation des conditions, le jugement sur un client qui hésite. Certaines décisions, communications et validations doivent rester humaines. L'automatisation du suivi ne remplace pas votre relation client, elle garantit que la relation ne s'éteint pas par oubli.</p>
+
+        <h2>À quoi ressemble un système de suivi des soumissions</h2>
+        <p>Voici le fonctionnement complet, sans nom de logiciel. Juste la mécanique :</p>
+        <ol>
+          <li>Une soumission part. <strong>Son statut passe à « envoyée »</strong> dans le pipeline, avec une date et une prochaine action.</li>
+          <li><strong>La séquence de relances s'enclenche automatiquement</strong> : à J+2, un courriel « Avez-vous des questions sur l'estimation ? » ; à J+5, un autre suivi.</li>
+          <li>Si la soumission dépasse 5 000 $ et que <strong>48 heures passent sans réponse, une tâche prioritaire se crée</strong> avec un script de relance prêt à envoyer.</li>
+          <li>Le prospect ouvre le document. <strong>Vous êtes notifié</strong> : c'est le moment d'être réactif.</li>
+          <li>Le client signe. <strong>La soumission bascule de « dans l'air » à « signée »</strong>, et le système crée le projet, les tâches et le dossier du chantier.</li>
+          <li>Chaque semaine, <strong>le tableau de bord répond aux questions vitales</strong> : combien de soumissions dans l'air, combien en attente depuis plus de 4 jours, quel est le ratio soumissions/contrats.</li>
+        </ol>
+        <p>L'objectif : que plus aucun contrat ne parte par simple oubli. Le suivi après soumission vaut plus que le prix. C'est contre-intuitif, mais c'est la leçon des chantiers perdus.</p>
+
+        <h2>Quels outils pour suivre ses soumissions</h2>
+        <p>Il existe plusieurs façons de suivre ses soumissions, et le bon choix dépend de votre point de départ :</p>
+        <ul>
+          <li><strong>Le tableau simple</strong> (Excel ou équivalent) : une ligne par soumission, les statuts, les prochaines actions. C'est le point de départ zéro coût. Mais un tableau statique ne vous alertera jamais : il faut ouvrir le fichier pour voir les retards.</li>
+          <li><strong>Le CRM avec pipeline</strong> (voir <a href="/ressources/choisir-crm-entreprise-construction/">notre guide sur le choix d'un CRM pour une entreprise de construction</a>) : les statuts, les relances et les alertes vivent au même endroit que vos clients. C'est la solution recommandée dès que le volume de soumissions dépasse ce qu'un tableau peut suivre.</li>
+          <li><strong>Les logiciels d'estimation avec suivi</strong> : ils génèrent la soumission et suivent le statut, mais vérifiez que les alertes et les relances existent vraiment, pas seulement le statut.</li>
+        </ul>
+        <p>Le critère décisif : la simplicité. Un outil que vous n'ouvrez pas ne sert à rien. L'objectif n'est pas d'ajouter des outils, mais de bâtir un système plus clair, plus simple et plus facile à gérer. Pour une vue d'ensemble, consultez <a href="/ressources/automatiser-entreprise-construction-quebec/">notre guide pour automatiser une entreprise de construction au Québec</a>.</p>
+
+        <h2>Quand le suivi manuel ne suffit plus</h2>
+        <p>Si votre volume de soumissions est faible et que votre mémoire suffit, un tableau peut marcher. Mais si vous perdez des contrats par manque de suivi, si vous ne savez pas combien de soumissions sont « dans l'air », si votre ratio soumissions/contrats est un mystère, alors le problème n'est pas l'outil. C'est le système complet.</p>
+        <p>Le constat est chiffré : en vente en général, 80 % des ventes nécessitent en moyenne 5 suivis ou plus après le premier contact, mais 44 % des vendeurs abandonnent après une seule tentative (IRC Sales Solutions). En construction, le suivi systématique est un avantage concurrentiel direct : le compétiteur qui « pense à relancer » gagne des contrats sur des soumissions pourtant égales.</p>
+        <p>C'est exactement le travail réalisé chez HUVI Optimisation, l'entreprise fondée par Hugo Viens : mettre en place le pipeline, les alertes et les relances automatiques qui font que vos soumissions en cours deviennent des contrats signés. Nous ne vendons pas de logiciel. Nous bâtissons le système qui fait que plus aucun contrat ne file chez le compétiteur qui a simplement « pensé à relancer ».</p>
+      </div>
+
+      <div class="container faq">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,3.4vw,28px);color:#fff;font-weight:700;margin-bottom:20px;">Questions fréquentes</h2>
+        <details>
+          <summary>Comment suivre ses soumissions sans logiciel ?</summary>
+          <div class="faq-a">Au minimum, un tableau simple avec une ligne par soumission : client, montant, date d'envoi, statut (envoyée, relancée, signée, perdue), prochaine action datée. Tout projet doit avoir un statut précis, un responsable unique et une prochaine action claire avec une date. Ce tableau est le point de départ ; l'étape suivante est de le rendre vivant avec des alertes.</div>
+        </details>
+        <details>
+          <summary>Quel est le bon taux de conversion des soumissions en construction ?</summary>
+          <div class="faq-a">Les repères d'industrie : 10 à 20 % de taux de succès en appel d'offres public, 30 à 50 % en travaux négociés (ConstructConnect). Mais le vrai chiffre à connaître, c'est le vôtre : moins de 6 % des entreprises de construction connaissent et suivent leur ratio soumissions/contrats (Sunflower Bank, mai 2024). Si vous ne mesurez pas votre ratio, vous ne pouvez pas l'améliorer.</div>
+        </details>
+        <details>
+          <summary>Quand faut-il relancer une soumission ?</summary>
+          <div class="faq-a">La méthode HUVI « boomerang des ventes » : à J+2, un courriel « Avez-vous des questions sur l'estimation ? » ; à J+5, un autre suivi. Si une soumission de plus de 5 000 $ n'a pas de réponse après 48 heures, une tâche prioritaire se crée avec un script de relance. Nous détaillons cette séquence dans <a href="/ressources/relancer-soumissions-sans-reponse/">notre article sur la relance automatique des soumissions envoyées sans réponse</a>.</div>
+        </details>
+        <details>
+          <summary>Pourquoi je perds des soumissions même quand mon prix est bon ?</summary>
+          <div class="faq-a">Parce que le problème est rarement le prix : c'est le suivi. En vente en général (donc pas spécifiquement en construction), 80 % des ventes nécessitent en moyenne 5 suivis ou plus après le premier contact, mais 44 % des vendeurs abandonnent après une seule tentative (IRC Sales Solutions). Le cas type chez HUVI : une soumission de 25 000 $ est partie chez le compétiteur qui a eu le réflexe d'envoyer un texto 48 heures plus tard.</div>
+        </details>
+        <details>
+          <summary>C'est quoi une soumission « dans l'air » ?</summary>
+          <div class="faq-a">C'est une soumission envoyée qui n'a pas encore de réponse : ni signée, ni perdue. Le pipeline des ventes, c'est exactement ça : combien de soumissions sont « dans l'air » vs signées. Une soumission « dans l'air » a besoin d'une prochaine action et d'une date : sinon elle reste en suspens indéfiniment et l'argent qu'elle représente est invisible.</div>
+        </details>
+      </div>
+
+      <div class="container related">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,3vw,26px);color:#fff;font-weight:700;margin-bottom:4px;">À lire aussi</h2>
+        <div class="related-grid">
+          <a class="card-link" href="/ressources/automatiser-entreprise-construction-quebec/">
+            <span class="rc-label">Guide</span>
+            <span class="rc-title">Automatiser une entreprise de construction au Québec</span>
+            <span class="rc-sub">Le guide complet, de la soumission à la facturation.</span>
+          </a>
+          <a class="card-link" href="/ressources/automatiser-soumissions-construction/">
+            <span class="rc-label">Soumissions</span>
+            <span class="rc-title">Comment automatiser mes soumissions en construction ?</span>
+          </a>
+          <a class="card-link" href="/ressources/relancer-soumissions-sans-reponse/">
+            <span class="rc-label">Relances</span>
+            <span class="rc-title">Comment relancer automatiquement les soumissions envoyées sans réponse ?</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="container cta-wrap">
+        <div class="cta-band">
+          <p class="eyebrow" style="justify-content:center"><span class="dot"></span> Prochaine étape</p>
+          <h2>Sachez exactement combien de soumissions sont « dans l'air ».</h2>
+          <p>Faites le bilan IA gratuit de HUVI Optimisation : en 15 minutes, vous repartez avec une lecture claire de votre pipeline de soumissions et des alertes qui vous feraient signer plus de contrats.</p>
+          <a class="btn btn-primary" href="https://bilan.huvioptimisation.com" target="_blank" rel="noopener noreferrer">Faire mon bilan IA gratuit</a>
+          <p class="secondary">Vous voulez d'abord en parler ? La <a href="https://huvioptimisation.fillout.com/rencontre-doptimisation-exploratoire" target="_blank" rel="noopener noreferrer">séance d'optimisation</a> est là pour ça : on regarde ensemble où vos soumissions se perdent et ce qu'un système de suivi changerait pour votre entreprise.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="/logo.png" alt="HUVI Optimisation">
+      <p>HUVI Optimisation accompagne les entrepreneurs de la construction, de l'immobilier et des services à structurer leurs opérations grâce à l'automatisation et à l'intelligence artificielle.</p>
+      <p><a href="/ressources/" style="color:#94a3b8;">Ressources</a> · © 2026 HUVI Optimisation Inc. Tous droits réservés. · Montréal, Québec, Canada.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
