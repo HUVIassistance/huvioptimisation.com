@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Database, Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import Logo from './Logo';
 
@@ -8,18 +8,13 @@ interface NavbarProps {
   showAdminButton?: boolean;
 }
 
+// Date de fin de la promo affichée dans le bandeau (même valeur, extraite en constante)
+const PROMO_END_DATE = "Jusqu'au 30 septembre";
+
 export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminButton = false }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [showBanner, setShowBanner] = useState(true);
-  const [promoVisible, setPromoVisible] = useState(true);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPromoVisible(prev => !prev);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
 
   const navLinks: { label: string; href: string; external?: boolean }[] = [
     { label: 'Le VRAI diagnostic', href: '#problem' },
@@ -54,9 +49,9 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
                 <span className="w-1.5 h-1.5 rounded-full bg-[#F47B20] animate-pulse"></span>
                 Tarif pionnier
               </span>
-              <p className={`text-xs sm:text-sm text-gray-300 font-sans leading-none flex items-center flex-wrap gap-x-1.5 gap-y-0.5 truncate transition-all duration-700 ease-in-out ${promoVisible ? 'opacity-100 translate-x-0' : 'opacity-30 sm:opacity-40 translate-x-0.5'}`}>
+              <p className="text-xs sm:text-sm text-gray-300 font-sans leading-none flex items-center flex-wrap gap-x-1.5 gap-y-0.5 truncate">
                 <span>Économisez 15 % sur la configuration</span>
-                <span className="text-[#ff9242] font-bold">Jusqu'au 30 septembre</span>
+                <span className="text-[#ff9242] font-bold">{PROMO_END_DATE}</span>
               </p>
             </div>
             <div className="flex items-center gap-3">
