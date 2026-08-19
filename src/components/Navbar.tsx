@@ -15,6 +15,7 @@ export default function Navbar({ onOpenAdmin: _onOpenAdmin, adminSubmissionsCoun
   const [isOpen, setIsOpen] = useState(false);
   const [showBanner, setShowBanner] = useState(true);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [ressourcesOpen, setRessourcesOpen] = useState(false);
 
   const navLinks: { label: string; href: string; external?: boolean }[] = [
     { label: 'Le VRAI diagnostic', href: '#problem' },
@@ -34,6 +35,12 @@ export default function Navbar({ onOpenAdmin: _onOpenAdmin, adminSubmissionsCoun
     { label: 'Marges & rentabilité', tagline: 'Votre vrai argent, sous les yeux', href: '/solutions/marges-rentabilite/' },
     { label: 'Onboarding & fidélisation', tagline: 'Des clients qui vous réfèrent', href: '/solutions/onboarding-fidelisation/' },
     { label: 'Automatisation & IA', tagline: 'La couche qui décuple', href: '/solutions/automatisation-ia/' },
+  ];
+
+  const ressourcesLinks: { label: string; tagline: string; href: string; external?: boolean }[] = [
+    { label: 'Bilan IA', tagline: 'Diagnostique ta maturité numérique en 2 min', href: 'https://bilan.huvioptimisation.com', external: true },
+    { label: 'Marges IQ', tagline: 'Calcule la marge réelle de tes chantiers', href: 'https://marges.huvioptimisation.com', external: true },
+    { label: 'Guides & articles', tagline: 'Guides pratiques pour entrepreneurs', href: '/ressources/' },
   ];
 
   const linkClass = "font-sans text-[11px] 2xl:text-xs 3xl:text-[13px] font-medium text-gray-400 hover:text-white transition-colors duration-200 relative py-1 whitespace-nowrap after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#F47B20] hover:after:w-full after:transition-all after:duration-300";
@@ -131,6 +138,43 @@ export default function Navbar({ onOpenAdmin: _onOpenAdmin, adminSubmissionsCoun
               )}
             </div>
 
+            {/* Ressources dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setRessourcesOpen(true)}
+              onMouseLeave={() => setRessourcesOpen(false)}
+            >
+              <button
+                className={`${linkClass} flex items-center gap-1 cursor-pointer`}
+                onClick={() => setRessourcesOpen(true)}
+                aria-expanded={ressourcesOpen}
+              >
+                Ressources
+                <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${ressourcesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {ressourcesOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[560px] z-50">
+                  <div className="bg-[#0D1527] border border-[#17243A] rounded-xl shadow-2xl shadow-black/50 p-5">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#F47B20] font-semibold mb-4">Nos ressources</p>
+                    <div className="grid grid-cols-2 gap-1">
+                      {ressourcesLinks.map((l) => (
+                        <a
+                          key={l.href}
+                          href={l.href}
+                          target={l.external ? "_blank" : undefined}
+                          rel={l.external ? "noopener noreferrer" : undefined}
+                          className="flex flex-col gap-0.5 rounded-lg px-3 py-2.5 hover:bg-[#16213a] transition-colors"
+                        >
+                          <span className="text-[13px] font-medium text-gray-200">{l.label}</span>
+                          <span className="text-[11px] text-gray-500 leading-tight">{l.tagline}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
             {navLinks.slice(2).map((link) => (
               <a key={link.href} href={link.href} className={linkClass}>
                 {link.label}
@@ -210,6 +254,26 @@ export default function Navbar({ onOpenAdmin: _onOpenAdmin, adminSubmissionsCoun
                   <a
                     key={l.href}
                     href={l.href}
+                    onClick={() => setIsOpen(false)}
+                    className="py-2 border-b border-[#17243A]/20 flex flex-col"
+                  >
+                    <span className="text-sm font-medium text-gray-200">{l.label}</span>
+                    <span className="text-[11px] text-gray-500">{l.tagline}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Ressources section in mobile drawer */}
+            <div>
+              <span className="text-[11px] font-mono text-[#F47B20] uppercase tracking-[0.2em]">Ressources</span>
+              <div className="mt-2 flex flex-col">
+                {ressourcesLinks.map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    target={l.external ? "_blank" : undefined}
+                    rel={l.external ? "noopener noreferrer" : undefined}
                     onClick={() => setIsOpen(false)}
                     className="py-2 border-b border-[#17243A]/20 flex flex-col"
                   >
