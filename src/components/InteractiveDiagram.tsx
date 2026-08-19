@@ -353,7 +353,7 @@ export default function InteractiveDiagram({
       {/* Top Header Controls */}
       <div className="flex flex-col sm:flex-row sm:items-start justify-between border-b border-[#17243A]/60 pb-4 mb-4 gap-4 relative z-10">
         <div className="flex-1 text-left">
-          <span className="text-[10px] font-mono tracking-widest text-[#F47B20] uppercase font-semibold bg-[#F47B20]/10 px-2.5 py-1 rounded-full border border-[#F47B20]/20">
+          <span className="text-[11px] font-mono tracking-widest text-[#F47B20] uppercase font-semibold bg-[#F47B20]/10 px-2.5 py-1 rounded-full border border-[#F47B20]/20">
             SIMULATEUR OPÉRATIONNEL
           </span>
           <h3 className="font-display text-lg sm:text-xl lg:text-2xl font-bold text-white mt-2.5">
@@ -365,7 +365,7 @@ export default function InteractiveDiagram({
 
           {/* Embedded Simulation Buttons inside the widget header */}
           <div className="mt-3.5 flex flex-wrap gap-1.5 items-center">
-            <span className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider flex items-center gap-1 shrink-0">
+            <span className="text-[11px] font-mono font-bold text-gray-400 uppercase tracking-wider flex items-center gap-1 shrink-0">
               <span className="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
               Simulation en direct :
             </span>
@@ -376,7 +376,7 @@ export default function InteractiveDiagram({
                 <button
                   key={source.id}
                   onClick={() => triggerFlow(idx)}
-                  className={`px-2.5 py-1.5 rounded-lg border text-[10px] font-mono font-semibold flex items-center gap-1.5 transition-all duration-300 cursor-pointer ${
+                  className={`px-2.5 py-1.5 rounded-lg border text-[11px] font-mono font-semibold flex items-center gap-1.5 transition-all duration-300 cursor-pointer ${
                     isCurrentActive
                        ? 'bg-red-500/20 border-red-500 text-white shadow-lg shadow-red-500/5'
                        : 'bg-[#0d1321]/60 border-[#17243A]/60 text-gray-400 hover:text-white hover:border-red-500/40'
@@ -391,7 +391,7 @@ export default function InteractiveDiagram({
         </div>
         <div className="flex items-center gap-2.5 shrink-0 self-start sm:self-center bg-[#111a2e]/40 p-2 rounded-lg border border-[#17243A]/20">
           <div className="text-right">
-            <span className="block text-[9px] font-mono text-gray-500">TÂCHES OPÉRATIONNELLES</span>
+            <span className="block text-[11px] font-mono text-gray-500">TÂCHES OPÉRATIONNELLES</span>
             <span className="text-xs font-mono font-bold text-green-400">{processedCount} traitées aujourd'hui</span>
           </div>
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
@@ -457,7 +457,7 @@ export default function InteractiveDiagram({
             <div className="col-span-1 lg:col-span-4 space-y-2 lg:space-y-3 z-10">
               <div className="flex items-center gap-1.5 sm:gap-2 pb-2 px-1 border-b border-[#17243A]/40 mb-2 lg:mb-3">
                 <AlertTriangle className="w-3.5 h-3.5 text-red-500" />
-                <span className="text-[9px] sm:text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">
+                <span className="text-[11px] sm:text-[11px] font-mono font-bold text-gray-400 uppercase tracking-wider">
                   DÉSORDRE (AVANT)
                 </span>
               </div>
@@ -483,12 +483,12 @@ export default function InteractiveDiagram({
                         <div className={`p-1.5 sm:p-2 rounded-lg bg-[#17243A]/60 ${isCurrentActive || isFlashed ? 'text-[#F47B20]' : 'text-gray-400 group-hover:text-red-400'} transition-colors shrink-0`}>
                           <SourceIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         </div>
-                        <h4 className="text-[10px] sm:text-xs font-bold text-white truncate">{source.label}</h4>
+                        <h4 className="text-[11px] sm:text-xs font-bold text-white truncate">{source.label}</h4>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="hidden md:block text-[10px] text-gray-400 mt-0.5 truncate leading-relaxed">{source.description}</p>
+                        <p className="hidden md:block text-[11px] text-gray-400 mt-0.5 truncate leading-relaxed">{source.description}</p>
                       </div>
-                      <span className="hidden sm:inline-block text-[9px] font-mono font-bold uppercase text-red-400 opacity-60 group-hover:opacity-100 transition-opacity shrink-0">
+                      <span className="hidden sm:inline-block text-[11px] font-mono font-bold uppercase text-red-400 opacity-60 group-hover:opacity-100 transition-opacity shrink-0">
                         Résoudre ➜
                       </span>
                     </div>
@@ -520,7 +520,7 @@ export default function InteractiveDiagram({
 
                 {/* Status indicator pill */}
                 <div className="absolute -bottom-6 bg-[#090D16] border border-[#F47B20]/60 px-2.5 py-0.5 rounded-full whitespace-nowrap shadow-md shadow-[#F47B20]/5">
-                  <span className="text-[9px] font-mono font-bold tracking-widest text-[#F47B20] uppercase animate-pulse">
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-[#F47B20] uppercase animate-pulse">
                     VOTRE SYSTÈME
                   </span>
                 </div>
@@ -531,7 +531,7 @@ export default function InteractiveDiagram({
             <div className="col-span-1 lg:col-span-4 space-y-2 lg:space-y-3 z-10">
               <div className="flex items-center gap-1.5 sm:gap-2 pb-2 px-1 border-b border-[#17243A]/40 mb-2 lg:mb-3">
                 <ShieldCheck className="w-3.5 h-3.5 text-green-500" />
-                <span className="text-[9px] sm:text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">
+                <span className="text-[11px] sm:text-[11px] font-mono font-bold text-gray-400 uppercase tracking-wider">
                   STRUCTURE (APRÈS)
                 </span>
               </div>
@@ -558,10 +558,10 @@ export default function InteractiveDiagram({
                         <div className={`p-1.5 sm:p-2 rounded-lg bg-[#17243A]/60 ${isCurrentActivated || isFlashed ? 'text-green-400' : 'text-gray-400 group-hover:text-green-400'} transition-colors shrink-0`}>
                           <OutputIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         </div>
-                        <h4 className="text-[10px] sm:text-xs font-bold text-white truncate">{output.label}</h4>
+                        <h4 className="text-[11px] sm:text-xs font-bold text-white truncate">{output.label}</h4>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="hidden md:block text-[10px] text-gray-400 mt-0.5 truncate leading-relaxed">{output.desc}</p>
+                        <p className="hidden md:block text-[11px] text-gray-400 mt-0.5 truncate leading-relaxed">{output.desc}</p>
                       </div>
                     </div>
                   </button>
@@ -574,7 +574,7 @@ export default function InteractiveDiagram({
           {/* Real-time Console simulation logger */}
           <div className="p-4 bg-[#111a2e]/60 rounded-xl border border-[#17243A]/60 text-left relative overflow-hidden">
             <div className="absolute top-0 left-0 w-1 h-full bg-[#F47B20]"></div>
-            <div className="flex items-center justify-between gap-4 mb-2 pb-1.5 border-b border-[#17243A]/40 font-mono text-[10px] text-gray-500">
+            <div className="flex items-center justify-between gap-4 mb-2 pb-1.5 border-b border-[#17243A]/40 font-mono text-[11px] text-gray-500">
               <span>CONSOLE OPÉRATIONNELLE</span>
               <span className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-ping"></span>
@@ -620,7 +620,7 @@ export default function InteractiveDiagram({
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500"></span>
                 <span className="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
                 <span className="w-2.5 h-2.5 rounded-full bg-green-500"></span>
-                <span className="ml-2 text-[9px] font-mono text-gray-500 uppercase tracking-widest hidden lg:inline">
+                <span className="ml-2 text-[11px] font-mono text-gray-500 uppercase tracking-widest hidden lg:inline">
                   HUVI SYSTEMS WORKSPACE
                 </span>
               </div>
@@ -636,7 +636,7 @@ export default function InteractiveDiagram({
                       setFlashShowcase(true);
                       setTimeout(() => setFlashShowcase(false), 500);
                     }}
-                    className={`px-3 py-1.5 rounded-md text-[10px] font-mono font-bold transition-all cursor-pointer ${
+                    className={`px-3 py-1.5 rounded-md text-[11px] font-mono font-bold transition-all cursor-pointer ${
                       activeShowcaseTab === track.id
                         ? 'bg-[#F47B20] text-white'
                         : 'text-gray-400 hover:text-white'
@@ -647,7 +647,7 @@ export default function InteractiveDiagram({
                 ))}
               </div>
 
-              <div className="text-[9px] font-mono text-[#F47B20] bg-[#F47B20]/10 px-2.5 py-0.5 rounded-full border border-[#F47B20]/20 uppercase font-bold shrink-0 self-start sm:self-center">
+              <div className="text-[11px] font-mono text-[#F47B20] bg-[#F47B20]/10 px-2.5 py-0.5 rounded-full border border-[#F47B20]/20 uppercase font-bold shrink-0 self-start sm:self-center">
                 {activeShowcaseTab === 'airtable' && 'Hub centralisé'}
                 {activeShowcaseTab === 'dashboard' && 'Rapport financier'}
                 {activeShowcaseTab === 'automation' && 'Automate make'}
@@ -683,7 +683,7 @@ export default function InteractiveDiagram({
                         };
                         setAirtableRows(prev => [...prev, newProj]);
                       }}
-                      className="px-3 py-1.5 rounded bg-blue-600 hover:bg-blue-500 text-white font-mono text-[10px] font-bold transition-all flex items-center gap-1 shrink-0 self-start cursor-pointer"
+                      className="px-3 py-1.5 rounded bg-blue-600 hover:bg-blue-500 text-white font-mono text-[11px] font-bold transition-all flex items-center gap-1 shrink-0 self-start cursor-pointer"
                     >
                       <RefreshCw className="w-3 h-3" />
                       <span>+ Ajouter un projet</span>
@@ -694,7 +694,7 @@ export default function InteractiveDiagram({
                   <div className="overflow-x-auto rounded-lg border border-[#17243A]/40 bg-[#070b14]">
                     <table className="w-full text-left border-collapse font-mono text-[11px]">
                       <thead>
-                        <tr className="bg-[#111a2e] text-gray-400 border-b border-[#17243A]/60 uppercase text-[10px]">
+                        <tr className="bg-[#111a2e] text-gray-400 border-b border-[#17243A]/60 uppercase text-[11px]">
                           <th className="p-2.5">Projet</th>
                           <th className="p-2.5">Client</th>
                           <th className="p-2.5">Budget</th>
@@ -719,7 +719,7 @@ export default function InteractiveDiagram({
                                     type="text" 
                                     value={editingMargin} 
                                     onChange={(e) => setEditingMargin(e.target.value)}
-                                    className="w-12 bg-[#17243A] border border-[#F47B20] text-white text-right px-1 rounded text-[10px] focus:outline-none"
+                                    className="w-12 bg-[#17243A] border border-[#F47B20] text-white text-right px-1 rounded text-[11px] focus:outline-none"
                                   />
                                   <button 
                                     onClick={() => {
@@ -745,7 +745,7 @@ export default function InteractiveDiagram({
                               )}
                             </td>
                             <td className="p-2.5 text-center">
-                              <span className={`px-2 py-0.5 rounded-full text-[9px] font-bold ${
+                              <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold ${
                                 row.status === 'En cours' ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20' :
                                 row.status === 'Facturé' || row.status === 'Archivé' ? 'bg-green-500/10 text-green-400 border border-green-500/20' :
                                 row.status === 'En attente' ? 'bg-rose-500/10 text-rose-400 border border-rose-500/20' :
@@ -755,7 +755,7 @@ export default function InteractiveDiagram({
                               </span>
                             </td>
                             <td className="p-2.5">
-                              <span className={`text-[10px] font-sans ${row.aiClass.includes('Alerte') ? 'text-red-400 font-semibold flex items-center gap-1' : 'text-gray-400'}`}>
+                              <span className={`text-[11px] font-sans ${row.aiClass.includes('Alerte') ? 'text-red-400 font-semibold flex items-center gap-1' : 'text-gray-400'}`}>
                                 {row.aiClass.includes('Alerte') && <AlertTriangle className="w-3 h-3 text-red-500 shrink-0" />}
                                 {row.aiClass}
                               </span>
@@ -768,7 +768,7 @@ export default function InteractiveDiagram({
 
                   <div className="p-3 bg-[#111a2e]/40 rounded-lg border border-[#17243A]/40 flex items-center justify-between text-[11px] text-gray-400 font-sans">
                     <p>💡 <span className="font-semibold text-white">Astuce interactive</span> : Cliquez sur une valeur de <b>Marge Est.</b> ci-dessus pour la modifier et voir comment le système réagit en temps réel.</p>
-                    <span className="font-mono text-[9px] text-[#F47B20] uppercase font-bold shrink-0 hidden sm:inline">Modèle connecté</span>
+                    <span className="font-mono text-[11px] text-[#F47B20] uppercase font-bold shrink-0 hidden sm:inline">Modèle connecté</span>
                   </div>
                 </div>
               )}
@@ -787,13 +787,13 @@ export default function InteractiveDiagram({
                   {/* KPI Cards row */}
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 font-mono">
                     <div className="p-3 rounded-lg bg-[#070b14] border border-[#17243A]/50">
-                      <span className="text-[9px] text-gray-500 block">REVENU CONSOLIDÉ</span>
+                      <span className="text-[11px] text-gray-500 block">REVENU CONSOLIDÉ</span>
                       <span className="text-sm font-bold text-white block mt-1">
                         {(airtableRows.reduce((acc, row) => acc + parseInt(row.total.replace(/[^0-9]/g, '')), 0)).toLocaleString()} $
                       </span>
                     </div>
                     <div className="p-3 rounded-lg bg-[#070b14] border border-[#17243A]/50">
-                      <span className="text-[9px] text-gray-500 block">MARGE MOYENNE</span>
+                      <span className="text-[11px] text-gray-500 block">MARGE MOYENNE</span>
                       <span className="text-sm font-bold text-[#F47B20] block mt-1">
                         {(airtableRows.reduce((acc, row) => {
                           const num = parseInt(row.margin.replace(/[^0-9]/g, ''));
@@ -802,11 +802,11 @@ export default function InteractiveDiagram({
                       </span>
                     </div>
                     <div className="p-3 rounded-lg bg-[#070b14] border border-[#17243A]/50">
-                      <span className="text-[9px] text-gray-500 block">RÉDUCTION ADMIN</span>
+                      <span className="text-[11px] text-gray-500 block">RÉDUCTION ADMIN</span>
                       <span className="text-sm font-bold text-green-400 block mt-1">-15h / sem</span>
                     </div>
                     <div className="p-3 rounded-lg bg-[#070b14] border border-[#17243A]/50 col-span-2 sm:col-span-1">
-                      <span className="text-[9px] text-gray-500 block">ALERTES EN COURS</span>
+                      <span className="text-[11px] text-gray-500 block">ALERTES EN COURS</span>
                       <span className="text-sm font-bold text-red-500 block mt-1 flex items-center gap-1.5">
                         <AlertTriangle className="w-3.5 h-3.5 text-red-500 animate-bounce" />
                         <span>1 Active</span>
@@ -818,12 +818,12 @@ export default function InteractiveDiagram({
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
                     {/* Left side selector */}
                     <div className="md:col-span-4 space-y-2">
-                      <span className="text-[10px] text-gray-500 font-mono block uppercase">Projets surveillés :</span>
+                      <span className="text-[11px] text-gray-500 font-mono block uppercase">Projets surveillés :</span>
                       {airtableRows.map((row) => (
                         <button
                           key={row.id}
                           onClick={() => setActiveDashboardProject(row.id)}
-                          className={`w-full p-2 rounded-lg border text-left flex items-center justify-between transition-all font-mono text-[10px] cursor-pointer ${
+                          className={`w-full p-2 rounded-lg border text-left flex items-center justify-between transition-all font-mono text-[11px] cursor-pointer ${
                             activeDashboardProject === row.id
                               ? 'bg-[#17243A]/60 border-[#F47B20] text-white font-bold'
                               : 'bg-[#070b14]/50 border-[#17243A]/60 text-gray-400 hover:text-white'
@@ -841,12 +841,12 @@ export default function InteractiveDiagram({
                         <span className="text-xs font-bold text-white">
                           RÉPARTITION : {airtableRows.find(r => r.id === activeDashboardProject)?.name}
                         </span>
-                        <span className="text-[10px] text-gray-400">Budget total : {airtableRows.find(r => r.id === activeDashboardProject)?.total}</span>
+                        <span className="text-[11px] text-gray-400">Budget total : {airtableRows.find(r => r.id === activeDashboardProject)?.total}</span>
                       </div>
 
                       <div className="space-y-2">
                         <div>
-                          <div className="flex justify-between text-[10px] text-gray-400 mb-1">
+                          <div className="flex justify-between text-[11px] text-gray-400 mb-1">
                             <span>Coûts de Main d'œuvre (Estimés vs Réels)</span>
                             <span className="text-white">42% (Optimal)</span>
                           </div>
@@ -856,7 +856,7 @@ export default function InteractiveDiagram({
                         </div>
 
                         <div>
-                          <div className="flex justify-between text-[10px] text-gray-400 mb-1">
+                          <div className="flex justify-between text-[11px] text-gray-400 mb-1">
                             <span>Coûts de Sous-traitance & Matériaux</span>
                             <span className="text-white">35%</span>
                           </div>
@@ -866,7 +866,7 @@ export default function InteractiveDiagram({
                         </div>
 
                         <div>
-                          <div className="flex justify-between text-[10px] text-gray-400 mb-1">
+                          <div className="flex justify-between text-[11px] text-gray-400 mb-1">
                             <span>Consommation du Budget d'Heures</span>
                             <span className="text-white">68% (54h / 80h)</span>
                           </div>
@@ -876,7 +876,7 @@ export default function InteractiveDiagram({
                         </div>
 
                         <div>
-                          <div className="flex justify-between text-[10px] text-gray-400 mb-1">
+                          <div className="flex justify-between text-[11px] text-gray-400 mb-1">
                             <span>Conformité du devis au coût réel</span>
                             <span className="text-white">96% d'exactitude</span>
                           </div>
@@ -886,7 +886,7 @@ export default function InteractiveDiagram({
                         </div>
 
                         <div>
-                          <div className="flex justify-between text-[10px] text-gray-400 mb-1">
+                          <div className="flex justify-between text-[11px] text-gray-400 mb-1">
                             <span>Marge bénéficiaire nette</span>
                             <span className="text-[#F47B20] font-bold">
                               {airtableRows.find(r => r.id === activeDashboardProject)?.margin}
@@ -900,7 +900,7 @@ export default function InteractiveDiagram({
                         </div>
                       </div>
 
-                      <p className="text-[10px] text-gray-400 italic font-sans">
+                      <p className="text-[11px] text-gray-400 italic font-sans">
                         * Toutes les dépenses chantiers sont capturées en arrière-plan à la volée dès qu'un agent traite un fichier fournisseur. Pas d'erreur d'écriture, pas de retard de calcul.
                       </p>
                     </div>
@@ -922,26 +922,26 @@ export default function InteractiveDiagram({
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
                     {/* Workflow steps */}
                     <div className="md:col-span-5 space-y-3 font-mono text-[11px]">
-                      <p className="text-[10px] text-gray-500 uppercase font-bold">Séquence programmée :</p>
+                      <p className="text-[11px] text-gray-500 uppercase font-bold">Séquence programmée :</p>
                       
                       <div className={`p-2.5 rounded-lg border transition-all ${automationStep >= 1 ? 'bg-red-500/10 border-red-500/30 text-white font-bold' : 'bg-[#070b14]/50 border-[#17243A]/60 text-gray-500'}`}>
                         <span className="font-bold">ÉTAPE 1 : Déclencheur</span>
-                        <p className="text-[10px] mt-0.5">Facture impayée depuis 7 jours</p>
+                        <p className="text-[11px] mt-0.5">Facture impayée depuis 7 jours</p>
                       </div>
 
                       <div className={`p-2.5 rounded-lg border transition-all ${automationStep >= 2 ? 'bg-[#17243A] border-[#F47B20]/40 text-white font-bold' : 'bg-[#070b14]/50 border-[#17243A]/60 text-gray-500'}`}>
                         <span className="font-bold">ÉTAPE 2 : Analyse du Ton</span>
-                        <p className="text-[10px] mt-0.5">L'IA consulte l'historique d'échange client</p>
+                        <p className="text-[11px] mt-0.5">L'IA consulte l'historique d'échange client</p>
                       </div>
 
                       <div className={`p-2.5 rounded-lg border transition-all ${automationStep >= 3 ? 'bg-[#17243A] border-[#F47B20]/60 text-white font-bold font-mono' : 'bg-[#070b14]/50 border-[#17243A]/60 text-gray-500'}`}>
                         <span className="font-bold">ÉTAPE 3 : Brouillon rédigé</span>
-                        <p className="text-[10px] mt-0.5 font-normal">Génération de la relance adaptée</p>
+                        <p className="text-[11px] mt-0.5 font-normal">Génération de la relance adaptée</p>
                       </div>
 
                       <div className={`p-2.5 rounded-lg border transition-all ${automationStep >= 4 ? 'bg-green-500/10 border-green-500/30 text-white font-bold' : 'bg-[#070b14]/50 border-[#17243A]/60 text-gray-500'}`}>
                         <span className="font-bold">ÉTAPE 4 : Envoi & Logs</span>
-                        <p className="text-[10px] mt-0.5">Courriel envoyé + notif administrative</p>
+                        <p className="text-[11px] mt-0.5">Courriel envoyé + notif administrative</p>
                       </div>
 
                       <button
@@ -955,13 +955,13 @@ export default function InteractiveDiagram({
                     </div>
 
                     {/* Email visual editor */}
-                    <div className="md:col-span-7 flex flex-col justify-between p-4 rounded-lg bg-[#070b14] border border-[#17243A]/60 font-mono text-[10px]">
+                    <div className="md:col-span-7 flex flex-col justify-between p-4 rounded-lg bg-[#070b14] border border-[#17243A]/60 font-mono text-[11px]">
                       <div>
                         <div className="flex items-center gap-1.5 border-b border-[#17243A]/50 pb-2 mb-2">
                           <span className="w-2.5 h-2.5 rounded-full bg-red-500"></span>
                           <span className="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
                           <span className="w-2.5 h-2.5 rounded-full bg-green-500"></span>
-                          <span className="ml-2 text-gray-400 text-[9px] uppercase">Aperçu du message automatisé</span>
+                          <span className="ml-2 text-gray-400 text-[11px] uppercase">Aperçu du message automatisé</span>
                         </div>
 
                         {generatedEmailDraft ? (
@@ -975,7 +975,7 @@ export default function InteractiveDiagram({
                         )}
                       </div>
 
-                      <div className="mt-2 pt-2 border-t border-[#17243A]/30 text-gray-500 text-[9px] flex items-center justify-between">
+                      <div className="mt-2 pt-2 border-t border-[#17243A]/30 text-gray-500 text-[11px] flex items-center justify-between">
                         <span>Statut : {automationStatusText}</span>
                         {isAutomationRunning && <span className="text-[#F47B20] animate-pulse">Traitement...</span>}
                       </div>
@@ -993,7 +993,7 @@ export default function InteractiveDiagram({
                         <FolderOpen className="w-4 h-4 text-orange-500" />
                         L'Agent de Classement de Documents (Google Drive)
                       </h5>
-                      <span className="text-[10px] font-mono font-bold bg-green-500/10 text-green-400 border border-green-500/20 px-2.5 py-0.5 rounded-full">
+                      <span className="text-[11px] font-mono font-bold bg-green-500/10 text-green-400 border border-green-500/20 px-2.5 py-0.5 rounded-full">
                         SÉCURISÉ & APPRIS
                       </span>
                     </div>
@@ -1003,7 +1003,7 @@ export default function InteractiveDiagram({
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
                     {/* Left side: Folder Explorer */}
                     <div className="md:col-span-5 p-3 rounded-lg bg-[#070b14] border border-[#17243A]/60 font-mono text-[11px]">
-                      <span className="text-[9px] text-gray-500 block uppercase mb-2">Structure Google Drive :</span>
+                      <span className="text-[11px] text-gray-500 block uppercase mb-2">Structure Google Drive :</span>
                       
                       <div className="space-y-1.5 text-left">
                         <div className="flex items-center gap-1.5 text-white font-bold">
@@ -1022,7 +1022,7 @@ export default function InteractiveDiagram({
                         {/* Files inside 2026 folder */}
                         <div className="pl-9 space-y-1.5 text-gray-400 border-l border-[#17243A] ml-[31px]">
                           {folderFiles.map((file, idx) => (
-                            <div key={idx} className="flex items-center gap-1.5 hover:text-white transition-all text-[10px]">
+                            <div key={idx} className="flex items-center gap-1.5 hover:text-white transition-all text-[11px]">
                               <FileText className="w-3 h-3 text-blue-400" />
                               <span className="truncate">{file}</span>
                             </div>
@@ -1034,7 +1034,7 @@ export default function InteractiveDiagram({
                     {/* Right side: AI Processor Panel */}
                     <div className="md:col-span-7 flex flex-col justify-between gap-3">
                       <div className="p-3.5 rounded-lg bg-[#111a2e]/60 border border-[#17243A]/50 space-y-2">
-                        <span className="text-[10px] text-[#F47B20] font-mono block uppercase font-bold">1. Fichier reçu à traiter :</span>
+                        <span className="text-[11px] text-[#F47B20] font-mono block uppercase font-bold">1. Fichier reçu à traiter :</span>
                         <div className="p-2.5 rounded-md bg-[#070b14] border border-[#17243A]/40 flex items-center justify-between text-xs font-mono">
                           <div className="flex items-center gap-2">
                             <FileText className="w-4 h-4 text-red-400 animate-pulse" />
@@ -1043,7 +1043,7 @@ export default function InteractiveDiagram({
                           <button
                             onClick={() => runAgentFileProcessor("facture_electricite_volt_3850.pdf")}
                             disabled={isAgentRunning}
-                            className="px-2.5 py-1 rounded bg-[#F47B20] hover:bg-[#ff9242] text-white font-bold text-[10px] uppercase font-mono disabled:opacity-50 cursor-pointer shrink-0"
+                            className="px-2.5 py-1 rounded bg-[#F47B20] hover:bg-[#ff9242] text-white font-bold text-[11px] uppercase font-mono disabled:opacity-50 cursor-pointer shrink-0"
                           >
                             Lancer l'Agent IA
                           </button>
@@ -1053,14 +1053,14 @@ export default function InteractiveDiagram({
                       {/* Terminal Log */}
                       <div className="p-3 rounded-lg bg-[#02050a] border border-[#17243A]/80 flex flex-col h-[140px]">
                         <div className="flex items-center justify-between border-b border-[#17243A]/40 pb-1.5 mb-1.5">
-                          <span className="text-[8px] font-mono text-gray-500 uppercase tracking-widest">LOGS DE CLASSEMENT IA</span>
+                          <span className="text-[11px] font-mono text-gray-500 uppercase tracking-widest">LOGS DE CLASSEMENT IA</span>
                           <div className="flex items-center gap-1">
                             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                            <span className="text-[8px] font-mono text-green-400">Actif</span>
+                            <span className="text-[11px] font-mono text-green-400">Actif</span>
                           </div>
                         </div>
 
-                        <div className="flex-1 overflow-y-auto text-left font-mono text-[9px] text-[#E2E8F0] space-y-1">
+                        <div className="flex-1 overflow-y-auto text-left font-mono text-[11px] text-[#E2E8F0] space-y-1">
                           {agentLogs.length > 0 ? (
                             agentLogs.map((log, idx) => (
                               <div key={idx} className={log.includes('🎉') ? 'text-green-400 font-bold' : log.includes('[IA]') ? 'text-blue-300' : 'text-gray-400'}>
@@ -1080,7 +1080,7 @@ export default function InteractiveDiagram({
             </div>
 
             {/* Footer inside the mockup screen */}
-            <div className="mt-6 pt-3.5 border-t border-[#17243A]/40 flex flex-col sm:flex-row items-center justify-between gap-2 text-[9px] text-gray-500 font-sans">
+            <div className="mt-6 pt-3.5 border-t border-[#17243A]/40 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-gray-500 font-sans">
               <p className="italic text-left leading-normal">
                 {activeShowcaseTab === 'airtable' && "* Hub centralisé synchronisé. Toute modification de valeur recalcule immédiatement les marges opérationnelles."}
                 {activeShowcaseTab === 'dashboard' && "* Dashboard décisionnel alimenté à 100% en direct par les données extraites automatiquement par l'IA."}
@@ -1089,7 +1089,7 @@ export default function InteractiveDiagram({
               </p>
               <button 
                 onClick={() => setIsZoomed(false)}
-                className="font-mono text-[9px] text-[#F47B20] hover:text-[#ff9242] font-bold uppercase tracking-wider shrink-0 transition-colors cursor-pointer"
+                className="font-mono text-[11px] text-[#F47B20] hover:text-[#ff9242] font-bold uppercase tracking-wider shrink-0 transition-colors cursor-pointer"
               >
                 ← Fermer l'outil
               </button>

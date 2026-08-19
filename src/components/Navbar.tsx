@@ -45,7 +45,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
         <div className="bg-[#070b13] border-b border-[#17243A]/40 py-2 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-x-3 gap-y-1 flex-wrap flex-1 min-w-0">
-              <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#F47B20]/10 to-orange-500/10 border border-[#F47B20]/30 text-[#ff9242] font-mono font-bold text-[9px] sm:text-[10px] px-3 py-1 rounded-full tracking-wider uppercase select-none shrink-0">
+              <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#F47B20]/10 to-orange-500/10 border border-[#F47B20]/30 text-[#ff9242] font-mono font-bold text-[11px] sm:text-[11px] px-3 py-1 rounded-full tracking-wider uppercase select-none shrink-0">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#F47B20] animate-pulse"></span>
                 Tarif pionnier
               </span>
@@ -59,7 +59,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
                 href="https://huvioptimisation.fillout.com/rencontre-doptimisation-exploratoire"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 bg-gradient-to-r from-[#F47B20] to-[#ff9242] hover:from-[#ff9242] hover:to-[#ffa767] text-white font-mono font-bold text-[10px] sm:text-[11px] rounded-lg shadow-lg shadow-[#F47B20]/10 hover:scale-[1.01] transition-all uppercase tracking-wider shrink-0"
+                className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 bg-gradient-to-r from-[#F47B20] to-[#ff9242] hover:from-[#ff9242] hover:to-[#ffa767] text-white font-mono font-bold text-[11px] sm:text-[11px] rounded-lg shadow-lg shadow-[#F47B20]/10 hover:scale-[1.01] transition-all uppercase tracking-wider shrink-0"
               >
                 <span>Réserver ma séance d'optimisation gratuite</span>
                 <ArrowRight className="w-3 h-3" />
@@ -82,8 +82,8 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
             <a href="#" className="flex items-center gap-3 group">
               <Logo size="sm" showProgressBar={true} className="group-hover:scale-105 transition-transform duration-300" />
               <div className="border-l border-[#17243A] pl-3 py-1 hidden xs:block">
-                <span className="block text-[8px] font-mono tracking-[0.2em] text-[#F47B20] uppercase font-semibold leading-none">OPTIMISATION</span>
-                <span className="block text-[9px] text-gray-500 mt-0.5 font-sans">Systèmes IA</span>
+                <span className="block text-[11px] font-mono tracking-[0.2em] text-[#F47B20] uppercase font-semibold leading-none">OPTIMISATION</span>
+                <span className="block text-[11px] text-gray-500 mt-0.5 font-sans">Systèmes IA</span>
               </div>
             </a>
           </div>
@@ -113,7 +113,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
               {solutionsOpen && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[560px] z-50">
                   <div className="bg-[#0D1527] border border-[#17243A] rounded-xl shadow-2xl shadow-black/50 p-5">
-                    <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#F47B20] font-semibold mb-4">Nos solutions</p>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#F47B20] font-semibold mb-4">Nos solutions</p>
                     <div className="grid grid-cols-2 gap-1">
                       {solutionsLinks.map((l) => (
                         <a
@@ -144,14 +144,14 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
             {showAdminButton && (
               <button
                 onClick={onOpenAdmin}
-                className="relative p-1.5 rounded-lg border border-[#17243A] bg-[#0D1527] hover:bg-[#17243A] text-gray-400 hover:text-[#F47B20] transition-all flex items-center gap-1.5 text-[10px] font-mono"
+                className="relative p-1.5 rounded-lg border border-[#17243A] bg-[#0D1527] hover:bg-[#17243A] text-gray-400 hover:text-[#F47B20] transition-all flex items-center gap-1.5 text-[11px] font-mono"
                 title="Console d'Administration des leads"
                 id="admin-console-toggle"
               >
                 <Database className="w-3.5 h-3.5" />
                 <span>Base de données</span>
                 {adminSubmissionsCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 bg-[#F47B20] text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold animate-pulse">
+                  <span className="absolute -top-1.5 -right-1.5 bg-[#F47B20] text-white text-[11px] px-1.5 py-0.5 rounded-full font-bold animate-pulse">
                     {adminSubmissionsCount}
                   </span>
                 )}
@@ -160,7 +160,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
 
             <a
               href="#builder"
-              className="inline-flex items-center gap-1 xl:gap-1.5 px-2 xl:px-2.5 2xl:px-3 py-1.5 rounded-md bg-[#0D1527] hover:bg-[#F47B20] text-gray-300 hover:text-white text-[9px] xl:text-[10px] font-mono tracking-wider uppercase font-bold border border-[#17243A] hover:border-[#F47B20] transition-all duration-300 shadow-sm shrink-0"
+              className="inline-flex items-center gap-1 xl:gap-1.5 px-2 xl:px-2.5 2xl:px-3 py-1.5 rounded-md bg-[#0D1527] hover:bg-[#F47B20] text-gray-300 hover:text-white text-[11px] xl:text-[11px] font-mono tracking-wider uppercase font-bold border border-[#17243A] hover:border-[#F47B20] transition-all duration-300 shadow-sm shrink-0"
               id="cta-analysis-nav"
             >
               <span>Calculer mes gains potentiels</span>
@@ -178,7 +178,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
               >
                 <Database className="w-4 h-4" />
                 {adminSubmissionsCount > 0 && (
-                  <span className="bg-[#F47B20] text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold">
+                  <span className="bg-[#F47B20] text-white text-[11px] px-1.5 py-0.5 rounded-full font-bold">
                     {adminSubmissionsCount}
                   </span>
                 )}
@@ -237,7 +237,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
 
             {/* Solutions section in mobile drawer */}
             <div>
-              <span className="text-[10px] font-mono text-[#F47B20] uppercase tracking-[0.2em]">Solutions</span>
+              <span className="text-[11px] font-mono text-[#F47B20] uppercase tracking-[0.2em]">Solutions</span>
               <div className="mt-2 flex flex-col">
                 {solutionsLinks.map((l) => (
                   <a

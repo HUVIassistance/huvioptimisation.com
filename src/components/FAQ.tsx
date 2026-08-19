@@ -257,7 +257,7 @@ export default function FAQ() {
         {/* Left Sidebar Category Selectors - hidden on mobile, list/tabs on desktop */}
         {!hasActiveSearch && (
           <div className="lg:col-span-4 hidden lg:flex flex-col gap-2 sticky top-24">
-            <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest pl-3 mb-2">CATÉGORIES</span>
+            <span className="text-[11px] font-mono text-gray-500 uppercase tracking-widest pl-3 mb-2">CATÉGORIES</span>
             {categories.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
@@ -316,7 +316,7 @@ export default function FAQ() {
               return (
                 <div key={cat.id} className="space-y-4">
                   {hasActiveSearch && (
-                    <span className="block text-[10px] font-mono text-[#F47B20] uppercase tracking-widest pl-1 mt-4">
+                    <span className="block text-[11px] font-mono text-[#F47B20] uppercase tracking-widest pl-1 mt-4">
                       {cat.label}
                     </span>
                   )}

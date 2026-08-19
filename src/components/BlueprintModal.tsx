@@ -50,7 +50,7 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
             </div>
             <div>
               <h3 className="font-display font-bold text-white text-base sm:text-lg">Le blueprint de la méthode C.A.S.A.</h3>
-              <p className="text-[10px] font-mono text-gray-500 mt-0.5 uppercase tracking-wider">GUIDE DE STRUCTURATION ET D'OPTIMISATION • HUVI</p>
+              <p className="text-[11px] font-mono text-gray-500 mt-0.5 uppercase tracking-wider">GUIDE DE STRUCTURATION ET D'OPTIMISATION • HUVI</p>
             </div>
           </div>
           
@@ -168,13 +168,13 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-2">
                   <div className="p-4 rounded-xl border border-red-500/10 bg-red-500/5">
-                    <span className="block text-[10px] font-mono text-red-400 uppercase font-semibold">AVANT</span>
+                    <span className="block text-[11px] font-mono text-red-400 uppercase font-semibold">AVANT</span>
                     <p className="text-xs text-gray-400 mt-2">
                       Fichiers sur l'ordinateur du bureau, notes papier sur les chantiers, emails dans 3 boîtes différentes.
                     </p>
                   </div>
                   <div className="p-4 rounded-xl border border-green-500/10 bg-green-500/5 md:col-span-2">
-                    <span className="block text-[10px] font-mono text-green-400 uppercase font-semibold">APRÈS</span>
+                    <span className="block text-[11px] font-mono text-green-400 uppercase font-semibold">APRÈS</span>
                     <p className="text-xs text-gray-400 mt-2">
                       Un seul outil accessible sur mobile et ordinateur pour toute l'équipe. Fiches clients unifiées avec historique des devis, notes de terrain et statuts en temps réel.
                     </p>

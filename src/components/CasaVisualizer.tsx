@@ -113,7 +113,7 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
           <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#F47B20] to-[#ff9242] text-white flex items-center justify-center shadow-lg shadow-[#F47B20]/30 border border-[#ffa767] animate-pulse">
             <Layers className="w-8 h-8" />
           </div>
-          <span className="mt-2.5 text-[10px] font-mono font-extrabold text-[#F47B20] bg-[#F47B20]/10 px-2.5 py-0.5 rounded-full border border-[#F47B20]/20 whitespace-nowrap uppercase tracking-wider">
+          <span className="mt-2.5 text-[11px] font-mono font-extrabold text-[#F47B20] bg-[#F47B20]/10 px-2.5 py-0.5 rounded-full border border-[#F47B20]/20 whitespace-nowrap uppercase tracking-wider">
             Votre système
           </span>
         </div>
@@ -130,7 +130,7 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
               <div className={`w-9 h-9 rounded-xl bg-[#0d1321] border ${node.color} flex items-center justify-center shadow-md`}>
                 <Icon className="w-4 h-4" />
               </div>
-              <span className="mt-1 text-[8px] font-mono text-gray-400 font-semibold text-center max-w-[80px] truncate">{node.label}</span>
+              <span className="mt-1 text-[11px] font-mono text-gray-400 font-semibold text-center max-w-[80px] truncate">{node.label}</span>
             </div>
           );
         })}
@@ -144,7 +144,7 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
       <div className="relative w-full h-[320px] bg-[#070b13] rounded-xl border border-[#17243A]/60 overflow-hidden p-5 flex flex-col justify-between">
         {/* Title */}
         <div className="flex items-center justify-between border-b border-[#17243A]/40 pb-2">
-          <span className="text-[10px] font-mono font-bold text-gray-500">INDIFICATEURS CLÉS EN TEMPS RÉEL</span>
+          <span className="text-[11px] font-mono font-bold text-gray-500">INDIFICATEURS CLÉS EN TEMPS RÉEL</span>
           <span className="flex h-1.5 w-1.5 rounded-full bg-[#F47B20]"></span>
         </div>
 
@@ -207,12 +207,12 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
         {/* Profit Step Breakdown */}
         <div className="grid grid-cols-2 gap-3 pt-2">
           <div className="bg-[#111a2e]/50 border border-[#17243A]/40 rounded-lg p-2 text-center">
-            <span className="block text-[8px] font-mono text-gray-500 uppercase">Rendement net</span>
-            <span className="text-[10px] font-mono font-bold text-green-400">Hausse de +18%</span>
+            <span className="block text-[11px] font-mono text-gray-500 uppercase">Rendement net</span>
+            <span className="text-[11px] font-mono font-bold text-green-400">Hausse de +18%</span>
           </div>
           <div className="bg-[#111a2e]/50 border border-[#17243A]/40 rounded-lg p-2 text-center">
-            <span className="block text-[8px] font-mono text-[#F47B20] uppercase font-bold">Temps Récupéré</span>
-            <span className="text-[10px] font-mono font-bold text-[#F47B20]">15h / sem.</span>
+            <span className="block text-[11px] font-mono text-[#F47B20] uppercase font-bold">Temps Récupéré</span>
+            <span className="text-[11px] font-mono font-bold text-[#F47B20]">15h / sem.</span>
           </div>
         </div>
       </div>
@@ -224,8 +224,8 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
     return (
       <div className="relative w-full h-[320px] bg-[#070b13] rounded-xl border border-[#17243A]/60 overflow-hidden flex flex-col justify-between p-5">
         <div className="flex items-center justify-between border-b border-[#17243A]/40 pb-2 mb-2">
-          <span className="text-[10px] font-mono font-bold text-gray-500">HIÉRARCHIE ET DISTRIBUTION DES ACTIONS</span>
-          <span className="text-[9px] font-mono text-green-400 bg-green-500/10 border border-green-500/20 px-2 py-0.5 rounded-full uppercase">Ordre</span>
+          <span className="text-[11px] font-mono font-bold text-gray-500">HIÉRARCHIE ET DISTRIBUTION DES ACTIONS</span>
+          <span className="text-[11px] font-mono text-green-400 bg-green-500/10 border border-green-500/20 px-2 py-0.5 rounded-full uppercase">Ordre</span>
         </div>
 
         {/* 3 Tier Structure */}
@@ -238,11 +238,11 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
                 <User className="w-3.5 h-3.5" />
               </div>
               <div className="text-left">
-                <h6 className="text-[10px] font-sans font-extrabold text-white">Dirigeant (Vous)</h6>
-                <p className="text-[8px] text-gray-400 leading-tight font-sans">Surveille uniquement la rentabilité globale et la stratégie.</p>
+                <h6 className="text-[11px] font-sans font-extrabold text-white">Dirigeant (Vous)</h6>
+                <p className="text-[11px] text-gray-400 leading-tight font-sans">Surveille uniquement la rentabilité globale et la stratégie.</p>
               </div>
             </div>
-            <span className="text-[8px] font-mono text-blue-400 uppercase font-bold shrink-0 ml-2">Décisions</span>
+            <span className="text-[11px] font-mono text-blue-400 uppercase font-bold shrink-0 ml-2">Décisions</span>
           </div>
 
           {/* Tier 2 */}
@@ -253,11 +253,11 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
                 <FolderOpen className="w-3.5 h-3.5" />
               </div>
               <div className="text-left">
-                <h6 className="text-[10px] font-sans font-extrabold text-white">Gestion des Procédures & Tâches</h6>
-                <p className="text-[8px] text-gray-400 leading-tight font-sans">Structure documentée qui attribue et suit chaque étape en direct.</p>
+                <h6 className="text-[11px] font-sans font-extrabold text-white">Gestion des Procédures & Tâches</h6>
+                <p className="text-[11px] text-gray-400 leading-tight font-sans">Structure documentée qui attribue et suit chaque étape en direct.</p>
               </div>
             </div>
-            <span className="text-[8px] font-mono text-[#F47B20] uppercase font-bold shrink-0 animate-pulse ml-2">Procédures</span>
+            <span className="text-[11px] font-mono text-[#F47B20] uppercase font-bold shrink-0 animate-pulse ml-2">Procédures</span>
           </div>
 
           {/* Tier 3 */}
@@ -267,11 +267,11 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
                 <Users className="w-3.5 h-3.5" />
               </div>
               <div className="text-left">
-                <h6 className="text-[10px] font-sans font-extrabold text-white">Équipes de Terrain</h6>
-                <p className="text-[8px] text-gray-400 leading-tight font-sans">Reçoivent l'exacte feuille de route claire du jour sans stress.</p>
+                <h6 className="text-[11px] font-sans font-extrabold text-white">Équipes de Terrain</h6>
+                <p className="text-[11px] text-gray-400 leading-tight font-sans">Reçoivent l'exacte feuille de route claire du jour sans stress.</p>
               </div>
             </div>
-            <span className="text-[8px] font-mono text-green-400 uppercase font-bold shrink-0 ml-2">Exécution</span>
+            <span className="text-[11px] font-mono text-green-400 uppercase font-bold shrink-0 ml-2">Exécution</span>
           </div>
 
         </div>
@@ -291,8 +291,8 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
     return (
       <div className="relative w-full h-[320px] bg-[#070b13] rounded-xl border border-[#17243A]/60 overflow-hidden p-5 flex flex-col justify-between">
         <div className="flex items-center justify-between border-b border-[#17243A]/40 pb-2">
-          <span className="text-[10px] font-mono font-bold text-gray-500">EXEMPLE DE WORKFLOW FLUIDE EN ACTION</span>
-          <span className="flex items-center gap-1 text-[9px] font-mono text-[#F47B20] font-extrabold">
+          <span className="text-[11px] font-mono font-bold text-gray-500">EXEMPLE DE WORKFLOW FLUIDE EN ACTION</span>
+          <span className="flex items-center gap-1 text-[11px] font-mono text-[#F47B20] font-extrabold">
             <span className="w-1.5 h-1.5 rounded-full bg-[#F47B20] animate-ping"></span>
             <span>TEMPS RÉEL</span>
           </span>
@@ -327,10 +327,10 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
                   {isCompleted ? <Check className="w-4 h-4 sm:w-5 sm:h-5" /> : <Icon className="w-4 h-4 sm:w-5 sm:h-5" />}
                 </div>
                 
-                <h6 className={`mt-2 text-[8px] sm:text-[9px] font-mono font-bold text-center leading-tight truncate max-w-full ${isActive ? 'text-[#F47B20]' : 'text-gray-400'}`}>
+                <h6 className={`mt-2 text-[11px] sm:text-[11px] font-mono font-bold text-center leading-tight truncate max-w-full ${isActive ? 'text-[#F47B20]' : 'text-gray-400'}`}>
                   {item.label}
                 </h6>
-                <span className="text-[7px] text-gray-500 font-mono mt-0.5 whitespace-nowrap text-center">{item.desc}</span>
+                <span className="text-[11px] text-gray-500 font-mono mt-0.5 whitespace-nowrap text-center">{item.desc}</span>
               </div>
             );
           })}
@@ -341,7 +341,7 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
           <div className="w-6 h-6 rounded-md bg-[#F47B20]/10 text-[#F47B20] flex items-center justify-center shrink-0">
             <Zap className="w-3.5 h-3.5 animate-bounce" />
           </div>
-          <p className="text-[10px] text-left text-gray-400 font-sans leading-normal">
+          <p className="text-[11px] text-left text-gray-400 font-sans leading-normal">
             <b>Zéro action manuelle :</b> Dès la soumission reçue, l'IA trie, calcule les prix, planifie l'itinéraire et envoie le devis directement au client final.
           </p>
         </div>

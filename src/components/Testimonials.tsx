@@ -252,15 +252,15 @@ function SMSConversation({ sms }: { sms: SMSTestimonial; key?: React.Key }) {
           <div>
             <div className="flex items-center gap-1.5">
               <span className="text-xs font-bold text-white">{sms.clientName}</span>
-              <span className="text-[9px] px-1.5 py-0.5 rounded bg-[#17243A] text-gray-400 font-mono">Client</span>
+              <span className="text-[11px] px-1.5 py-0.5 rounded bg-[#17243A] text-gray-400 font-mono">Client</span>
             </div>
-            <p className="text-[10px] text-gray-500 font-medium truncate max-w-[150px] sm:max-w-[180px]">{sms.clientSubtitle}</p>
+            <p className="text-[11px] text-gray-500 font-medium truncate max-w-[150px] sm:max-w-[180px]">{sms.clientSubtitle}</p>
           </div>
         </div>
         <div className="flex flex-col items-end">
-          <span className="text-[8px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 uppercase tracking-widest font-semibold">{sms.outcomeTag}</span>
+          <span className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 uppercase tracking-widest font-semibold">{sms.outcomeTag}</span>
           {sms.savingValue && (
-            <span className="text-[9px] text-orange-400 font-mono mt-1 font-semibold">{sms.savingValue}</span>
+            <span className="text-[11px] text-orange-400 font-mono mt-1 font-semibold">{sms.savingValue}</span>
           )}
         </div>
       </div>
@@ -272,7 +272,7 @@ function SMSConversation({ sms }: { sms: SMSTestimonial; key?: React.Key }) {
           return (
             <div key={idx} className={`flex flex-col ${isHugo ? 'items-end' : 'items-start'}`}>
               <div className="flex items-center gap-1 mb-1">
-                <span className="text-[8px] font-mono text-gray-500">
+                <span className="text-[11px] font-mono text-gray-500">
                   {isHugo ? 'Hugo (HUVI)' : sms.clientName}
                 </span>
               </div>
@@ -292,7 +292,7 @@ function SMSConversation({ sms }: { sms: SMSTestimonial; key?: React.Key }) {
 
       {/* Phone Footer Input Simulation */}
       <div className="bg-[#0b101d]/60 px-4 py-3 border-t border-[#17243A]/40 flex items-center justify-between text-gray-500">
-        <span className="text-[10px] font-mono">Suivi SMS</span>
+        <span className="text-[11px] font-mono">Suivi SMS</span>
         <MessageSquare className="w-3.5 h-3.5 text-gray-600" />
       </div>
     </div>
@@ -326,16 +326,16 @@ function GoogleCard({ review }: { review: GoogleReview; key?: React.Key }) {
                   <Star key={i} className="w-3 h-3 text-yellow-500 fill-yellow-500" />
                 ))}
               </div>
-              <span className="text-[10px] text-gray-500 font-mono">{review.time}</span>
+              <span className="text-[11px] text-gray-500 font-mono">{review.time}</span>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col items-end">
           <div className="flex items-center gap-1 bg-[#4285F4]/10 border border-[#4285F4]/20 rounded-full px-2 py-0.5">
-            <span className="text-[8px] font-mono text-[#4285F4] uppercase font-bold tracking-wider">Avis Google</span>
+            <span className="text-[11px] font-mono text-[#4285F4] uppercase font-bold tracking-wider">Avis Google</span>
           </div>
-          <span className="text-[9px] text-[#F47B20] font-mono mt-1">{review.outcomeTag}</span>
+          <span className="text-[11px] text-[#F47B20] font-mono mt-1">{review.outcomeTag}</span>
         </div>
       </div>
 
@@ -344,7 +344,7 @@ function GoogleCard({ review }: { review: GoogleReview; key?: React.Key }) {
       </p>
 
       {/* Trust Seal */}
-      <div className="mt-4 pt-3 border-t border-[#17243A]/30 flex items-center justify-between text-[10px] font-mono text-gray-500">
+      <div className="mt-4 pt-3 border-t border-[#17243A]/30 flex items-center justify-between text-[11px] font-mono text-gray-500">
         <span className="flex items-center gap-1">
           <Shield className="w-3 h-3 text-emerald-500" />
           Avis client 100% vérifié

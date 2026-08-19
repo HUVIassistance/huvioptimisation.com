@@ -496,7 +496,7 @@ export default function App() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Hero text */}
           <div className="lg:col-span-6 space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#17243A]/60 border border-[#3A7697]/30 text-[#E2E8F0] text-[9px] sm:text-xs font-mono whitespace-nowrap max-w-full overflow-hidden">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#17243A]/60 border border-[#3A7697]/30 text-[#E2E8F0] text-[11px] sm:text-xs font-mono whitespace-nowrap max-w-full overflow-hidden">
               <span className="flex h-2 w-2 rounded-full bg-[#F47B20] shrink-0"></span>
               <span>HUVI Optimisation · Consultant d'affaires PME</span>
             </div>
@@ -542,22 +542,22 @@ export default function App() {
                 <span className="block text-xl font-bold text-white">
                   <AnimatedCounter value={60} suffix="%" />
                 </span>
-                <span className="block text-[10px] text-gray-400 uppercase mt-0.5">Temps administratif réduit en moyenne</span>
+                <span className="block text-[11px] text-gray-400 uppercase mt-0.5">Temps administratif réduit en moyenne</span>
               </div>
               <div>
                 <span className="block text-xl font-bold text-white">
                   <AnimatedCounter value={15} suffix="h+" />
                 </span>
-                <span className="block text-[10px] text-gray-400 uppercase mt-0.5">Économisées par semaine en moyenne</span>
+                <span className="block text-[11px] text-gray-400 uppercase mt-0.5">Économisées par semaine en moyenne</span>
               </div>
               <div>
                 <span className="block text-xl font-bold text-[#F47B20]">
                   <AnimatedCounter value={100} suffix="%" />
                 </span>
-                <span className="block text-[10px] text-gray-400 uppercase mt-0.5">Solutions testées avec votre équipe</span>
+                <span className="block text-[11px] text-gray-400 uppercase mt-0.5">Solutions testées avec votre équipe</span>
               </div>
             </div>
-            <p className="text-[10px] text-gray-500 font-mono mt-3 italic">
+            <p className="text-[11px] text-gray-500 font-mono mt-3 italic">
               * Résultats moyens observés chez nos clients accompagnés en 2025
             </p>
           </div>
@@ -797,7 +797,7 @@ export default function App() {
                       <span>Identifier mes premières opportunités</span>
                       <ArrowRight className="w-4 h-4" />
                     </a>
-                    <p className="text-[10px] text-gray-500 font-mono italic">Gratuit · 30 secondes · Adapté à votre réalité</p>
+                    <p className="text-[11px] text-gray-500 font-mono italic">Gratuit · 30 secondes · Adapté à votre réalité</p>
                   </div>
                 </div>
               </div>
@@ -896,7 +896,7 @@ export default function App() {
                     onChange={(e) => setCalcHours(parseInt(e.target.value))}
                     className="w-full accent-[#F47B20] h-1.5 bg-[#17243A] rounded-lg cursor-pointer"
                   />
-                  <p className="text-[10px] text-gray-500 italic">Moyenne de l'industrie : 15h perdues en double saisie et relances.</p>
+                  <p className="text-[11px] text-gray-500 italic">Moyenne de l'industrie : 15h perdues en double saisie et relances.</p>
                 </div>
 
                 {/* Control 2: Hourly Rate */}
@@ -916,7 +916,7 @@ export default function App() {
                     onChange={(e) => setCalcRate(parseInt(e.target.value))}
                     className="w-full accent-[#F47B20] h-1.5 bg-[#17243A] rounded-lg cursor-pointer"
                   />
-                  <p className="text-[10px] text-gray-500 italic">Inclut le coût d'opportunité d'un gestionnaire ou d'un propriétaire.</p>
+                  <p className="text-[11px] text-gray-500 italic">Inclut le coût d'opportunité d'un gestionnaire ou d'un propriétaire.</p>
                 </div>
 
                 {/* Control 3: Employee count */}
@@ -936,7 +936,7 @@ export default function App() {
                     onChange={(e) => setCalcEmployees(parseInt(e.target.value))}
                     className="w-full accent-[#F47B20] h-1.5 bg-[#17243A] rounded-lg cursor-pointer"
                   />
-                  <p className="text-[10px] text-gray-500 italic">Employés de bureau, répartiteurs ou propriétaires affectés par la paperasse.</p>
+                  <p className="text-[11px] text-gray-500 italic">Employés de bureau, répartiteurs ou propriétaires affectés par la paperasse.</p>
                 </div>
               </div>
 
@@ -959,22 +959,22 @@ export default function App() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Hours lost block */}
                   <div className="p-4 rounded-xl bg-red-500/[0.03] border border-red-500/10 space-y-1">
-                    <span className="text-[10px] font-mono text-gray-500 uppercase tracking-wider block">TEMPS PERDU</span>
+                    <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider block">TEMPS PERDU</span>
                     <span className="text-2xl font-mono font-bold text-red-400 block">
                       {calcHours * 52 * calcEmployees} h / an
                     </span>
-                    <span className="text-[10px] text-gray-400 block font-sans">
+                    <span className="text-[11px] text-gray-400 block font-sans">
                       Perdues en tâches sans valeur ajoutée.
                     </span>
                   </div>
 
                   {/* Financial loss block */}
                   <div className="p-4 rounded-xl bg-red-500/[0.03] border border-red-500/20 space-y-1">
-                    <span className="text-[10px] font-mono text-gray-500 uppercase tracking-wider block">PERTE FINANCIÈRE DIRECTE</span>
+                    <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider block">PERTE FINANCIÈRE DIRECTE</span>
                     <span className="text-2xl font-mono font-bold text-red-500 block">
                       {(calcHours * 52 * calcEmployees * calcRate).toLocaleString()} $ / an
                     </span>
-                    <span className="text-[10px] text-gray-400 block font-sans">
+                    <span className="text-[11px] text-gray-400 block font-sans">
                       Dépensées en frictions opérationnelles.
                     </span>
                   </div>
@@ -997,13 +997,13 @@ export default function App() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 font-mono">
                     <div>
-                      <span className="text-[9px] text-gray-500 uppercase block">HEURES RÉCUPÉRÉES</span>
+                      <span className="text-[11px] text-gray-500 uppercase block">HEURES RÉCUPÉRÉES</span>
                       <span className="text-xl font-bold text-green-400 block mt-0.5">
                         + {Math.round(calcHours * 52 * calcEmployees * 0.6)} h / an
                       </span>
                     </div>
                     <div>
-                      <span className="text-[9px] text-gray-500 uppercase block">ARGENT RÉINJECTÉ</span>
+                      <span className="text-[11px] text-gray-500 uppercase block">ARGENT RÉINJECTÉ</span>
                       <span className="text-xl font-bold text-green-400 block mt-0.5">
                         + {Math.round(calcHours * 52 * calcEmployees * calcRate * 0.6).toLocaleString()} $ / an
                       </span>
@@ -1013,7 +1013,7 @@ export default function App() {
               </div>
 
               {/* Stat sources & validation */}
-              <div className="border-t border-[#17243A]/60 pt-4 text-[10px] text-gray-500 space-y-2 text-left">
+              <div className="border-t border-[#17243A]/60 pt-4 text-[11px] text-gray-500 space-y-2 text-left">
                 <p className="leading-normal">
                   <span className="text-gray-400 font-bold">Source statistique (15h) :</span> estimation basée sur les heures d’administration, de saisie double et de relances manuelles économisées en moyenne par semaine chez nos clients PME de services.
                 </p>
@@ -1145,7 +1145,7 @@ export default function App() {
 
           {/* Mobile Selector Tab Switcher */}
           <div className="flex md:hidden flex-col gap-2.5 w-full max-w-sm mx-auto my-6 p-2 bg-[#090D16] border border-[#17243A] rounded-2xl">
-            <span className="text-[10px] font-mono font-bold text-gray-500 uppercase tracking-widest text-center">
+            <span className="text-[11px] font-mono font-bold text-gray-500 uppercase tracking-widest text-center">
               Choisissez ce que vous voulez voir :
             </span>
             <button
@@ -1159,7 +1159,7 @@ export default function App() {
               <span className="text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
                 💎 CE QUE L'ÉQUIPE GARDE
               </span>
-              <span className="text-[10px] leading-snug opacity-90 font-sans">
+              <span className="text-[11px] leading-snug opacity-90 font-sans">
                 La relation client, l'expertise technique et le contrôle final.
               </span>
             </button>
@@ -1174,7 +1174,7 @@ export default function App() {
               <span className="text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
                 🗑️ CE QU'ON ÉLIMINE
               </span>
-              <span className="text-[10px] leading-snug opacity-90 font-sans">
+              <span className="text-[11px] leading-snug opacity-90 font-sans">
                 La double saisie, les relances manuelles et la paperasse.
               </span>
             </button>
@@ -1223,7 +1223,7 @@ export default function App() {
                   </li>
                 </ul>
               </div>
-              <p className="text-[10px] text-green-500/70 font-mono italic text-left pt-2">
+              <p className="text-[11px] text-green-500/70 font-mono italic text-left pt-2">
                 = Recentrage complet sur ce qui fait avancer la business.
               </p>
             </div>
@@ -1270,7 +1270,7 @@ export default function App() {
                   </li>
                 </ul>
               </div>
-              <p className="text-[10px] text-red-500/70 font-mono italic text-left pt-2">
+              <p className="text-[11px] text-red-500/70 font-mono italic text-left pt-2">
                 = Élimination de la fatigue administrative et des tâches répétitives.
               </p>
             </div>
@@ -1317,7 +1317,7 @@ export default function App() {
                   </span>
                   <div className="flex-1">
                     <h4 className="font-display text-sm font-bold text-white">{step.title}</h4>
-                    <p className="text-[10px] text-gray-400 mt-0.5">{step.tagline}</p>
+                    <p className="text-[11px] text-gray-400 mt-0.5">{step.tagline}</p>
                   </div>
                   <ChevronRight className={`w-4 h-4 transition-transform ${activeApproachStep === idx ? 'text-[#F47B20] rotate-90' : 'text-gray-600'}`} />
                 </button>
@@ -1342,7 +1342,7 @@ export default function App() {
                   <div className="md:col-span-6 space-y-6 flex flex-col justify-between h-full order-2 md:order-1">
                     <div className="space-y-4">
                       <div className="flex items-center gap-3 border-b border-[#17243A] pb-4">
-                        <span className="text-[10px] font-mono font-bold bg-green-500/10 text-green-400 px-2.5 py-1 rounded-full border border-green-500/30 shrink-0 flex items-center gap-1.5 shadow-lg shadow-green-500/5">
+                        <span className="text-[11px] font-mono font-bold bg-green-500/10 text-green-400 px-2.5 py-1 rounded-full border border-green-500/30 shrink-0 flex items-center gap-1.5 shadow-lg shadow-green-500/5">
                           <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
                           CHECKPOINT {(casaSteps[activeApproachStep] || casaSteps[0]).num}
                         </span>
@@ -1362,7 +1362,7 @@ export default function App() {
                     </div>
 
                     <div className="pt-6 border-t border-[#17243A]/60">
-                      <span className="block text-[9px] font-mono text-green-400/90 uppercase tracking-widest mb-2 font-bold flex items-center gap-1.5">
+                      <span className="block text-[11px] font-mono text-green-400/90 uppercase tracking-widest mb-2 font-bold flex items-center gap-1.5">
                         <span className="w-1 h-1 rounded-full bg-green-400"></span>
                         RÉSULTAT DU CHECKPOINT :
                       </span>
@@ -1450,7 +1450,7 @@ export default function App() {
                   </div>
                   
                   <div className="mt-5 pt-3 border-t border-[#17243A]/40 flex justify-end">
-                    <span className="text-[10px] font-mono text-gray-500 group-hover:text-[#3A7697] transition-colors flex items-center gap-1.5">
+                    <span className="text-[11px] font-mono text-gray-500 group-hover:text-[#3A7697] transition-colors flex items-center gap-1.5">
                       <span>Inclus</span>
                       <Check className="w-3.5 h-3.5 text-green-500" />
                     </span>
@@ -1511,7 +1511,7 @@ export default function App() {
                       <StepIcon className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     {/* Small step number badge */}
-                    <span className={`absolute -top-1.5 -right-1.5 px-1.5 py-0.5 min-w-[20px] h-5 rounded-md text-[8px] font-mono font-bold flex items-center justify-center shadow-md ${
+                    <span className={`absolute -top-1.5 -right-1.5 px-1.5 py-0.5 min-w-[20px] h-5 rounded-md text-[11px] font-mono font-bold flex items-center justify-center shadow-md ${
                       step.isOptional
                         ? 'bg-gradient-to-r from-[#3A7697] to-blue-500 text-white'
                         : 'bg-gradient-to-r from-[#F47B20] to-orange-500 text-white'
@@ -1527,7 +1527,7 @@ export default function App() {
                   {/* Content */}
                   <div className="space-y-2 lg:space-y-3 flex-1 lg:flex-none relative z-10 w-full">
                     <div className="space-y-1">
-                      <span className={`inline-block text-[10px] font-mono uppercase tracking-wider font-bold px-2 py-0.5 rounded border ${
+                      <span className={`inline-block text-[11px] font-mono uppercase tracking-wider font-bold px-2 py-0.5 rounded border ${
                         step.isOptional
                           ? 'text-[#3A7697] bg-[#3A7697]/5 border-[#3A7697]/10'
                           : 'text-[#F47B20] bg-[#F47B20]/5 border-[#F47B20]/10'
@@ -1547,7 +1547,7 @@ export default function App() {
                       {step.desc}
                     </p>
                     <div className="pt-1">
-                      <span className={`inline-flex items-center gap-1.5 text-[10px] font-mono bg-[#0D1527]/40 border px-2.5 py-1 rounded-full ${
+                      <span className={`inline-flex items-center gap-1.5 text-[11px] font-mono bg-[#0D1527]/40 border px-2.5 py-1 rounded-full ${
                         step.isOptional ? 'text-[#3A7697] border-[#3A7697]/30' : 'text-gray-500 border-[#17243A]/60'
                       }`}>
                         <span className={`w-1.5 h-1.5 rounded-full ${step.isOptional ? 'bg-[#3A7697]' : 'bg-[#3A7697]'}`}></span>
@@ -1567,7 +1567,7 @@ export default function App() {
       {/* Specialized AI Teams Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-[#17243A]/40" id="ai-teams">
         <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/10 border border-[#F47B20]/30 text-[#F47B20] text-[10px] font-mono uppercase font-bold tracking-wider mx-auto">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/10 border border-[#F47B20]/30 text-[#F47B20] text-[11px] font-mono uppercase font-bold tracking-wider mx-auto">
             ⚡ POUR ALLER PLUS LOIN
           </div>
           <span className="block text-xs font-mono tracking-widest text-gray-500 uppercase font-semibold">Vos agents IA personnalisés</span>
@@ -1634,7 +1634,7 @@ export default function App() {
                       </div>
                       <h4 className="font-display font-bold text-white text-sm sm:text-base text-left">{agent.name}</h4>
                     </div>
-                    <span className={`text-[9px] font-mono font-bold uppercase tracking-wider ${isCustom ? 'text-[#F47B20]' : 'text-gray-500'}`}>
+                    <span className={`text-[11px] font-mono font-bold uppercase tracking-wider ${isCustom ? 'text-[#F47B20]' : 'text-gray-500'}`}>
                       {isCustom ? '🚀 SUR MESURE' : 'AGENT ACTIF'}
                     </span>
                   </div>
@@ -1644,8 +1644,8 @@ export default function App() {
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-[#17243A]/40 bg-[#090D16]/40 text-left">
-                  <span className="block text-[8px] font-mono text-gray-500 uppercase tracking-widest mb-1.5">FLUX AUTOMATISÉ :</span>
-                  <p className="text-[10px] text-gray-300 font-mono leading-normal bg-[#111a2e] p-2 rounded-lg border border-[#17243A]/30">
+                  <span className="block text-[11px] font-mono text-gray-500 uppercase tracking-widest mb-1.5">FLUX AUTOMATISÉ :</span>
+                  <p className="text-[11px] text-gray-300 font-mono leading-normal bg-[#111a2e] p-2 rounded-lg border border-[#17243A]/30">
                     {agent.flow}
                   </p>
                 </div>
@@ -1774,7 +1774,7 @@ export default function App() {
                         style={{ width: `${generationProgress}%` }}
                       ></div>
                     </div>
-                    <p className="text-[10px] text-gray-400 font-mono text-center">{generationStepMsg}</p>
+                    <p className="text-[11px] text-gray-400 font-mono text-center">{generationStepMsg}</p>
                   </div>
                 )}
               </form>
@@ -1789,7 +1789,7 @@ export default function App() {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between border-b border-[#17243A] pb-4">
                       <div>
-                        <span className="text-[10px] font-mono text-[#F47B20] uppercase tracking-wider block">PLAN RECOMMANDÉ : ORIENTATION STRATÉGIQUE</span>
+                        <span className="text-[11px] font-mono text-[#F47B20] uppercase tracking-wider block">PLAN RECOMMANDÉ : ORIENTATION STRATÉGIQUE</span>
                         <h4 className="font-display text-xl font-bold text-white mt-1">
                           {currentResult.recommendation.title}
                         </h4>
@@ -1807,7 +1807,7 @@ export default function App() {
 
                     {/* Modules list */}
                     <div className="space-y-2 pt-3">
-                      <span className="block text-[10px] font-mono text-gray-400 uppercase tracking-widest">SOLUTIONS DE SIMPLIFICATION :</span>
+                      <span className="block text-[11px] font-mono text-gray-400 uppercase tracking-widest">SOLUTIONS DE SIMPLIFICATION :</span>
                       <ul className="space-y-2">
                         {currentResult.recommendation.modules.map((mod, i) => (
                           <li key={i} className="flex gap-2.5 items-start text-xs text-gray-300">
@@ -1820,7 +1820,7 @@ export default function App() {
 
                     {/* IA Assistants specific to their recommendation */}
                     <div className="space-y-2 pt-3 border-t border-[#17243A]/40">
-                      <span className="block text-[10px] font-mono text-[#F47B20] uppercase tracking-widest">ASSISTANTS IA CONSEILLÉS :</span>
+                      <span className="block text-[11px] font-mono text-[#F47B20] uppercase tracking-widest">ASSISTANTS IA CONSEILLÉS :</span>
                       <ul className="space-y-2">
                         {currentResult.recommendation.aiAgents.map((agent, i) => (
                           <li key={i} className="text-xs text-gray-400 flex gap-2 items-start">
@@ -1837,7 +1837,7 @@ export default function App() {
                     {/* Impact estimate card */}
                     <div className="pt-3">
                       <div className="p-4 rounded-xl bg-[#17243A]/50 border border-[#F47B20]/20">
-                        <span className="block text-[10px] font-mono text-gray-400 uppercase tracking-wider">GAINS RENTABILITÉ ESTIMÉS :</span>
+                        <span className="block text-[11px] font-mono text-gray-400 uppercase tracking-wider">GAINS RENTABILITÉ ESTIMÉS :</span>
                         <p className="text-sm font-semibold text-white mt-1 font-bold">
                           {currentResult.recommendation.impactEstimate}
                         </p>
@@ -1852,7 +1852,7 @@ export default function App() {
                     <div className="p-5 rounded-xl bg-gradient-to-r from-[#17243A] to-[#0D1527] border-2 border-[#F47B20] space-y-3 relative overflow-hidden group">
                       <div className="absolute top-0 right-0 w-24 h-24 bg-[#F47B20]/5 rounded-full blur-2xl pointer-events-none group-hover:bg-[#F47B20]/10 transition-all duration-300"></div>
                       <div className="space-y-1 relative z-10 text-left">
-                        <span className="text-[10px] font-mono tracking-wider text-[#F47B20] uppercase font-bold">Étape suivante n°1</span>
+                        <span className="text-[11px] font-mono tracking-wider text-[#F47B20] uppercase font-bold">Étape suivante n°1</span>
                         <p className="text-xs sm:text-sm text-white font-semibold leading-snug">
                           Obtenez votre analyse de maturité personnalisée complète sur l'ensemble de votre organisation.
                         </p>
@@ -1893,8 +1893,8 @@ export default function App() {
 
                       {/* Prochaines étapes display: Séance → Diagnostic → Parcours */}
                       <div className="text-left sm:text-right w-full sm:w-auto">
-                        <span className="block text-[9px] font-mono text-gray-500 uppercase tracking-widest">Prochaines étapes :</span>
-                        <div className="flex items-center justify-start sm:justify-end gap-1.5 text-[10px] font-mono text-[#F47B20] mt-1 font-bold">
+                        <span className="block text-[11px] font-mono text-gray-500 uppercase tracking-widest">Prochaines étapes :</span>
+                        <div className="flex items-center justify-start sm:justify-end gap-1.5 text-[11px] font-mono text-[#F47B20] mt-1 font-bold">
                           <span className="text-gray-300">Séance d'optimisation</span>
                           <span className="text-gray-600">→</span>
                           <span className="text-gray-400">Diagnostic des processus</span>
@@ -1928,7 +1928,7 @@ export default function App() {
                       <span>Faire mon Bilan IA complet</span>
                       <ArrowUpRight className="w-4 h-4" />
                     </a>
-                    <span className="block text-[10px] font-mono text-gray-500">
+                    <span className="block text-[11px] font-mono text-gray-500">
                       ⏱️ 2 min. — Gratuit & Sans engagement
                     </span>
                   </div>
@@ -2034,7 +2034,7 @@ export default function App() {
             </a>
           </div>
 
-          <div className="flex items-center justify-center gap-6 text-[10px] font-mono text-gray-500 pt-4">
+          <div className="flex items-center justify-center gap-6 text-[11px] font-mono text-gray-500 pt-4">
             <span className="flex items-center gap-1.5">
               <Check className="w-3.5 h-3.5 text-green-500" /> Sans engagement
             </span>
@@ -2065,7 +2065,7 @@ export default function App() {
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-white text-base">Console Administrative des Soumissions</h3>
-                  <p className="text-[10px] font-mono text-gray-500 mt-0.5">HISTORIQUE DES LEADS CLIENTS • HUVI ENGINE</p>
+                  <p className="text-[11px] font-mono text-gray-500 mt-0.5">HISTORIQUE DES LEADS CLIENTS • HUVI ENGINE</p>
                 </div>
               </div>
               <button 
@@ -2121,7 +2121,7 @@ export default function App() {
               
               {/* Leads List */}
               <div className="md:col-span-5 border-r border-[#17243A]/60 overflow-y-auto p-4 space-y-3 bg-[#111a2e]/30">
-                <span className="block text-[9px] font-mono text-gray-500 uppercase tracking-widest mb-1">
+                <span className="block text-[11px] font-mono text-gray-500 uppercase tracking-widest mb-1">
                   LEADS REÇUS ({filteredSubmissions.length})
                 </span>
 
@@ -2142,7 +2142,7 @@ export default function App() {
                         <div className="flex justify-between items-start">
                           <div>
                             <h4 className="font-display text-xs font-bold text-white">{sub.company}</h4>
-                            <p className="text-[10px] text-gray-400 mt-1 font-sans">{sub.name}</p>
+                            <p className="text-[11px] text-gray-400 mt-1 font-sans">{sub.name}</p>
                           </div>
                           <button
                             onClick={(e) => handleDeleteSubmission(sub.id, e)}
@@ -2153,7 +2153,7 @@ export default function App() {
                           </button>
                         </div>
                         
-                        <div className="mt-3 flex items-center justify-between border-t border-[#17243A]/40 pt-2 text-[9px] font-mono text-gray-500">
+                        <div className="mt-3 flex items-center justify-between border-t border-[#17243A]/40 pt-2 text-[11px] font-mono text-gray-500">
                           <span className="uppercase text-[#F47B20]">
                             {sub.industry === 'construction' ? 'Construction' : sub.industry === 'other' ? 'Immobilier' : 'Professionnels'}
                           </span>
@@ -2176,7 +2176,7 @@ export default function App() {
                     
                     {/* Header */}
                     <div className="border-b border-[#17243A] pb-4">
-                      <span className="text-[9px] font-mono text-[#F47B20] uppercase tracking-wider block">Fiche client détaillée</span>
+                      <span className="text-[11px] font-mono text-[#F47B20] uppercase tracking-wider block">Fiche client détaillée</span>
                       <h4 className="font-display text-lg font-bold text-white mt-1">
                         {selectedAdminSubmission.company}
                       </h4>
@@ -2190,32 +2190,32 @@ export default function App() {
                     {/* Contact Grid */}
                     <div className="grid grid-cols-2 gap-4 bg-[#111a2e] p-4 rounded-xl border border-[#17243A]/60">
                       <div>
-                        <span className="block text-[8px] font-mono text-gray-500 uppercase">CONTACT</span>
+                        <span className="block text-[11px] font-mono text-gray-500 uppercase">CONTACT</span>
                         <span className="text-xs text-white font-medium block mt-0.5">{selectedAdminSubmission.name}</span>
                       </div>
                       <div>
-                        <span className="block text-[8px] font-mono text-gray-500 uppercase">COURRIEL</span>
+                        <span className="block text-[11px] font-mono text-gray-500 uppercase">COURRIEL</span>
                         <span className="text-xs text-[#3A7697] font-medium block mt-0.5 truncate">{selectedAdminSubmission.email}</span>
                       </div>
                       <div>
-                        <span className="block text-[8px] font-mono text-gray-500 uppercase">TÉLÉPHONE</span>
+                        <span className="block text-[11px] font-mono text-gray-500 uppercase">TÉLÉPHONE</span>
                         <span className="text-xs text-white font-medium block mt-0.5">{selectedAdminSubmission.phone || 'Non fourni'}</span>
                       </div>
                       <div>
-                        <span className="block text-[8px] font-mono text-gray-500 uppercase">DÉFI SÉLECTIONNÉ</span>
+                        <span className="block text-[11px] font-mono text-gray-500 uppercase">DÉFI SÉLECTIONNÉ</span>
                         <span className="text-xs text-[#F47B20] font-mono font-bold block mt-0.5 uppercase">{selectedAdminSubmission.challenge}</span>
                       </div>
                     </div>
 
                     {/* Associated Computed Plan */}
                     <div className="space-y-4 pt-4 border-t border-[#17243A]/40">
-                      <span className="block text-[9px] font-mono text-gray-500 uppercase tracking-widest">PLAN RECOMMANDÉ PAR L'ENGIN HUVI :</span>
+                      <span className="block text-[11px] font-mono text-gray-500 uppercase tracking-widest">PLAN RECOMMANDÉ PAR L'ENGIN HUVI :</span>
                       <div className="p-5 rounded-xl border border-green-500/20 bg-green-500/5">
                         <h5 className="font-display font-bold text-white text-sm">{selectedAdminSubmission.recommendation.title}</h5>
                         <p className="text-xs text-gray-300 mt-2 leading-relaxed">{selectedAdminSubmission.recommendation.description}</p>
                         
                         <div className="mt-4 space-y-2">
-                          <span className="block text-[9px] font-mono text-gray-400 uppercase tracking-widest">MODULES ESTIMÉS :</span>
+                          <span className="block text-[11px] font-mono text-gray-400 uppercase tracking-widest">MODULES ESTIMÉS :</span>
                           <ul className="space-y-1">
                             {selectedAdminSubmission.recommendation.modules.map((mod, i) => (
                               <li key={i} className="flex gap-2 items-start text-xs text-gray-400">
@@ -2262,10 +2262,10 @@ export default function App() {
           {/* Logo & Pitch */}
           <div className="md:col-span-3 space-y-3">
             <Logo size="sm" showProgressBar={true} className="items-start" />
-            <p className="text-[10px] text-gray-500 leading-relaxed font-sans max-w-sm pt-1">
+            <p className="text-[11px] text-gray-500 leading-relaxed font-sans max-w-sm pt-1">
               HUVI Optimisation accompagne les entrepreneurs de la construction, de l'immobilier et des services à structurer leurs opérations grâce à l'automatisation et à l'intelligence artificielle.
             </p>
-            <p className="text-[9px] font-mono text-gray-600">
+            <p className="text-[11px] font-mono text-gray-600">
               © {new Date().getFullYear()} HUVI Optimisation Inc. Tous droits réservés. <br />
               Montréal, Québec, Canada.
             </p>
@@ -2273,8 +2273,8 @@ export default function App() {
  
           {/* Quick links */}
           <div className="md:col-span-3 space-y-2 text-left md:pt-2">
-            <h5 className="font-mono text-[10px] font-bold text-white uppercase tracking-wider">Plan du site</h5>
-            <ul className="space-y-1.5 text-[10px] font-sans text-gray-500">
+            <h5 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Plan du site</h5>
+            <ul className="space-y-1.5 text-[11px] font-sans text-gray-500">
               <li><a href="#problem" className="hover:text-white transition-colors">Le diagnostic</a></li>
               <li><a href="#architecture" className="hover:text-white transition-colors">La méthode CASA</a></li>
               <li><a href="#ai-teams" className="hover:text-white transition-colors">Nos assistants IA</a></li>
@@ -2286,8 +2286,8 @@ export default function App() {
  
           {/* Solutions */}
           <div className="md:col-span-3 space-y-2 text-left md:pt-2">
-            <h5 className="font-mono text-[10px] font-bold text-white uppercase tracking-wider">Nos solutions</h5>
-            <ul className="space-y-1.5 text-[10px] font-sans text-gray-500">
+            <h5 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Nos solutions</h5>
+            <ul className="space-y-1.5 text-[11px] font-sans text-gray-500">
               <li><a href="/solutions/audit-des-processus/" className="hover:text-white transition-colors">Audit des processus</a></li>
               <li><a href="/solutions/centralisation-crm/" className="hover:text-white transition-colors">Centralisation &amp; CRM</a></li>
               <li><a href="/solutions/suivis-automatises/" className="hover:text-white transition-colors">Suivis automatisés</a></li>
@@ -2301,8 +2301,8 @@ export default function App() {
  
           {/* Core values declaration */}
           <div className="md:col-span-3 space-y-2 text-left md:pt-2">
-            <h5 className="font-mono text-[10px] font-bold text-white uppercase tracking-wider">Notre engagement</h5>
-            <div className="p-3 rounded-lg bg-[#111a2e] border border-[#17243A] text-[9px] font-mono text-gray-500 leading-relaxed space-y-1">
+            <h5 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Notre engagement</h5>
+            <div className="p-3 rounded-lg bg-[#111a2e] border border-[#17243A] text-[11px] font-mono text-gray-500 leading-relaxed space-y-1">
               <p className="text-[#F47B20] font-bold">● Partenaire de votre croissance : la structure d'abord, la technologie ensuite.</p>
               <p>On bâtit des solutions simples et sur mesure pour des résultats concrets et mesurables au quotidien.</p>
             </div>
