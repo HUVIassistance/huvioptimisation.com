@@ -2016,7 +2016,7 @@ export default function App() {
               Prêt à faire votre Bilan IA Complet ?
             </h2>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-sans">
-              En 2 minutes, le bilan calcule les pertes de temps et d'argent de votre entreprise, estime tes gains potentiels et te transmet un plan d'action sur-mesure selon ton niveau de maturité numérique.
+              En 2 minutes, le bilan calcule les pertes de temps et d'argent de ton entreprise, estime tes gains potentiels et te transmet un plan d'action sur-mesure selon ton niveau de maturité numérique.
             </p>
 
             <div className="pt-4">
