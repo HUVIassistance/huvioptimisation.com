@@ -871,175 +871,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Urgence Chiffrée Section (🔴 P0 Item 2) */}
-      <section className="bg-[#090D15] py-24 px-4 sm:px-6 lg:px-8 border-b border-[#17243A]/40" id="cost-calculator">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 max-w-3xl mx-auto mb-12">
-            <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Ce que vous perdez chaque mois</span>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
-              Le coût réel d’une entreprise mal structurée
-            </h2>
-            <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-              Chaque inefficacité, chaque information introuvable et chaque tâche répétée inutilement gruge du temps et de l’argent. Utilisez notre calculateur pour voir ce que ces pertes peuvent réellement représenter pour votre entreprise.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            {/* Left side: interactive controls */}
-            <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-[#0b1220] border border-[#17243A]/80 flex flex-col justify-between space-y-6">
-              <div className="space-y-6">
-                <h3 className="font-display font-bold text-white text-base border-b border-[#17243A]/60 pb-3 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#F47B20]"></span>
-                  Simulez la situation de votre PME
-                </h3>
-
-                {/* Control 1: Hours */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center text-xs">
-                    <label className="text-gray-300 font-medium">Heures d'admin par semaine</label>
-                    <span className="font-mono font-bold text-[#F47B20] bg-[#F47B20]/10 px-2 py-0.5 rounded border border-[#F47B20]/20">
-                      {calcHours} h / sem
-                    </span>
-                  </div>
-                  <input
-                    type="range"
-                    min="2"
-                    max="40"
-                    step="1"
-                    value={calcHours}
-                    onChange={(e) => setCalcHours(parseInt(e.target.value))}
-                    className="w-full accent-[#F47B20] h-1.5 bg-[#17243A] rounded-lg cursor-pointer"
-                  />
-                  <p className="text-[11px] text-gray-500 italic">Moyenne de l'industrie : 15h perdues en double saisie et relances.</p>
-                </div>
-
-                {/* Control 2: Hourly Rate */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center text-xs">
-                    <label className="text-gray-300 font-medium">Taux horaire moyen estimé</label>
-                    <span className="font-mono font-bold text-[#F47B20] bg-[#F47B20]/10 px-2 py-0.5 rounded border border-[#F47B20]/20">
-                      {calcRate} $ / h
-                    </span>
-                  </div>
-                  <input
-                    type="range"
-                    min="25"
-                    max="200"
-                    step="5"
-                    value={calcRate}
-                    onChange={(e) => setCalcRate(parseInt(e.target.value))}
-                    className="w-full accent-[#F47B20] h-1.5 bg-[#17243A] rounded-lg cursor-pointer"
-                  />
-                  <p className="text-[11px] text-gray-500 italic">Inclut le coût d'opportunité d'un gestionnaire ou d'un propriétaire.</p>
-                </div>
-
-                {/* Control 3: Employee count */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center text-xs">
-                    <label className="text-gray-300 font-medium font-sans">Nombre de personnes impactées</label>
-                    <span className="font-mono font-bold text-[#F47B20] bg-[#F47B20]/10 px-2 py-0.5 rounded border border-[#F47B20]/20">
-                      {calcEmployees} {calcEmployees > 1 ? 'personnes' : 'personne'}
-                    </span>
-                  </div>
-                  <input
-                    type="range"
-                    min="1"
-                    max="15"
-                    step="1"
-                    value={calcEmployees}
-                    onChange={(e) => setCalcEmployees(parseInt(e.target.value))}
-                    className="w-full accent-[#F47B20] h-1.5 bg-[#17243A] rounded-lg cursor-pointer"
-                  />
-                  <p className="text-[11px] text-gray-500 italic">Employés de bureau, répartiteurs ou propriétaires affectés par la paperasse.</p>
-                </div>
-              </div>
-
-              <div className="p-3.5 bg-[#17243A]/30 rounded-xl border border-[#17243A]/50 text-left">
-                <p className="text-[11px] text-gray-400 leading-relaxed font-sans">
-                  <Lightbulb className="w-4 h-4 text-[#F47B20]" /> <span className="text-white font-semibold">Note de calcul :</span> La formule est simple et transparente : <br />
-                  <span className="font-mono text-white text-xs">{calcHours}h × 52 semaines × {calcEmployees} employé(s) × {calcRate}$ / heure = Coût annuel global.</span>
-                </p>
-              </div>
-            </div>
-
-            {/* Right side: visual mathematical outcomes */}
-            <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-[#070b14] border border-[#17243A] flex flex-col justify-between space-y-6">
-              <div className="space-y-6 text-left">
-                <h3 className="font-display font-bold text-white text-base border-b border-[#17243A]/60 pb-3 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-500"></span>
-                  Le coût annuel estimé de vos tâches
-                </h3>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Hours lost block */}
-                  <div className="p-4 rounded-xl bg-red-500/[0.03] border border-red-500/10 space-y-1">
-                    <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider block">TEMPS PERDU</span>
-                    <span className="text-2xl font-mono font-bold text-red-400 block">
-                      {calcHours * 52 * calcEmployees} h / an
-                    </span>
-                    <span className="text-[11px] text-gray-400 block font-sans">
-                      Perdues en tâches sans valeur ajoutée.
-                    </span>
-                  </div>
-
-                  {/* Financial loss block */}
-                  <div className="p-4 rounded-xl bg-red-500/[0.03] border border-red-500/20 space-y-1">
-                    <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider block">PERTE FINANCIÈRE DIRECTE</span>
-                    <span className="text-2xl font-mono font-bold text-red-500 block">
-                      {(calcHours * 52 * calcEmployees * calcRate).toLocaleString()} $ / an
-                    </span>
-                    <span className="text-[11px] text-gray-400 block font-sans">
-                      Dépensées en frictions opérationnelles.
-                    </span>
-                  </div>
-                </div>
-
-                {/* Outcome with HUVI optimization (60% saved) */}
-                <div className="p-5 sm:p-6 rounded-xl bg-green-500/[0.03] border border-green-500/20 space-y-4">
-                  <div className="flex items-center gap-2">
-                    <span className="p-1 rounded-md bg-green-500/10 text-green-400">
-                      <Sparkles className="w-4 h-4" />
-                    </span>
-                    <h4 className="font-display font-bold text-sm text-green-300">
-                      Potentiel d'optimisation avec HUVI
-                    </h4>
-                  </div>
-
-                  <p className="text-xs text-gray-400 leading-relaxed font-sans">
-                    En automatisant les relances, en centralisant vos processus et en connectant vos outils, nous éliminons en moyenne <span className="text-white font-bold font-mono">60%</span> du temps administratif inutile.
-                  </p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 font-mono">
-                    <div>
-                      <span className="text-[11px] text-gray-500 uppercase block">HEURES RÉCUPÉRÉES</span>
-                      <span className="text-xl font-bold text-green-400 block mt-0.5">
-                        + {Math.round(calcHours * 52 * calcEmployees * 0.6)} h / an
-                      </span>
-                    </div>
-                    <div>
-                      <span className="text-[11px] text-gray-500 uppercase block">ARGENT RÉINJECTÉ</span>
-                      <span className="text-xl font-bold text-green-400 block mt-0.5">
-                        + {Math.round(calcHours * 52 * calcEmployees * calcRate * 0.6).toLocaleString()} $ / an
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Stat sources & validation */}
-              <div className="border-t border-[#17243A]/60 pt-4 text-[11px] text-gray-500 space-y-2 text-left">
-                <p className="leading-normal">
-                  <span className="text-gray-400 font-bold">Source statistique (15h) :</span> estimation basée sur les heures d’administration, de saisie double et de relances manuelles économisées en moyenne par semaine chez nos clients PME de services.
-                </p>
-                <p className="leading-normal">
-                  <span className="text-gray-400 font-bold">Source statistique (60%) :</span> réduction moyenne de 60 % du temps consacré aux tâches administratives répétitives après la mise en place de notre méthode CASA.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Our Approach Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-[#17243A]/40" id="approach">
         <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
@@ -1671,288 +1502,503 @@ export default function App() {
         </div>
       </section>
 
-      {/* Interactive Experience Section (Business Growth Assessment) */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-[#17243A]/40" id="builder">
-        
-        {/* Header */}
-        <div className="text-center space-y-4 max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold bg-[#F47B20]/10 px-3 py-1 rounded-full border border-[#F47B20]/20">
-            ÉVALUATION & OPPORTUNITÉS
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
-            Votre plan d'action personnalisé
-          </h2>
-          <p className="text-gray-400 text-sm leading-relaxed max-w-2xl mx-auto">
-            Faites le test pour voir rapidement où l’automatisation et l’IA peuvent vous faire gagner du temps.
+      {/* Module Évaluation — fusion des 3 sections de quantification */}
+      <section className="bg-[#090D15] py-24 px-4 sm:px-6 lg:px-8 border-b border-[#17243A]/40" id="cost-calculator">
+        <div className="max-w-7xl mx-auto">
 
-          </p>
-        </div>
+          <div className="text-center space-y-4 max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">ÉVALUATION & OPPORTUNITÉS</span>
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+              Le coût réel d’une entreprise mal structurée
+            </h2>
+            <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+              Chaque inefficacité, chaque information introuvable et chaque tâche répétée inutilement gruge du temps et de l’argent. Utilisez notre calculateur pour voir ce que ces pertes peuvent réellement représenter pour votre entreprise.
+            </p>
+          </div>
 
-        {/* ORIGINAL RADAR D'OPPORTUNITÉS RAPIDE */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start animate-fade-in" id="radar-tool-container">
-            
-            {/* Form Side */}
-            <div className="lg:col-span-5 space-y-6">
-              <div>
-                <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Par où commencer</span>
-                <h3 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight mt-1">
-                  Obtenez une première piste d'amélioration adaptée à votre réalité.
-                </h3>
-                <p className="text-gray-400 text-sm mt-3 leading-relaxed">
-                  Sélectionnez votre domaine d'activité et votre défi principal pour obtenir instantanément une première orientation d'optimisation adaptée à votre réalité.
-                </p>
-              </div>
-
-              <form onSubmit={handleSubmitAssessment} className="space-y-5 p-6 rounded-2xl bg-[#090D16] border border-[#17243A]" id="assessment-form">
-                
-                {/* Step 1: Industry */}
-                <div className="space-y-2">
-                  <label className="block text-xs font-mono text-gray-400 uppercase tracking-wider">1. Secteur d'activité</label>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedIndustry('construction')}
-                      className={`p-3 rounded-lg text-xs font-mono font-bold text-center border transition-all ${
-                        selectedIndustry === 'construction'
-                          ? 'bg-[#17243A] border-[#F47B20] text-[#F47B20]'
-                          : 'bg-[#111a2e] border-[#17243A] text-gray-400 hover:text-white'
-                      }`}
-                    >
-                      <Hammer className="w-3.5 h-3.5" /> Construction
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setSelectedIndustry('other')}
-                      className={`p-3 rounded-lg text-xs font-mono font-bold text-center border transition-all ${
-                        selectedIndustry === 'other'
-                          ? 'bg-[#17243A] border-[#F47B20] text-[#F47B20]'
-                          : 'bg-[#111a2e] border-[#17243A] text-gray-400 hover:text-white'
-                      }`}
-                    >
-                      <Building className="w-3.5 h-3.5" /> Immobilier
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setSelectedIndustry('services')}
-                      className={`p-3 rounded-lg text-xs font-mono font-bold text-center border transition-all ${
-                        selectedIndustry === 'services'
-                          ? 'bg-[#17243A] border-[#F47B20] text-[#F47B20]'
-                          : 'bg-[#111a2e] border-[#17243A] text-gray-400 hover:text-white'
-                      }`}
-                    >
-                      <Briefcase className="w-3.5 h-3.5" /> Professionnels
-                    </button>
-                  </div>
-                </div>
-
-                {/* Step 2: Challenge */}
-                <div className="space-y-2">
-                  <label className="block text-xs font-mono text-gray-400 uppercase tracking-wider">2. Principal Défi Opérationnel</label>
-                  <select
-                    value={selectedChallenge}
-                    onChange={(e) => setSelectedChallenge(e.target.value as Challenge)}
-                    className="w-full bg-[#111a2e] border border-[#17243A] rounded-lg p-3 text-xs text-gray-300 focus:outline-none focus:border-[#F47B20] font-sans"
-                    id="challenge-select"
-                  >
-                    <option value="administration">Administration (Trop de paperasse / Saisie manuelle)</option>
-                    <option value="sales">Ventes (Suivi de devis / Qualification de leads)</option>
-                    <option value="projects">Gestion de projets (Chantiers / Retards de livraison)</option>
-                    <option value="communication">Suivi Client (Silos d'info / Appels constants)</option>
-                    <option value="data">Données (Manque de visibilité sur les marges financières)</option>
-                  </select>
-                </div>
-
-                {/* Submit CTA button with loading states */}
-                <button
-                  type="submit"
-                  disabled={isGenerating}
-                  className="w-full py-3.5 px-4 rounded-xl bg-[#F47B20] hover:bg-[#ff9242] text-white font-bold text-xs tracking-wider font-mono transition-all duration-300 shadow-md flex items-center justify-center gap-2 disabled:bg-gray-700 disabled:cursor-not-allowed uppercase cursor-pointer"
-                  id="assessment-submit-btn"
-                >
-                  {isGenerating ? (
-                    <>
-                      <RefreshCw className="w-4 h-4 animate-spin" />
-                      <span>Calcul de l'architecture... {generationProgress}%</span>
-                    </>
-                  ) : (
-                    <>
-                      <Sparkles className="w-4 h-4" />
-                      <span>Identifier mes premières opportunités</span>
-                    </>
-                  )}
-                </button>
-
-                {isGenerating && (
-                  <div className="space-y-2 mt-3 animate-pulse">
-                    <div className="w-full bg-[#111a2e] h-1.5 rounded-full overflow-hidden">
-                      <div 
-                        className="bg-gradient-to-r from-[#F47B20] to-orange-500 h-full transition-all duration-300"
-                        style={{ width: `${generationProgress}%` }}
-                      ></div>
-                    </div>
-                    <p className="text-[11px] text-gray-400 font-mono text-center">{generationStepMsg}</p>
-                  </div>
-                )}
-              </form>
+          {/* Étape 1 — Estimez vos pertes */}
+          <div className="mb-16">
+            <div className="text-center mb-8">
+              <h3 className="font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Étape 1 : Estimez vos pertes</h3>
             </div>
 
-            {/* Blueprint Report Results Display */}
-            <div className="lg:col-span-7 flex" id="assessment-result-panel">
-              {currentResult ? (
-                <div className="w-full p-8 rounded-2xl bg-[#090D16] border-2 border-[#F47B20]/40 shadow-2xl shadow-[#F47B20]/5 relative space-y-6 flex flex-col justify-between animate-fade-in" id="report-active-box">
-                  
-                  {/* Upper Details */}
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between border-b border-[#17243A] pb-4">
-                      <div>
-                        <span className="text-[11px] font-mono text-[#F47B20] uppercase tracking-wider block">PLAN RECOMMANDÉ : ORIENTATION STRATÉGIQUE</span>
-                        <h3 className="font-display text-xl font-bold text-white mt-1">
-                          {currentResult.recommendation.title}
-                        </h3>
-                      </div>
-                      <div className="p-1 rounded bg-green-500/10 text-green-400 border border-green-500/20">
-                        <CheckCircle className="w-5 h-5 animate-pulse" />
-                      </div>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+              <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-[#0b1220] border border-[#17243A]/80 flex flex-col justify-between space-y-6">
+                <div className="space-y-6">
+                  <h3 className="font-display font-bold text-white text-base border-b border-[#17243A]/60 pb-3 flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#F47B20]"></span>
+                    Simulez la situation de votre PME
+                  </h3>
+
+                  {/* Control 1: Hours */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center text-xs">
+                      <label className="text-gray-300 font-medium">Heures d'admin par semaine</label>
+                      <span className="font-mono font-bold text-[#F47B20] bg-[#F47B20]/10 px-2 py-0.5 rounded border border-[#F47B20]/20">
+                        {calcHours} h / sem
+                      </span>
                     </div>
-
-
-
-                    <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                      {currentResult.recommendation.description}
-                    </p>
-
-                    {/* Modules list */}
-                    <div className="space-y-2 pt-3">
-                      <span className="block text-[11px] font-mono text-gray-400 uppercase tracking-widest">SOLUTIONS DE SIMPLIFICATION :</span>
-                      <ul className="space-y-2">
-                        {currentResult.recommendation.modules.map((mod, i) => (
-                          <li key={i} className="flex gap-2.5 items-start text-xs text-gray-300">
-                            <Check className="w-4 h-4 text-[#F47B20] shrink-0 mt-0.5" />
-                            <span>{mod}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* IA Assistants specific to their recommendation */}
-                    <div className="space-y-2 pt-3 border-t border-[#17243A]/40">
-                      <span className="block text-[11px] font-mono text-[#F47B20] uppercase tracking-widest">ASSISTANTS IA CONSEILLÉS :</span>
-                      <ul className="space-y-2">
-                        {currentResult.recommendation.aiAgents.map((agent, i) => (
-                          <li key={i} className="text-xs text-gray-400 flex gap-2 items-start">
-                            <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 shrink-0"></div>
-                            <span className="leading-relaxed">
-                              <strong className="text-white font-medium">{agent.split(':')[0]}:</strong> 
-                              {agent.split(':')[1]}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Impact estimate card */}
-                    <div className="pt-3">
-                      <div className="p-4 rounded-xl bg-[#17243A]/50 border border-[#F47B20]/20">
-                        <span className="block text-[11px] font-mono text-gray-400 uppercase tracking-wider">GAINS RENTABILITÉ ESTIMÉS :</span>
-                        <p className="text-sm font-semibold text-white mt-1 font-bold">
-                          {currentResult.recommendation.impactEstimate}
-                        </p>
-                        {/* Urgence — coût du statu quo (chantier stratégie #6) with chaos replaced with désordre */}
-                        <p className="text-[11px] text-[#F47B20] mt-2 italic leading-relaxed">
-                          « Le diagnostic complet chiffre le coût exact de votre désordre actuel — et ce que vous gagnez à le structurer. »
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Primary CTA - Faire mon bilan IA complet (EN PREMIER) */}
-                    <div className="p-5 rounded-xl bg-gradient-to-r from-[#17243A] to-[#0D1527] border-2 border-[#F47B20] space-y-3 relative overflow-hidden group">
-                      <div className="absolute top-0 right-0 w-24 h-24 bg-[#F47B20]/5 rounded-full blur-2xl pointer-events-none group-hover:bg-[#F47B20]/10 transition-all duration-300"></div>
-                      <div className="space-y-1 relative z-10 text-left">
-                        <span className="text-[11px] font-mono tracking-wider text-[#F47B20] uppercase font-bold">Étape suivante n°1</span>
-                        <p className="text-xs sm:text-sm text-white font-semibold leading-snug">
-                          Obtenez votre analyse de maturité personnalisée complète sur l'ensemble de votre organisation.
-                        </p>
-                      </div>
-                      <a 
-                        href="https://bilan.huvioptimisation.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-[#F47B20] hover:bg-[#ff9242] text-white font-bold text-xs font-mono tracking-wider transition-all duration-300 uppercase shadow-md relative z-10 hover:scale-[1.01] cursor-pointer"
-                        id="full-bilan-cta"
-                      >
-                        <span>Faire mon bilan IA complet</span>
-                        <ArrowUpRight className="w-4 h-4" />
-                      </a>
-                    </div>
-
+                    <input
+                      type="range"
+                      min="2"
+                      max="40"
+                      step="1"
+                      value={calcHours}
+                      onChange={(e) => setCalcHours(parseInt(e.target.value))}
+                      className="w-full accent-[#F47B20] h-1.5 bg-[#17243A] rounded-lg cursor-pointer"
+                    />
+                    <p className="text-[11px] text-gray-500 italic">Moyenne de l'industrie : 15h perdues en double saisie et relances.</p>
                   </div>
 
-                  {/* Secondary CTA - Vous voulez en discuter ? (Page de confirmation) */}
-                  <div className="pt-6 border-t border-[#17243A] space-y-4 bg-[#090D16]/80 text-left">
-                    <div className="space-y-1">
-                      <h4 className="text-sm font-display font-bold text-white uppercase tracking-wider">Vous voulez en discuter ?</h4>
-                      <p className="text-xs text-gray-400 italic">
-                        « Une rencontre pour comprendre votre entreprise, vos blocages et vos pertes de temps. »
+                  {/* Control 2: Hourly Rate */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center text-xs">
+                      <label className="text-gray-300 font-medium">Taux horaire moyen estimé</label>
+                      <span className="font-mono font-bold text-[#F47B20] bg-[#F47B20]/10 px-2 py-0.5 rounded border border-[#F47B20]/20">
+                        {calcRate} $ / h
+                      </span>
+                    </div>
+                    <input
+                      type="range"
+                      min="25"
+                      max="200"
+                      step="5"
+                      value={calcRate}
+                      onChange={(e) => setCalcRate(parseInt(e.target.value))}
+                      className="w-full accent-[#F47B20] h-1.5 bg-[#17243A] rounded-lg cursor-pointer"
+                    />
+                    <p className="text-[11px] text-gray-500 italic">Inclut le coût d'opportunité d'un gestionnaire ou d'un propriétaire.</p>
+                  </div>
+
+                  {/* Control 3: Employee count */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center text-xs">
+                      <label className="text-gray-300 font-medium font-sans">Nombre de personnes impactées</label>
+                      <span className="font-mono font-bold text-[#F47B20] bg-[#F47B20]/10 px-2 py-0.5 rounded border border-[#F47B20]/20">
+                        {calcEmployees} {calcEmployees > 1 ? 'personnes' : 'personne'}
+                      </span>
+                    </div>
+                    <input
+                      type="range"
+                      min="1"
+                      max="15"
+                      step="1"
+                      value={calcEmployees}
+                      onChange={(e) => setCalcEmployees(parseInt(e.target.value))}
+                      className="w-full accent-[#F47B20] h-1.5 bg-[#17243A] rounded-lg cursor-pointer"
+                    />
+                    <p className="text-[11px] text-gray-500 italic">Employés de bureau, répartiteurs ou propriétaires affectés par la paperasse.</p>
+                  </div>
+                </div>
+
+                <div className="p-3.5 bg-[#17243A]/30 rounded-xl border border-[#17243A]/50 text-left">
+                  <p className="text-[11px] text-gray-400 leading-relaxed font-sans">
+                    <Lightbulb className="w-4 h-4 text-[#F47B20]" /> <span className="text-white font-semibold">Note de calcul :</span> La formule est simple et transparente : <br />
+                    <span className="font-mono text-white text-xs">{calcHours}h × 52 semaines × {calcEmployees} employé(s) × {calcRate}$ / heure = Coût annuel global.</span>
+                  </p>
+                </div>
+              </div>
+              <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-[#070b14] border border-[#17243A] flex flex-col justify-between space-y-6">
+                <div className="space-y-6 text-left">
+                  <h3 className="font-display font-bold text-white text-base border-b border-[#17243A]/60 pb-3 flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                    Le coût annuel estimé de vos tâches
+                  </h3>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Hours lost block */}
+                    <div className="p-4 rounded-xl bg-red-500/[0.03] border border-red-500/10 space-y-1">
+                      <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider block">TEMPS PERDU</span>
+                      <span className="text-2xl font-mono font-bold text-red-400 block">
+                        {calcHours * 52 * calcEmployees} h / an
+                      </span>
+                      <span className="text-[11px] text-gray-400 block font-sans">
+                        Perdues en tâches sans valeur ajoutée.
+                      </span>
+                    </div>
+
+                    {/* Financial loss block */}
+                    <div className="p-4 rounded-xl bg-red-500/[0.03] border border-red-500/20 space-y-1">
+                      <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider block">PERTE FINANCIÈRE DIRECTE</span>
+                      <span className="text-2xl font-mono font-bold text-red-500 block">
+                        {(calcHours * 52 * calcEmployees * calcRate).toLocaleString()} $ / an
+                      </span>
+                      <span className="text-[11px] text-gray-400 block font-sans">
+                        Dépensées en frictions opérationnelles.
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Outcome with HUVI optimization (60% saved) */}
+                  <div className="p-5 sm:p-6 rounded-xl bg-green-500/[0.03] border border-green-500/20 space-y-4">
+                    <div className="flex items-center gap-2">
+                      <span className="p-1 rounded-md bg-green-500/10 text-green-400">
+                        <Sparkles className="w-4 h-4" />
+                      </span>
+                      <h4 className="font-display font-bold text-sm text-green-300">
+                        Potentiel d'optimisation avec HUVI
+                      </h4>
+                    </div>
+
+                    <p className="text-xs text-gray-400 leading-relaxed font-sans">
+                      En automatisant les relances, en centralisant vos processus et en connectant vos outils, nous éliminons en moyenne <span className="text-white font-bold font-mono">60%</span> du temps administratif inutile.
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 font-mono">
+                      <div>
+                        <span className="text-[11px] text-gray-500 uppercase block">HEURES RÉCUPÉRÉES</span>
+                        <span className="text-xl font-bold text-green-400 block mt-0.5">
+                          + {Math.round(calcHours * 52 * calcEmployees * 0.6)} h / an
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[11px] text-gray-500 uppercase block">ARGENT RÉINJECTÉ</span>
+                        <span className="text-xl font-bold text-green-400 block mt-0.5">
+                          + {Math.round(calcHours * 52 * calcEmployees * calcRate * 0.6).toLocaleString()} $ / an
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Stat sources & validation */}
+                <div className="border-t border-[#17243A]/60 pt-4 text-[11px] text-gray-500 space-y-2 text-left">
+                  <p className="leading-normal">
+                    <span className="text-gray-400 font-bold">Source statistique (15h) :</span> estimation basée sur les heures d’administration, de saisie double et de relances manuelles économisées en moyenne par semaine chez nos clients PME de services.
+                  </p>
+                  <p className="leading-normal">
+                    <span className="text-gray-400 font-bold">Source statistique (60%) :</span> réduction moyenne de 60 % du temps consacré aux tâches administratives répétitives après la mise en place de notre méthode CASA.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 flex justify-center">
+              <button
+                onClick={() => {
+                  const target = document.getElementById('builder');
+                  if (target) target.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#F47B20] hover:bg-[#ff9242] text-white font-bold text-xs tracking-wider font-mono transition-all duration-300 uppercase shadow-md shadow-[#F47B20]/10 cursor-pointer"
+              >
+                <span>Voir mes opportunités</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* Étape 2 — Voyez vos opportunités */}
+          <div id="builder" className="scroll-mt-24">
+            <div className="text-center space-y-4 max-w-3xl mx-auto mb-12">
+              <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Par où commencer</span>
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight mt-1">Étape 2 : Voyez vos opportunités</h3>
+              <h3 className="text-xl sm:text-2xl font-display font-bold text-white tracking-tight mt-1">
+                Obtenez une première piste d'amélioration adaptée à votre réalité.
+              </h3>
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+                Sélectionnez votre domaine d'activité et votre défi principal pour obtenir instantanément une première orientation d'optimisation adaptée à votre réalité.
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmitAssessment} className="space-y-5 p-6 rounded-2xl bg-[#090D16] border border-[#17243A]" id="assessment-form">
+
+              {/* Step 1: Industry */}
+              <div className="space-y-2">
+                <label className="block text-xs font-mono text-gray-400 uppercase tracking-wider">1. Secteur d'activité</label>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedIndustry('construction')}
+                    className={`p-3 rounded-lg text-xs font-mono font-bold text-center border transition-all ${
+                      selectedIndustry === 'construction'
+                        ? 'bg-[#17243A] border-[#F47B20] text-[#F47B20]'
+                        : 'bg-[#111a2e] border-[#17243A] text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    <Hammer className="w-3.5 h-3.5" /> Construction
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedIndustry('other')}
+                    className={`p-3 rounded-lg text-xs font-mono font-bold text-center border transition-all ${
+                      selectedIndustry === 'other'
+                        ? 'bg-[#17243A] border-[#F47B20] text-[#F47B20]'
+                        : 'bg-[#111a2e] border-[#17243A] text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    <Building className="w-3.5 h-3.5" /> Immobilier
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedIndustry('services')}
+                    className={`p-3 rounded-lg text-xs font-mono font-bold text-center border transition-all ${
+                      selectedIndustry === 'services'
+                        ? 'bg-[#17243A] border-[#F47B20] text-[#F47B20]'
+                        : 'bg-[#111a2e] border-[#17243A] text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    <Briefcase className="w-3.5 h-3.5" /> Professionnels
+                  </button>
+                </div>
+              </div>
+
+              {/* Step 2: Challenge */}
+              <div className="space-y-2">
+                <label className="block text-xs font-mono text-gray-400 uppercase tracking-wider">2. Principal Défi Opérationnel</label>
+                <select
+                  value={selectedChallenge}
+                  onChange={(e) => setSelectedChallenge(e.target.value as Challenge)}
+                  className="w-full bg-[#111a2e] border border-[#17243A] rounded-lg p-3 text-xs text-gray-300 focus:outline-none focus:border-[#F47B20] font-sans"
+                  id="challenge-select"
+                >
+                  <option value="administration">Administration (Trop de paperasse / Saisie manuelle)</option>
+                  <option value="sales">Ventes (Suivi de devis / Qualification de leads)</option>
+                  <option value="projects">Gestion de projets (Chantiers / Retards de livraison)</option>
+                  <option value="communication">Suivi Client (Silos d'info / Appels constants)</option>
+                  <option value="data">Données (Manque de visibilité sur les marges financières)</option>
+                </select>
+              </div>
+
+              {/* Submit CTA button with loading states */}
+              <button
+                type="submit"
+                disabled={isGenerating}
+                className="w-full py-3.5 px-4 rounded-xl bg-[#F47B20] hover:bg-[#ff9242] text-white font-bold text-xs tracking-wider font-mono transition-all duration-300 shadow-md flex items-center justify-center gap-2 disabled:bg-gray-700 disabled:cursor-not-allowed uppercase cursor-pointer"
+                id="assessment-submit-btn"
+              >
+                {isGenerating ? (
+                  <>
+                    <RefreshCw className="w-4 h-4 animate-spin" />
+                    <span>Calcul de l'architecture... {generationProgress}%</span>
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="w-4 h-4" />
+                    <span>Identifier mes premières opportunités</span>
+                  </>
+                )}
+              </button>
+
+              {isGenerating && (
+                <div className="space-y-2 mt-3 animate-pulse">
+                  <div className="w-full bg-[#111a2e] h-1.5 rounded-full overflow-hidden">
+                    <div 
+                      className="bg-gradient-to-r from-[#F47B20] to-orange-500 h-full transition-all duration-300"
+                      style={{ width: `${generationProgress}%` }}
+                    ></div>
+                  </div>
+                  <p className="text-[11px] text-gray-400 font-mono text-center">{generationStepMsg}</p>
+                </div>
+              )}
+            </form>
+
+            {/* Écran résultat */}
+            {currentResult && (
+              <div className="mt-16 space-y-8" id="assessment-result-panel">
+                <div className="text-center">
+                  <h3 className="font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Votre plan d'action personnalisé</h3>
+                </div>
+              <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-[#070b14] border border-[#17243A] flex flex-col justify-between space-y-6">
+                <div className="space-y-6 text-left">
+                  <h3 className="font-display font-bold text-white text-base border-b border-[#17243A]/60 pb-3 flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                    Le coût annuel estimé de vos tâches
+                  </h3>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Hours lost block */}
+                    <div className="p-4 rounded-xl bg-red-500/[0.03] border border-red-500/10 space-y-1">
+                      <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider block">TEMPS PERDU</span>
+                      <span className="text-2xl font-mono font-bold text-red-400 block">
+                        {calcHours * 52 * calcEmployees} h / an
+                      </span>
+                      <span className="text-[11px] text-gray-400 block font-sans">
+                        Perdues en tâches sans valeur ajoutée.
+                      </span>
+                    </div>
+
+                    {/* Financial loss block */}
+                    <div className="p-4 rounded-xl bg-red-500/[0.03] border border-red-500/20 space-y-1">
+                      <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider block">PERTE FINANCIÈRE DIRECTE</span>
+                      <span className="text-2xl font-mono font-bold text-red-500 block">
+                        {(calcHours * 52 * calcEmployees * calcRate).toLocaleString()} $ / an
+                      </span>
+                      <span className="text-[11px] text-gray-400 block font-sans">
+                        Dépensées en frictions opérationnelles.
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Outcome with HUVI optimization (60% saved) */}
+                  <div className="p-5 sm:p-6 rounded-xl bg-green-500/[0.03] border border-green-500/20 space-y-4">
+                    <div className="flex items-center gap-2">
+                      <span className="p-1 rounded-md bg-green-500/10 text-green-400">
+                        <Sparkles className="w-4 h-4" />
+                      </span>
+                      <h4 className="font-display font-bold text-sm text-green-300">
+                        Potentiel d'optimisation avec HUVI
+                      </h4>
+                    </div>
+
+                    <p className="text-xs text-gray-400 leading-relaxed font-sans">
+                      En automatisant les relances, en centralisant vos processus et en connectant vos outils, nous éliminons en moyenne <span className="text-white font-bold font-mono">60%</span> du temps administratif inutile.
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 font-mono">
+                      <div>
+                        <span className="text-[11px] text-gray-500 uppercase block">HEURES RÉCUPÉRÉES</span>
+                        <span className="text-xl font-bold text-green-400 block mt-0.5">
+                          + {Math.round(calcHours * 52 * calcEmployees * 0.6)} h / an
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[11px] text-gray-500 uppercase block">ARGENT RÉINJECTÉ</span>
+                        <span className="text-xl font-bold text-green-400 block mt-0.5">
+                          + {Math.round(calcHours * 52 * calcEmployees * calcRate * 0.6).toLocaleString()} $ / an
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Stat sources & validation */}
+                <div className="border-t border-[#17243A]/60 pt-4 text-[11px] text-gray-500 space-y-2 text-left">
+                  <p className="leading-normal">
+                    <span className="text-gray-400 font-bold">Source statistique (15h) :</span> estimation basée sur les heures d’administration, de saisie double et de relances manuelles économisées en moyenne par semaine chez nos clients PME de services.
+                  </p>
+                  <p className="leading-normal">
+                    <span className="text-gray-400 font-bold">Source statistique (60%) :</span> réduction moyenne de 60 % du temps consacré aux tâches administratives répétitives après la mise en place de notre méthode CASA.
+                  </p>
+                </div>
+              </div>
+              <div className="w-full p-8 rounded-2xl bg-[#090D16] border-2 border-[#F47B20]/40 shadow-2xl shadow-[#F47B20]/5 relative space-y-6 flex flex-col justify-between animate-fade-in" id="report-active-box">
+
+                {/* Upper Details */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between border-b border-[#17243A] pb-4">
+                    <div>
+                      <span className="text-[11px] font-mono text-[#F47B20] uppercase tracking-wider block">PLAN RECOMMANDÉ : ORIENTATION STRATÉGIQUE</span>
+                      <h3 className="font-display text-xl font-bold text-white mt-1">
+                        {currentResult.recommendation.title}
+                      </h3>
+                    </div>
+                    <div className="p-1 rounded bg-green-500/10 text-green-400 border border-green-500/20">
+                      <CheckCircle className="w-5 h-5 animate-pulse" />
+                    </div>
+                  </div>
+
+
+
+                  <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                    {currentResult.recommendation.description}
+                  </p>
+
+                  {/* Modules list */}
+                  <div className="space-y-2 pt-3">
+                    <span className="block text-[11px] font-mono text-gray-400 uppercase tracking-widest">SOLUTIONS DE SIMPLIFICATION :</span>
+                    <ul className="space-y-2">
+                      {currentResult.recommendation.modules.map((mod, i) => (
+                        <li key={i} className="flex gap-2.5 items-start text-xs text-gray-300">
+                          <Check className="w-4 h-4 text-[#F47B20] shrink-0 mt-0.5" />
+                          <span>{mod}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* IA Assistants specific to their recommendation */}
+                  <div className="space-y-2 pt-3 border-t border-[#17243A]/40">
+                    <span className="block text-[11px] font-mono text-[#F47B20] uppercase tracking-widest">ASSISTANTS IA CONSEILLÉS :</span>
+                    <ul className="space-y-2">
+                      {currentResult.recommendation.aiAgents.map((agent, i) => (
+                        <li key={i} className="text-xs text-gray-400 flex gap-2 items-start">
+                          <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 shrink-0"></div>
+                          <span className="leading-relaxed">
+                            <strong className="text-white font-medium">{agent.split(':')[0]}:</strong> 
+                            {agent.split(':')[1]}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Impact estimate card */}
+                  <div className="pt-3">
+                    <div className="p-4 rounded-xl bg-[#17243A]/50 border border-[#F47B20]/20">
+                      <span className="block text-[11px] font-mono text-gray-400 uppercase tracking-wider">GAINS RENTABILITÉ ESTIMÉS :</span>
+                      <p className="text-sm font-semibold text-white mt-1 font-bold">
+                        {currentResult.recommendation.impactEstimate}
+                      </p>
+                      {/* Urgence — coût du statu quo (chantier stratégie #6) with chaos replaced with désordre */}
+                      <p className="text-[11px] text-[#F47B20] mt-2 italic leading-relaxed">
+                        « Le diagnostic complet chiffre le coût exact de votre désordre actuel — et ce que vous gagnez à le structurer. »
                       </p>
                     </div>
+                  </div>
 
-                    <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-                      <a
-                        href="https://huvioptimisation.fillout.com/rencontre-doptimisation-exploratoire"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full sm:w-auto px-5 py-3 bg-[#17243A] hover:bg-[#23385a] text-gray-200 hover:text-white border border-[#17243A] hover:border-[#F47B20]/30 font-bold text-[11px] rounded font-mono tracking-wider transition-all inline-flex items-center justify-center gap-1.5 uppercase shrink-0 cursor-pointer"
-                      >
-                        <span>Prendre ma séance d'optimisation</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </a>
-
-                      {/* Prochaines étapes display: Séance → Diagnostic → Parcours */}
-                      <div className="text-left sm:text-right w-full sm:w-auto">
-                        <span className="block text-[11px] font-mono text-gray-500 uppercase tracking-widest">Prochaines étapes :</span>
-                        <div className="flex items-center justify-start sm:justify-end gap-1.5 text-[11px] font-mono text-[#F47B20] mt-1 font-bold">
-                          <span className="text-gray-300">Séance d'optimisation</span>
-                          <span className="text-gray-600">→</span>
-                          <span className="text-gray-400">Diagnostic des processus</span>
-                          <span className="text-gray-600">→</span>
-                          <span className="text-gray-400">Parcours de croissance</span>
-                        </div>
-                      </div>
+                  {/* Primary CTA - Faire mon bilan IA complet (EN PREMIER) */}
+                  <div className="p-5 rounded-xl bg-gradient-to-r from-[#17243A] to-[#0D1527] border-2 border-[#F47B20] space-y-3 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-[#F47B20]/5 rounded-full blur-2xl pointer-events-none group-hover:bg-[#F47B20]/10 transition-all duration-300"></div>
+                    <div className="space-y-1 relative z-10 text-left">
+                      <span className="text-[11px] font-mono tracking-wider text-[#F47B20] uppercase font-bold">Étape suivante n°1</span>
+                      <p className="text-xs sm:text-sm text-white font-semibold leading-snug">
+                        Obtenez votre analyse de maturité personnalisée complète sur l'ensemble de votre organisation.
+                      </p>
                     </div>
-                  </div>
-
-                </div>
-              ) : (
-                <div className="w-full p-8 rounded-2xl bg-[#090D16]/50 border border-[#17243A] flex flex-col items-center justify-center text-center py-16 space-y-6" id="report-placeholder-box">
-                  <div className="w-12 h-12 rounded-xl bg-[#17243A]/60 border border-[#17243A] flex items-center justify-center text-[#F47B20]">
-                    <Cpu className="w-6 h-6 animate-pulse" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-white font-bold text-base">Rapport d'Analyse En Attente</h3>
-                    <p className="text-xs text-gray-500 max-w-sm mx-auto mt-2 leading-relaxed">
-                      Remplissez l'analyse à gauche pour obtenir instantanément vos recommandations d'optimisation et de croissance.
-                    </p>
-                  </div>
-                  <div className="w-full max-w-sm pt-4 border-t border-[#17243A]/40 space-y-2">
                     <a 
                       href="https://bilan.huvioptimisation.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-[#F47B20] hover:bg-[#ff9242] text-white font-bold text-xs font-mono tracking-wider transition-all duration-300 uppercase shadow-md cursor-pointer"
-                      id="placeholder-bilan-cta"
+                      className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-[#F47B20] hover:bg-[#ff9242] text-white font-bold text-xs font-mono tracking-wider transition-all duration-300 uppercase shadow-md relative z-10 hover:scale-[1.01] cursor-pointer"
+                      id="full-bilan-cta"
                     >
-                      <span>Faire mon Bilan IA complet</span>
+                      <span>Faire mon bilan IA complet</span>
                       <ArrowUpRight className="w-4 h-4" />
                     </a>
-                    <span className="block text-[11px] font-mono text-gray-500">
-                      <Timer className="w-3.5 h-3.5" /> 2 min. — Gratuit & Sans engagement
-                    </span>
+                  </div>
+
+                </div>
+
+                {/* Secondary CTA - Vous voulez en discuter ? (Page de confirmation) */}
+                <div className="pt-6 border-t border-[#17243A] space-y-4 bg-[#090D16]/80 text-left">
+                  <div className="space-y-1">
+                    <h4 className="text-sm font-display font-bold text-white uppercase tracking-wider">Vous voulez en discuter ?</h4>
+                    <p className="text-xs text-gray-400 italic">
+                      « Une rencontre pour comprendre votre entreprise, vos blocages et vos pertes de temps. »
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
+                    <a
+                      href="https://huvioptimisation.fillout.com/rencontre-doptimisation-exploratoire"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto px-5 py-3 bg-[#17243A] hover:bg-[#23385a] text-gray-200 hover:text-white border border-[#17243A] hover:border-[#F47B20]/30 font-bold text-[11px] rounded font-mono tracking-wider transition-all inline-flex items-center justify-center gap-1.5 uppercase shrink-0 cursor-pointer"
+                    >
+                      <span>Prendre ma séance d'optimisation</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+
+                    {/* Prochaines étapes display: Séance → Diagnostic → Parcours */}
+                    <div className="text-left sm:text-right w-full sm:w-auto">
+                      <span className="block text-[11px] font-mono text-gray-500 uppercase tracking-widest">Prochaines étapes :</span>
+                      <div className="flex items-center justify-start sm:justify-end gap-1.5 text-[11px] font-mono text-[#F47B20] mt-1 font-bold">
+                        <span className="text-gray-300">Séance d'optimisation</span>
+                        <span className="text-gray-600">→</span>
+                        <span className="text-gray-400">Diagnostic des processus</span>
+                        <span className="text-gray-600">→</span>
+                        <span className="text-gray-400">Parcours de croissance</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              )}
-            </div>
 
+              </div>
+              </div>
+            )}
           </div>
+
+        </div>
       </section>
 
       {/* Dedicated Bilan IA Complet Section */}
@@ -1970,7 +2016,7 @@ export default function App() {
               Prêt à faire votre Bilan IA Complet ?
             </h2>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-sans">
-              En 2 minutes, le bilan calcule les pertes de temps et d'argent de ton entreprise, estime tes gains potentiels et te transmet un plan d'action sur-mesure selon ton niveau de maturité numérique .
+              En 2 minutes, le bilan calcule les pertes de temps et d'argent de votre entreprise, estime tes gains potentiels et te transmet un plan d'action sur-mesure selon ton niveau de maturité numérique.
             </p>
 
             <div className="pt-4">
