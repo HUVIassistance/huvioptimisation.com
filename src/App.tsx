@@ -917,7 +917,7 @@ export default function App() {
               <X className="w-4 h-4 stroke-[3]" />
             </div>
             <div className="text-left">
-              <h3 className="font-display font-bold text-white text-base leading-snug">Installer des dizaines de logiciels</h3>
+              <h3 className="font-display font-bold text-white text-base leading-snug"><a href="/ressources/eviter-logiciels-inutiles/" className="no-underline text-white hover:text-[#F47B20] transition-colors" aria-label="Lire l'article : comment éviter de dépenser dans des logiciels inutiles">Installer des dizaines de logiciels<span aria-hidden="true" className="hidden group-hover:inline text-[#F47B20]"> →</span></a></h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Plus d'outils ne règle pas un manque de structure. On préfère solidifier ce que vous avez déjà avant d'ajouter quoi que ce soit.
               </p>
@@ -930,7 +930,7 @@ export default function App() {
               <X className="w-4 h-4 stroke-[3]" />
             </div>
             <div className="text-left">
-              <h3 className="font-display font-bold text-white text-base leading-snug">Implanter une solution sans comprendre votre réalité</h3>
+              <h3 className="font-display font-bold text-white text-base leading-snug"><a href="/ressources/comprendre-entreprise-avant-automatiser/" className="no-underline text-white hover:text-[#F47B20] transition-colors" aria-label="Lire l'article : pourquoi comprendre son entreprise avant d'automatiser">Implanter une solution sans comprendre votre réalité<span aria-hidden="true" className="hidden group-hover:inline text-[#F47B20]"> →</span></a></h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Chaque entreprise fonctionne différemment. On analyse d'abord vos façons de travailler avant de construire quoi que ce soit. Non négociable.
               </p>
@@ -943,7 +943,7 @@ export default function App() {
               <X className="w-4 h-4 stroke-[3]" />
             </div>
             <div className="text-left">
-              <h3 className="font-display font-bold text-white text-base leading-snug">Promettre de remplacer l'humain par l'IA</h3>
+              <h3 className="font-display font-bold text-white text-base leading-snug"><a href="/ressources/agent-ia-vs-employe-humain/" className="no-underline text-white hover:text-[#F47B20] transition-colors" aria-label="Lire l'article : agent IA vs employé humain">Promettre de remplacer l'humain par l'IA<span aria-hidden="true" className="hidden group-hover:inline text-[#F47B20]"> →</span></a></h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Personne ne veut parler à un robot. La technologie doit soutenir votre équipe, pas tenter de remplacer l'expertise et l'intelligence de vos employés.
               </p>
@@ -956,7 +956,7 @@ export default function App() {
               <X className="w-4 h-4 stroke-[3]" />
             </div>
             <div className="text-left">
-              <h3 className="font-display font-bold text-white text-base leading-snug">Vendre un outil parce qu'il est à la mode</h3>
+              <h3 className="font-display font-bold text-white text-base leading-snug"><a href="/ressources/choisir-outils-entreprise-construction/" className="no-underline text-white hover:text-[#F47B20] transition-colors" aria-label="Lire l'article : choisir les bons outils pour une entreprise de construction">Vendre un outil parce qu'il est à la mode<span aria-hidden="true" className="hidden group-hover:inline text-[#F47B20]"> →</span></a></h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 On recommande uniquement les solutions qui servent vos objectifs d'affaires. Ce n'est pas parce que c'est "sexy" que c'est une bonne idée.
               </p>
@@ -969,7 +969,7 @@ export default function App() {
               <X className="w-4 h-4 stroke-[3]" />
             </div>
             <div className="text-left">
-              <h3 className="font-display font-bold text-white text-base leading-snug">Promettre des résultats magiques</h3>
+              <h3 className="font-display font-bold text-white text-base leading-snug"><a href="/ressources/resultats-attendre-automatisation/" className="no-underline text-white hover:text-[#F47B20] transition-colors" aria-label="Lire l'article : quels résultats attendre de l'automatisation">Promettre des résultats magiques<span aria-hidden="true" className="hidden group-hover:inline text-[#F47B20]"> →</span></a></h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 La technologie est un levier. Les vrais résultats viennent d'une meilleure façon de travailler.
               </p>
