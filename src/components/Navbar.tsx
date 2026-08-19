@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Database, Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import Logo from './Logo';
 
 interface NavbarProps {
@@ -11,7 +11,7 @@ interface NavbarProps {
 // Date de fin de la promo affichée dans le bandeau (même valeur, extraite en constante)
 const PROMO_END_DATE = "Jusqu'au 30 septembre";
 
-export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminButton = false }: NavbarProps) {
+export default function Navbar({ onOpenAdmin: _onOpenAdmin, adminSubmissionsCount: _adminSubmissionsCount, showAdminButton: _showAdminButton = false }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [showBanner, setShowBanner] = useState(true);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
@@ -36,7 +36,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
     { label: 'Automatisation & IA', tagline: 'La couche qui décuple', href: '/solutions/automatisation-ia/' },
   ];
 
-  const linkClass = "font-sans text-xs xl:text-[11px] 2xl:text-xs 3xl:text-[13px] font-medium text-gray-400 hover:text-white transition-colors duration-200 relative py-1 whitespace-nowrap after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#F47B20] hover:after:w-full after:transition-all after:duration-300";
+  const linkClass = "font-sans text-[11px] 2xl:text-xs 3xl:text-[13px] font-medium text-gray-400 hover:text-white transition-colors duration-200 relative py-1 whitespace-nowrap after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#F47B20] hover:after:w-full after:transition-all after:duration-300";
 
   return (
     <>
@@ -89,7 +89,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-3 xl:gap-3.5 2xl:gap-5 3xl:gap-6 shrink-0">
+          <nav className="hidden lg:flex items-center gap-2.5 lg:gap-3 2xl:gap-5 3xl:gap-6 shrink-0">
             {navLinks.slice(0, 2).map((link) => (
               <a key={link.href} href={link.href} className={linkClass}>
                 {link.label}
@@ -140,24 +140,6 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
 
           {/* Action Buttons */}
           <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 2xl:gap-3 shrink-0">
-            {/* Admin toggle visualizer */}
-            {showAdminButton && (
-              <button
-                onClick={onOpenAdmin}
-                className="relative p-1.5 rounded-lg border border-[#17243A] bg-[#0D1527] hover:bg-[#17243A] text-gray-400 hover:text-[#F47B20] transition-all flex items-center gap-1.5 text-[11px] font-mono"
-                title="Console d'Administration des leads"
-                id="admin-console-toggle"
-              >
-                <Database className="w-3.5 h-3.5" />
-                <span>Base de données</span>
-                {adminSubmissionsCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 bg-[#F47B20] text-white text-[11px] px-1.5 py-0.5 rounded-full font-bold animate-pulse">
-                    {adminSubmissionsCount}
-                  </span>
-                )}
-              </button>
-            )}
-
             <a
               href="#builder"
               className="inline-flex items-center gap-1 xl:gap-1.5 px-2 xl:px-2.5 2xl:px-3 py-1.5 rounded-md bg-[#0D1527] hover:bg-[#F47B20] text-gray-300 hover:text-white text-[11px] xl:text-[11px] font-mono tracking-wider uppercase font-bold border border-[#17243A] hover:border-[#F47B20] transition-all duration-300 shadow-sm shrink-0"
@@ -169,22 +151,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
           </div>
 
           {/* Mobile menu toggle */}
-          <div className="flex items-center gap-3 xl:hidden">
-            {showAdminButton && (
-              <button
-                onClick={onOpenAdmin}
-                className="p-2 rounded-lg border border-[#17243A] bg-[#0D1527] hover:bg-[#17243A] text-gray-400 transition-all flex items-center gap-1.5 text-xs font-mono"
-                id="admin-console-toggle-mobile"
-              >
-                <Database className="w-4 h-4" />
-                {adminSubmissionsCount > 0 && (
-                  <span className="bg-[#F47B20] text-white text-[11px] px-1.5 py-0.5 rounded-full font-bold">
-                    {adminSubmissionsCount}
-                  </span>
-                )}
-              </button>
-            )}
-
+          <div className="flex items-center gap-3 lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg border border-[#17243A] hover:bg-[#17243A] text-gray-400 hover:text-white transition-all"
@@ -200,7 +167,7 @@ export default function Navbar({ onOpenAdmin, adminSubmissionsCount, showAdminBu
 
     {/* Mobile Drawer (Right Sidebar) — outside <header> to escape backdrop-blur stacking context */}
     {isOpen && (
-      <div className="xl:hidden fixed inset-0 z-[9999]" id="mobile-menu-overlay">
+      <div className="lg:hidden fixed inset-0 z-[9999]" id="mobile-menu-overlay">
         {/* Backdrop */}
         <div 
           className="absolute inset-0 bg-[#090D15]/80 backdrop-blur-sm" 
