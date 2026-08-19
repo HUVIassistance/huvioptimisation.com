@@ -671,7 +671,7 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            <div className="p-6 rounded-xl border border-[#17243A] bg-[#111a2e] hover:border-amber-500/40 transition-all group" id="spec-construction">
+            <div className="p-6 rounded-2xl border border-[#17243A] bg-[#111a2e] hover:border-amber-500/40 transition-all group" id="spec-construction">
               <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 mb-4 group-hover:bg-amber-500/20 group-hover:border-amber-500/40 group-hover:text-amber-400 transition-colors">
                 <Hammer className="w-5 h-5" />
               </div>
@@ -681,7 +681,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 rounded-xl border border-[#17243A] bg-[#111a2e] hover:border-blue-500/40 transition-all group" id="spec-realestate">
+            <div className="p-6 rounded-2xl border border-[#17243A] bg-[#111a2e] hover:border-blue-500/40 transition-all group" id="spec-realestate">
               <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 group-hover:bg-blue-500/20 group-hover:border-blue-500/40 group-hover:text-blue-300 transition-colors">
                 <Building className="w-5 h-5" />
               </div>
@@ -691,7 +691,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 rounded-xl border border-[#17243A] bg-[#111a2e] hover:border-emerald-500/40 transition-all group" id="spec-services">
+            <div className="p-6 rounded-2xl border border-[#17243A] bg-[#111a2e] hover:border-emerald-500/40 transition-all group" id="spec-services">
               <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 group-hover:bg-emerald-500/20 group-hover:border-emerald-500/40 group-hover:text-emerald-300 transition-colors">
                 <Briefcase className="w-5 h-5" />
               </div>
@@ -1446,7 +1446,7 @@ export default function App() {
               return (
                 <div 
                   key={idx} 
-                  className="p-6 rounded-xl border border-[#17243A] bg-[#111a2e]/95 hover:bg-[#0D1527] hover:border-[#F47B20]/40 transition-all duration-300 relative group flex flex-col justify-between"
+                  className="p-6 rounded-2xl border border-[#17243A] bg-[#111a2e]/95 hover:bg-[#0D1527] hover:border-[#F47B20]/40 transition-all duration-300 relative group flex flex-col justify-between"
                   id={`service-grid-card-${idx}`}
                 >
                   <div className="space-y-4">
