@@ -138,9 +138,9 @@ export default function Testimonials() {
             <CheckCircle className="w-3.5 h-3.5 text-[#F47B20]" />
             <span>Retours d'expérience vérifiés</span>
           </div>
-          <h3 className="text-3xl sm:text-4xl font-display font-bold text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white leading-tight">
             Des résultats concrets, <span className="text-[#F47B20]">sur le terrain.</span>
-          </h3>
+          </h2>
           <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
             Pas de blabla marketing. Juste des entrepreneurs qui ont simplifié leurs opérations, gagné du temps et repris le contrôle de leur entreprise.
           </p>
@@ -316,10 +316,10 @@ function GoogleCard({ review }: { review: GoogleReview; key?: React.Key }) {
             {review.initial}
           </div>
           <div>
-            <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
+            <h3 className="text-sm font-bold text-white flex items-center gap-1.5">
               {review.author}
               <CheckCircle className="w-3.5 h-3.5 text-emerald-400 fill-emerald-500/10" />
-            </h4>
+            </h3>
             <div className="flex items-center gap-2 mt-0.5">
               <div className="flex items-center">
                 {[...Array(review.rating)].map((_, i) => (

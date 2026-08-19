@@ -24,9 +24,9 @@ export default function Garantie() {
               </div>
               <div>
                 <span className="text-[11px] font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Notre engagement</span>
-                <h4 className="text-xl sm:text-2xl font-display font-bold text-white mt-1">
+                <h2 className="text-xl sm:text-2xl font-display font-bold text-white mt-1">
                   La garantie HUVI
-                </h4>
+                </h2>
               </div>
             </div>
 

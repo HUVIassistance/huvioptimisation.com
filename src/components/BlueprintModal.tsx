@@ -104,9 +104,9 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
             <div className="space-y-6 max-w-4xl mx-auto animate-fade-in">
               <div className="text-center space-y-4 py-4">
                 <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-bold">L'Art de simplifier</span>
-                <h4 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight">
+                <h3 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight">
                   Pourquoi les entreprises en croissance plafonnent ?
-                </h4>
+                </h3>
                 <p className="text-gray-400 text-sm max-w-2xl mx-auto">
                   La majorité des entrepreneurs pensent que pour grandir, il faut travailler plus fort. Mais à un certain point, l'effort ne suffit plus. Ce qui vous bloque n'est pas votre volonté : c'est votre structure.
                 </p>
@@ -114,14 +114,14 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
                 <div className="p-6 rounded-xl border border-[#17243A] bg-[#111a2e]/50 space-y-3">
-                  <h5 className="font-display font-bold text-white text-sm uppercase text-[#F47B20]">L'angle mort</h5>
+                  <h4 className="font-display font-bold text-white text-sm uppercase text-[#F47B20]">L'angle mort</h4>
                   <p className="text-xs text-gray-400">
                     Plus vous prenez de clients, plus la quantité de courriels, de papiers et de suivis explose. Sans un système solide, l'absence de structure devient le principal angle mort. Tout passe par vous, et vous manquez de temps pour piloter la croissance.
                   </p>
                 </div>
 
                 <div className="p-6 rounded-xl border border-[#17243A] bg-[#111a2e]/50 space-y-3">
-                  <h5 className="font-display font-bold text-white text-sm uppercase text-green-400">La solution : La méthode C.A.S.A.</h5>
+                  <h4 className="font-display font-bold text-white text-sm uppercase text-green-400">La solution : La méthode C.A.S.A.</h4>
                   <p className="text-xs text-gray-400">
                     Notre méthode est un cadre pratique en 4 étapes simples conçu pour décharger le dirigeant, responsabiliser l'équipe et automatiser la paperasse. Pas de théorie complexe, juste de la clarté opérationnelle.
                   </p>
@@ -129,10 +129,10 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
               </div>
 
               <div className="border border-[#17243A] rounded-xl p-5 bg-[#17243A]/10 space-y-3 mt-6">
-                <h5 className="font-display font-bold text-white text-sm flex items-center gap-2">
+                <h4 className="font-display font-bold text-white text-sm flex items-center gap-2">
                   <Check className="w-4 h-4 text-[#F47B20]" />
                   <span>Ce que vous allez accomplir avec ce guide :</span>
-                </h5>
+                </h4>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-400 font-mono">
                   <li className="flex items-center gap-2">
                     <span className="text-[#F47B20]">•</span> Centraliser 100% de vos données clés
@@ -155,7 +155,7 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
             <div className="space-y-6 max-w-4xl mx-auto animate-fade-in">
               <div className="border-b border-[#17243A] pb-4">
                 <span className="text-xs font-mono text-[#F47B20] uppercase tracking-wider block">ÉTAPE 01</span>
-                <h4 className="text-xl sm:text-2xl font-display font-bold text-white mt-1">C • Centraliser l'information</h4>
+                <h3 className="text-xl sm:text-2xl font-display font-bold text-white mt-1">C • Centraliser l'information</h3>
                 <p className="text-xs text-gray-400 mt-1">
                   Éliminez la dispersion de vos fichiers clients, de vos soumissions et de vos données opérationnelles.
                 </p>
@@ -182,7 +182,7 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
                 </div>
 
                 <div className="space-y-3 pt-2">
-                  <h5 className="font-display font-bold text-white text-xs sm:text-sm uppercase tracking-wider text-[#F47B20]">Plan d'action et checklist :</h5>
+                  <h4 className="font-display font-bold text-white text-xs sm:text-sm uppercase tracking-wider text-[#F47B20]">Plan d'action et checklist :</h4>
                   <div className="space-y-2 bg-[#111a2e]/40 p-4 rounded-xl border border-[#17243A]/60">
                     {[
                       "Créer un répertoire client unique (base de données unifiée).",
@@ -205,7 +205,7 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
             <div className="space-y-6 max-w-4xl mx-auto animate-fade-in">
               <div className="border-b border-[#17243A] pb-4">
                 <span className="text-xs font-mono text-[#F47B20] uppercase tracking-wider block">ÉTAPE 02</span>
-                <h4 className="text-xl sm:text-2xl font-display font-bold text-white mt-1">A • Analyser vos angles morts</h4>
+                <h3 className="text-xl sm:text-2xl font-display font-bold text-white mt-1">A • Analyser vos angles morts</h3>
                 <p className="text-xs text-gray-400 mt-1">
                   Identifiez précisément où l'argent s'échappe et où votre équipe perd le plus de temps.
                 </p>
@@ -219,14 +219,14 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-2">
                   <div className="p-4 rounded-xl border border-[#17243A] bg-[#111a2e]/40">
                     <span className="text-xs font-mono text-gray-400 uppercase block font-semibold">Friction classique #1</span>
-                    <h5 className="font-display font-bold text-white text-xs mt-1">La double saisie administrative</h5>
+                    <h4 className="font-display font-bold text-white text-xs mt-1">La double saisie administrative</h4>
                     <p className="text-xs text-gray-400 mt-1.5">
                       Copier les heures d'un fichier Excel vers un autre outil, puis dans la facturation. Une perte moyenne de 4h à 8h par semaine.
                     </p>
                   </div>
                   <div className="p-4 rounded-xl border border-[#17243A] bg-[#111a2e]/40">
                     <span className="text-xs font-mono text-gray-400 uppercase block font-semibold">Friction classique #2</span>
-                    <h5 className="font-display font-bold text-white text-xs mt-1">Les devis restés sans nouvelles</h5>
+                    <h4 className="font-display font-bold text-white text-xs mt-1">Les devis restés sans nouvelles</h4>
                     <p className="text-xs text-gray-400 mt-1.5">
                       Des dizaines de soumissions envoyées, mais jamais relancées par manque de temps. Une perte directe de milliers de dollars de chiffre d'affaires.
                     </p>
@@ -234,7 +234,7 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
                 </div>
 
                 <div className="space-y-3 pt-2">
-                  <h5 className="font-display font-bold text-white text-xs sm:text-sm uppercase tracking-wider text-[#F47B20]">Plan d'action et checklist :</h5>
+                  <h4 className="font-display font-bold text-white text-xs sm:text-sm uppercase tracking-wider text-[#F47B20]">Plan d'action et checklist :</h4>
                   <div className="space-y-2 bg-[#111a2e]/40 p-4 rounded-xl border border-[#17243A]/60">
                     {[
                       "Lister toutes les étapes requises pour passer de la demande du client à la facturation finale.",
@@ -257,7 +257,7 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
             <div className="space-y-6 max-w-4xl mx-auto animate-fade-in">
               <div className="border-b border-[#17243A] pb-4">
                 <span className="text-xs font-mono text-[#F47B20] uppercase tracking-wider block">ÉTAPE 03</span>
-                <h4 className="text-xl sm:text-2xl font-display font-bold text-white mt-1">S • Structurer vos opérations</h4>
+                <h3 className="text-xl sm:text-2xl font-display font-bold text-white mt-1">S • Structurer vos opérations</h3>
                 <p className="text-xs text-gray-400 mt-1">
                   Standardisez vos processus pour rendre votre équipe autonome et prête à soutenir la croissance.
                 </p>
@@ -269,14 +269,14 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
                 </p>
 
                 <div className="border border-[#17243A] rounded-xl p-5 bg-[#111a2e]/30 space-y-3">
-                  <h5 className="font-display font-bold text-white text-xs sm:text-sm">Règle d'or : Rendre la structure plus simple que le désordre</h5>
+                  <h4 className="font-display font-bold text-white text-xs sm:text-sm">Règle d'or : Rendre la structure plus simple que le désordre</h4>
                   <p className="text-xs text-gray-400">
                     Si un processus nécessite de lire un document de 40 pages, personne ne l'appliquera. Un bon processus se résume en une check-list visuelle simple de 3 à 5 étapes clés.
                   </p>
                 </div>
 
                 <div className="space-y-3 pt-2">
-                  <h5 className="font-display font-bold text-white text-xs sm:text-sm uppercase tracking-wider text-[#F47B20]">Plan d'action et checklist :</h5>
+                  <h4 className="font-display font-bold text-white text-xs sm:text-sm uppercase tracking-wider text-[#F47B20]">Plan d'action et checklist :</h4>
                   <div className="space-y-2 bg-[#111a2e]/40 p-4 rounded-xl border border-[#17243A]/60">
                     {[
                       "Rédiger un guide de démarrage ultra-simple pour chaque nouveau membre de l'équipe.",
@@ -299,7 +299,7 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
             <div className="space-y-6 max-w-4xl mx-auto animate-fade-in">
               <div className="border-b border-[#17243A] pb-4">
                 <span className="text-xs font-mono text-[#F47B20] uppercase tracking-wider block">ÉTAPE 04</span>
-                <h4 className="text-xl sm:text-2xl font-display font-bold text-white mt-1">A • Automatiser avec l'IA et les flux intelligents</h4>
+                <h3 className="text-xl sm:text-2xl font-display font-bold text-white mt-1">A • Automatiser avec l'IA et les flux intelligents</h3>
                 <p className="text-xs text-gray-400 mt-1">
                   Utilisez la technologie moderne pour faire disparaître les tâches à faible valeur ajoutée.
                 </p>
@@ -312,20 +312,20 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-2">
                   <div className="p-4 rounded-xl border border-[#3A7697]/25 bg-[#3A7697]/5">
-                    <h5 className="font-display font-bold text-[#E2E8F0] text-xs flex items-center gap-2">
+                    <h4 className="font-display font-bold text-[#E2E8F0] text-xs flex items-center gap-2">
                       <Cpu className="w-4 h-4 text-[#3A7697]" />
                       <span>Exemple : Relances de devis</span>
-                    </h5>
+                    </h4>
                     <p className="text-xs text-gray-400 mt-2">
                       Un devis est envoyé. Si aucune signature n'est reçue après 3 jours, un courriel poli de relance s'envoie de façon autonome. Taux de conversion moyen augmenté de 15%.
                     </p>
                   </div>
 
                   <div className="p-4 rounded-xl border border-[#F47B20]/25 bg-[#F47B20]/5">
-                    <h5 className="font-display font-bold text-[#E2E8F0] text-xs flex items-center gap-2">
+                    <h4 className="font-display font-bold text-[#E2E8F0] text-xs flex items-center gap-2">
                       <Bot className="w-4 h-4 text-[#F47B20]" />
                       <span>Exemple : Classement de factures</span>
-                    </h5>
+                    </h4>
                     <p className="text-xs text-gray-400 mt-2">
                       Dès qu'une facture fournisseur entre par courriel, un assistant IA extrait les données clés (montant, taxes, nom) et la classe directement dans votre comptabilité.
                     </p>
@@ -333,7 +333,7 @@ export default function BlueprintModal({ isOpen, onClose, onActionClick }: Bluep
                 </div>
 
                 <div className="space-y-3 pt-2">
-                  <h5 className="font-display font-bold text-white text-xs sm:text-sm uppercase tracking-wider text-[#F47B20]">Plan d'action et checklist :</h5>
+                  <h4 className="font-display font-bold text-white text-xs sm:text-sm uppercase tracking-wider text-[#F47B20]">Plan d'action et checklist :</h4>
                   <div className="space-y-2 bg-[#111a2e]/40 p-4 rounded-xl border border-[#17243A]/60">
                     {[
                       "Relier vos outils de messagerie professionnelle avec votre CRM d'affaires.",

@@ -588,9 +588,9 @@ export default function App() {
         <div className="max-w-6xl mx-auto text-center space-y-8">
           <div className="space-y-4 max-w-3xl mx-auto">
             <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">On comprend votre réalité</span>
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white tracking-tight">
               Votre entreprise a grandi. Et la complexité a grandi avec elle.
-            </h3>
+            </h2>
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 pt-4">
@@ -653,9 +653,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Notre raison d'être</span>
-            <h3 className="text-2xl sm:text-3xl font-display font-bold text-white">
+            <h2 className="text-2xl sm:text-3xl font-display font-bold text-white">
               Aider votre entreprise à bâtir la structure nécessaire pour soutenir sa croissance.
-            </h3>
+            </h2>
             <div className="text-gray-400 text-sm sm:text-base leading-relaxed space-y-4">
               <p>
                 On connaît la réalité des entreprises en croissance : plus de clients, plus de projets, plus d’informations à gérer. Chez HUVI, on simplifie vos opérations en connectant vos outils, en automatisant vos tâches et en donnant plus d’autonomie à votre équipe.
@@ -668,7 +668,7 @@ export default function App() {
               <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 mb-4 group-hover:bg-amber-500/20 group-hover:border-amber-500/40 group-hover:text-amber-400 transition-colors">
                 <Hammer className="w-5 h-5" />
               </div>
-              <h4 className="font-display font-bold text-white text-base group-hover:text-amber-400 transition-colors">Construction et métiers spécialisés</h4>
+              <h3 className="font-display font-bold text-white text-base group-hover:text-amber-400 transition-colors">Construction et métiers spécialisés</h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Suivis automatiques des soumissions, rapports de chantiers simplifiés, automatisation de la facturation et centralisation des données administratives.
               </p>
@@ -678,7 +678,7 @@ export default function App() {
               <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 group-hover:bg-blue-500/20 group-hover:border-blue-500/40 group-hover:text-blue-300 transition-colors">
                 <Building className="w-5 h-5" />
               </div>
-              <h4 className="font-display font-bold text-white text-base group-hover:text-blue-400 transition-colors">Immobilier et courtage</h4>
+              <h3 className="font-display font-bold text-white text-base group-hover:text-blue-400 transition-colors">Immobilier et courtage</h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Suivis clients connectés, centralisation des documents légaux et qualification automatisée des prospects vendeurs et acheteurs.
               </p>
@@ -688,7 +688,7 @@ export default function App() {
               <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 group-hover:bg-emerald-500/20 group-hover:border-emerald-500/40 group-hover:text-emerald-300 transition-colors">
                 <Briefcase className="w-5 h-5" />
               </div>
-              <h4 className="font-display font-bold text-white text-base group-hover:text-emerald-400 transition-colors">PME et services résidentiels</h4>
+              <h3 className="font-display font-bold text-white text-base group-hover:text-emerald-400 transition-colors">PME et services résidentiels</h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Planification intelligente de la charge d'équipe, automatisation de la facturation récurrente, portails d'échanges de fichiers et rapports de rentabilité par projet.
               </p>
@@ -709,9 +709,9 @@ export default function App() {
           
           <div className="lg:col-span-5 space-y-6">
             <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Le diagnostic réel</span>
-            <h3 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
               Le problème n'est pas les outils. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F47B20] to-orange-400">C'est la façon dont ils travaillent ensemble.</span>
-            </h3>
+            </h2>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               Plus de logiciels ne veut pas dire plus d’efficacité. Sans structure, l’information reste éparpillée entre Excel, les courriels et les conversations.
             </p>
@@ -757,7 +757,7 @@ export default function App() {
                   <div className="p-4 rounded-xl bg-red-950/10 border border-red-950/20 flex gap-4">
                     <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-display font-bold text-red-200 text-sm">Chercher un ancien devis</h4>
+                      <h3 className="font-display font-bold text-red-200 text-sm">Chercher un ancien devis</h3>
                       <p className="text-xs text-gray-400 mt-1">Vous perdez un temps fou à chercher des informations dispersées dans les courriels, les messages ou sur un vieil ordi.</p>
                     </div>
                   </div>
@@ -765,7 +765,7 @@ export default function App() {
                   <div className="p-4 rounded-xl bg-red-950/10 border border-red-950/20 flex gap-4">
                     <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-display font-bold text-red-200 text-sm">Relancer un client manuellement</h4>
+                      <h3 className="font-display font-bold text-red-200 text-sm">Relancer un client manuellement</h3>
                       <p className="text-xs text-gray-400 mt-1">Les relances sont oubliées ou prennent des heures de suivi chaque fin de semaine.</p>
                     </div>
                   </div>
@@ -773,7 +773,7 @@ export default function App() {
                   <div className="p-4 rounded-xl bg-red-950/10 border border-red-950/20 flex gap-4">
                     <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-display font-bold text-red-200 text-sm">Demander une information à trois personnes</h4>
+                      <h3 className="font-display font-bold text-red-200 text-sm">Demander une information à trois personnes</h3>
                       <p className="text-xs text-gray-400 mt-1">Personne n'a les mêmes chiffres. On se demande sans cesse : "Qui fait quoi et sur quel projet ?"</p>
                     </div>
                   </div>
@@ -781,7 +781,7 @@ export default function App() {
                   <div className="p-4 rounded-xl bg-red-950/10 border border-red-950/20 flex gap-4">
                     <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-display font-bold text-red-200 text-sm">Copier les mêmes données dans plusieurs outils</h4>
+                      <h3 className="font-display font-bold text-red-200 text-sm">Copier les mêmes données dans plusieurs outils</h3>
                       <p className="text-xs text-gray-400 mt-1">Vous devez constamment entrer les mêmes informations à travers vos feuilles de temps, soumissions et logiciels.</p>
                     </div>
                   </div>
@@ -789,7 +789,7 @@ export default function App() {
                   <div className="p-4 rounded-xl bg-red-950/10 border border-red-950/20 flex gap-4">
                     <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-display font-bold text-red-200 text-sm">Vérifier les chiffres à la fin du mois</h4>
+                      <h3 className="font-display font-bold text-red-200 text-sm">Vérifier les chiffres à la fin du mois</h3>
                       <p className="text-xs text-gray-400 mt-1">Vous prenez des décisions sans trop savoir si vos projets en cours sont réellement rentables aujourd'hui.</p>
                     </div>
                   </div>
@@ -820,7 +820,7 @@ export default function App() {
                   <div className="p-4 rounded-xl bg-green-950/10 border border-green-950/20 flex gap-4">
                     <CheckCircle className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-display font-bold text-green-200 text-sm">Les informations sont au bon endroit</h4>
+                      <h3 className="font-display font-bold text-green-200 text-sm">Les informations sont au bon endroit</h3>
                       <p className="text-xs text-gray-400 mt-1">Tout est centralisé, structuré et accessible en un clic pour vous et vos employés.</p>
                     </div>
                   </div>
@@ -828,7 +828,7 @@ export default function App() {
                   <div className="p-4 rounded-xl bg-green-950/10 border border-green-950/20 flex gap-4">
                     <CheckCircle className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-display font-bold text-green-200 text-sm">Les suivis se font automatiquement</h4>
+                      <h3 className="font-display font-bold text-green-200 text-sm">Les suivis se font automatiquement</h3>
                       <p className="text-xs text-gray-400 mt-1">Vos soumissions se relancent d'elles-mêmes sans que vous ayez à y penser.</p>
                     </div>
                   </div>
@@ -836,7 +836,7 @@ export default function App() {
                   <div className="p-4 rounded-xl bg-green-950/10 border border-green-950/20 flex gap-4">
                     <CheckCircle className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-display font-bold text-green-200 text-sm">L'équipe sait quoi faire</h4>
+                      <h3 className="font-display font-bold text-green-200 text-sm">L'équipe sait quoi faire</h3>
                       <p className="text-xs text-gray-400 mt-1">Chaque membre de l'équipe avance de façon autonome et rigoureuse sans devoir sans cesse vous demander quoi faire.</p>
                     </div>
                   </div>
@@ -844,7 +844,7 @@ export default function App() {
                   <div className="p-4 rounded-xl bg-green-950/10 border border-green-950/20 flex gap-4">
                     <CheckCircle className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-display font-bold text-green-200 text-sm">Les décisions sont basées sur de vrais chiffres</h4>
+                      <h3 className="font-display font-bold text-green-200 text-sm">Les décisions sont basées sur de vrais chiffres</h3>
                       <p className="text-xs text-gray-400 mt-1">Vous connaissez votre marge nette réelle chaque semaine sur chaque projet.</p>
                     </div>
                   </div>
@@ -852,7 +852,7 @@ export default function App() {
                   <div className="p-4 rounded-xl bg-green-950/10 border border-green-950/20 flex gap-4">
                     <CheckCircle className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-display font-bold text-green-200 text-sm">Le propriétaire reprend du temps</h4>
+                      <h3 className="font-display font-bold text-green-200 text-sm">Le propriétaire reprend du temps</h3>
                       <p className="text-xs text-gray-400 mt-1">Vous sortez de la gestion quotidienne pour enfin redevenir le pilote de votre croissance.</p>
                     </div>
                   </div>
@@ -869,9 +869,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 max-w-3xl mx-auto mb-12">
             <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Ce que vous perdez chaque mois</span>
-            <h3 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
               Le coût réel d’une entreprise mal structurée
-            </h3>
+            </h2>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               Chaque inefficacité, chaque information introuvable et chaque tâche répétée inutilement gruge du temps et de l’argent. Utilisez notre calculateur pour voir ce que ces pertes peuvent réellement représenter pour votre entreprise.
             </p>
@@ -881,10 +881,10 @@ export default function App() {
             {/* Left side: interactive controls */}
             <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-[#0b1220] border border-[#17243A]/80 flex flex-col justify-between space-y-6">
               <div className="space-y-6">
-                <h4 className="font-display font-bold text-white text-base border-b border-[#17243A]/60 pb-3 flex items-center gap-2">
+                <h3 className="font-display font-bold text-white text-base border-b border-[#17243A]/60 pb-3 flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#F47B20]"></span>
                   Simulez la situation de votre PME
-                </h4>
+                </h3>
 
                 {/* Control 1: Hours */}
                 <div className="space-y-2">
@@ -958,10 +958,10 @@ export default function App() {
             {/* Right side: visual mathematical outcomes */}
             <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-[#070b14] border border-[#17243A] flex flex-col justify-between space-y-6">
               <div className="space-y-6 text-left">
-                <h4 className="font-display font-bold text-white text-base border-b border-[#17243A]/60 pb-3 flex items-center gap-2">
+                <h3 className="font-display font-bold text-white text-base border-b border-[#17243A]/60 pb-3 flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-red-500"></span>
                   Le coût annuel estimé de vos tâches
-                </h4>
+                </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Hours lost block */}
@@ -993,9 +993,9 @@ export default function App() {
                     <span className="p-1 rounded-md bg-green-500/10 text-green-400">
                       <Sparkles className="w-4 h-4" />
                     </span>
-                    <h5 className="font-display font-bold text-sm text-green-300">
+                    <h4 className="font-display font-bold text-sm text-green-300">
                       Potentiel d'optimisation avec HUVI
-                    </h5>
+                    </h4>
                   </div>
 
                   <p className="text-xs text-gray-400 leading-relaxed font-sans">
@@ -1037,9 +1037,9 @@ export default function App() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-[#17243A]/40" id="approach">
         <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
           <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Notre approche</span>
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white tracking-tight leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white tracking-tight leading-[1.15]">
             Notre objectif n'est pas d'ajouter de la complexité à votre entreprise. C'est de la simplifier.
-          </h3>
+          </h2>
           <p className="text-sm font-mono text-red-400 uppercase tracking-widest pt-2">
             <Ban className="w-4 h-4" /> Ce que nous ne faisons pas
           </p>
@@ -1079,7 +1079,7 @@ export default function App() {
               <X className="w-4 h-4 stroke-[3]" />
             </div>
             <div className="text-left">
-              <h4 className="font-display font-bold text-white text-base leading-snug">Installer des dizaines de logiciels</h4>
+              <h3 className="font-display font-bold text-white text-base leading-snug">Installer des dizaines de logiciels</h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Plus d'outils ne règle pas un manque de structure. On préfère solidifier ce que vous avez déjà avant d'ajouter quoi que ce soit.
               </p>
@@ -1092,7 +1092,7 @@ export default function App() {
               <X className="w-4 h-4 stroke-[3]" />
             </div>
             <div className="text-left">
-              <h4 className="font-display font-bold text-white text-base leading-snug">Implanter une solution sans comprendre votre réalité</h4>
+              <h3 className="font-display font-bold text-white text-base leading-snug">Implanter une solution sans comprendre votre réalité</h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Chaque entreprise fonctionne différemment. On analyse d'abord vos façons de travailler avant de construire quoi que ce soit. Non négociable.
               </p>
@@ -1105,7 +1105,7 @@ export default function App() {
               <X className="w-4 h-4 stroke-[3]" />
             </div>
             <div className="text-left">
-              <h4 className="font-display font-bold text-white text-base leading-snug">Promettre de remplacer l'humain par l'IA</h4>
+              <h3 className="font-display font-bold text-white text-base leading-snug">Promettre de remplacer l'humain par l'IA</h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 Personne ne veut parler à un robot. La technologie doit soutenir votre équipe, pas tenter de remplacer l'expertise et l'intelligence de vos employés.
               </p>
@@ -1118,7 +1118,7 @@ export default function App() {
               <X className="w-4 h-4 stroke-[3]" />
             </div>
             <div className="text-left">
-              <h4 className="font-display font-bold text-white text-base leading-snug">Vendre un outil parce qu'il est à la mode</h4>
+              <h3 className="font-display font-bold text-white text-base leading-snug">Vendre un outil parce qu'il est à la mode</h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 On recommande uniquement les solutions qui servent vos objectifs d'affaires. Ce n'est pas parce que c'est "sexy" que c'est une bonne idée.
               </p>
@@ -1131,7 +1131,7 @@ export default function App() {
               <X className="w-4 h-4 stroke-[3]" />
             </div>
             <div className="text-left">
-              <h4 className="font-display font-bold text-white text-base leading-snug">Promettre des résultats magiques</h4>
+              <h3 className="font-display font-bold text-white text-base leading-snug">Promettre des résultats magiques</h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                 La technologie est un levier. Les vrais résultats viennent d'une meilleure façon de travailler.
               </p>
@@ -1142,9 +1142,9 @@ export default function App() {
         {/* COMPARATIVE SPLIT PANEL (🔴 P0 Item 3 - Anti-objection structurée) */}
         <div className="mt-16 p-6 sm:p-8 rounded-2xl bg-[#0b1220]/50 border border-[#17243A]/60 max-w-5xl mx-auto space-y-6">
           <div className="text-center space-y-2 max-w-2xl mx-auto">
-            <h4 className="font-display font-bold text-lg sm:text-xl text-white">
+            <h3 className="font-display font-bold text-lg sm:text-xl text-white">
               Votre équipe, améliorée. Jamais remplacée.
-            </h4>
+            </h3>
             <p className="text-xs text-gray-400 leading-relaxed font-sans">
               On ne remplace pas votre équipe. On remplace ses pires tâches. Notre objectif est de libérer votre équipe pour la recentrer sur ce qui compte vraiment.
             </p>
@@ -1195,9 +1195,9 @@ export default function App() {
               <div>
                 <div className="flex items-center gap-2 border-b border-green-950/30 pb-3 mb-4">
                   <Gem className="w-4 h-4 text-green-400 shrink-0" />
-                  <h5 className="font-display font-bold text-green-400 text-sm uppercase font-mono tracking-wider">
+                  <h4 className="font-display font-bold text-green-400 text-sm uppercase font-mono tracking-wider">
                     Ce que votre équipe GARDE
-                  </h5>
+                  </h4>
                 </div>
                 <ul className="space-y-4 font-sans text-xs text-gray-400 text-left">
                   <li className="flex items-start gap-2.5">
@@ -1242,9 +1242,9 @@ export default function App() {
               <div>
                 <div className="flex items-center gap-2 border-b border-red-950/30 pb-3 mb-4">
                   <Trash2 className="w-4 h-4 text-red-400 shrink-0" />
-                  <h5 className="font-display font-bold text-red-400 text-sm uppercase font-mono tracking-wider">
+                  <h4 className="font-display font-bold text-red-400 text-sm uppercase font-mono tracking-wider">
                     Ce qu'on ÉLIMINE de leur journée
-                  </h5>
+                  </h4>
                 </div>
                 <ul className="space-y-4 font-sans text-xs text-gray-400 text-left">
                   <li className="flex items-start gap-2.5">
@@ -1291,9 +1291,9 @@ export default function App() {
           
           <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
             <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">La méthode HUVI</span>
-            <h3 className="text-3xl sm:text-4xl font-display font-bold text-white">
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
               Notre méthode CASA pour bâtir des entreprises plus solides
-            </h3>
+            </h2>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               Les meilleures solutions commencent toujours par de bonnes fondations. CASA est la méthode qu'on utilise pour remettre de l'ordre, étape par étape, avant de laisser la technologie accélérer le reste.
             </p>
@@ -1323,7 +1323,7 @@ export default function App() {
                     {step.num}
                   </span>
                   <div className="flex-1">
-                    <h4 className="font-display text-sm font-bold text-white">{step.title}</h4>
+                    <h3 className="font-display text-sm font-bold text-white">{step.title}</h3>
                     <p className="text-[11px] text-gray-400 mt-0.5">{step.tagline}</p>
                   </div>
                   <ChevronRight className={`w-4 h-4 transition-transform ${activeApproachStep === idx ? 'text-[#F47B20] rotate-90' : 'text-gray-600'}`} />
@@ -1353,15 +1353,15 @@ export default function App() {
                           <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
                           CHECKPOINT {(casaSteps[activeApproachStep] || casaSteps[0]).num}
                         </span>
-                        <h4 className="font-display text-lg sm:text-xl font-bold text-white truncate">
+                        <h3 className="font-display text-lg sm:text-xl font-bold text-white truncate">
                           {(casaSteps[activeApproachStep] || casaSteps[0]).title}
-                        </h4>
+                        </h3>
                       </div>
 
                       <div className="space-y-3">
-                        <h5 className="font-display font-semibold text-[#F47B20] text-sm sm:text-base">
+                        <h4 className="font-display font-semibold text-[#F47B20] text-sm sm:text-base">
                           {(casaSteps[activeApproachStep] || casaSteps[0]).tagline}
-                        </h5>
+                        </h4>
                         <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                           {(casaSteps[activeApproachStep] || casaSteps[0]).desc}
                         </p>
@@ -1403,7 +1403,7 @@ export default function App() {
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#F47B20]/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-[#F47B20]/10 transition-all duration-500"></div>
           <div className="space-y-2 relative z-10 text-left">
             <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-bold">Ressource stratégique gratuite</span>
-            <h4 className="text-xl sm:text-2xl font-display font-bold text-white">Le Blueprint de la Méthode C.A.S.A.</h4>
+            <h3 className="text-xl sm:text-2xl font-display font-bold text-white">Le Blueprint de la Méthode C.A.S.A.</h3>
             <p className="text-xs sm:text-sm text-gray-400 max-w-2xl leading-relaxed">
               Découvrez notre plan d'action complet. Un guide stratégique étape par étape pour structurer votre entreprise de A à Z, sans ajouter de complexité inutile.
             </p>
@@ -1425,9 +1425,9 @@ export default function App() {
           
           <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
             <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Solutions concrètes</span>
-            <h3 className="text-3xl sm:text-4xl font-display font-bold text-white">
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
               Une entreprise plus simple à gérer au quotidien.
-            </h3>
+            </h2>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               On simplifie ce qui ralentit votre entreprise pour créer un quotidien plus fluide, plus clair et plus prévisible.
             </p>
@@ -1447,9 +1447,9 @@ export default function App() {
                       <ServiceIcon className="w-5 h-5" />
                     </div>
                     <div className="space-y-2">
-                      <h4 className="font-display font-bold text-white text-base group-hover:text-[#F47B20] transition-colors">
+                      <h3 className="font-display font-bold text-white text-base group-hover:text-[#F47B20] transition-colors">
                         {service.title}
-                      </h4>
+                      </h3>
                       <p className="text-xs text-gray-400 leading-relaxed font-sans">
                         {service.desc}
                       </p>
@@ -1474,9 +1474,9 @@ export default function App() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-[#17243A]/40" id="how-it-works">
         <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
           <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Avancer ensemble</span>
-          <h3 className="text-3xl sm:text-4xl font-display font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
             Comprendre d'abord. Construire ensuite.
-          </h3>
+          </h2>
           <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
             On ne se contente pas de recommander des solutions. On travaille à vos côtés pour mettre en place des méthodes de travail plus simples et plus efficaces.
           </p>
@@ -1541,11 +1541,11 @@ export default function App() {
                       }`}>
                         {step.isOptional ? "Étape Optionnelle" : `Étape ${step.num}`}
                       </span>
-                      <h4 className={`font-display font-bold text-white text-base sm:text-lg transition-colors pt-1 ${
+                      <h3 className={`font-display font-bold text-white text-base sm:text-lg transition-colors pt-1 ${
                         step.isOptional ? 'group-hover:text-[#3A7697]' : 'group-hover:text-[#F47B20]'
                       }`}>
                         {step.title}
-                      </h4>
+                      </h3>
                       <p className="text-xs font-mono font-bold text-[#3A7697] leading-snug">
                         {step.tagline}
                       </p>
@@ -1578,9 +1578,9 @@ export default function App() {
             <Zap className="w-3.5 h-3.5" /> POUR ALLER PLUS LOIN
           </div>
           <span className="block text-xs font-mono tracking-widest text-gray-500 uppercase font-semibold">Vos agents IA personnalisés</span>
-          <h3 className="text-3xl sm:text-4xl font-display font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
             Vous ne devriez pas passer vos journées à faire des tâches que l'IA pourrait faire.
-          </h3>
+          </h2>
           <div className="max-w-2xl mx-auto p-6 rounded-2xl bg-gradient-to-br from-[#111a2e] to-[#0D1527] border border-[#F47B20]/30 shadow-xl relative overflow-hidden text-center mt-6">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#F47B20]/5 rounded-full blur-2xl pointer-events-none"></div>
             <p className="text-white text-base sm:text-lg leading-relaxed font-sans font-medium">
@@ -1639,7 +1639,7 @@ export default function App() {
                       <div className={`p-2 rounded-lg border text-[#F47B20] ${isCustom ? 'bg-[#F47B20]/20 border-[#F47B20]/40' : 'bg-[#F47B20]/10 border-[#F47B20]/20'}`}>
                         <IconComponent className="w-4 h-4 animate-pulse" />
                       </div>
-                      <h4 className="font-display font-bold text-white text-sm sm:text-base text-left">{agent.name}</h4>
+                      <h3 className="font-display font-bold text-white text-sm sm:text-base text-left">{agent.name}</h3>
                     </div>
                     <span className={`text-[11px] font-mono font-bold uppercase tracking-wider ${isCustom ? 'text-[#F47B20]' : 'text-gray-500'}`}>
                       {isCustom ? <><Rocket className="w-3 h-3" /> SUR MESURE</> : 'AGENT ACTIF'}
@@ -1670,9 +1670,9 @@ export default function App() {
           <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold bg-[#F47B20]/10 px-3 py-1 rounded-full border border-[#F47B20]/20">
             ÉVALUATION & OPPORTUNITÉS
           </span>
-          <h3 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
             Votre plan d'action personnalisé
-          </h3>
+          </h2>
           <p className="text-gray-400 text-sm leading-relaxed max-w-2xl mx-auto">
             Faites le test pour voir rapidement où l’automatisation et l’IA peuvent vous faire gagner du temps.
 
@@ -1797,9 +1797,9 @@ export default function App() {
                     <div className="flex items-center justify-between border-b border-[#17243A] pb-4">
                       <div>
                         <span className="text-[11px] font-mono text-[#F47B20] uppercase tracking-wider block">PLAN RECOMMANDÉ : ORIENTATION STRATÉGIQUE</span>
-                        <h4 className="font-display text-xl font-bold text-white mt-1">
+                        <h3 className="font-display text-xl font-bold text-white mt-1">
                           {currentResult.recommendation.title}
-                        </h4>
+                        </h3>
                       </div>
                       <div className="p-1 rounded bg-green-500/10 text-green-400 border border-green-500/20">
                         <CheckCircle className="w-5 h-5 animate-pulse" />
@@ -1881,7 +1881,7 @@ export default function App() {
                   {/* Secondary CTA - Vous voulez en discuter ? (Page de confirmation) */}
                   <div className="pt-6 border-t border-[#17243A] space-y-4 bg-[#090D16]/80 text-left">
                     <div className="space-y-1">
-                      <h5 className="text-sm font-display font-bold text-white uppercase tracking-wider">Vous voulez en discuter ?</h5>
+                      <h4 className="text-sm font-display font-bold text-white uppercase tracking-wider">Vous voulez en discuter ?</h4>
                       <p className="text-xs text-gray-400 italic">
                         « Une rencontre pour comprendre votre entreprise, vos blocages et vos pertes de temps. »
                       </p>
@@ -1919,7 +1919,7 @@ export default function App() {
                     <Cpu className="w-6 h-6 animate-pulse" />
                   </div>
                   <div>
-                    <h4 className="font-display text-white font-bold text-base">Rapport d'Analyse En Attente</h4>
+                    <h3 className="font-display text-white font-bold text-base">Rapport d'Analyse En Attente</h3>
                     <p className="text-xs text-gray-500 max-w-sm mx-auto mt-2 leading-relaxed">
                       Remplissez l'analyse à gauche pour obtenir instantanément vos recommandations d'optimisation et de croissance.
                     </p>
@@ -1957,9 +1957,9 @@ export default function App() {
             <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-bold bg-[#F47B20]/10 px-3.5 py-1.5 rounded-full border border-[#F47B20]/20 inline-block">
               ÉVALUATION DE MATURITÉ IA
             </span>
-            <h3 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
               Prêt à faire votre Bilan IA Complet ?
-            </h3>
+            </h2>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-sans">
               En 2 minutes, le bilan calcule les pertes de temps et d'argent de ton entreprise, estime tes gains potentiels et te transmet un plan d'action sur-mesure selon ton niveau de maturité numérique .
             </p>
@@ -2020,9 +2020,9 @@ export default function App() {
         <div className="max-w-3xl mx-auto space-y-8 relative z-10">
           <Logo size="lg" className="mb-6 animate-float" />
 
-          <h3 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight leading-tight">
             Vous avez déjà <span className="text-[#F47B20]">bâti quelque chose de solide</span>. Maintenant, il faut lui donner <span className="text-[#F47B20]">les fondations</span> pour continuer à grandir.
-          </h3>
+          </h2>
 
           <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-sans">
             On s'assoit ensemble, on regarde vos chiffres, vos angles morts, et on bâtit un plan clair. Pas de blabla technique, que des solutions pratiques.
@@ -2148,7 +2148,7 @@ export default function App() {
                       >
                         <div className="flex justify-between items-start">
                           <div>
-                            <h4 className="font-display text-xs font-bold text-white">{sub.company}</h4>
+                            <h3 className="font-display text-xs font-bold text-white">{sub.company}</h3>
                             <p className="text-[11px] text-gray-400 mt-1 font-sans">{sub.name}</p>
                           </div>
                           <button
@@ -2184,9 +2184,9 @@ export default function App() {
                     {/* Header */}
                     <div className="border-b border-[#17243A] pb-4">
                       <span className="text-[11px] font-mono text-[#F47B20] uppercase tracking-wider block">Fiche client détaillée</span>
-                      <h4 className="font-display text-lg font-bold text-white mt-1">
+                      <h3 className="font-display text-lg font-bold text-white mt-1">
                         {selectedAdminSubmission.company}
-                      </h4>
+                      </h3>
                       <p className="text-xs text-gray-400 mt-1">
                         Soumis le {new Date(selectedAdminSubmission.createdAt).toLocaleDateString('fr-CA', { 
                           year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' 
@@ -2218,7 +2218,7 @@ export default function App() {
                     <div className="space-y-4 pt-4 border-t border-[#17243A]/40">
                       <span className="block text-[11px] font-mono text-gray-500 uppercase tracking-widest">PLAN RECOMMANDÉ PAR L'ENGIN HUVI :</span>
                       <div className="p-5 rounded-xl border border-green-500/20 bg-green-500/5">
-                        <h5 className="font-display font-bold text-white text-sm">{selectedAdminSubmission.recommendation.title}</h5>
+                        <h4 className="font-display font-bold text-white text-sm">{selectedAdminSubmission.recommendation.title}</h4>
                         <p className="text-xs text-gray-300 mt-2 leading-relaxed">{selectedAdminSubmission.recommendation.description}</p>
                         
                         <div className="mt-4 space-y-2">
@@ -2280,7 +2280,7 @@ export default function App() {
  
           {/* Quick links */}
           <div className="md:col-span-3 space-y-2 text-left md:pt-2">
-            <h5 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Plan du site</h5>
+            <h4 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Plan du site</h4>
             <ul className="space-y-1.5 text-[11px] font-sans text-gray-500">
               <li><a href="#problem" className="hover:text-white transition-colors">Le diagnostic</a></li>
               <li><a href="#architecture" className="hover:text-white transition-colors">La méthode CASA</a></li>
@@ -2293,7 +2293,7 @@ export default function App() {
  
           {/* Solutions */}
           <div className="md:col-span-3 space-y-2 text-left md:pt-2">
-            <h5 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Nos solutions</h5>
+            <h4 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Nos solutions</h4>
             <ul className="space-y-1.5 text-[11px] font-sans text-gray-500">
               <li><a href="/solutions/audit-des-processus/" className="hover:text-white transition-colors">Audit des processus</a></li>
               <li><a href="/solutions/centralisation-crm/" className="hover:text-white transition-colors">Centralisation &amp; CRM</a></li>
@@ -2308,7 +2308,7 @@ export default function App() {
  
           {/* Core values declaration */}
           <div className="md:col-span-3 space-y-2 text-left md:pt-2">
-            <h5 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Notre engagement</h5>
+            <h4 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Notre engagement</h4>
             <div className="p-3 rounded-lg bg-[#111a2e] border border-[#17243A] text-[11px] font-mono text-gray-500 leading-relaxed space-y-1">
               <p className="text-[#F47B20] font-bold">● Partenaire de votre croissance : la structure d'abord, la technologie ensuite.</p>
               <p>On bâtit des solutions simples et sur mesure pour des résultats concrets et mesurables au quotidien.</p>

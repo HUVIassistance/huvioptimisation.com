@@ -484,7 +484,7 @@ export default function InteractiveDiagram({
                         <div className={`p-1.5 sm:p-2 rounded-lg bg-[#17243A]/60 ${isCurrentActive || isFlashed ? 'text-[#F47B20]' : 'text-gray-400 group-hover:text-red-400'} transition-colors shrink-0`}>
                           <SourceIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         </div>
-                        <h4 className="text-[11px] sm:text-xs font-bold text-white truncate">{source.label}</h4>
+                        <h3 className="text-[11px] sm:text-xs font-bold text-white truncate">{source.label}</h3>
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="hidden md:block text-[11px] text-gray-400 mt-0.5 truncate leading-relaxed">{source.description}</p>
@@ -559,7 +559,7 @@ export default function InteractiveDiagram({
                         <div className={`p-1.5 sm:p-2 rounded-lg bg-[#17243A]/60 ${isCurrentActivated || isFlashed ? 'text-green-400' : 'text-gray-400 group-hover:text-green-400'} transition-colors shrink-0`}>
                           <OutputIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         </div>
-                        <h4 className="text-[11px] sm:text-xs font-bold text-white truncate">{output.label}</h4>
+                        <h3 className="text-[11px] sm:text-xs font-bold text-white truncate">{output.label}</h3>
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="hidden md:block text-[11px] text-gray-400 mt-0.5 truncate leading-relaxed">{output.desc}</p>
@@ -664,10 +664,10 @@ export default function InteractiveDiagram({
                 <div className="space-y-4 animate-fade-in text-left">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#17243A]/60 pb-3">
                     <div>
-                      <h5 className="font-display font-bold text-sm text-white flex items-center gap-2">
+                      <h4 className="font-display font-bold text-sm text-white flex items-center gap-2">
                         <span className="w-2 h-2 rounded-sm bg-blue-500"></span>
                         Système de gestion : Base de Données Centralisée
-                      </h5>
+                      </h4>
                       <p className="text-[11px] text-gray-400">Toutes vos fiches de chantiers, vos clients et vos marges consolidés à un seul endroit.</p>
                     </div>
                     <button 
@@ -778,10 +778,10 @@ export default function InteractiveDiagram({
               {activeShowcaseTab === 'dashboard' && (
                 <div className="space-y-4 animate-fade-in text-left">
                   <div className="border-b border-[#17243A]/60 pb-3">
-                    <h5 className="font-display font-bold text-sm text-white flex items-center gap-2">
+                    <h4 className="font-display font-bold text-sm text-white flex items-center gap-2">
                       <span className="w-2 h-2 rounded-sm bg-[#F47B20]"></span>
                       Dashboard Stratégique : Rentabilité Nette par Projet
-                    </h5>
+                    </h4>
                     <p className="text-[11px] text-gray-400">Vue macro d'ensemble pour le propriétaire. Analyse de chaque centime de dépenses par rapport aux prévisions.</p>
                   </div>
 
@@ -913,10 +913,10 @@ export default function InteractiveDiagram({
               {activeShowcaseTab === 'automation' && (
                 <div className="space-y-4 animate-fade-in text-left font-sans">
                   <div className="border-b border-[#17243A]/60 pb-3">
-                    <h5 className="font-display font-bold text-sm text-white flex items-center gap-2">
+                    <h4 className="font-display font-bold text-sm text-white flex items-center gap-2">
                       <span className="w-2 h-2 rounded-sm bg-orange-500 animate-pulse"></span>
                       Séquence de Relance Automatique de Facturation
-                    </h5>
+                    </h4>
                     <p className="text-[11px] text-gray-400">Plus de temps perdu à appeler les retardataires : le système s'occupe de rédiger et d'acheminer le rappel poli.</p>
                   </div>
 
@@ -990,10 +990,10 @@ export default function InteractiveDiagram({
                 <div className="space-y-4 animate-fade-in text-left">
                   <div className="border-b border-[#17243A]/60 pb-3">
                     <div className="flex items-center justify-between gap-2 flex-wrap">
-                      <h5 className="font-display font-bold text-sm text-white flex items-center gap-2">
+                      <h4 className="font-display font-bold text-sm text-white flex items-center gap-2">
                         <FolderOpen className="w-4 h-4 text-orange-500" />
                         L'Agent de Classement de Documents (Google Drive)
-                      </h5>
+                      </h4>
                       <span className="text-[11px] font-mono font-bold bg-green-500/10 text-green-400 border border-green-500/20 px-2.5 py-0.5 rounded-full">
                         SÉCURISÉ & APPRIS
                       </span>

@@ -238,7 +238,7 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
                 <User className="w-3.5 h-3.5" />
               </div>
               <div className="text-left">
-                <h6 className="text-[11px] font-sans font-extrabold text-white">Dirigeant (Vous)</h6>
+                <h5 className="text-[11px] font-sans font-extrabold text-white">Dirigeant (Vous)</h5>
                 <p className="text-[11px] text-gray-400 leading-tight font-sans">Surveille uniquement la rentabilité globale et la stratégie.</p>
               </div>
             </div>
@@ -253,7 +253,7 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
                 <FolderOpen className="w-3.5 h-3.5" />
               </div>
               <div className="text-left">
-                <h6 className="text-[11px] font-sans font-extrabold text-white">Gestion des Procédures & Tâches</h6>
+                <h5 className="text-[11px] font-sans font-extrabold text-white">Gestion des Procédures & Tâches</h5>
                 <p className="text-[11px] text-gray-400 leading-tight font-sans">Structure documentée qui attribue et suit chaque étape en direct.</p>
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
                 <Users className="w-3.5 h-3.5" />
               </div>
               <div className="text-left">
-                <h6 className="text-[11px] font-sans font-extrabold text-white">Équipes de Terrain</h6>
+                <h5 className="text-[11px] font-sans font-extrabold text-white">Équipes de Terrain</h5>
                 <p className="text-[11px] text-gray-400 leading-tight font-sans">Reçoivent l'exacte feuille de route claire du jour sans stress.</p>
               </div>
             </div>
@@ -327,9 +327,9 @@ export default function CasaVisualizer({ activeStep }: CasaVisualizerProps) {
                   {isCompleted ? <Check className="w-4 h-4 sm:w-5 sm:h-5" /> : <Icon className="w-4 h-4 sm:w-5 sm:h-5" />}
                 </div>
                 
-                <h6 className={`mt-2 text-[11px] sm:text-[11px] font-mono font-bold text-center leading-tight truncate max-w-full ${isActive ? 'text-[#F47B20]' : 'text-gray-400'}`}>
+                <h5 className={`mt-2 text-[11px] sm:text-[11px] font-mono font-bold text-center leading-tight truncate max-w-full ${isActive ? 'text-[#F47B20]' : 'text-gray-400'}`}>
                   {item.label}
-                </h6>
+                </h5>
                 <span className="text-[11px] text-gray-500 font-mono mt-0.5 whitespace-nowrap text-center">{item.desc}</span>
               </div>
             );
