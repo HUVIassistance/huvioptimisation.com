@@ -36,7 +36,14 @@ import {
   Eye,
   Hammer,
   Briefcase,
-  ClipboardCheck
+  ClipboardCheck,
+  Timer,
+  Lightbulb,
+  Circle,
+  Ban,
+  Gem,
+  Rocket,
+  Target
 } from 'lucide-react';
 import Navbar from './components/Navbar';
 import InteractiveDiagram from './components/InteractiveDiagram';
@@ -533,7 +540,7 @@ export default function App() {
                 </a>
               </div>
               <span className="text-[11px] font-mono text-gray-500 text-center sm:text-left tracking-wide select-none pl-1">
-                ⏱️ 2 min. 100% gratuit. Sans engagement.
+                <Timer className="w-3.5 h-3.5" /> 2 min. 100% gratuit. Sans engagement.
               </span>
             </div>
 
@@ -690,7 +697,7 @@ export default function App() {
 
           <div className="mt-8 p-4 rounded-xl bg-[#17243A]/20 border border-[#17243A]/40 text-center max-w-2xl mx-auto">
             <p className="text-xs text-gray-400 font-mono">
-              💡 <span className="text-white font-sans font-medium">Vous dirigez une PME de services dans un autre domaine ?</span> Écrivez-nous quand même. Les défis de structure dépassent souvent l'industrie et on sait s'y adapter.
+              <Lightbulb className="w-4 h-4 text-[#F47B20]" /> <span className="text-white font-sans font-medium">Vous dirigez une PME de services dans un autre domaine ?</span> Écrivez-nous quand même. Les défis de structure dépassent souvent l'industrie et on sait s'y adapter.
             </p>
           </div>
         </div>
@@ -722,7 +729,7 @@ export default function App() {
                     : 'text-gray-500 hover:text-white'
                 }`}
               >
-                🔴 UNE JOURNÉE NORMALE
+                <Circle className="w-2.5 h-2.5 fill-current" /> UNE JOURNÉE NORMALE
               </button>
               <button
                 onClick={() => setActiveProblemTab('after')}
@@ -732,7 +739,7 @@ export default function App() {
                     : 'text-gray-500 hover:text-white'
                 }`}
               >
-                🟢 UNE ENTREPRISE QUI RESPIRE
+                <Circle className="w-2.5 h-2.5 fill-current" /> UNE ENTREPRISE QUI RESPIRE
               </button>
             </div>
           </div>
@@ -942,7 +949,7 @@ export default function App() {
 
               <div className="p-3.5 bg-[#17243A]/30 rounded-xl border border-[#17243A]/50 text-left">
                 <p className="text-[11px] text-gray-400 leading-relaxed font-sans">
-                  💡 <span className="text-white font-semibold">Note de calcul :</span> La formule est simple et transparente : <br />
+                  <Lightbulb className="w-4 h-4 text-[#F47B20]" /> <span className="text-white font-semibold">Note de calcul :</span> La formule est simple et transparente : <br />
                   <span className="font-mono text-white text-xs">{calcHours}h × 52 semaines × {calcEmployees} employé(s) × {calcRate}$ / heure = Coût annuel global.</span>
                 </p>
               </div>
@@ -1034,7 +1041,7 @@ export default function App() {
             Notre objectif n'est pas d'ajouter de la complexité à votre entreprise. C'est de la simplifier.
           </h3>
           <p className="text-sm font-mono text-red-400 uppercase tracking-widest pt-2">
-            🚫 Ce que nous ne faisons pas
+            <Ban className="w-4 h-4" /> Ce que nous ne faisons pas
           </p>
         </div>
 
@@ -1157,7 +1164,7 @@ export default function App() {
               }`}
             >
               <span className="text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
-                💎 CE QUE L'ÉQUIPE GARDE
+                <Gem className="w-3.5 h-3.5 shrink-0" /> CE QUE L'ÉQUIPE GARDE
               </span>
               <span className="text-[11px] leading-snug opacity-90 font-sans">
                 La relation client, l'expertise technique et le contrôle final.
@@ -1172,7 +1179,7 @@ export default function App() {
               }`}
             >
               <span className="text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
-                🗑️ CE QU'ON ÉLIMINE
+                <Trash2 className="w-3.5 h-3.5 shrink-0" /> CE QU'ON ÉLIMINE
               </span>
               <span className="text-[11px] leading-snug opacity-90 font-sans">
                 La double saisie, les relances manuelles et la paperasse.
@@ -1187,7 +1194,7 @@ export default function App() {
             }`}>
               <div>
                 <div className="flex items-center gap-2 border-b border-green-950/30 pb-3 mb-4">
-                  <span className="text-xs">💎</span>
+                  <Gem className="w-4 h-4 text-green-400 shrink-0" />
                   <h5 className="font-display font-bold text-green-400 text-sm uppercase font-mono tracking-wider">
                     Ce que votre équipe GARDE
                   </h5>
@@ -1234,7 +1241,7 @@ export default function App() {
             }`}>
               <div>
                 <div className="flex items-center gap-2 border-b border-red-950/30 pb-3 mb-4">
-                  <span className="text-xs">🗑️</span>
+                  <Trash2 className="w-4 h-4 text-red-400 shrink-0" />
                   <h5 className="font-display font-bold text-red-400 text-sm uppercase font-mono tracking-wider">
                     Ce qu'on ÉLIMINE de leur journée
                   </h5>
@@ -1568,7 +1575,7 @@ export default function App() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-[#17243A]/40" id="ai-teams">
         <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/10 border border-[#F47B20]/30 text-[#F47B20] text-[11px] font-mono uppercase font-bold tracking-wider mx-auto">
-            ⚡ POUR ALLER PLUS LOIN
+            <Zap className="w-3.5 h-3.5" /> POUR ALLER PLUS LOIN
           </div>
           <span className="block text-xs font-mono tracking-widest text-gray-500 uppercase font-semibold">Vos agents IA personnalisés</span>
           <h3 className="text-3xl sm:text-4xl font-display font-bold text-white">
@@ -1635,7 +1642,7 @@ export default function App() {
                       <h4 className="font-display font-bold text-white text-sm sm:text-base text-left">{agent.name}</h4>
                     </div>
                     <span className={`text-[11px] font-mono font-bold uppercase tracking-wider ${isCustom ? 'text-[#F47B20]' : 'text-gray-500'}`}>
-                      {isCustom ? '🚀 SUR MESURE' : 'AGENT ACTIF'}
+                      {isCustom ? <><Rocket className="w-3 h-3" /> SUR MESURE</> : 'AGENT ACTIF'}
                     </span>
                   </div>
 
@@ -1702,7 +1709,7 @@ export default function App() {
                           : 'bg-[#111a2e] border-[#17243A] text-gray-400 hover:text-white'
                       }`}
                     >
-                      🚧 Construction
+                      <Hammer className="w-3.5 h-3.5" /> Construction
                     </button>
                     <button
                       type="button"
@@ -1713,7 +1720,7 @@ export default function App() {
                           : 'bg-[#111a2e] border-[#17243A] text-gray-400 hover:text-white'
                       }`}
                     >
-                      🏠 Immobilier
+                      <Building className="w-3.5 h-3.5" /> Immobilier
                     </button>
                     <button
                       type="button"
@@ -1724,7 +1731,7 @@ export default function App() {
                           : 'bg-[#111a2e] border-[#17243A] text-gray-400 hover:text-white'
                       }`}
                     >
-                      💼 Professionnels
+                      <Briefcase className="w-3.5 h-3.5" /> Professionnels
                     </button>
                   </div>
                 </div>
@@ -1929,7 +1936,7 @@ export default function App() {
                       <ArrowUpRight className="w-4 h-4" />
                     </a>
                     <span className="block text-[11px] font-mono text-gray-500">
-                      ⏱️ 2 min. — Gratuit & Sans engagement
+                      <Timer className="w-3.5 h-3.5" /> 2 min. — Gratuit & Sans engagement
                     </span>
                   </div>
                 </div>
@@ -1975,21 +1982,21 @@ export default function App() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 text-left max-w-2xl mx-auto font-mono text-xs">
               <div className="p-3.5 rounded-xl bg-[#111a2e]/60 border border-[#17243A] flex items-start gap-2.5">
-                <span className="text-lg">⏱️</span>
+                <Timer className="w-5 h-5 text-[#F47B20] shrink-0" />
                 <div>
                   <span className="block font-bold text-white">Rapide & Gratuit</span>
                   <span className="text-[11px] text-gray-500 font-sans">Seulement 2 minutes de questions</span>
                 </div>
               </div>
               <div className="p-3.5 rounded-xl bg-[#111a2e]/60 border border-[#17243A] flex items-start gap-2.5">
-                <span className="text-lg">🔒</span>
+                <Lock className="w-5 h-5 text-[#F47B20] shrink-0" />
                 <div>
                   <span className="block font-bold text-white">100% Sécurisé</span>
                   <span className="text-[11px] text-gray-500 font-sans font-normal">Données confidentielles et cryptées</span>
                 </div>
               </div>
               <div className="p-3.5 rounded-xl bg-[#111a2e]/60 border border-[#17243A] flex items-start gap-2.5">
-                <span className="text-lg">🎯</span>
+                <Target className="w-5 h-5 text-[#F47B20] shrink-0" />
                 <div>
                   <span className="block font-bold text-white">Sans Engagement</span>
                   <span className="text-[11px] text-gray-500 font-sans">Un plan d'action actionnable direct</span>

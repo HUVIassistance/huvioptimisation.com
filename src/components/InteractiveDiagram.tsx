@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { 
   Mail, FileSpreadsheet, FileText, Globe, Layers, Zap, Bot, TrendingUp, 
   Cpu, Server, Check, Folder, FolderOpen, Play, Send, RefreshCw, 
-  Upload, CheckSquare, Sparkles, ArrowRight, AlertTriangle, Eye, ShieldCheck
+  Upload, CheckSquare, Sparkles, ArrowRight, AlertTriangle, Eye, ShieldCheck,
+  Lightbulb
 } from 'lucide-react';
 
 interface InteractiveDiagramProps {
@@ -767,7 +768,7 @@ export default function InteractiveDiagram({
                   </div>
 
                   <div className="p-3 bg-[#111a2e]/40 rounded-lg border border-[#17243A]/40 flex items-center justify-between text-[11px] text-gray-400 font-sans">
-                    <p>💡 <span className="font-semibold text-white">Astuce interactive</span> : Cliquez sur une valeur de <b>Marge Est.</b> ci-dessus pour la modifier et voir comment le système réagit en temps réel.</p>
+                    <p><Lightbulb className="w-4 h-4 text-[#F47B20]" /> <span className="font-semibold text-white">Astuce interactive</span> : Cliquez sur une valeur de <b>Marge Est.</b> ci-dessus pour la modifier et voir comment le système réagit en temps réel.</p>
                     <span className="font-mono text-[11px] text-[#F47B20] uppercase font-bold shrink-0 hidden sm:inline">Modèle connecté</span>
                   </div>
                 </div>
@@ -1102,7 +1103,7 @@ export default function InteractiveDiagram({
       {/* Merged bottom information strip */}
       <div className="mt-8 pt-5 border-t border-[#17243A]/60 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
         <p className="text-[11px] text-gray-400 font-sans italic text-left max-w-2xl leading-relaxed">
-          💡 <b>La simplicité HUVI :</b> On simplifie le quotidien de ton équipe en connectant intelligemment vos outils, sans ajouter une tonne d'abonnements et de nouveaux logiciels complexes.
+          <Lightbulb className="w-4 h-4 text-[#F47B20]" /> <b>La simplicité HUVI :</b> On simplifie le quotidien de ton équipe en connectant intelligemment vos outils, sans ajouter une tonne d'abonnements et de nouveaux logiciels complexes.
         </p>
         <a
           href="#builder"
