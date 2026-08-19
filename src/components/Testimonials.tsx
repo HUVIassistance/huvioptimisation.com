@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Star, CheckCircle, MessageSquare, Shield, Smartphone, ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
 
 interface GoogleReview {
   type: 'google';
