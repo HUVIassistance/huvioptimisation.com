@@ -97,6 +97,13 @@ const AnimatedCounter = ({ value, suffix = '', duration = 1500 }: { value: numbe
   const [count, setCount] = useState(0);
 
   useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      setCount(value);
+      return;
+    }
     let startTimestamp: number | null = null;
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;

@@ -49,3 +49,29 @@ body {
   background-color: #111a2e;
   color: #E2E8F0;
 }
+
+/* Accessibilité : cohérence du focus clavier sur tous les éléments interactifs */
+:focus-visible {
+  outline: 2px solid #F47B20;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Accessibilité : feedback d'appui (press) sur les éléments cliquables */
+button:active:not(:disabled),
+a:active {
+  filter: brightness(0.9);
+}
+
+/* Accessibilité : couper tout mouvement pour les utilisateurs qui le demandent */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
