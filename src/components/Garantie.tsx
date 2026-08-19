@@ -3,7 +3,7 @@ import { Shield, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export default function Garantie() {
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-[#17243A]/40 overflow-hidden" id="garantie-huvi">
+    <section className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-[#17243A]/40 overflow-hidden" id="garantie-huvi">
       {/* Dynamic background lights */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full bg-gradient-to-r from-[#F47B20]/5 to-[#3A7697]/5 blur-[120px] pointer-events-none"></div>
       

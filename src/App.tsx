@@ -656,7 +656,7 @@ export default function App() {
       </section>
 
       {/* Specialization Section */}
-      <section className="bg-[#090D15]/80 py-16 px-4 sm:px-6 lg:px-8 border-b border-[#17243A]/40" id="specialization">
+      <section className="bg-[#090D15]/80 py-24 px-4 sm:px-6 lg:px-8 border-b border-[#17243A]/40" id="specialization">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Notre raison d'être</span>
@@ -872,7 +872,7 @@ export default function App() {
       </section>
 
       {/* Urgence Chiffrée Section (🔴 P0 Item 2) */}
-      <section className="bg-[#090D15] py-20 px-4 sm:px-6 lg:px-8 border-b border-[#17243A]/40" id="cost-calculator">
+      <section className="bg-[#090D15] py-24 px-4 sm:px-6 lg:px-8 border-b border-[#17243A]/40" id="cost-calculator">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 max-w-3xl mx-auto mb-12">
             <span className="text-xs font-mono tracking-widest text-[#F47B20] uppercase font-semibold">Ce que vous perdez chaque mois</span>
@@ -1579,7 +1579,8 @@ export default function App() {
       </section>
 
       {/* Specialized AI Teams Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-[#17243A]/40" id="ai-teams">
+      <section className="bg-[#090D15]/80 py-24 px-4 sm:px-6 lg:px-8 border-b border-[#17243A]/40" id="ai-teams">
+        <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/10 border border-[#F47B20]/30 text-[#F47B20] text-[11px] font-mono uppercase font-bold tracking-wider mx-auto">
             <Zap className="w-3.5 h-3.5" /> POUR ALLER PLUS LOIN
@@ -1666,6 +1667,7 @@ export default function App() {
               </div>
             );
           })}
+        </div>
         </div>
       </section>
 
