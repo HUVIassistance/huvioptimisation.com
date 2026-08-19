@@ -1590,13 +1590,6 @@ export default function App() {
                     <p className="text-[11px] text-gray-500 italic">Employés de bureau, répartiteurs ou propriétaires affectés par la paperasse.</p>
                   </div>
                 </div>
-
-                <div className="p-3.5 bg-[#17243A]/30 rounded-xl border border-[#17243A]/50 text-left">
-                  <p className="text-[11px] text-gray-400 leading-relaxed font-sans">
-                    <Lightbulb className="w-4 h-4 text-[#F47B20]" /> <span className="text-white font-semibold">Note de calcul :</span> La formule est simple et transparente : <br />
-                    <span className="font-mono text-white text-xs">{calcHours}h × 52 semaines × {calcEmployees} employé(s) × {calcRate}$ / heure = Coût annuel global.</span>
-                  </p>
-                </div>
               </div>
               <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-[#070b14] border border-[#17243A] flex flex-col justify-between space-y-6">
                 <div className="space-y-6 text-left">
@@ -1663,6 +1656,10 @@ export default function App() {
 
                 {/* Stat sources & validation */}
                 <div className="border-t border-[#17243A]/60 pt-4 text-[11px] text-gray-500 space-y-2 text-left">
+                  <p className="leading-normal">
+                    <Lightbulb className="w-4 h-4 text-[#F47B20]" /> <span className="text-gray-400 font-bold">Note de calcul :</span> La formule est simple et transparente : <br />
+                    <span className="font-mono text-white text-xs">{calcHours}h × 52 semaines × {calcEmployees} employé(s) × {calcRate}$ / heure = Coût annuel global.</span>
+                  </p>
                   <p className="leading-normal">
                     <span className="text-gray-400 font-bold">Source statistique (15h) :</span> estimation basée sur les heures d’administration, de saisie double et de relances manuelles économisées en moyenne par semaine chez nos clients PME de services.
                   </p>
