@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digitaliser ta PME intelligemment : blueprint gratuit</title>
+  <meta name="description" content="Télécharge le blueprint gratuit d'HUVI : la roadmap pour choisir les bons outils, les intégrer sans te ruiner et bâtir un système qui crée du levier.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.huvioptimisation.com/blueprint-digitalisation/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.huvioptimisation.com/blueprint-digitalisation/">
+  <meta property="og:title" content="Digitaliser ta PME intelligemment : blueprint gratuit">
+  <meta property="og:description" content="Télécharge le blueprint gratuit d'HUVI : la roadmap pour choisir les bons outils, les intégrer sans te ruiner et bâtir un système qui crée du levier.">
+  <meta property="og:image" content="https://www.huvioptimisation.com/og-image.jpg">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="twitter:card" content="summary_large_image">
+
+  <!-- FAQPage JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "C'est pour qui, ce blueprint ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour les dirigeants de PME de services et les professionnels qui veulent reprendre le contrôle de leurs opérations avec la technologie."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Je sais pas par où commencer.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "C'est exactement le but du blueprint : une roadmap claire, étape par étape, dans le bon ordre. Pas besoin de tout changer d'un coup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "J'ai peur de dépenser dans des outils qui servent à rien.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La méthode anti-erreur en 5 étapes existe pour ça : tu évalues les besoins AVANT d'acheter, tu testes, et tu calcules les coûts réels à long terme."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "L'IA, c'est pas pour moi.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "L'IA est un levier, pas un remplacement. Le blueprint te montre comment l'utiliser sans perdre ton humanité, avec la règle n°1 de Hugo."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=JetBrains+Mono:wght@400..500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #0e1a30;
+      color: #E2E8F0;
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+    }
+    ::selection { background: rgba(244,123,32,0.3); color: #fff; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* Fond quadrillé type plans d'architecte */
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(109,154,214,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(109,154,214,0.07) 1px, transparent 1px),
+        linear-gradient(rgba(109,154,214,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(109,154,214,0.05) 1px, transparent 1px);
+      background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+    }
+
+    /* Accent visuel */
+    .kw {
+      color: #F47B20;
+      font-weight: 800;
+      background: linear-gradient(transparent 62%, rgba(244,123,32,0.16) 62%);
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+    .blue { color: #6d9ad6; font-weight: 800; }
+
+    /* Header : minimal, bouton petit */
+    .site-header { border-bottom: 1px solid rgba(109,154,214,0.25); background: rgba(14,26,48,0.88); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 50; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+    .brand img { height: 26px; width: auto; }
+    .brand .divider { width: 1px; height: 18px; background: rgba(244,123,32,0.5); }
+    .brand .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #F47B20; font-weight: 600; }
+    .header-cta {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #fff;
+      background: linear-gradient(90deg, #F47B20, #ff9242);
+      padding: 6px 12px; border-radius: 8px; text-decoration: none;
+      box-shadow: none; white-space: nowrap;
+      transition: transform 0.15s ease-out, filter 0.15s ease-out;
+    }
+    .header-cta:hover { filter: brightness(1.06); }
+    .header-cta:active { transform: scale(0.97); }
+
+    /* Hero : plan technique */
+    .hero { padding: 80px 0 72px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(900px 420px at 80% -10%, rgba(244,123,32,0.10), transparent 60%), radial-gradient(700px 420px at 10% 110%, rgba(109,154,214,0.12), transparent 60%);
+    }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+    @media (max-width: 920px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #6d9ad6; background: rgba(109,154,214,0.10); border: 1px solid rgba(109,154,214,0.35); padding: 7px 14px; border-radius: 4px; margin-bottom: 24px; }
+    .eyebrow .tick { width: 8px; height: 8px; border: 1px solid #F47B20; transform: rotate(45deg); }
+    .hero h1 { font-size: clamp(1.9rem, 4.2vw, 2.9rem); line-height: 1.12; font-weight: 800; letter-spacing: -0.02em; color: #fff; margin-bottom: 20px; }
+    .hero h1 .accent { color: #F47B20; }
+    .hero-sub { font-size: 1.06rem; color: #a8b4cc; max-width: 560px; margin-bottom: 32px; }
+    .hero-sub strong { color: #fff; font-weight: 600; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase; color: #fff;
+      background: linear-gradient(90deg, #F47B20, #ff9242);
+      padding: 15px 28px; border-radius: 4px; text-decoration: none;
+      box-shadow: 0 8px 28px rgba(244,123,32,0.30); border: none; cursor: pointer;
+      transition: transform 0.16s ease-out, box-shadow 0.2s ease-out, filter 0.16s ease-out;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(244,123,32,0.40); filter: brightness(1.05); }
+    .btn:active { transform: translateY(-1px) scale(0.97); }
+    .btn:focus-visible, .header-cta:focus-visible, .text-cta-link:focus-visible, summary:focus-visible, a:focus-visible { outline: 2px solid #F47B20; outline-offset: 2px; border-radius: 4px; }
+    .btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+    .btn-sm { padding: 9px 16px; font-size: 11px; border-radius: 4px; box-shadow: 0 4px 16px rgba(244,123,32,0.25); }
+    .hero-note { display: flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 0.88rem; color: #7d8aa5; }
+    .hero-note svg { width: 16px; height: 16px; color: #F47B20; }
+
+    /* Plan technique (mockup blueprint) */
+    .plan-card { position: relative; border-radius: 6px; background: #0c1730; border: 1px solid rgba(109,154,214,0.4); padding: 26px 24px; box-shadow: 0 30px 70px rgba(0,0,0,0.5); }
+    .plan-card::before { content: ""; position: absolute; inset: 6px; border: 1px dashed rgba(109,154,214,0.25); border-radius: 3px; pointer-events: none; }
+    .plan-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; position: relative; }
+    .plan-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6d9ad6; }
+    .plan-ref { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; color: #5a6884; }
+    .plan-lines { display: flex; flex-direction: column; gap: 14px; position: relative; }
+    .plan-line { display: grid; grid-template-columns: 34px 1fr auto; gap: 12px; align-items: center; }
+    .plan-marker { width: 34px; height: 34px; border: 1px solid rgba(244,123,32,0.6); background: rgba(244,123,32,0.08); color: #F47B20; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; border-radius: 3px; }
+    .plan-line .label { font-size: 0.86rem; color: #a8b4cc; }
+    .plan-line .tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: #6d9ad6; }
+    .plan-rule { height: 1px; background: rgba(109,154,214,0.2); margin: 16px 0; position: relative; }
+    .plan-foot { display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #5a6884; position: relative; }
+
+    /* Sections : blocs numérotés */
+    section { padding: 76px 0; position: relative; }
+    .section-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6d9ad6; margin-bottom: 14px; }
+    .section-num .n { color: #F47B20; margin-right: 10px; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; letter-spacing: -0.02em; color: #fff; line-height: 1.2; margin-bottom: 18px; }
+    .lead { font-size: 1.04rem; color: #a8b4cc; max-width: 720px; }
+    .lead strong { color: #fff; }
+    .section-alt { background: rgba(10,20,38,0.6); border-top: 1px solid rgba(109,154,214,0.15); border-bottom: 1px solid rgba(109,154,214,0.15); }
+
+    /* Bénéfices : blocs techniques */
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: 36px; }
+    .benefit-card {
+      position: relative; background: rgba(12,23,48,0.7); border: 1px solid rgba(109,154,214,0.3); border-radius: 4px; padding: 26px;
+      transition: transform 0.25s cubic-bezier(0.23,1,0.32,1), border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .benefit-card::before { content: ""; position: absolute; top: 8px; left: 8px; width: 10px; height: 10px; border-top: 2px solid rgba(244,123,32,0.7); border-left: 2px solid rgba(244,123,32,0.7); }
+    .benefit-card::after { content: ""; position: absolute; bottom: 8px; right: 8px; width: 10px; height: 10px; border-bottom: 2px solid rgba(244,123,32,0.7); border-right: 2px solid rgba(244,123,32,0.7); }
+    @media (hover: hover) and (pointer: fine) {
+      .benefit-card:hover { border-color: rgba(244,123,32,0.6); transform: translateY(-4px); box-shadow: 0 18px 44px rgba(0,0,0,0.4); }
+    }
+    .benefit-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #F47B20; letter-spacing: 0.1em; margin-bottom: 10px; }
+    .benefit-card h3 { font-size: 1.02rem; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.35; }
+    .benefit-card h3 .kw { background: none; padding: 0; }
+    .benefit-card p { font-size: 0.9rem; color: #a8b4cc; }
+
+    /* Bandeau CTA intermédiaire */
+    .cta-band { margin-top: 44px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; background: linear-gradient(120deg, rgba(244,123,32,0.10), rgba(12,23,48,0.7)); border: 1px solid rgba(244,123,32,0.3); border-radius: 4px; padding: 22px 28px; }
+    .cta-band p { font-size: 0.98rem; color: #cdd6e6; font-weight: 600; }
+
+    /* À l'intérieur : étapes de chantier numérotées */
+    .steps-list { margin-top: 40px; display: flex; flex-direction: column; }
+    .step-item { position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 22px; padding: 0 0 30px 0; }
+    .step-item:last-child { padding-bottom: 0; }
+    .step-item::before { content: ""; position: absolute; left: 31px; top: 60px; bottom: 6px; width: 2px; border-left: 2px dashed rgba(109,154,214,0.3); }
+    .step-item:last-child::before { display: none; }
+    .step-num { width: 64px; height: 64px; border-radius: 4px; background: rgba(244,123,32,0.10); border: 1px solid rgba(244,123,32,0.55); color: #F47B20; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+    .step-num small { position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%); font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase; color: #5a6884; }
+    .step-body { background: rgba(12,23,48,0.7); border: 1px solid rgba(109,154,214,0.3); border-radius: 4px; padding: 20px 24px; transition: border-color 0.25s ease; position: relative; }
+    .step-body::before { content: ""; position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; border-top: 1px solid rgba(109,154,214,0.4); border-right: 1px solid rgba(109,154,214,0.4); }
+    @media (hover: hover) and (pointer: fine) {
+      .step-body:hover { border-color: rgba(244,123,32,0.5); }
+    }
+    .step-body h3 { font-size: 1.02rem; font-weight: 700; color: #fff; margin-bottom: 6px; letter-spacing: 0.01em; }
+    .step-body p { font-size: 0.9rem; color: #a8b4cc; }
+
+    /* Qui suis-je */
+    .about-card { display: grid; grid-template-columns: auto 1fr; gap: 28px; background: rgba(12,23,48,0.7); border: 1px solid rgba(109,154,214,0.3); border-radius: 4px; padding: 34px; margin-top: 32px; align-items: start; }
+    @media (max-width: 640px) { .about-card { grid-template-columns: 1fr; } }
+    .about-avatar { width: 84px; height: 84px; border-radius: 50%; background: linear-gradient(135deg, #F47B20, #ff9242); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 26px; color: #fff; box-shadow: 0 10px 30px rgba(244,123,32,0.35); }
+    .about-card p { font-size: 0.98rem; color: #a8b4cc; margin-bottom: 14px; }
+    .about-card p:last-child { margin-bottom: 0; }
+    .about-card p strong { color: #fff; }
+
+    /* Micro-assurances */
+    .assurances-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 32px; }
+    .assurance { display: flex; gap: 14px; background: rgba(12,23,48,0.7); border: 1px solid rgba(109,154,214,0.3); border-radius: 4px; padding: 22px; transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.23,1,0.32,1); }
+    @media (hover: hover) and (pointer: fine) {
+      .assurance:hover { border-color: rgba(244,123,32,0.5); transform: translateY(-3px); }
+    }
+    .assurance .check { flex-shrink: 0; width: 26px; height: 26px; border-radius: 3px; background: rgba(244,123,32,0.12); border: 1px solid rgba(244,123,32,0.5); display: flex; align-items: center; justify-content: center; }
+    .assurance .check svg { width: 13px; height: 13px; color: #F47B20; }
+    .assurance h3 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 5px; }
+    .assurance p { font-size: 0.87rem; color: #a8b4cc; }
+
+    /* CTA textuel avant FAQ */
+    .text-cta { text-align: center; padding: 28px 0 0; }
+    .text-cta p { color: #cdd6e6; font-size: 1rem; font-weight: 600; }
+    .text-cta .text-cta-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #6d9ad6; text-decoration: none; transition: color 0.15s ease, gap 0.15s ease; }
+    .text-cta .text-cta-link:hover { color: #F47B20; gap: 10px; }
+    .text-cta .text-cta-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    /* FAQ accordéon */
+    .faq-list { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; max-width: 780px; margin-left: auto; margin-right: auto; }
+    details.faq-item { background: rgba(12,23,48,0.7); border: 1px solid rgba(109,154,214,0.3); border-radius: 4px; overflow: hidden; transition: border-color 0.25s ease; }
+    details.faq-item[open] { border-color: rgba(244,123,32,0.5); }
+    details.faq-item summary { cursor: pointer; list-style: none; padding: 20px 24px; font-size: 0.98rem; font-weight: 700; color: #fff; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary .chevron { flex-shrink: 0; width: 20px; height: 20px; color: #F47B20; transition: transform 0.25s cubic-bezier(0.23,1,0.32,1); }
+    details.faq-item[open] summary .chevron { transform: rotate(180deg); }
+    .faq-item .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s cubic-bezier(0.23,1,0.32,1); }
+    .faq-item[open] .faq-answer { grid-template-rows: 1fr; }
+    .faq-answer-inner { overflow: hidden; }
+    .faq-answer-inner p { padding: 0 24px 20px; font-size: 0.92rem; color: #a8b4cc; }
+
+    /* Formulaire (en fin) */
+    .form-wrap { max-width: 640px; margin: 0 auto; }
+    .form-card { background: rgba(12,23,48,0.75); border: 1px solid rgba(109,154,214,0.4); border-radius: 4px; padding: 40px 38px; box-shadow: 0 24px 60px rgba(0,0,0,0.45); margin-top: 32px; }
+    @media (max-width: 560px) { .form-card { padding: 28px 22px; } }
+    .form-card h2 { margin-bottom: 8px; }
+    .form-sub { font-size: 0.95rem; color: #a8b4cc; margin-bottom: 26px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #cdd6e6; margin-bottom: 7px; }
+    .field label .req { color: #F47B20; }
+    .field input, .field select { width: 100%; background: #0a1730; border: 1px solid #24405f; border-radius: 4px; padding: 13px 14px; color: #fff; font-family: 'Manrope', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+    .field input:focus, .field select:focus { border-color: #F47B20; box-shadow: 0 0 0 3px rgba(244,123,32,0.15); }
+    .field select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23F47B20' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer; }
+    .field select option { background: #0a1730; color: #fff; }
+    .consent { display: flex; gap: 12px; align-items: flex-start; margin: 22px 0 24px; cursor: pointer; }
+    .consent input { width: 18px; height: 18px; margin-top: 2px; accent-color: #F47B20; cursor: pointer; flex-shrink: 0; }
+    .consent .consent-label { font-weight: 700; color: #fff; font-size: 0.92rem; }
+    .consent .consent-note { font-size: 0.84rem; color: #a8b4cc; margin-top: 2px; }
+    .form-error { display: none; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.45); color: #fca5a5; font-size: 0.9rem; padding: 12px 16px; border-radius: 4px; margin-bottom: 18px; }
+    .form-error.visible { display: block; }
+    .form-footer-note { text-align: center; margin-top: 14px; font-size: 0.84rem; color: #7d8aa5; }
+
+    /* CTA final */
+    .final-cta { text-align: center; }
+    .final-cta h2 { max-width: 640px; margin-left: auto; margin-right: auto; }
+    .final-cta p { color: #a8b4cc; max-width: 560px; margin: 0 auto 28px; }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid rgba(109,154,214,0.2); padding: 36px 0; }
+    .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+    .footer-inner img { height: 24px; width: auto; }
+    .footer-inner p { font-size: 0.82rem; color: #7d8aa5; }
+    .footer-inner .mono { font-size: 0.78rem; color: #5a6884; letter-spacing: 0.06em; }
+
+    /* Sticky bar CTA */
+    .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: rgba(14,26,48,0.92); backdrop-filter: blur(10px); border-top: 1px solid rgba(244,123,32,0.35); box-shadow: 0 -10px 30px rgba(0,0,0,0.35); transform: translateY(110%); transition: transform 0.32s cubic-bezier(0.23,1,0.32,1); }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 24px; }
+    .sticky-text { font-size: 0.88rem; font-weight: 600; color: #cdd6e6; }
+    @media (max-width: 560px) { .sticky-text { font-size: 0.78rem; } }
+
+    /* Scroll reveal */
+    .js-reveal [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity 0.6s cubic-bezier(0.23,1,0.32,1), transform 0.6s cubic-bezier(0.23,1,0.32,1); transition-delay: var(--d, 0s); will-change: opacity, transform; }
+    .js-reveal [data-reveal].revealed { opacity: 1; transform: none; }
+
+    @media (max-width: 640px) { .hero { padding: 48px 0 48px; } section { padding: 56px 0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js-reveal [data-reveal] { opacity: 1; transform: none; transition: none; }
+      .sticky-cta { transition: none; }
+      details.faq-item summary .chevron { transition: none; }
+      .faq-item .faq-answer { transition: none; }
+      .benefit-card, .assurance, .step-body, .btn, .header-cta, .text-cta-link { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/"><img src="/logo.png" alt="HUVI Optimisation"><span class="divider"></span><span class="tag">Optimisation</span></a>
+      <a class="header-cta" href="#formulaire">Je télécharge mon playbook</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero : plan technique -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span class="tick"></span> Blueprint gratuit</span>
+          <h1>Le blueprint gratuit pour <span class="accent">digitaliser</span> ton entreprise intelligemment</h1>
+          <p class="hero-sub">La roadmap complète pour choisir les <span class="kw">BONS</span> outils, les intégrer au <span class="kw">BON</span> moment et remplacer le désordre par des <strong>SYSTÈMES SIMPLES, STRUCTURÉS et PRÉVISIBLES</strong>.</p>
+          <a class="btn" href="#formulaire">Je télécharge mon playbook</a>
+          <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Gratuit. Zéro engagement.</p>
+        </div>
+        <div>
+          <div class="plan-card">
+            <div class="plan-head">
+              <span class="plan-title">Plan·Roadmap</span>
+              <span class="plan-ref">HUVI-OPT-2026</span>
+            </div>
+            <div class="plan-lines">
+              <div class="plan-line"><span class="plan-marker">1</span><span class="label">Évaluer les besoins</span><span class="tag">Fondations</span></div>
+              <div class="plan-line"><span class="plan-marker">2</span><span class="label">Comparer et tester</span><span class="tag">Structure</span></div>
+              <div class="plan-line"><span class="plan-marker">3</span><span class="label">Vérifier la connectivité</span><span class="tag">Raccord</span></div>
+              <div class="plan-line"><span class="plan-marker">4</span><span class="label">Calculer les coûts réels</span><span class="tag">Budget</span></div>
+              <div class="plan-line"><span class="plan-marker">5</span><span class="label">Intégrer et automatiser</span><span class="tag">Leviers</span></div>
+            </div>
+            <div class="plan-rule"></div>
+            <div class="plan-foot"><span>Jalons clés</span><span>Bilan final</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bénéfices -->
+    <section class="section-alt">
+      <div class="container">
+        <p class="section-num"><span class="n">01</span>Bénéfices</p>
+        <h2>Ce que tu vas gagner</h2>
+        <div class="benefits-grid">
+          <div class="benefit-card" data-reveal style="--d:0s;">
+            <div class="benefit-num">01</div>
+            <h3><span class="kw">CHOISIS</span> les BONS outils</h3>
+            <p>La méthode anti-erreur en 5 étapes pour ne plus te noyer dans l'océan de logiciels. Le bon outil règle ton problème, point.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0.06s;">
+            <div class="benefit-num">02</div>
+            <h3><span class="kw">ÉVITE</span> les pièges COÛTEUX</h3>
+            <p>Shiny object syndrome, frais cachés, solutions qui t'enferment. Les red flags, pointés un par un, avant que tu paies.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0.12s;">
+            <div class="benefit-num">03</div>
+            <h3><span class="kw">CENTRALISE</span> sans COMPLEXIFIER</h3>
+            <p>Le « deuxième cerveau » de ton entreprise : toutes tes infos au même endroit, faciles à retrouver, sans créer une structure impossible à naviguer.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0s;">
+            <div class="benefit-num">04</div>
+            <h3><span class="kw">RÉCUPÈRE</span> des heures chaque semaine</h3>
+            <p>Comme Marc-Antoine, le paysagiste : plus de 20 heures par semaine récupérées avec quelques changements simples. La tech fait le travail, pas toi.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0.06s;">
+            <div class="benefit-num">05</div>
+            <h3><span class="kw">INTÈGRE</span> l'IA intelligemment</h3>
+            <p>Comme un levier, jamais pour remplacer le travail. La règle n°1 de Hugo : ne jamais utiliser un résultat d'IA sans l'avoir retravaillé, JAMAIS.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0.12s;">
+            <div class="benefit-num">06</div>
+            <h3><span class="kw">FAIS PLUS</span> avec MOINS</h3>
+            <p>Le bon outil, au bon moment : le seul levier qui peut 10X ta productivité sans faire exploser les dépenses. Plus de liberté, plus de contrôle.</p>
+          </div>
+        </div>
+
+        <!-- CTA intermédiaire -->
+        <div class="cta-band" data-reveal>
+          <p>Gratuit. Zéro engagement.</p>
+          <a class="btn btn-sm" href="#formulaire">Je télécharge mon playbook</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- À l'intérieur : étapes de chantier numérotées -->
+    <section>
+      <div class="container">
+        <p class="section-num"><span class="n">02</span>Le contenu</p>
+        <h2>À l'intérieur du blueprint</h2>
+        <p class="lead">Pas de filler. Voici ce que tu vas trouver, dans l'ordre :</p>
+        <div class="steps-list">
+          <div class="step-item" data-reveal style="--d:0s;">
+            <div class="step-num">01</div>
+            <div class="step-body"><h3>La technologie comme partenaire</h3><p>Pourquoi c'est un passage obligé, et pourquoi le mauvais outil te nuit plus qu'il t'aide.</p></div>
+          </div>
+          <div class="step-item" data-reveal style="--d:0.05s;">
+            <div class="step-num">02</div>
+            <div class="step-body"><h3>La méthode anti-erreur en 5 étapes</h3><p>Évaluer les besoins, comparer, tester, vérifier la connectivité, calculer les coûts réels.</p></div>
+          </div>
+          <div class="step-item" data-reveal style="--d:0.1s;">
+            <div class="step-num">03</div>
+            <div class="step-body"><h3>La colonne vertébrale</h3><p>La gestion documentaire, la nomenclature et le compartimentage. Fini le bazar.</p></div>
+          </div>
+          <div class="step-item" data-reveal style="--d:0s;">
+            <div class="step-num">04</div>
+            <div class="step-body"><h3>Planifier pour mieux régner</h3><p>La gestion de projet, les vues calendrier et Kanban.</p></div>
+          </div>
+          <div class="step-item" data-reveal style="--d:0.05s;">
+            <div class="step-num">05</div>
+            <div class="step-body"><h3>L'automatisation et l'IA</h3><p>L'adjointe à 20$ par mois, les 3 façons d'incorporer l'IA, la règle n°1.</p></div>
+          </div>
+          <div class="step-item" data-reveal style="--d:0.1s;">
+            <div class="step-num">06</div>
+            <div class="step-body"><h3>Le bilan de ta transformation</h3><p>Comment tout s'assemble en un système centralisé et connecté qui crée du levier.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qui suis-je -->
+    <section class="section-alt">
+      <div class="container">
+        <p class="section-num"><span class="n">03</span>L'auteur</p>
+        <h2>Qui suis-je pour te parler de ça ?</h2>
+        <div class="about-card" data-reveal>
+          <div class="about-avatar">HV</div>
+          <div>
+            <p><strong>Moi c'est Hugo Viens, fondateur d'HUVI Optimisation</strong>, une agence spécialisée dans l'architecture de systèmes et l'optimisation des opérations. On aide les PME de services à faire <span class="kw">PLUS</span> avec <span class="kw">MOINS</span>.</p>
+            <p>Architecte de systèmes, oui, vendeur de théorie, non.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Micro-assurances -->
+    <section>
+      <div class="container">
+        <p class="section-num"><span class="n">04</span>Zéro bullshit</p>
+        <h2>Pas de bullshit. Juste du concret.</h2>
+        <div class="assurances-grid">
+          <div class="assurance" data-reveal style="--d:0s;">
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><h3><span class="kw">GRATUIT</span>, vraiment.</h3><p>Aucun piège, aucun abonnement caché.</p></div>
+          </div>
+          <div class="assurance" data-reveal style="--d:0.06s;">
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><h3><span class="kw">PAS</span> de jargon technique.</h3><p>On te parle de bénéfices et de résultats, pas de spécifications.</p></div>
+          </div>
+          <div class="assurance" data-reveal style="--d:0.12s;">
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><h3><span class="kw">PAS</span> besoin d'être techno.</h3><p>La méthode commence par TES besoins, pas par les outils. C'est la première étape de la méthode anti-erreur.</p></div>
+          </div>
+        </div>
+
+        <!-- CTA textuel discret avant la FAQ -->
+        <div class="text-cta" data-reveal>
+          <p>Le blueprint, c'est la méthode. À toi de l'appliquer.</p>
+          <a class="text-cta-link" href="#formulaire">Je télécharge mon playbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-alt">
+      <div class="container">
+        <p class="section-num"><span class="n">05</span>FAQ</p>
+        <h2>Questions fréquentes</h2>
+        <div class="faq-list">
+          <details class="faq-item" data-reveal>
+            <summary>C'est pour qui, ce blueprint ? <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>Pour les dirigeants de PME de services et les professionnels qui veulent reprendre le contrôle de leurs opérations avec la technologie.</p></div></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Je sais pas par où commencer. <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>C'est exactement le but du blueprint : une roadmap claire, étape par étape, dans le bon ordre. Pas besoin de tout changer d'un coup.</p></div></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>J'ai peur de dépenser dans des outils qui servent à rien. <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>La méthode anti-erreur en 5 étapes existe pour ça : tu évalues les besoins AVANT d'acheter, tu testes, et tu calcules les coûts réels à long terme.</p></div></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>L'IA, c'est pas pour moi. <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>L'IA est un levier, pas un remplacement. Le blueprint te montre comment l'utiliser sans perdre ton humanité, avec la règle n°1 de Hugo.</p></div></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>Prêt à faire plus avec moins ?</h2>
+        <p>Télécharge le blueprint gratuit et commence ta roadmap cette semaine.</p>
+        <a class="btn" href="#formulaire">Je télécharge mon playbook</a>
+      </div>
+    </section>
+
+    <!-- Formulaire (en fin) -->
+    <section id="formulaire" class="section-alt">
+      <div class="container form-wrap">
+        <p class="section-num" style="text-align:center;"><span class="n">06</span>Téléchargement gratuit</p>
+        <h2 style="text-align:center;">Télécharge le blueprint gratuit</h2>
+        <p class="form-sub" style="text-align:center;">Remplis le formulaire et reçois ta copie du blueprint par courriel, dans les prochaines minutes.</p>
+        <div class="form-card" data-reveal>
+          <form id="lead-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="prenom">Prénom <span class="req">*</span></label>
+                <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
+              </div>
+              <div class="field">
+                <label for="nom">Nom <span class="req">*</span></label>
+                <input type="text" id="nom" name="nom" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="courriel">Courriel <span class="req">*</span></label>
+                <input type="email" id="courriel" name="courriel" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="entreprise">Entreprise <span class="req">*</span></label>
+                <input type="text" id="entreprise" name="entreprise" autocomplete="organization" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="typeEntreprise">Type d'entreprise <span class="req">*</span></label>
+                <select id="typeEntreprise" name="typeEntreprise" required>
+                  <option value="" selected disabled>Choisis une option</option>
+                  <option value="Construction / Rénovation">Construction / Rénovation</option>
+                  <option value="Entreprise de service">Entreprise de service</option>
+                  <option value="Professionnel (comptable, avocat, etc.)">Professionnel (comptable, avocat, etc.)</option>
+                  <option value="Autre">Autre</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="telephone">Téléphone (optionnel)</label>
+                <input type="tel" id="telephone" name="telephone" autocomplete="tel">
+              </div>
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" id="consentement" name="consentement" value="true">
+              <span>
+                <span class="consent-label">Rester en contact avec HUVI Optimisation</span>
+                <span class="consent-note">Ton courriel sert à t'envoyer le blueprint et des conseils pour choisir les bons outils et digitaliser intelligemment.</span>
+              </span>
+            </label>
+
+            <div class="form-error" id="form-error" role="alert" aria-live="assertive"></div>
+
+            <button type="submit" class="btn" id="submit-btn" style="width:100%;">Je télécharge mon playbook</button>
+            <p class="form-footer-note">Gratuit. Zéro engagement.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="/logo.png" alt="HUVI Optimisation">
+      <p>© 2026 HUVI Optimisation Inc. Tous droits réservés. · Montréal, Québec, Canada.</p>
+      <p class="mono">huvioptimisation.com · (450) 522-0955</p>
+    </div>
+  </footer>
+
+  <!-- Sticky bar CTA -->
+  <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+    <div class="container sticky-inner">
+      <span class="sticky-text">Le blueprint gratuit pour digitaliser ton entreprise intelligemment</span>
+      <a class="btn btn-sm" href="#formulaire" tabindex="-1">Je télécharge mon playbook</a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      // ===== Configuration =====
+      // URL du webhook Make DÉDIÉ au funnel Blueprint Digitalisation. À remplacer par
+      // l'URL réelle fournie par Hugo après création dans l'UI Make (voir SPEC_WEBHOOK_MAKE_vague3.md).
+      // Laisser VIDE = le formulaire affiche une erreur claire (jamais de faux succès).
+      var LEAD_WEBHOOK_URL = "";
+
+      // Token de la page de confirmation : utilisé en secours uniquement.
+      // La voie nominale : Make répond 302 vers /merci-digitalisation/?t=<TOKEN>.
+      var THANK_YOU_PATH = "/merci-digitalisation/?t=TOKEN_DIGITALISATION_2026";
+
+      // ===== UTM : capture à l'arrivée, persistance en sessionStorage =====
+      var UTM_STORAGE_KEY = "blueprint-digitalisation:utm";
+      var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+
+      function captureUtm() {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var utm = {};
+          var hasAny = false;
+          UTM_KEYS.forEach(function (key) {
+            var val = params.get(key);
+            if (val) { utm[key] = val; hasAny = true; }
+          });
+          if (hasAny) {
+            sessionStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(utm));
+          }
+        } catch (e) {
+          // sessionStorage indisponible : on continue sans UTM
+        }
+      }
+
+      function getUtm() {
+        try {
+          var raw = sessionStorage.getItem(UTM_STORAGE_KEY);
+          if (!raw) return {};
+          var parsed = JSON.parse(raw);
+          var out = {};
+          UTM_KEYS.forEach(function (key) {
+            if (parsed[key]) out[key] = parsed[key];
+          });
+          return out;
+        } catch (e) {
+          return {};
+        }
+      }
+
+      captureUtm();
+
+      // ===== Formulaire =====
+      var form = document.getElementById("lead-form");
+      var errorBox = document.getElementById("form-error");
+      var submitBtn = document.getElementById("submit-btn");
+
+      function showError(message) {
+        errorBox.textContent = message;
+        errorBox.classList.add("visible");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Je télécharge mon playbook";
+      }
+
+      function setLoading() {
+        errorBox.classList.remove("visible");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Envoi en cours…";
+      }
+
+      function redirectToThankYou(prenomCapture) {
+        try { sessionStorage.setItem("blueprint-digitalisation:prenom", prenomCapture); } catch (e) {}
+        window.location.href = THANK_YOU_PATH;
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var prenom = document.getElementById("prenom").value.trim();
+        var nom = document.getElementById("nom").value.trim();
+        var courriel = document.getElementById("courriel").value.trim();
+        var entreprise = document.getElementById("entreprise").value.trim();
+        var typeEntreprise = document.getElementById("typeEntreprise").value;
+        var telephone = document.getElementById("telephone").value.trim();
+        var consentement = document.getElementById("consentement").checked;
+
+        if (!prenom || !nom || !courriel || !entreprise || !typeEntreprise) {
+          showError("Tous les champs obligatoires doivent être remplis.");
+          return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(courriel)) {
+          showError("Le courriel semble invalide. Vérifie-le et réessaie.");
+          return;
+        }
+
+        if (!LEAD_WEBHOOK_URL) {
+          showError("Le formulaire n'est pas encore actif. Réessaie dans quelques instants.");
+          return;
+        }
+
+        var payload = {
+          "prénom": prenom,
+          "nom": nom,
+          "courriel": courriel,
+          "entreprise": entreprise,
+          "typeEntreprise": typeEntreprise,
+          "téléphone": telephone,
+          "consentement": consentement,
+          "source": "blueprint-digitalisation",
+          "capturedAt": Date.now()
+        };
+
+        var utm = getUtm();
+        Object.keys(utm).forEach(function (key) { payload[key] = utm[key]; });
+
+        setLoading();
+
+        fetch(LEAD_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          redirect: "manual",
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          if (res.type === "opaqueredirect" || res.ok) {
+            redirectToThankYou(prenom);
+          } else {
+            showError("L'envoi a échoué (erreur " + res.status + "). Réessaie dans quelques instants.");
+          }
+        }).catch(function () {
+          showError("Oups, l'envoi a échoué. Vérifie ta connexion et réessaie.");
+        });
+      });
+
+      // ===== Scroll reveal (IntersectionObserver, reduced-motion respecté) =====
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("js-reveal");
+        var revealEls = document.querySelectorAll("[data-reveal]");
+        if ("IntersectionObserver" in window) {
+          var revealObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("revealed");
+                revealObs.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+          revealEls.forEach(function (el) { revealObs.observe(el); });
+        } else {
+          revealEls.forEach(function (el) { el.classList.add("revealed"); });
+        }
+      }
+
+      // ===== Sticky bar CTA =====
+      var stickyBar = document.getElementById("sticky-cta");
+      var formSection = document.getElementById("formulaire");
+      if (stickyBar && formSection) {
+        var STICKY_SHOW_AT = 600;
+        function updateSticky() {
+          var rect = formSection.getBoundingClientRect();
+          var formVisible = rect.top <= window.innerHeight * 0.85;
+          var show = window.scrollY > STICKY_SHOW_AT && !formVisible;
+          stickyBar.classList.toggle("visible", show);
+          stickyBar.setAttribute("aria-hidden", show ? "false" : "true");
+        }
+        window.addEventListener("scroll", updateSticky, { passive: true });
+        window.addEventListener("resize", updateSticky, { passive: true });
+        updateSticky();
+      }
+
+      // ===== FAQ accordéon =====
+      var faqItems = document.querySelectorAll(".faq-item");
+      faqItems.forEach(function (item) {
+        var summary = item.querySelector("summary");
+        summary.addEventListener("click", function () {
+          if (item.open) return;
+          faqItems.forEach(function (other) {
+            if (other !== item) other.open = false;
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
