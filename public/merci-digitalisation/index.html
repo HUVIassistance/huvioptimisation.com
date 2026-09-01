@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merci ! Ton blueprint est prêt | HUVI Optimisation</title>
+  <meta name="description" content="Ton blueprint digitalisation est prêt. Télécharge-le et découvre la roadmap pour digitaliser ton entreprise intelligemment.">
+  <!-- NOINDEX garanti : page de confirmation, jamais indexée, jamais dans le sitemap -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta property="og:locale" content="fr_CA">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=JetBrains+Mono:wght@400..500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #111a2e;
+      color: #E2E8F0;
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    ::selection { background: rgba(244,123,32,0.3); color: #fff; }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 24px; width: 100%; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+
+    .site-header { border-bottom: 1px solid rgba(23,36,58,0.6); background: rgba(17,26,46,0.85); }
+    .header-inner { display: flex; align-items: center; justify-content: center; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+    .brand img { height: 28px; width: auto; }
+    .brand .divider { width: 1px; height: 20px; background: rgba(244,123,32,0.5); }
+    .brand .tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #F47B20; font-weight: 600; }
+
+    main { flex: 1; }
+    .confirm { padding: 72px 0 40px; text-align: center; background: radial-gradient(800px 400px at 50% -10%, rgba(244,123,32,0.10), transparent 60%); }
+    .confirm-badge { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 50%; background: rgba(244,123,32,0.15); border: 1px solid rgba(244,123,32,0.4); margin-bottom: 24px; }
+    .confirm-badge svg { width: 30px; height: 30px; color: #F47B20; }
+    .confirm h1 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 800; letter-spacing: -0.02em; color: #fff; line-height: 1.2; margin-bottom: 14px; }
+    .confirm .sub { font-size: 1.05rem; color: #a8b4cc; max-width: 560px; margin: 0 auto; }
+
+    .pdf-block { background: rgba(23,36,58,0.6); border: 1px solid #2a3a5c; border-radius: 18px; padding: 40px 34px; margin-top: 36px; box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
+    .pdf-block .pdf-icon { font-size: 40px; margin-bottom: 12px; }
+    .pdf-block h2 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .pdf-block p { font-size: 0.95rem; color: #a8b4cc; margin-bottom: 24px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; background: linear-gradient(90deg, #F47B20, #ff9242); padding: 15px 28px; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 28px rgba(244,123,32,0.30); transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(244,123,32,0.40); filter: brightness(1.05); }
+    .btn-secondary { background: transparent; border: 1px solid #2a3a5c; color: #cdd6e6; box-shadow: none; }
+    .btn-secondary:hover { border-color: #F47B20; color: #fff; box-shadow: none; }
+    .pdf-value { margin-top: 18px; font-size: 0.84rem; color: #7d8aa5; }
+
+    .upsell { margin-top: 48px; }
+    .upsell-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #F47B20; text-align: center; margin-bottom: 14px; }
+    .upsell-card { background: rgba(23,36,58,0.45); border: 1px solid #223352; border-radius: 16px; padding: 36px 32px; text-align: center; }
+    .upsell-card h2 { font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 14px; letter-spacing: -0.01em; line-height: 1.25; }
+    .upsell-card p { font-size: 0.95rem; color: #a8b4cc; margin-bottom: 24px; }
+    .upsell-card .btn { width: 100%; max-width: 360px; }
+    .upsell-secondary { margin-top: 20px; }
+    .upsell-secondary p { margin-bottom: 16px; }
+
+    .site-footer { border-top: 1px solid rgba(23,36,58,0.6); padding: 32px 0; margin-top: 56px; }
+    .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+    .footer-inner img { height: 24px; width: auto; }
+    .footer-inner p { font-size: 0.82rem; color: #7d8aa5; }
+    .footer-inner .mono { font-size: 0.78rem; color: #5a6884; letter-spacing: 0.06em; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/"><img src="/logo.png" alt="HUVI Optimisation"><span class="divider"></span><span class="tag">Optimisation</span></a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="confirm">
+      <div class="confirm-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h1 id="confirmation-title">Merci ! Ton blueprint est prêt.</h1>
+      <p class="sub">Ta copie du blueprint « La roadmap pour digitaliser ton entreprise intelligemment » t'attend juste ici.</p>
+
+      <div class="pdf-block">
+        <div class="pdf-icon">📥</div>
+        <h2>Télécharger mon blueprint</h2>
+        <p>Clique sur le bouton pour récupérer ta copie du blueprint.</p>
+        <a class="btn" href="https://www.huvioptimisation.com/leads/blueprint-digitalisation-8ed7f967.pdf" download>📥 Télécharger mon blueprint</a>
+        <p class="pdf-value">À l'intérieur : la méthode anti-erreur en 5 étapes, la colonne vertébrale documentaire et la règle n°1 pour utiliser l'IA sans perdre ton humanité.</p>
+      </div>
+
+      <div class="upsell">
+        <p class="upsell-label">Pour aller plus loin</p>
+        <div class="upsell-card">
+          <h2>Veux-tu savoir où ton entreprise perd du temps et de l'argent ?</h2>
+          <p>Le blueprint, c'est la méthode. Le Bilan IA, c'est l'application directe à TON entreprise. Pendant une séance gratuite, on analyse tes processus, on regarde où l'information est dispersée, on identifie les pertes invisibles et on te dit exactement où investir ton énergie pour avoir le plus d'impact.<br><br>Pas de vente forcée. Juste de la clarté.</p>
+          <a class="btn" href="https://bilan.huvioptimisation.com" target="_blank" rel="noopener noreferrer">Je réserve mon Bilan IA gratuit</a>
+        </div>
+        <div class="upsell-card upsell-secondary">
+          <p>Tu préfères jaser de vive voix avant de t'embarquer ? Réserve un appel direct avec moi, on regarde ta situation ensemble et je te dis honnêtement si on peut t'aider.</p>
+          <a class="btn btn-secondary" href="https://www.huvioptimisation.com/calendrier/" target="_blank" rel="noopener noreferrer">Je réserve mon appel</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="/logo.png" alt="HUVI Optimisation">
+      <p>© 2026 HUVI Optimisation Inc. Tous droits réservés. · Montréal, Québec, Canada.</p>
+      <p class="mono">huvioptimisation.com · (450) 522-0955</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      "use strict";
+
+      // ===== Protection par token =====
+      // Token attendu (constante du brief) : TOKEN_DIGITALISATION_2026
+      var REQUIRED_TOKEN = "TOKEN_DIGITALISATION_2026";
+
+      function getToken() {
+        try {
+          return new URLSearchParams(window.location.search).get("t") || "";
+        } catch (e) {
+          return "";
+        }
+      }
+
+      function redirectToLanding() {
+        // Token absent/invalide → on ne sert PAS le contenu : retour à la landing.
+        window.location.replace("/blueprint-digitalisation/");
+      }
+
+      // ===== Personnalisation du prénom (fourni par la landing via sessionStorage) =====
+      function getPrenom() {
+        try {
+          return sessionStorage.getItem("blueprint-digitalisation:prenom") || "";
+        } catch (e) {
+          return "";
+        }
+      }
+
+      if (getToken() !== REQUIRED_TOKEN) {
+        redirectToLanding();
+        return; // le reste ne s'exécute pas
+      }
+
+      var prenom = getPrenom();
+      if (prenom) {
+        document.getElementById("confirmation-title").textContent =
+          "Merci, " + prenom + " ! Ton blueprint est prêt.";
+        document.title = "Merci, " + prenom + " ! Ton blueprint est prêt | HUVI Optimisation";
+      }
+    })();
+  </script>
+</body>
+</html>
