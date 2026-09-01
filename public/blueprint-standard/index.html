@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint STANDARD : reprends le contrôle de tes opérations</title>
+  <meta name="description" content="Télécharge le blueprint gratuit d'HUVI : la méthode S.T.A.N.D.A.R.D. pour transformer tes opérations en processus clairs, simples et répétables.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.huvioptimisation.com/blueprint-standard/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.huvioptimisation.com/blueprint-standard/">
+  <meta property="og:title" content="Blueprint STANDARD : reprends le contrôle de tes opérations">
+  <meta property="og:description" content="Télécharge le blueprint gratuit d'HUVI : la méthode S.T.A.N.D.A.R.D. pour transformer tes opérations en processus clairs, simples et répétables.">
+  <meta property="og:image" content="https://www.huvioptimisation.com/og-image.jpg">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="twitter:card" content="summary_large_image">
+
+  <!-- FAQPage JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "C'est pour qui, ce blueprint ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour les dirigeants de PME de services et de construction qui veulent simplifier leur quotidien, gagner en prévisibilité et arrêter de tout porter sur leurs épaules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mes projets sont tous différents. Je peux pas standardiser ça.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Justement : on standardise le squelette (le répétitif) pour garder ton énergie pour les exceptions. C'est là que ton jugement d'entrepreneur vaut de l'or."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ça veut dire plus de paperasse ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NON. Standardiser, c'est simplifier : clarifier les étapes essentielles, pas écrire des procédures de 40 pages que personne ne lit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Je dois acheter des logiciels pour commencer ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pas tout de suite. La bonne séquence : Clarté → Processus → Procédures → Outils → Automatisation, parce que les outils viennent à la fin de la réflexion."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=JetBrains+Mono:wght@400..500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #111a2e;
+      color: #E2E8F0;
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+    }
+    ::selection { background: rgba(244,123,32,0.3); color: #fff; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* Accent visuel : mot-clé MAJUSCULES de la copy */
+    .kw {
+      color: #F47B20;
+      font-weight: 800;
+      background: linear-gradient(transparent 62%, rgba(244,123,32,0.16) 62%);
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+
+    /* Header : minimal, bouton petit */
+    .site-header { border-bottom: 1px solid rgba(23,36,58,0.6); background: rgba(17,26,46,0.85); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 50; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+    .brand img { height: 26px; width: auto; }
+    .brand .divider { width: 1px; height: 18px; background: rgba(244,123,32,0.5); }
+    .brand .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #F47B20; font-weight: 600; }
+    .header-cta {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #fff;
+      background: linear-gradient(90deg, #F47B20, #ff9242);
+      padding: 6px 12px; border-radius: 8px; text-decoration: none;
+      box-shadow: none; white-space: nowrap;
+      transition: transform 0.15s ease-out, filter 0.15s ease-out;
+    }
+    .header-cta:hover { filter: brightness(1.06); }
+    .header-cta:active { transform: scale(0.97); }
+
+    /* Hero split : copy à gauche, formulaire à droite (capture sans scroll) */
+    .hero { padding: 64px 0 72px; background: radial-gradient(1000px 500px at 85% -10%, rgba(244,123,32,0.08), transparent 60%), radial-gradient(800px 400px at 5% 110%, rgba(58,118,151,0.10), transparent 60%); }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; }
+    @media (max-width: 920px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #ff9242; background: rgba(244,123,32,0.10); border: 1px solid rgba(244,123,32,0.25); padding: 7px 14px; border-radius: 999px; margin-bottom: 24px; }
+    .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: #F47B20; box-shadow: 0 0 0 0 rgba(244,123,32,0.5); animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(244,123,32,0.45); } 70% { box-shadow: 0 0 0 8px rgba(244,123,32,0); } 100% { box-shadow: 0 0 0 0 rgba(244,123,32,0); } }
+    .hero h1 { font-size: clamp(1.75rem, 3.8vw, 2.6rem); line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; color: #fff; margin-bottom: 20px; }
+    .hero h1 .accent { color: #F47B20; }
+    .hero-sub { font-size: 1.02rem; color: #a8b4cc; max-width: 540px; margin-bottom: 28px; }
+    .hero-sub strong { color: #fff; font-weight: 600; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase; color: #fff;
+      background: linear-gradient(90deg, #F47B20, #ff9242);
+      padding: 15px 28px; border-radius: 12px; text-decoration: none;
+      box-shadow: 0 8px 28px rgba(244,123,32,0.30); border: none; cursor: pointer;
+      transition: transform 0.16s ease-out, box-shadow 0.2s ease-out, filter 0.16s ease-out;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(244,123,32,0.40); filter: brightness(1.05); }
+    .btn:active { transform: translateY(-1px) scale(0.97); }
+    .btn:focus-visible, .header-cta:focus-visible, .text-cta-link:focus-visible, summary:focus-visible, a:focus-visible { outline: 2px solid #F47B20; outline-offset: 2px; border-radius: 8px; }
+    .btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+    .btn-sm { padding: 9px 16px; font-size: 11px; border-radius: 10px; box-shadow: 0 4px 16px rgba(244,123,32,0.25); }
+    .hero-note { display: flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 0.88rem; color: #7d8aa5; }
+    .hero-note svg { width: 16px; height: 16px; color: #F47B20; }
+
+    /* Carte "poste de contrôle" : liste des lettres du blueprint */
+    .control-card { border-radius: 16px; background: linear-gradient(160deg, #17243A, #0e1626); border: 1px solid #223352; padding: 28px 26px; box-shadow: 0 24px 50px rgba(0,0,0,0.35); margin-top: 32px; }
+    .control-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #F47B20; margin-bottom: 14px; }
+    .control-letters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .control-letter { flex: 1 1 0; min-width: 40px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: #fff; background: rgba(244,123,32,0.12); border: 1px solid rgba(244,123,32,0.35); border-radius: 8px; padding: 8px 4px; }
+    .control-letter span { display: block; font-size: 8px; font-weight: 500; color: #7d8aa5; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px; }
+
+    /* Sections */
+    section { padding: 72px 0; }
+    .section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #F47B20; margin-bottom: 14px; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; letter-spacing: -0.02em; color: #fff; line-height: 1.2; margin-bottom: 18px; }
+    .lead { font-size: 1.04rem; color: #a8b4cc; max-width: 720px; }
+    .lead strong { color: #fff; }
+    .section-alt { background: rgba(14,22,38,0.6); border-top: 1px solid rgba(23,36,58,0.5); border-bottom: 1px solid rgba(23,36,58,0.5); }
+
+    /* Bénéfices : grille compacte, cartes nettes */
+    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
+    @media (max-width: 900px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .benefits-grid { grid-template-columns: 1fr; } }
+    .benefit-card {
+      background: rgba(23,36,58,0.45); border: 1px solid #223352; border-radius: 12px; padding: 22px 20px;
+      transition: transform 0.25s cubic-bezier(0.23,1,0.32,1), border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .benefit-card:hover { border-color: rgba(244,123,32,0.55); transform: translateY(-3px); box-shadow: 0 14px 36px rgba(0,0,0,0.3); }
+    }
+    .benefit-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; color: #F47B20; letter-spacing: 0.1em; margin-bottom: 8px; }
+    .benefit-card h3 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.35; }
+    .benefit-card h3 .kw { background: none; padding: 0; }
+    .benefit-card p { font-size: 0.87rem; color: #a8b4cc; }
+
+    /* Bandeau CTA intermédiaire */
+    .cta-band { margin-top: 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; background: linear-gradient(120deg, rgba(244,123,32,0.10), rgba(23,36,58,0.45)); border: 1px solid rgba(244,123,32,0.25); border-radius: 14px; padding: 20px 26px; }
+    .cta-band p { font-size: 0.96rem; color: #cdd6e6; font-weight: 600; }
+
+    /* À l'intérieur : grille compacte */
+    .inside-grid { margin-top: 36px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    @media (max-width: 700px) { .inside-grid { grid-template-columns: 1fr; } }
+    .inside-item { display: grid; grid-template-columns: 36px 1fr; gap: 14px; background: rgba(23,36,58,0.45); border: 1px solid #223352; border-radius: 12px; padding: 18px 18px; align-items: start; transition: border-color 0.25s ease; }
+    @media (hover: hover) and (pointer: fine) {
+      .inside-item:hover { border-color: rgba(244,123,32,0.45); }
+    }
+    .inside-num { width: 36px; height: 36px; border-radius: 10px; background: rgba(244,123,32,0.14); border: 1px solid rgba(244,123,32,0.35); color: #F47B20; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .inside-item h3 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 4px; line-height: 1.35; }
+    .inside-item p { font-size: 0.85rem; color: #a8b4cc; }
+
+    /* Qui suis-je */
+    .about-card { display: grid; grid-template-columns: auto 1fr; gap: 28px; background: rgba(23,36,58,0.45); border: 1px solid #223352; border-radius: 16px; padding: 34px; margin-top: 32px; align-items: start; }
+    @media (max-width: 640px) { .about-card { grid-template-columns: 1fr; } }
+    .about-avatar { width: 84px; height: 84px; border-radius: 50%; background: linear-gradient(135deg, #F47B20, #ff9242); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 26px; color: #fff; box-shadow: 0 10px 30px rgba(244,123,32,0.35); }
+    .about-card p { font-size: 0.98rem; color: #a8b4cc; margin-bottom: 14px; }
+    .about-card p:last-child { margin-bottom: 0; }
+    .about-card p strong { color: #fff; }
+
+    /* CTA textuel avant FAQ */
+    .text-cta { text-align: center; padding: 28px 0 0; }
+    .text-cta p { color: #cdd6e6; font-size: 1rem; font-weight: 600; }
+    .text-cta .text-cta-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #ff9242; text-decoration: none; transition: color 0.15s ease, gap 0.15s ease; }
+    .text-cta .text-cta-link:hover { color: #F47B20; gap: 10px; }
+    .text-cta .text-cta-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    /* FAQ accordéon */
+    .faq-list { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; max-width: 780px; margin-left: auto; margin-right: auto; }
+    details.faq-item { background: rgba(23,36,58,0.45); border: 1px solid #223352; border-radius: 12px; overflow: hidden; transition: border-color 0.25s ease; }
+    details.faq-item[open] { border-color: rgba(244,123,32,0.4); }
+    details.faq-item summary { cursor: pointer; list-style: none; padding: 20px 24px; font-size: 0.98rem; font-weight: 700; color: #fff; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary .chevron { flex-shrink: 0; width: 20px; height: 20px; color: #F47B20; transition: transform 0.25s cubic-bezier(0.23,1,0.32,1); }
+    details.faq-item[open] summary .chevron { transform: rotate(180deg); }
+    .faq-item .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s cubic-bezier(0.23,1,0.32,1); }
+    .faq-item[open] .faq-answer { grid-template-rows: 1fr; }
+    .faq-answer-inner { overflow: hidden; }
+    .faq-answer-inner p { padding: 0 24px 20px; font-size: 0.92rem; color: #a8b4cc; }
+
+    /* Formulaire (bloc dans le hero) */
+    .form-card { background: rgba(23,36,58,0.6); border: 1px solid #2a3a5c; border-radius: 16px; padding: 30px 28px; box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
+    @media (max-width: 560px) { .form-card { padding: 24px 20px; } }
+    .form-card h2 { font-size: 1.3rem; margin-bottom: 8px; }
+    .form-sub { font-size: 0.9rem; color: #a8b4cc; margin-bottom: 22px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+    .field { margin-bottom: 13px; }
+    .field label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #cdd6e6; margin-bottom: 6px; }
+    .field label .req { color: #F47B20; }
+    .field input, .field select { width: 100%; background: #0e1626; border: 1px solid #2a3a5c; border-radius: 10px; padding: 12px 13px; color: #fff; font-family: 'Manrope', sans-serif; font-size: 0.92rem; outline: none; transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+    .field input:focus, .field select:focus { border-color: #F47B20; box-shadow: 0 0 0 3px rgba(244,123,32,0.15); }
+    .field select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23F47B20' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer; }
+    .field select option { background: #0e1626; color: #fff; }
+    .consent { display: flex; gap: 12px; align-items: flex-start; margin: 18px 0 20px; cursor: pointer; }
+    .consent input { width: 18px; height: 18px; margin-top: 2px; accent-color: #F47B20; cursor: pointer; flex-shrink: 0; }
+    .consent .consent-label { font-weight: 700; color: #fff; font-size: 0.9rem; }
+    .consent .consent-note { font-size: 0.82rem; color: #a8b4cc; margin-top: 2px; }
+    .form-error { display: none; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.45); color: #fca5a5; font-size: 0.88rem; padding: 11px 14px; border-radius: 10px; margin-bottom: 16px; }
+    .form-error.visible { display: block; }
+    .form-footer-note { text-align: center; margin-top: 12px; font-size: 0.82rem; color: #7d8aa5; }
+
+    /* Micro-assurances en 3 puces sous le formulaire */
+    .hero-assurances { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+    .hero-assurance { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: #a8b4cc; }
+    .hero-assurance .check { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; background: rgba(244,123,32,0.14); border: 1px solid rgba(244,123,32,0.4); display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .hero-assurance .check svg { width: 10px; height: 10px; color: #F47B20; }
+    .hero-assurance strong { color: #fff; font-weight: 700; }
+
+    /* CTA final */
+    .final-cta { text-align: center; }
+    .final-cta h2 { max-width: 640px; margin-left: auto; margin-right: auto; }
+    .final-cta p { color: #a8b4cc; max-width: 560px; margin: 0 auto 28px; }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid rgba(23,36,58,0.6); padding: 36px 0; }
+    .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+    .footer-inner img { height: 24px; width: auto; }
+    .footer-inner p { font-size: 0.82rem; color: #7d8aa5; }
+    .footer-inner .mono { font-size: 0.78rem; color: #5a6884; letter-spacing: 0.06em; }
+
+    /* Scroll reveal : ajouté par JS (html.js-reveal), no-JS = tout visible */
+    .js-reveal [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity 0.6s cubic-bezier(0.23,1,0.32,1), transform 0.6s cubic-bezier(0.23,1,0.32,1); transition-delay: var(--d, 0s); will-change: opacity, transform; }
+    .js-reveal [data-reveal].revealed { opacity: 1; transform: none; }
+
+    @media (max-width: 640px) { .hero { padding: 40px 0 48px; } section { padding: 56px 0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js-reveal [data-reveal] { opacity: 1; transform: none; transition: none; }
+      details.faq-item summary .chevron { transition: none; }
+      .faq-item .faq-answer { transition: none; }
+      .benefit-card, .inside-item, .btn, .header-cta, .text-cta-link { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/"><img src="/logo.png" alt="HUVI Optimisation"><span class="divider"></span><span class="tag">Optimisation</span></a>
+      <a class="header-cta" href="#formulaire">Je télécharge mon playbook</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero : split, formulaire visible sans scroll -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Blueprint gratuit</span>
+          <h1>Le blueprint gratuit pour standardiser tes opérations et <span class="accent">reprendre le contrôle</span> de ta business</h1>
+          <p class="hero-sub">La méthode S.T.A.N.D.A.R.D. pour transformer tes suivis, tes chantiers et tes tâches en processus <span class="kw">CLAIRS</span>, <span class="kw">SIMPLES</span> ET <span class="kw">RÉPÉTABLES</span>. Fini d'être le cerveau de la business. Plain and simple.</p>
+          <a class="btn" href="#formulaire">Je télécharge mon playbook</a>
+          <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Gratuit. Zéro engagement.</p>
+
+          <div class="control-card">
+            <p class="control-label">La méthode en 8 lettres</p>
+            <div class="control-letters">
+              <div class="control-letter">S<span>éparer</span></div>
+              <div class="control-letter">T<span>raduire</span></div>
+              <div class="control-letter">A<span>ssigner</span></div>
+              <div class="control-letter">N<span>ormaliser</span></div>
+              <div class="control-letter">D<span>éclencher</span></div>
+              <div class="control-letter">A<span>nalyser</span></div>
+              <div class="control-letter">R<span>affiner</span></div>
+              <div class="control-letter">D<span>ocumenter</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulaire dans le hero (capture immédiate) -->
+        <div id="formulaire">
+          <div class="form-card">
+            <h2>Télécharge le blueprint gratuit</h2>
+            <p class="form-sub">Remplis le formulaire et reçois ta copie du blueprint par courriel, dans les prochaines minutes.</p>
+            <form id="lead-form" novalidate>
+              <div class="form-row">
+                <div class="field">
+                  <label for="prenom">Prénom <span class="req">*</span></label>
+                  <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
+                </div>
+                <div class="field">
+                  <label for="nom">Nom <span class="req">*</span></label>
+                  <input type="text" id="nom" name="nom" autocomplete="family-name" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="courriel">Courriel <span class="req">*</span></label>
+                  <input type="email" id="courriel" name="courriel" autocomplete="email" required>
+                </div>
+                <div class="field">
+                  <label for="entreprise">Entreprise <span class="req">*</span></label>
+                  <input type="text" id="entreprise" name="entreprise" autocomplete="organization" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="typeEntreprise">Type d'entreprise <span class="req">*</span></label>
+                  <select id="typeEntreprise" name="typeEntreprise" required>
+                    <option value="" selected disabled>Choisis une option</option>
+                    <option value="Construction / Rénovation">Construction / Rénovation</option>
+                    <option value="Entreprise de service">Entreprise de service</option>
+                    <option value="Professionnel (comptable, avocat, etc.)">Professionnel (comptable, avocat, etc.)</option>
+                    <option value="Autre">Autre</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="telephone">Téléphone (optionnel)</label>
+                  <input type="tel" id="telephone" name="telephone" autocomplete="tel">
+                </div>
+              </div>
+
+              <label class="consent">
+                <input type="checkbox" id="consentement" name="consentement" value="true">
+                <span>
+                  <span class="consent-label">Rester en contact avec HUVI Optimisation</span>
+                  <span class="consent-note">Ton courriel sert à t'envoyer le blueprint et des conseils pour standardiser tes opérations et reprendre le contrôle.</span>
+                </span>
+              </label>
+
+              <div class="form-error" id="form-error" role="alert" aria-live="assertive"></div>
+
+              <button type="submit" class="btn" id="submit-btn" style="width:100%;">Je télécharge mon playbook</button>
+              <p class="form-footer-note">Gratuit. Zéro engagement.</p>
+            </form>
+          </div>
+
+          <!-- Micro-assurances en 3 puces sous le formulaire -->
+          <div class="hero-assurances">
+            <div class="hero-assurance"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>GRATUIT</strong>, vraiment. Aucun piège, aucun abonnement caché.</span></div>
+            <div class="hero-assurance"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Concret</strong>, pas de théorie : des checklists et des exemples terrain directement applicables.</span></div>
+            <div class="hero-assurance"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Simple</strong>, pas un manuel de 40 pages : une procédure se comprend en 30 secondes, sur un cellulaire.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bénéfices -->
+    <section class="section-alt">
+      <div class="container">
+        <p class="section-label">Bénéfices</p>
+        <h2>Ce que tu vas gagner</h2>
+        <div class="benefits-grid">
+          <div class="benefit-card" data-reveal style="--d:0s;">
+            <div class="benefit-num">01</div>
+            <h3><span class="kw">RÉCUPÈRE</span> l'argent perdu</h3>
+            <p>Des milliers de dollars s'évaporent en erreurs et en oublis : extras jamais facturés, soumissions sans suivi, heures faussées. Le blueprint te montre où.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0.06s;">
+            <div class="benefit-num">02</div>
+            <h3><span class="kw">SORS</span> les opérations de ta tête</h3>
+            <p>Ta business dépend de ta mémoire, de tes textos et de tes notes éparpillées. On sort ça de là, une étape à la fois.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0.12s;">
+            <div class="benefit-num">03</div>
+            <h3>GÈRE des chantiers <span class="kw">PRÉVISIBLES</span></h3>
+            <p>Chaque employé suit la même recette, au même standard. Fini de répéter les mêmes affaires aux mêmes personnes, chaque semaine.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0s;">
+            <div class="benefit-num">04</div>
+            <h3><span class="kw">ASSIGNE</span> les responsabilités, PAS les zones grises</h3>
+            <p>« Je pensais que c'était Marc qui s'en occupait ! » Cette phrase coûte cher. Chaque étape doit avoir un Qui, un Quoi, un Quand, point.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0.06s;">
+            <div class="benefit-num">05</div>
+            <h3><span class="kw">AUTOMATISE</span> au BON moment</h3>
+            <p>La bonne séquence : Clarté → Processus → Procédures → Outils → Automatisation. Un processus flou automatisé, c'est tes problèmes en accéléré.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0.12s;">
+            <div class="benefit-num">06</div>
+            <h3><span class="kw">RÉDUIS</span> les dépenses, <span class="kw">GAGNE</span> du temps</h3>
+            <p>Moins de charge mentale, moins de répétitions, plus de prévisibilité. Plus de résultats avec moins de ressources, that's the game.</p>
+          </div>
+        </div>
+
+        <!-- CTA intermédiaire -->
+        <div class="cta-band" data-reveal>
+          <p>Gratuit. Zéro engagement.</p>
+          <a class="btn btn-sm" href="#formulaire">Je télécharge mon playbook</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- À l'intérieur -->
+    <section>
+      <div class="container">
+        <p class="section-label">Le contenu</p>
+        <h2>À l'intérieur du blueprint</h2>
+        <p class="lead">Pas de filler. Voici ce que tu vas trouver, dans l'ordre :</p>
+        <div class="inside-grid">
+          <div class="inside-item" data-reveal style="--d:0s;">
+            <div class="inside-num">1</div>
+            <div><h3>Le vrai problème</h3><p>Le syndrome de l'effort héroïque et pourquoi travailler PLUS fort ne règlera rien.</p></div>
+          </div>
+          <div class="inside-item" data-reveal style="--d:0.05s;">
+            <div class="inside-num">2</div>
+            <div><h3>La méthode S.T.A.N.D.A.R.D. en 8 lettres</h3><p>Séparer, Traduire, Assigner, Normaliser, Déclencher, Analyser, Raffiner, Documenter.</p></div>
+          </div>
+          <div class="inside-item" data-reveal style="--d:0.1s;">
+            <div class="inside-num">3</div>
+            <div><h3>Les 8 opérations à cibler en premier</h3><p>Des leads jusqu'à la facturation, la liste concrète pour commencer.</p></div>
+          </div>
+          <div class="inside-item" data-reveal style="--d:0s;">
+            <div class="inside-num">4</div>
+            <div><h3>Les 7 opérations essentielles simplifiées</h3><p>Exemples terrain, problème → solution → automatisation.</p></div>
+          </div>
+          <div class="inside-item" data-reveal style="--d:0.05s;">
+            <div class="inside-num">5</div>
+            <div><h3>Les dashboards</h3><p>Rendre l'invisible visible, pipeline, production, rentabilité réelle.</p></div>
+          </div>
+          <div class="inside-item" data-reveal style="--d:0.1s;">
+            <div class="inside-num">6</div>
+            <div><h3>Le plan en 7 jours</h3><p>Comment briser la paralysie et commencer dès cette semaine.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qui suis-je -->
+    <section class="section-alt">
+      <div class="container">
+        <p class="section-label">L'auteur</p>
+        <h2>Qui suis-je pour te parler de ça ?</h2>
+        <div class="about-card" data-reveal>
+          <div class="about-avatar">HV</div>
+          <div>
+            <p><strong>Moi c'est Hugo Viens, fondateur d'HUVI Optimisation</strong>, une agence spécialisée dans l'architecture de systèmes et l'optimisation des opérations. On aide les PME de services à faire <span class="kw">PLUS</span> avec <span class="kw">MOINS</span>.</p>
+            <p>Architecte de systèmes, oui, vendeur de théorie, non.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA rappel avant FAQ -->
+    <section>
+      <div class="container">
+        <div class="text-cta" data-reveal>
+          <p>Le blueprint, c'est la méthode. À toi de l'appliquer.</p>
+          <a class="text-cta-link" href="#formulaire">Je télécharge mon playbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-alt">
+      <div class="container">
+        <p class="section-label">FAQ</p>
+        <h2>Questions fréquentes</h2>
+        <div class="faq-list">
+          <details class="faq-item" data-reveal>
+            <summary>C'est pour qui, ce blueprint ? <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>Pour les dirigeants de PME de services et de construction qui veulent simplifier leur quotidien, gagner en prévisibilité et arrêter de tout porter sur leurs épaules.</p></div></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Mes projets sont tous différents. Je peux pas standardiser ça. <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>Justement : on standardise le squelette (le répétitif) pour garder ton énergie pour les exceptions. C'est là que ton jugement d'entrepreneur vaut de l'or.</p></div></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Ça veut dire plus de paperasse ? <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>NON. Standardiser, c'est simplifier : clarifier les étapes essentielles, pas écrire des procédures de 40 pages que personne ne lit.</p></div></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Je dois acheter des logiciels pour commencer ? <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>Pas tout de suite. La bonne séquence : Clarté → Processus → Procédures → Outils → Automatisation, parce que les outils viennent à la fin de la réflexion.</p></div></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>Prêt à arrêter d'être le cerveau de ta business ?</h2>
+        <p>Télécharge le blueprint gratuit et commence à standardiser dès cette semaine.</p>
+        <a class="btn" href="#formulaire">Je télécharge mon playbook</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="/logo.png" alt="HUVI Optimisation">
+      <p>© 2026 HUVI Optimisation Inc. Tous droits réservés. · Montréal, Québec, Canada.</p>
+      <p class="mono">huvioptimisation.com · (450) 522-0955</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      "use strict";
+
+      // ===== Configuration =====
+      // URL du webhook Make DÉDIÉ au funnel Blueprint STANDARD. À remplacer par
+      // l'URL réelle fournie par Hugo après création dans l'UI Make (voir SPEC_WEBHOOK_MAKE_vague3.md).
+      // Laisser VIDE = le formulaire affiche une erreur claire (jamais de faux succès).
+      var LEAD_WEBHOOK_URL = "";
+
+      // Token de la page de confirmation : utilisé en secours uniquement.
+      // La voie nominale : Make répond 302 vers /merci-standard/?t=<TOKEN>.
+      // Le CORS cross-origin empêche de lire l'URL de redirection depuis fetch :
+      // on la reconstruit ici après confirmation du succès de l'envoi.
+      var THANK_YOU_PATH = "/merci-standard/?t=TOKEN_STANDARD_2026";
+
+      // ===== UTM : capture à l'arrivée, persistance en sessionStorage =====
+      var UTM_STORAGE_KEY = "blueprint-standard:utm";
+      var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+
+      function captureUtm() {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var utm = {};
+          var hasAny = false;
+          UTM_KEYS.forEach(function (key) {
+            var val = params.get(key);
+            if (val) { utm[key] = val; hasAny = true; }
+          });
+          if (hasAny) {
+            sessionStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(utm));
+          }
+        } catch (e) {
+          // sessionStorage indisponible : on continue sans UTM
+        }
+      }
+
+      function getUtm() {
+        try {
+          var raw = sessionStorage.getItem(UTM_STORAGE_KEY);
+          if (!raw) return {};
+          var parsed = JSON.parse(raw);
+          var out = {};
+          UTM_KEYS.forEach(function (key) {
+            if (parsed[key]) out[key] = parsed[key];
+          });
+          return out;
+        } catch (e) {
+          return {};
+        }
+      }
+
+      captureUtm();
+
+      // ===== Formulaire =====
+      var form = document.getElementById("lead-form");
+      var errorBox = document.getElementById("form-error");
+      var submitBtn = document.getElementById("submit-btn");
+
+      function showError(message) {
+        errorBox.textContent = message;
+        errorBox.classList.add("visible");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Je télécharge mon playbook";
+      }
+
+      function setLoading() {
+        errorBox.classList.remove("visible");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Envoi en cours…";
+      }
+
+      function redirectToThankYou(prenomCapture) {
+        // Le prénom est conservé pour la personnalisation de la page de confirmation
+        // (sessionStorage survit à la redirection dans le même onglet).
+        try { sessionStorage.setItem("blueprint-standard:prenom", prenomCapture); } catch (e) {}
+        window.location.href = THANK_YOU_PATH;
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var prenom = document.getElementById("prenom").value.trim();
+        var nom = document.getElementById("nom").value.trim();
+        var courriel = document.getElementById("courriel").value.trim();
+        var entreprise = document.getElementById("entreprise").value.trim();
+        var typeEntreprise = document.getElementById("typeEntreprise").value;
+        var telephone = document.getElementById("telephone").value.trim();
+        var consentement = document.getElementById("consentement").checked;
+
+        // Validation (double sécurité au-delà des attributs HTML)
+        if (!prenom || !nom || !courriel || !entreprise || !typeEntreprise) {
+          showError("Tous les champs obligatoires doivent être remplis.");
+          return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(courriel)) {
+          showError("Le courriel semble invalide. Vérifie-le et réessaie.");
+          return;
+        }
+
+        if (!LEAD_WEBHOOK_URL) {
+          // Anti-piège : jamais de faux succès. Webhook pas encore configuré.
+          showError("Le formulaire n'est pas encore actif. Réessaie dans quelques instants.");
+          return;
+        }
+
+        var payload = {
+          "prénom": prenom,
+          "nom": nom,
+          "courriel": courriel,
+          "entreprise": entreprise,
+          "typeEntreprise": typeEntreprise,
+          "téléphone": telephone,
+          "consentement": consentement,
+          "source": "blueprint-standard",
+          "capturedAt": Date.now()
+        };
+
+        // Fusion des UTM capturées en sessionStorage
+        var utm = getUtm();
+        Object.keys(utm).forEach(function (key) { payload[key] = utm[key]; });
+
+        setLoading();
+
+        fetch(LEAD_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          // manual : on ne suit pas la 302 cross-origin via fetch (CORS) ;
+          // on la traite comme un succès et on redirige le navigateur nous-mêmes.
+          redirect: "manual",
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          if (res.type === "opaqueredirect" || res.ok) {
+            // Succès : le lead est capturé (et l'email part chez Make).
+            redirectToThankYou(prenom);
+          } else {
+            showError("L'envoi a échoué (erreur " + res.status + "). Réessaie dans quelques instants.");
+          }
+        }).catch(function () {
+          showError("Oups, l'envoi a échoué. Vérifie ta connexion et réessaie.");
+        });
+      });
+
+      // ===== Scroll reveal (IntersectionObserver, prefers-reduced-motion respecté) =====
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("js-reveal");
+        var revealEls = document.querySelectorAll("[data-reveal]");
+        if ("IntersectionObserver" in window) {
+          var revealObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("revealed");
+                revealObs.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+          revealEls.forEach(function (el) { revealObs.observe(el); });
+        } else {
+          revealEls.forEach(function (el) { el.classList.add("revealed"); });
+        }
+      }
+
+      // ===== FAQ accordéon : un seul item ouvert à la fois =====
+      var faqItems = document.querySelectorAll(".faq-item");
+      faqItems.forEach(function (item) {
+        var summary = item.querySelector("summary");
+        summary.addEventListener("click", function () {
+          if (item.open) return; // le toggle natif referme celui-ci
+          faqItems.forEach(function (other) {
+            if (other !== item) other.open = false;
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
