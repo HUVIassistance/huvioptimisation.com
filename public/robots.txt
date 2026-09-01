@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /calendrier/
+Disallow: /leads/
 
 Sitemap: https://www.huvioptimisation.com/sitemap.xml
