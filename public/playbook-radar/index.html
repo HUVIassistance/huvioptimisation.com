@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playbook R.A.D.A.R. : transformer tes données en décisions</title>
+  <meta name="description" content="Télécharge le playbook gratuit d'HUVI : la méthode R.A.D.A.R. pour repérer tes fuites d'argent, détecter les problèmes d'avance et ne plus décider au feeling.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.huvioptimisation.com/playbook-radar/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.huvioptimisation.com/playbook-radar/">
+  <meta property="og:title" content="Playbook R.A.D.A.R. : transformer tes données en décisions">
+  <meta property="og:description" content="Télécharge le playbook gratuit d'HUVI : la méthode R.A.D.A.R. pour repérer tes fuites d'argent, détecter les problèmes d'avance et ne plus décider au feeling.">
+  <meta property="og:image" content="https://www.huvioptimisation.com/og-image.jpg">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="twitter:card" content="summary_large_image">
+
+  <!-- FAQPage JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "C'est pour qui, ce playbook ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour les dirigeants de PME de services et de construction qui veulent faire grandir leur entreprise sans laisser les choses au hasard."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "J'ai pas le temps de remplir d'autres formulaires.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "T'as pas besoin : dans 90% des cas, tes données existent déjà (soumissions, heures, calendrier, photos). On les regroupe, on les fait parler."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mes gars sont là pour bâtir, pas pour la paperasse.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Exactement. Le système catégorise le temps sans les écoeurer, et l'IA transforme même une note vocale du terrain en données actionnables."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de chiffres je dois suivre ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "3 à 5 par trimestre, pas plus. Si tout est important, rien n'est important."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=JetBrains+Mono:wght@400..500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #0b1220;
+      color: #E2E8F0;
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+    }
+    ::selection { background: rgba(244,123,32,0.3); color: #fff; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* Accent visuel : mot-clé MAJUSCULES */
+    .kw {
+      color: #F47B20;
+      font-weight: 800;
+      background: linear-gradient(transparent 62%, rgba(244,123,32,0.16) 62%);
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+    /* Données lumineuses : teinte bleutée pour l'ambiance data (variation autorisée) */
+    .data { color: #6db3f2; font-weight: 800; }
+
+    /* Header : minimal, bouton petit */
+    .site-header { border-bottom: 1px solid rgba(109,179,242,0.18); background: rgba(11,18,32,0.85); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 50; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+    .brand img { height: 26px; width: auto; }
+    .brand .divider { width: 1px; height: 18px; background: rgba(244,123,32,0.5); }
+    .brand .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #F47B20; font-weight: 600; }
+    .header-cta {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #fff;
+      background: linear-gradient(90deg, #F47B20, #ff9242);
+      padding: 6px 12px; border-radius: 8px; text-decoration: none;
+      box-shadow: none; white-space: nowrap;
+      transition: transform 0.15s ease-out, filter 0.15s ease-out;
+    }
+    .header-cta:hover { filter: brightness(1.06); }
+    .header-cta:active { transform: scale(0.97); }
+
+    /* Hero data : fond sombre + "radar" lumineux */
+    .hero { padding: 80px 0 72px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(900px 420px at 80% -10%, rgba(109,179,242,0.14), transparent 60%),
+        radial-gradient(700px 420px at 10% 110%, rgba(244,123,32,0.10), transparent 60%);
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
+      background-image:
+        linear-gradient(rgba(109,179,242,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(109,179,242,0.06) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(600px 400px at 50% 0%, #000 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(600px 400px at 50% 0%, #000 30%, transparent 80%);
+    }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1fr 0.9fr; gap: 56px; align-items: center; }
+    @media (max-width: 920px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #6db3f2; background: rgba(109,179,242,0.10); border: 1px solid rgba(109,179,242,0.3); padding: 7px 14px; border-radius: 999px; margin-bottom: 24px; }
+    .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: #6db3f2; box-shadow: 0 0 0 0 rgba(109,179,242,0.5); animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(109,179,242,0.5); } 70% { box-shadow: 0 0 0 8px rgba(109,179,242,0); } 100% { box-shadow: 0 0 0 0 rgba(109,179,242,0); } }
+    .hero h1 { font-size: clamp(1.9rem, 4.2vw, 2.9rem); line-height: 1.12; font-weight: 800; letter-spacing: -0.02em; color: #fff; margin-bottom: 20px; }
+    .hero h1 .accent { color: #6db3f2; }
+    .hero-sub { font-size: 1.06rem; color: #a8b4cc; max-width: 560px; margin-bottom: 32px; }
+    .hero-sub strong { color: #fff; font-weight: 600; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase; color: #fff;
+      background: linear-gradient(90deg, #F47B20, #ff9242);
+      padding: 15px 28px; border-radius: 12px; text-decoration: none;
+      box-shadow: 0 8px 28px rgba(244,123,32,0.30); border: none; cursor: pointer;
+      transition: transform 0.16s ease-out, box-shadow 0.2s ease-out, filter 0.16s ease-out;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(244,123,32,0.40); filter: brightness(1.05); }
+    .btn:active { transform: translateY(-1px) scale(0.97); }
+    .btn:focus-visible, .header-cta:focus-visible, .text-cta-link:focus-visible, summary:focus-visible, a:focus-visible { outline: 2px solid #F47B20; outline-offset: 2px; border-radius: 8px; }
+    .btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+    .btn-sm { padding: 9px 16px; font-size: 11px; border-radius: 10px; box-shadow: 0 4px 16px rgba(244,123,32,0.25); }
+    .hero-note { display: flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 0.88rem; color: #7d8aa5; }
+    .hero-note svg { width: 16px; height: 16px; color: #F47B20; }
+
+    /* Panneau "signal" : mockup de dashboard lumineux */
+    .signal-card { position: relative; border-radius: 18px; background: linear-gradient(160deg, #101c31, #0a1424); border: 1px solid rgba(109,179,242,0.35); padding: 26px 24px; box-shadow: 0 30px 70px rgba(0,0,0,0.5), 0 0 40px rgba(109,179,242,0.08); }
+    .signal-card::before { content: ""; position: absolute; inset: 0; border-radius: 18px; background: linear-gradient(120deg, rgba(109,179,242,0.10), transparent 45%); pointer-events: none; }
+    .signal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+    .signal-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6db3f2; }
+    .signal-live { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #6db3f2; }
+    .signal-live .dot { width: 6px; height: 6px; border-radius: 50%; background: #6db3f2; animation: pulse 1.6s infinite; }
+    .signal-rows { display: flex; flex-direction: column; gap: 10px; }
+    .signal-row { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; }
+    .signal-row .label { font-size: 0.82rem; color: #a8b4cc; }
+    .signal-bar { height: 7px; border-radius: 4px; background: rgba(109,179,242,0.12); overflow: hidden; }
+    .signal-bar span { display: block; height: 100%; border-radius: 4px; background: linear-gradient(90deg, #F47B20, #6db3f2); }
+    .signal-row .val { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; font-weight: 600; color: #fff; }
+    .signal-rule { height: 1px; background: rgba(109,179,242,0.15); margin: 16px 0; }
+    .signal-foot { display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #5a6884; }
+
+    /* Sections : blocs lumineux */
+    section { padding: 76px 0; }
+    .section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6db3f2; margin-bottom: 14px; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; letter-spacing: -0.02em; color: #fff; line-height: 1.2; margin-bottom: 18px; }
+    .lead { font-size: 1.04rem; color: #a8b4cc; max-width: 720px; }
+    .lead strong { color: #fff; }
+    .section-alt { background: rgba(16,28,49,0.55); border-top: 1px solid rgba(109,179,242,0.12); border-bottom: 1px solid rgba(109,179,242,0.12); }
+
+    /* Bénéfices : blocs lumineux */
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: 36px; }
+    .benefit-card {
+      position: relative; background: rgba(16,28,49,0.65); border: 1px solid rgba(109,179,242,0.22); border-radius: 14px; padding: 26px;
+      transition: transform 0.25s cubic-bezier(0.23,1,0.32,1), border-color 0.25s ease, box-shadow 0.25s ease;
+      overflow: hidden;
+    }
+    .benefit-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #F47B20, #6db3f2); opacity: 0.5; }
+    @media (hover: hover) and (pointer: fine) {
+      .benefit-card:hover { border-color: rgba(109,179,242,0.55); transform: translateY(-4px); box-shadow: 0 18px 44px rgba(0,0,0,0.4), 0 0 30px rgba(109,179,242,0.06); }
+    }
+    .benefit-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #6db3f2; letter-spacing: 0.1em; margin-bottom: 10px; }
+    .benefit-card h3 { font-size: 1.02rem; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.35; }
+    .benefit-card h3 .kw { background: none; padding: 0; }
+    .benefit-card p { font-size: 0.9rem; color: #a8b4cc; }
+
+    /* Compteurs animés */
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+    @media (max-width: 700px) { .stats-grid { grid-template-columns: 1fr; } }
+    .stat-card { text-align: center; background: rgba(16,28,49,0.65); border: 1px solid rgba(109,179,242,0.22); border-radius: 14px; padding: 28px 20px; }
+    .stat-value { font-family: 'JetBrains Mono', monospace; font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 700; color: #6db3f2; line-height: 1; margin-bottom: 10px; }
+    .stat-value .suffix { font-size: 0.55em; }
+    .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #a8b4cc; }
+
+    /* Timeline R.A.D.A.R. animée */
+    .radar-timeline { margin-top: 44px; position: relative; display: flex; flex-direction: column; gap: 0; }
+    .radar-step { position: relative; display: grid; grid-template-columns: 72px 1fr; gap: 24px; padding: 0 0 30px 0; }
+    .radar-step:last-child { padding-bottom: 0; }
+    .radar-step::before { content: ""; position: absolute; left: 35px; top: 68px; bottom: 6px; width: 2px; background: rgba(109,179,242,0.2); }
+    .radar-step:last-child::before { display: none; }
+    .radar-orb { width: 72px; height: 72px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #1d3a5f, #0e1b30); border: 1px solid rgba(109,179,242,0.5); box-shadow: 0 0 22px rgba(109,179,242,0.18), inset 0 0 18px rgba(109,179,242,0.12); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; color: #6db3f2; position: relative; z-index: 1; }
+    .radar-step.revealed .radar-orb { animation: orb-in 0.5s cubic-bezier(0.23,1,0.32,1) both; }
+    @keyframes orb-in { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .radar-body { background: rgba(16,28,49,0.6); border: 1px solid rgba(109,179,242,0.22); border-radius: 14px; padding: 20px 24px; transition: border-color 0.25s ease, box-shadow 0.25s ease; }
+    .radar-step.revealed .radar-body { animation: body-in 0.55s cubic-bezier(0.23,1,0.32,1) both; }
+    @keyframes body-in { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+    .radar-body h3 { font-size: 1.02rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .radar-body h3 .n { color: #6db3f2; font-family: 'JetBrains Mono', monospace; margin-right: 6px; }
+    .radar-body p { font-size: 0.9rem; color: #a8b4cc; }
+    .js-reveal .radar-step { opacity: 0; transform: translateY(16px); transition: opacity 0.5s cubic-bezier(0.23,1,0.32,1), transform 0.5s cubic-bezier(0.23,1,0.32,1); transition-delay: var(--d, 0s); }
+    .js-reveal .radar-step.revealed { opacity: 1; transform: none; }
+
+    /* Bandeau CTA intermédiaire */
+    .cta-band { margin-top: 44px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; background: linear-gradient(120deg, rgba(109,179,242,0.12), rgba(16,28,49,0.6)); border: 1px solid rgba(109,179,242,0.3); border-radius: 16px; padding: 22px 28px; }
+    .cta-band p { font-size: 0.98rem; color: #cdd6e6; font-weight: 600; }
+
+    /* Qui suis-je */
+    .about-card { display: grid; grid-template-columns: auto 1fr; gap: 28px; background: rgba(16,28,49,0.6); border: 1px solid rgba(109,179,242,0.22); border-radius: 16px; padding: 34px; margin-top: 32px; align-items: start; }
+    @media (max-width: 640px) { .about-card { grid-template-columns: 1fr; } }
+    .about-avatar { width: 84px; height: 84px; border-radius: 50%; background: linear-gradient(135deg, #F47B20, #ff9242); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 26px; color: #fff; box-shadow: 0 10px 30px rgba(244,123,32,0.35); }
+    .about-card p { font-size: 0.98rem; color: #a8b4cc; margin-bottom: 14px; }
+    .about-card p:last-child { margin-bottom: 0; }
+    .about-card p strong { color: #fff; }
+
+    /* Micro-assurances */
+    .assurances-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 32px; }
+    .assurance { display: flex; gap: 14px; background: rgba(16,28,49,0.6); border: 1px solid rgba(109,179,242,0.22); border-radius: 14px; padding: 22px; transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.23,1,0.32,1); }
+    @media (hover: hover) and (pointer: fine) {
+      .assurance:hover { border-color: rgba(109,179,242,0.5); transform: translateY(-3px); }
+    }
+    .assurance .check { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: rgba(109,179,242,0.14); border: 1px solid rgba(109,179,242,0.45); display: flex; align-items: center; justify-content: center; }
+    .assurance .check svg { width: 13px; height: 13px; color: #6db3f2; }
+    .assurance h3 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 5px; }
+    .assurance p { font-size: 0.87rem; color: #a8b4cc; }
+
+    /* CTA textuel avant FAQ */
+    .text-cta { text-align: center; padding: 28px 0 0; }
+    .text-cta p { color: #cdd6e6; font-size: 1rem; font-weight: 600; }
+    .text-cta .text-cta-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #6db3f2; text-decoration: none; transition: color 0.15s ease, gap 0.15s ease; }
+    .text-cta .text-cta-link:hover { color: #F47B20; gap: 10px; }
+    .text-cta .text-cta-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    /* FAQ accordéon */
+    .faq-list { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; max-width: 780px; margin-left: auto; margin-right: auto; }
+    details.faq-item { background: rgba(16,28,49,0.6); border: 1px solid rgba(109,179,242,0.22); border-radius: 12px; overflow: hidden; transition: border-color 0.25s ease; }
+    details.faq-item[open] { border-color: rgba(244,123,32,0.4); }
+    details.faq-item summary { cursor: pointer; list-style: none; padding: 20px 24px; font-size: 0.98rem; font-weight: 700; color: #fff; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary .chevron { flex-shrink: 0; width: 20px; height: 20px; color: #6db3f2; transition: transform 0.25s cubic-bezier(0.23,1,0.32,1); }
+    details.faq-item[open] summary .chevron { transform: rotate(180deg); }
+    .faq-item .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s cubic-bezier(0.23,1,0.32,1); }
+    .faq-item[open] .faq-answer { grid-template-rows: 1fr; }
+    .faq-answer-inner { overflow: hidden; }
+    .faq-answer-inner p { padding: 0 24px 20px; font-size: 0.92rem; color: #a8b4cc; }
+
+    /* Formulaire (en fin de page) */
+    .form-wrap { max-width: 640px; margin: 0 auto; }
+    .form-card { background: rgba(16,28,49,0.7); border: 1px solid rgba(109,179,242,0.35); border-radius: 18px; padding: 40px 38px; box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 0 40px rgba(109,179,242,0.06); margin-top: 32px; }
+    @media (max-width: 560px) { .form-card { padding: 28px 22px; } }
+    .form-card h2 { margin-bottom: 8px; }
+    .form-sub { font-size: 0.95rem; color: #a8b4cc; margin-bottom: 26px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #cdd6e6; margin-bottom: 7px; }
+    .field label .req { color: #F47B20; }
+    .field input, .field select { width: 100%; background: #0a1424; border: 1px solid #24405f; border-radius: 10px; padding: 13px 14px; color: #fff; font-family: 'Manrope', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+    .field input:focus, .field select:focus { border-color: #6db3f2; box-shadow: 0 0 0 3px rgba(109,179,242,0.15); }
+    .field select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236db3f2' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer; }
+    .field select option { background: #0a1424; color: #fff; }
+    .consent { display: flex; gap: 12px; align-items: flex-start; margin: 22px 0 24px; cursor: pointer; }
+    .consent input { width: 18px; height: 18px; margin-top: 2px; accent-color: #F47B20; cursor: pointer; flex-shrink: 0; }
+    .consent .consent-label { font-weight: 700; color: #fff; font-size: 0.92rem; }
+    .consent .consent-note { font-size: 0.84rem; color: #a8b4cc; margin-top: 2px; }
+    .form-error { display: none; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.45); color: #fca5a5; font-size: 0.9rem; padding: 12px 16px; border-radius: 10px; margin-bottom: 18px; }
+    .form-error.visible { display: block; }
+    .form-footer-note { text-align: center; margin-top: 14px; font-size: 0.84rem; color: #7d8aa5; }
+
+    /* CTA final */
+    .final-cta { text-align: center; }
+    .final-cta h2 { max-width: 640px; margin-left: auto; margin-right: auto; }
+    .final-cta p { color: #a8b4cc; max-width: 560px; margin: 0 auto 28px; }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid rgba(109,179,242,0.15); padding: 36px 0; }
+    .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+    .footer-inner img { height: 24px; width: auto; }
+    .footer-inner p { font-size: 0.82rem; color: #7d8aa5; }
+    .footer-inner .mono { font-size: 0.78rem; color: #5a6884; letter-spacing: 0.06em; }
+
+    /* Sticky bar CTA */
+    .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: rgba(11,18,32,0.92); backdrop-filter: blur(10px); border-top: 1px solid rgba(244,123,32,0.3); box-shadow: 0 -10px 30px rgba(0,0,0,0.35); transform: translateY(110%); transition: transform 0.32s cubic-bezier(0.23,1,0.32,1); }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 24px; }
+    .sticky-text { font-size: 0.88rem; font-weight: 600; color: #cdd6e6; }
+    @media (max-width: 560px) { .sticky-text { font-size: 0.78rem; } }
+
+    /* Scroll reveal */
+    .js-reveal [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity 0.6s cubic-bezier(0.23,1,0.32,1), transform 0.6s cubic-bezier(0.23,1,0.32,1); transition-delay: var(--d, 0s); will-change: opacity, transform; }
+    .js-reveal [data-reveal].revealed { opacity: 1; transform: none; }
+
+    @media (max-width: 640px) { .hero { padding: 48px 0 48px; } section { padding: 56px 0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js-reveal [data-reveal] { opacity: 1; transform: none; transition: none; }
+      .js-reveal .radar-step { opacity: 1; transform: none; transition: none; }
+      .sticky-cta { transition: none; }
+      details.faq-item summary .chevron { transition: none; }
+      .faq-item .faq-answer { transition: none; }
+      .benefit-card, .assurance, .radar-body, .btn, .header-cta, .text-cta-link { transition: none; }
+      .stat-value { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/"><img src="/logo.png" alt="HUVI Optimisation"><span class="divider"></span><span class="tag">Optimisation</span></a>
+      <a class="header-cta" href="#formulaire">Je télécharge mon playbook</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero data -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Playbook gratuit</span>
+          <h1>Le playbook gratuit pour transformer tes <span class="accent">données</span> en décisions</h1>
+          <p class="hero-sub">La méthode R.A.D.A.R. pour rendre l'invisible visible : repère tes fuites d'argent, détecte les problèmes d'avance et décide avec des <span class="kw">FAITS</span>, pas au feeling.</p>
+          <a class="btn" href="#formulaire">Je télécharge mon playbook</a>
+          <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Gratuit. Zéro engagement.</p>
+        </div>
+        <div>
+          <div class="signal-card">
+            <div class="signal-head">
+              <span class="signal-title">Signal·Données</span>
+              <span class="signal-live"><span class="dot"></span> Live</span>
+            </div>
+            <div class="signal-rows">
+              <div class="signal-row"><span class="label">Extras non facturés</span><span class="val">DÉTECTÉ</span></div>
+              <div class="signal-bar"><span style="width:78%;"></span></div>
+              <div class="signal-row"><span class="label">Heures perdues</span><span class="val">DÉTECTÉ</span></div>
+              <div class="signal-bar"><span style="width:64%;"></span></div>
+              <div class="signal-row"><span class="label">Opportunités dormantes</span><span class="val">VISIBLE</span></div>
+              <div class="signal-bar"><span style="width:52%;"></span></div>
+            </div>
+            <div class="signal-rule"></div>
+            <div class="signal-foot"><span>3-5 métriques</span><span>vue claire</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bénéfices -->
+    <section class="section-alt">
+      <div class="container">
+        <p class="section-label">Bénéfices</p>
+        <h2>Ce que tu vas gagner</h2>
+        <div class="benefits-grid">
+          <div class="benefit-card" data-reveal style="--d:0s;">
+            <div class="benefit-num">01</div>
+            <h3><span class="kw">TRACK</span> ton ARGENT FANTÔME</h3>
+            <p>Extras jamais facturés, heures perdues, opportunités dormantes. L'argent qui s'évapore sans que tu le voies, enfin visible.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0.06s;">
+            <div class="benefit-num">02</div>
+            <h3><span class="kw">DÉTECTE</span> les problèmes <span class="kw">D'AVANCE</span></h3>
+            <p>Fini d'éteindre des feux 24/24. Tu vois les écarts AVANT de perdre l'argent, pas 3 semaines après, quand c'est trop tard.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0.12s;">
+            <div class="benefit-num">03</div>
+            <h3><span class="kw">DÉCIDE</span> avec des FAITS</h3>
+            <p>Des chiffres concrets, au bon endroit, au bon moment. Fini de gérer au feeling : être occupé ne veut pas dire être en contrôle.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0s;">
+            <div class="benefit-num">04</div>
+            <h3><span class="kw">DÉLÈGUE</span> en CONFIANCE</h3>
+            <p>Tu sais exactement ce qui se passe quand t'es pas là : le système t'alerte seulement si quelque chose dérape. Sinon, tu continues ta journée.</p>
+          </div>
+          <div class="benefit-card" data-reveal style="--d:0.06s;">
+            <div class="benefit-num">05</div>
+            <h3>GARDE tes gars <span class="kw">TRANQUILLES</span></h3>
+            <p>Zéro paperasse de plus : dans 90% des cas, tes données existent DÉJÀ, on les regroupe, on les fait parler. Tes gars continuent à bâtir.</p>
+          </div>
+        </div>
+
+        <!-- Chiffres clés en compteurs animés -->
+        <div class="stats-grid">
+          <div class="stat-card" data-reveal style="--d:0s;">
+            <div class="stat-value"><span class="counter" data-count="5">0</span></div>
+            <p class="stat-label">Zones de données critiques</p>
+          </div>
+          <div class="stat-card" data-reveal style="--d:0.08s;">
+            <div class="stat-value"><span class="counter" data-count="3">0</span></div>
+            <p class="stat-label">Dashboards essentiels</p>
+          </div>
+          <div class="stat-card" data-reveal style="--d:0.16s;">
+            <div class="stat-value"><span class="counter" data-count="95">0</span><span class="suffix">%</span></div>
+            <p class="stat-label">De ta rentabilité couverte</p>
+          </div>
+        </div>
+
+        <!-- CTA intermédiaire -->
+        <div class="cta-band" data-reveal>
+          <p>Gratuit. Zéro engagement.</p>
+          <a class="btn btn-sm" href="#formulaire">Je télécharge mon playbook</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- À l'intérieur : timeline R.A.D.A.R. -->
+    <section>
+      <div class="container">
+        <p class="section-label">Le contenu</p>
+        <h2>À l'intérieur du playbook</h2>
+        <p class="lead">Pas de filler. Voici ce que tu vas trouver, dans l'ordre :</p>
+        <div class="radar-timeline">
+          <div class="radar-step" data-reveal style="--d:0s;">
+            <div class="radar-orb">01</div>
+            <div class="radar-body"><h3><span class="n">→</span>Le mythe brisé</h3><p>T'as PAS besoin de créer de nouvelles données. Dans 90% des cas, tu les as DÉJÀ.</p></div>
+          </div>
+          <div class="radar-step" data-reveal style="--d:0.06s;">
+            <div class="radar-orb">02</div>
+            <div class="radar-body"><h3><span class="n">→</span>La méthode R.A.D.A.R. en 5 lettres</h3><p>Regrouper, Analyser, Détecter, Agir, Réajuster.</p></div>
+          </div>
+          <div class="radar-step" data-reveal style="--d:0.12s;">
+            <div class="radar-orb">03</div>
+            <div class="radar-body"><h3><span class="n">→</span>Les 5 zones de données critiques</h3><p>Ventes, projets, feuilles de temps, extras, expérience client. 95% de ta rentabilité.</p></div>
+          </div>
+          <div class="radar-step" data-reveal style="--d:0.18s;">
+            <div class="radar-orb">04</div>
+            <div class="radar-body"><h3><span class="n">→</span>Les 3 dashboards essentiels</h3><p>La vue propriétaire, la vue terrain, la money view.</p></div>
+          </div>
+          <div class="radar-step" data-reveal style="--d:0.24s;">
+            <div class="radar-orb">05</div>
+            <div class="radar-body"><h3><span class="n">→</span>Les 5 pièges mortels du tracking</h3><p>Et comment les éviter.</p></div>
+          </div>
+          <div class="radar-step" data-reveal style="--d:0.3s;">
+            <div class="radar-orb">06</div>
+            <div class="radar-body"><h3><span class="n">→</span>Le plan en 5 étapes</h3><p>Pour commencer à tracker ce mois-ci, sans projet de 6 mois.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qui suis-je -->
+    <section class="section-alt">
+      <div class="container">
+        <p class="section-label">L'auteur</p>
+        <h2>Qui suis-je pour te parler de ça ?</h2>
+        <div class="about-card" data-reveal>
+          <div class="about-avatar">HV</div>
+          <div>
+            <p><strong>Moi c'est Hugo Viens, fondateur d'HUVI Optimisation</strong>, une agence spécialisée dans l'architecture de systèmes et l'optimisation des opérations. On aide les PME de services à faire <span class="kw">PLUS</span> avec <span class="kw">MOINS</span>.</p>
+            <p>Architecte de systèmes, oui, vendeur de théorie, non.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Micro-assurances -->
+    <section>
+      <div class="container">
+        <p class="section-label">Zéro bullshit</p>
+        <h2>Pas de bullshit. Juste du concret.</h2>
+        <div class="assurances-grid">
+          <div class="assurance" data-reveal style="--d:0s;">
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><h3><span class="kw">GRATUIT</span>, vraiment.</h3><p>Aucun piège, aucun abonnement caché.</p></div>
+          </div>
+          <div class="assurance" data-reveal style="--d:0.06s;">
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><h3><span class="kw">SIMPLE</span>, pas 45 chiffres.</h3><p>3 à 5 métriques par trimestre, on garde ça chirurgical.</p></div>
+          </div>
+          <div class="assurance" data-reveal style="--d:0.12s;">
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><h3><span class="kw">SANS LOURDEUR</span> pour ton équipe.</h3><p>Le système ramasse les données, tes gars continuent à bâtir.</p></div>
+          </div>
+        </div>
+
+        <!-- CTA textuel discret avant la FAQ -->
+        <div class="text-cta" data-reveal>
+          <p>Le playbook, c'est la méthode. À toi de l'appliquer.</p>
+          <a class="text-cta-link" href="#formulaire">Je télécharge mon playbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-alt">
+      <div class="container">
+        <p class="section-label">FAQ</p>
+        <h2>Questions fréquentes</h2>
+        <div class="faq-list">
+          <details class="faq-item" data-reveal>
+            <summary>C'est pour qui, ce playbook ? <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>Pour les dirigeants de PME de services et de construction qui veulent faire grandir leur entreprise sans laisser les choses au hasard.</p></div></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>J'ai pas le temps de remplir d'autres formulaires. <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>T'as pas besoin : dans 90% des cas, tes données existent déjà (soumissions, heures, calendrier, photos). On les regroupe, on les fait parler.</p></div></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Mes gars sont là pour bâtir, pas pour la paperasse. <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>Exactement. Le système catégorise le temps sans les écoeurer, et l'IA transforme même une note vocale du terrain en données actionnables.</p></div></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Combien de chiffres je dois suivre ? <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>3 à 5 par trimestre, pas plus. Si tout est important, rien n'est important.</p></div></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>Prêt à arrêter de gérer au feeling ?</h2>
+        <p>Télécharge le playbook gratuit et commence à voir clair dans tes chiffres cette semaine.</p>
+        <a class="btn" href="#formulaire">Je télécharge mon playbook</a>
+      </div>
+    </section>
+
+    <!-- Formulaire (en fin) -->
+    <section id="formulaire" class="section-alt">
+      <div class="container form-wrap">
+        <p class="section-label" style="text-align:center;">Téléchargement gratuit</p>
+        <h2 style="text-align:center;">Télécharge le playbook gratuit</h2>
+        <p class="form-sub" style="text-align:center;">Remplis le formulaire et reçois ta copie du playbook par courriel, dans les prochaines minutes.</p>
+        <div class="form-card" data-reveal>
+          <form id="lead-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="prenom">Prénom <span class="req">*</span></label>
+                <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
+              </div>
+              <div class="field">
+                <label for="nom">Nom <span class="req">*</span></label>
+                <input type="text" id="nom" name="nom" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="courriel">Courriel <span class="req">*</span></label>
+                <input type="email" id="courriel" name="courriel" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="entreprise">Entreprise <span class="req">*</span></label>
+                <input type="text" id="entreprise" name="entreprise" autocomplete="organization" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="typeEntreprise">Type d'entreprise <span class="req">*</span></label>
+                <select id="typeEntreprise" name="typeEntreprise" required>
+                  <option value="" selected disabled>Choisis une option</option>
+                  <option value="Construction / Rénovation">Construction / Rénovation</option>
+                  <option value="Entreprise de service">Entreprise de service</option>
+                  <option value="Professionnel (comptable, avocat, etc.)">Professionnel (comptable, avocat, etc.)</option>
+                  <option value="Autre">Autre</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="telephone">Téléphone (optionnel)</label>
+                <input type="tel" id="telephone" name="telephone" autocomplete="tel">
+              </div>
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" id="consentement" name="consentement" value="true">
+              <span>
+                <span class="consent-label">Rester en contact avec HUVI Optimisation</span>
+                <span class="consent-note">Ton courriel sert à t'envoyer le playbook et des conseils pour prendre des décisions basées sur tes chiffres.</span>
+              </span>
+            </label>
+
+            <div class="form-error" id="form-error" role="alert" aria-live="assertive"></div>
+
+            <button type="submit" class="btn" id="submit-btn" style="width:100%;">Je télécharge mon playbook</button>
+            <p class="form-footer-note">Gratuit. Zéro engagement.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="/logo.png" alt="HUVI Optimisation">
+      <p>© 2026 HUVI Optimisation Inc. Tous droits réservés. · Montréal, Québec, Canada.</p>
+      <p class="mono">huvioptimisation.com · (450) 522-0955</p>
+    </div>
+  </footer>
+
+  <!-- Sticky bar CTA -->
+  <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+    <div class="container sticky-inner">
+      <span class="sticky-text">Le playbook gratuit pour transformer tes données en décisions</span>
+      <a class="btn btn-sm" href="#formulaire" tabindex="-1">Je télécharge mon playbook</a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      // ===== Configuration =====
+      // URL du webhook Make DÉDIÉ au funnel Playbook R.A.D.A.R. À remplacer par
+      // l'URL réelle fournie par Hugo après création dans l'UI Make (voir SPEC_WEBHOOK_MAKE_vague3.md).
+      // Laisser VIDE = le formulaire affiche une erreur claire (jamais de faux succès).
+      var LEAD_WEBHOOK_URL = "";
+
+      // Token de la page de confirmation : utilisé en secours uniquement.
+      // La voie nominale : Make répond 302 vers /merci-radar/?t=<TOKEN>.
+      var THANK_YOU_PATH = "/merci-radar/?t=TOKEN_RADAR_2026";
+
+      // ===== UTM : capture à l'arrivée, persistance en sessionStorage =====
+      var UTM_STORAGE_KEY = "playbook-radar:utm";
+      var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+
+      function captureUtm() {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var utm = {};
+          var hasAny = false;
+          UTM_KEYS.forEach(function (key) {
+            var val = params.get(key);
+            if (val) { utm[key] = val; hasAny = true; }
+          });
+          if (hasAny) {
+            sessionStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(utm));
+          }
+        } catch (e) {
+          // sessionStorage indisponible : on continue sans UTM
+        }
+      }
+
+      function getUtm() {
+        try {
+          var raw = sessionStorage.getItem(UTM_STORAGE_KEY);
+          if (!raw) return {};
+          var parsed = JSON.parse(raw);
+          var out = {};
+          UTM_KEYS.forEach(function (key) {
+            if (parsed[key]) out[key] = parsed[key];
+          });
+          return out;
+        } catch (e) {
+          return {};
+        }
+      }
+
+      captureUtm();
+
+      // ===== Formulaire =====
+      var form = document.getElementById("lead-form");
+      var errorBox = document.getElementById("form-error");
+      var submitBtn = document.getElementById("submit-btn");
+
+      function showError(message) {
+        errorBox.textContent = message;
+        errorBox.classList.add("visible");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Je télécharge mon playbook";
+      }
+
+      function setLoading() {
+        errorBox.classList.remove("visible");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Envoi en cours…";
+      }
+
+      function redirectToThankYou(prenomCapture) {
+        try { sessionStorage.setItem("playbook-radar:prenom", prenomCapture); } catch (e) {}
+        window.location.href = THANK_YOU_PATH;
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var prenom = document.getElementById("prenom").value.trim();
+        var nom = document.getElementById("nom").value.trim();
+        var courriel = document.getElementById("courriel").value.trim();
+        var entreprise = document.getElementById("entreprise").value.trim();
+        var typeEntreprise = document.getElementById("typeEntreprise").value;
+        var telephone = document.getElementById("telephone").value.trim();
+        var consentement = document.getElementById("consentement").checked;
+
+        if (!prenom || !nom || !courriel || !entreprise || !typeEntreprise) {
+          showError("Tous les champs obligatoires doivent être remplis.");
+          return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(courriel)) {
+          showError("Le courriel semble invalide. Vérifie-le et réessaie.");
+          return;
+        }
+
+        if (!LEAD_WEBHOOK_URL) {
+          showError("Le formulaire n'est pas encore actif. Réessaie dans quelques instants.");
+          return;
+        }
+
+        var payload = {
+          "prénom": prenom,
+          "nom": nom,
+          "courriel": courriel,
+          "entreprise": entreprise,
+          "typeEntreprise": typeEntreprise,
+          "téléphone": telephone,
+          "consentement": consentement,
+          "source": "playbook-radar",
+          "capturedAt": Date.now()
+        };
+
+        var utm = getUtm();
+        Object.keys(utm).forEach(function (key) { payload[key] = utm[key]; });
+
+        setLoading();
+
+        fetch(LEAD_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          redirect: "manual",
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          if (res.type === "opaqueredirect" || res.ok) {
+            redirectToThankYou(prenom);
+          } else {
+            showError("L'envoi a échoué (erreur " + res.status + "). Réessaie dans quelques instants.");
+          }
+        }).catch(function () {
+          showError("Oups, l'envoi a échoué. Vérifie ta connexion et réessaie.");
+        });
+      });
+
+      // ===== Scroll reveal + timeline (IntersectionObserver, reduced-motion respecté) =====
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("js-reveal");
+        var revealEls = document.querySelectorAll("[data-reveal]");
+        if ("IntersectionObserver" in window) {
+          var revealObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("revealed");
+                revealObs.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+          revealEls.forEach(function (el) { revealObs.observe(el); });
+        } else {
+          revealEls.forEach(function (el) { el.classList.add("revealed"); });
+        }
+      }
+
+      // ===== Compteurs animés (déclenchés à l'entrée dans le viewport) =====
+      function animateCounter(el) {
+        var target = parseInt(el.getAttribute("data-count"), 10);
+        if (isNaN(target)) return;
+        var duration = 1200;
+        var start = null;
+        function tick(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target);
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+      var counters = document.querySelectorAll(".counter");
+      if (counters.length && "IntersectionObserver" in window) {
+        var counterObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              counterObs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+        counters.forEach(function (el) { counterObs.observe(el); });
+      } else {
+        counters.forEach(function (el) {
+          el.textContent = el.getAttribute("data-count");
+        });
+      }
+
+      // ===== Sticky bar CTA =====
+      var stickyBar = document.getElementById("sticky-cta");
+      var formSection = document.getElementById("formulaire");
+      if (stickyBar && formSection) {
+        var STICKY_SHOW_AT = 600;
+        function updateSticky() {
+          var rect = formSection.getBoundingClientRect();
+          var formVisible = rect.top <= window.innerHeight * 0.85;
+          var show = window.scrollY > STICKY_SHOW_AT && !formVisible;
+          stickyBar.classList.toggle("visible", show);
+          stickyBar.setAttribute("aria-hidden", show ? "false" : "true");
+        }
+        window.addEventListener("scroll", updateSticky, { passive: true });
+        window.addEventListener("resize", updateSticky, { passive: true });
+        updateSticky();
+      }
+
+      // ===== FAQ accordéon =====
+      var faqItems = document.querySelectorAll(".faq-item");
+      faqItems.forEach(function (item) {
+        var summary = item.querySelector("summary");
+        summary.addEventListener("click", function () {
+          if (item.open) return;
+          faqItems.forEach(function (other) {
+            if (other !== item) other.open = false;
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
