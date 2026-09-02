@@ -257,6 +257,14 @@
       text-transform: uppercase; color: #7d8aa5;
     }
 
+    /* Diagramme : version mobile empilée (< 768px) — le desktop est masqué, le mobile affiché */
+    .diagram-card svg.arch-svg-mobile { display: none; }
+    @media (max-width: 767px) {
+      .diagram-card { padding: 16px 14px; }
+      .diagram-card svg.arch-svg-desktop { display: none; }
+      .diagram-card svg.arch-svg-mobile { display: block; }
+    }
+
     /* Bénéfices-cartes (1.3) */
     .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 36px; }
     .benefit-card {
@@ -530,7 +538,7 @@
         <!-- Diagramme d'architecture : le HUB comme OS central -->
         <div class="diagram-wrap" data-reveal>
           <div class="diagram-card">
-            <svg viewBox="0 0 960 560" role="img" aria-label="Architecture du HUB : le noyau HUVI agents OS relie les agents, les prompts, les skills, les workflows et les serveurs MCP." xmlns="http://www.w3.org/2000/svg" font-family="Manrope, sans-serif">
+            <svg class="arch-svg arch-svg-desktop" viewBox="0 0 960 560" role="img" aria-label="Architecture du HUB : le noyau HUVI agents OS relie les agents, les prompts, les skills, les workflows et les serveurs MCP." xmlns="http://www.w3.org/2000/svg" font-family="Manrope, sans-serif">
               <defs>
                 <linearGradient id="coreGrad" x1="0" y1="0" x2="1" y2="1">
                   <stop offset="0%" stop-color="#F47B20"/>
@@ -616,6 +624,97 @@
                 </g>
                 <text x="738" y="432" text-anchor="start" fill="#fff" font-size="15" font-weight="700">Serveurs MCP</text>
                 <text x="738" y="451" text-anchor="start" fill="#7d8aa5" font-size="9.5" letter-spacing="0.05em">LES CONNEXIONS AUX OUTILS</text>
+              </g>
+            </svg>
+
+            <!-- Version mobile du diagramme (empilée, affichée < 768px) -->
+            <svg class="arch-svg arch-svg-mobile" viewBox="0 0 300 780" role="img" aria-label="Architecture du HUB : le noyau HUVI agents OS relie les agents, les prompts, les skills, les workflows et les serveurs MCP." xmlns="http://www.w3.org/2000/svg" font-family="Manrope, sans-serif">
+              <defs>
+                <linearGradient id="coreGradM" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#F47B20"/>
+                  <stop offset="100%" stop-color="#ff9242"/>
+                </linearGradient>
+                <linearGradient id="linkGradM" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="rgba(244,123,32,0.15)"/>
+                  <stop offset="100%" stop-color="rgba(244,123,32,0.75)"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Rail : noyau ↔ bulles -->
+              <g fill="none" stroke="url(#linkGradM)" stroke-width="2">
+                <path class="arch-link" d="M150 216 H14 V734"/>
+                <line class="arch-link" x1="14" y1="303" x2="20" y2="303"/>
+                <line class="arch-link" x1="14" y1="405" x2="20" y2="405"/>
+                <line class="arch-link" x1="14" y1="507" x2="20" y2="507"/>
+                <line class="arch-link" x1="14" y1="609" x2="20" y2="609"/>
+                <line class="arch-link" x1="14" y1="711" x2="20" y2="711"/>
+              </g>
+
+              <!-- Noyau : HUVI agents OS -->
+              <g>
+                <circle cx="150" cy="140" r="98" fill="rgba(244,123,32,0.06)" stroke="rgba(244,123,32,0.35)" stroke-width="1.5"/>
+                <circle cx="150" cy="140" r="76" fill="#101b30" stroke="url(#coreGradM)" stroke-width="2.5"/>
+                <text x="150" y="134" text-anchor="middle" fill="#fff" font-size="17" font-weight="800" letter-spacing="0.02em">HUVI agents OS</text>
+                <text x="150" y="152" text-anchor="middle" fill="#F47B20" font-size="13" font-family="'JetBrains Mono', monospace" letter-spacing="0.05em">AI AUTOMATION HUB</text>
+              </g>
+
+              <!-- Module : Agents -->
+              <g>
+                <rect x="20" y="262" width="260" height="82" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
+                <circle cx="54" cy="303" r="13" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
+                <g fill="none" stroke="#F47B20" stroke-width="1.8" stroke-linecap="round">
+                  <circle cx="54" cy="297" r="4"/>
+                  <path d="M47.5 316c0-3.6 2.9-6.4 6.5-6.4s6.5 2.8 6.5 6.4"/>
+                </g>
+                <text x="76" y="302" text-anchor="start" fill="#fff" font-size="16" font-weight="700">Agents</text>
+                <text x="76" y="323" text-anchor="start" fill="#a8b4cc" font-size="13" letter-spacing="0.02em">TON INFRASTRUCTURE IA</text>
+              </g>
+
+              <!-- Module : Prompts -->
+              <g>
+                <rect x="20" y="364" width="260" height="82" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
+                <circle cx="54" cy="405" r="13" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
+                <g fill="none" stroke="#F47B20" stroke-width="1.7" stroke-linecap="round">
+                  <path d="M49 401h10M50.5 405h7M49.5 409h9"/>
+                </g>
+                <text x="76" y="404" text-anchor="start" fill="#fff" font-size="16" font-weight="700">Prompts</text>
+                <text x="76" y="425" text-anchor="start" fill="#a8b4cc" font-size="13" letter-spacing="0.02em">BIBLIOTHÈQUE CENTRALE</text>
+              </g>
+
+              <!-- Module : Skills -->
+              <g>
+                <rect x="20" y="466" width="260" height="82" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
+                <circle cx="54" cy="507" r="13" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
+                <g fill="none" stroke="#F47B20" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M54 504l4.4 3-1.7 5-2.7-1.8-2.7 1.8-1.7-5z"/>
+                </g>
+                <text x="76" y="506" text-anchor="start" fill="#fff" font-size="16" font-weight="700">Skills</text>
+                <text x="76" y="527" text-anchor="start" fill="#a8b4cc" font-size="13" letter-spacing="0.02em">ARMOIRE DES CAPACITÉS</text>
+              </g>
+
+              <!-- Module : Workflows -->
+              <g>
+                <rect x="20" y="568" width="260" height="82" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
+                <circle cx="54" cy="609" r="13" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
+                <g fill="none" stroke="#F47B20" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="48" y="606" width="6" height="6" rx="1.5"/>
+                  <rect x="58" y="606" width="6" height="6" rx="1.5"/>
+                  <path d="M54 609h4"/>
+                </g>
+                <text x="76" y="608" text-anchor="start" fill="#fff" font-size="16" font-weight="700">Workflows</text>
+                <text x="76" y="629" text-anchor="start" fill="#a8b4cc" font-size="13" letter-spacing="0.02em">CE QUI TOURNE TOUT SEUL</text>
+              </g>
+
+              <!-- Module : Serveurs MCP -->
+              <g>
+                <rect x="20" y="670" width="260" height="82" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
+                <circle cx="54" cy="711" r="13" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
+                <g fill="none" stroke="#F47B20" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="48" y="703" width="13" height="6" rx="1.5"/>
+                  <rect x="48" y="713" width="13" height="6" rx="1.5"/>
+                </g>
+                <text x="76" y="710" text-anchor="start" fill="#fff" font-size="16" font-weight="700">Serveurs MCP</text>
+                <text x="76" y="731" text-anchor="start" fill="#a8b4cc" font-size="13" letter-spacing="0.02em">LES CONNEXIONS AUX OUTILS</text>
               </g>
             </svg>
             <p class="diagram-cap">Le HUB, l'OS central de ton infrastructure IA</p>
