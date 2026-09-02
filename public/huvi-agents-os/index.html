@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gère toute ton infrastructure IA depuis UN template Notion</title>
+  <title>Gère toute ton infrastructure IA depuis UN SEUL template Notion</title>
   <meta name="description" content="Télécharge gratuitement le template Notion HUVI agents OS : gère tes agents IA, prompts, workflows et serveurs MCP depuis UN tableau de bord.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.huvioptimisation.com/huvi-agents-os/">
@@ -12,7 +12,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.huvioptimisation.com/huvi-agents-os/">
-  <meta property="og:title" content="Gère toute ton infrastructure IA depuis UN template Notion">
+  <meta property="og:title" content="Gère toute ton infrastructure IA depuis UN SEUL template Notion">
   <meta property="og:description" content="Télécharge gratuitement le template Notion HUVI agents OS : gère tes agents IA, prompts, workflows et serveurs MCP depuis UN tableau de bord.">
   <meta property="og:image" content="https://www.huvioptimisation.com/og-image.jpg">
   <meta property="og:locale" content="fr_CA">
@@ -257,12 +257,15 @@
 
     /* Bande stats (compteur animé) */
     .stats-bar { border-top: 1px solid rgba(23,36,58,0.6); border-bottom: 1px solid rgba(23,36,58,0.6); background: rgba(14,22,38,0.7); }
-    .stats-inner { display: flex; align-items: center; justify-content: center; gap: 56px; padding: 30px 24px; flex-wrap: wrap; }
-    .stat { text-align: center; }
-    .stat-num { font-family: 'JetBrains Mono', monospace; font-size: 2.4rem; font-weight: 500; color: #F47B20; line-height: 1; display: block; }
-    .stat-label { font-size: 0.82rem; color: #a8b4cc; margin-top: 8px; letter-spacing: 0.02em; }
-    .stat-divider { width: 1px; height: 44px; background: rgba(23,36,58,0.9); }
-    @media (max-width: 560px) { .stats-inner { gap: 28px; } .stat-divider { height: 36px; } }
+    .stats-inner { display: flex; align-items: flex-start; justify-content: center; gap: 48px; padding: 30px 24px; }
+    .stat { flex: 1 1 0; min-width: 0; text-align: center; }
+    .stat-num { font-family: 'JetBrains Mono', monospace; font-size: 2.4rem; font-weight: 500; color: #F47B20; line-height: 1; display: block; font-variant-numeric: tabular-nums; }
+    .stat-label { font-size: 0.82rem; color: #a8b4cc; margin-top: 8px; letter-spacing: 0.02em; line-height: 1.4; }
+    .stat-divider { flex: 0 0 1px; width: 1px; height: 44px; background: rgba(23,36,58,0.9); }
+    /* Les 3 stats restent sur une même rangée (blocs égaux, chiffres centrés) jusqu'aux petits mobiles */
+    @media (max-width: 767px) { .stats-inner { gap: 24px; } }
+    @media (max-width: 560px) { .stats-inner { gap: 16px; padding: 26px 16px; } .stat-divider { height: 32px; } .stat-label { font-size: 0.72rem; } }
+    @media (max-width: 380px) { .stats-inner { gap: 10px; padding: 24px 10px; } .stat-label { font-size: 0.66rem; } }
 
     /* Sections */
     section { padding: 76px 0; }
@@ -308,6 +311,7 @@
     .benefit-card h3 { font-size: 1.02rem; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.35; }
     .benefit-card h3 .kw { background: none; padding: 0; }
     .benefit-card p { font-size: 0.9rem; color: #a8b4cc; }
+    .benefit-card p strong { color: #fff; font-weight: 600; }
 
     /* CTA intermédiaire */
     .cta-band { margin-top: 44px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; background: linear-gradient(120deg, rgba(244,123,32,0.10), rgba(23,36,58,0.45)); border: 1px solid rgba(244,123,32,0.25); border-radius: 16px; padding: 22px 28px; }
@@ -324,6 +328,7 @@
     .module-text h3 { font-size: 1.22rem; font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.3; letter-spacing: -0.01em; }
     .module-text h3 .kw { background: none; padding: 0; }
     .module-text p { font-size: 0.96rem; color: #a8b4cc; }
+    .module-text p strong { color: #fff; font-weight: 600; }
     .shot-btn {
       display: block; width: 100%; padding: 0; background: none; border: none; cursor: zoom-in;
       border-radius: 18px;
@@ -375,6 +380,7 @@
     .step-card h3 { font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: 8px; letter-spacing: 0.02em; }
     .step-card h3 .kw { background: none; padding: 0; }
     .step-card p { font-size: 0.9rem; color: #a8b4cc; }
+    .step-card p strong { color: #fff; font-weight: 600; }
     .step-arrow { position: absolute; top: 50%; right: -16px; transform: translateY(-50%); color: rgba(244,123,32,0.5); width: 20px; height: 20px; z-index: 2; }
     @media (max-width: 1024px) { .step-arrow { display: none; } }
     .step-card:last-child .step-arrow { display: none; }
@@ -521,7 +527,7 @@
     <section class="hero">
       <div class="container hero-center">
         <span class="eyebrow"><span class="dot"></span> HUVI agents OS</span>
-        <h1>Gère toute ton infrastructure IA depuis <span class="accent">UN</span> template Notion</h1>
+        <h1>Gère toute ton infrastructure IA depuis <span class="accent">UN SEUL</span> template Notion</h1>
         <p class="hero-sub">Le tableau de bord où <strong>TES agents IA</strong> se retrouvent et s'organisent : prompts, workflows, skills et serveurs MCP, tous reliés au même endroit.</p>
         <div class="offer-card">
           <p class="offer-badge">🚀 Offre de lancement : <strong>GRATUIT</strong> jusqu'au 31 octobre</p>
@@ -771,22 +777,22 @@
           <div class="benefit-card" data-reveal style="--d:0s;">
             <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
             <h3>TES AGENTS ONT UN <span class="kw">QUARTIER GÉNÉRAL</span></h3>
-            <p>Chaque agent est lié à ses prompts, ses skills, ses workflows et ses serveurs MCP. Tu sais qui utilise quoi, au même endroit.</p>
+            <p>Chaque agent est lié à ses prompts, ses skills, ses workflows et ses serveurs MCP. <strong>Tu sais qui utilise quoi</strong>, au même endroit.</p>
           </div>
           <div class="benefit-card" data-reveal style="--d:0.06s;">
             <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg></div>
             <h3>PROMPTS <span class="kw">CENTRALISÉS</span></h3>
-            <p>Ta bibliothèque de prompts avec état, catégorie, objectif et dernier test. Fini de chercher ton meilleur system prompt dans 14 fichiers.</p>
+            <p>Ta bibliothèque de prompts avec état, catégorie, objectif et dernier test. <strong>Fini de chercher</strong> ton meilleur system prompt dans 14 fichiers.</p>
           </div>
           <div class="benefit-card" data-reveal style="--d:0.12s;">
             <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg></div>
             <h3><span class="kw">WORKFLOWS</span> RELIÉS AUX AGENTS</h3>
-            <p>Chaque workflow montre sa fréquence, son trigger et l'agent qui l'exécute. Tu vois d'un coup d'oeil ce qui tourne tout seul et ce qui dort.</p>
+            <p>Chaque workflow montre sa fréquence, son trigger et l'agent qui l'exécute. Tu vois <strong>d'un coup d'œil</strong> ce qui tourne tout seul et ce qui dort.</p>
           </div>
           <div class="benefit-card" data-reveal style="--d:0.18s;">
             <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg></div>
-            <h3><span class="kw">MCP</span> À PORTÉE DE MAIN</h3>
-            <p>Tes serveurs MCP (les connexions qui donnent à tes agents l'accès à tes outils et tes données) : type, description, lien, agents liés. Rien ne se perd.</p>
+            <h3><span class="kw">SERVEURS MCP</span> À PORTÉE DE MAIN</h3>
+            <p>Tes serveurs MCP (les connexions qui donnent à tes agents l'accès à tes outils et tes données) : type, description, lien, agents liés. <strong>Rien ne se perd</strong>.</p>
           </div>
         </div>
 
@@ -836,7 +842,7 @@
             <div class="module-text">
               <div class="module-num">MODULE 02</div>
               <h3>TA <span class="kw">BIBLIOTHÈQUE</span> DE PROMPTS</h3>
-              <p>System prompts, objectifs, catégories, dernier test, variables : ta matière grise IA, organisée et archivée. Ton meilleur prompt se retrouve en 10 secondes.</p>
+              <p>System prompts, objectifs, catégories, dernier test, variables : ta matière grise IA, organisée et archivée. Ton meilleur prompt se retrouve <strong>en 10 secondes</strong>.</p>
             </div>
             <div class="module-shot">
               <button type="button" class="shot-btn" data-lightbox="assets/module-prompts.png" data-lightbox-cap="La bibliothèque de prompts" aria-label="Agrandir l'aperçu de la bibliothèque de prompts">
@@ -911,7 +917,7 @@
             <div class="module-text">
               <div class="module-num">MODULE 05</div>
               <h3>L'ARMOIRE <span class="kw">DES SKILLS</span></h3>
-              <p>Les capacités de tes agents, répertoriées avec leur état. Tu sais ce que ton infrastructure sait faire, et ce qui reste à bâtir.</p>
+              <p>Les capacités de tes agents, répertoriées avec leur état. Tu sais ce que ton infrastructure sait faire, et <strong>ce qui reste à bâtir</strong>.</p>
             </div>
             <div class="module-shot">
               <button type="button" class="shot-btn" data-lightbox="assets/module-skills.png" data-lightbox-cap="L'armoire des skills" aria-label="Agrandir l'aperçu de l'armoire des skills">
@@ -944,7 +950,7 @@
             <svg class="step-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             <div class="step-num">1</div>
             <h3><span class="kw">DUPLIQUE</span> le template</h3>
-            <p>Le template est public. Un clic sur « Dupliquer », et il atterrit dans TON espace Notion.</p>
+            <p>Le template est public. Un clic sur « Dupliquer », et il atterrit <strong>dans TON espace Notion</strong>.</p>
           </div>
           <div class="step-card" data-reveal style="--d:0.08s;">
             <svg class="step-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -956,7 +962,7 @@
             <svg class="step-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             <div class="step-num">3</div>
             <h3><span class="kw">RELIE</span> tes agents</h3>
-            <p>Lie chaque agent à ses skills, ses workflows et ses serveurs MCP. C'est là que le HUB prend toute sa valeur : tout est relié, rien ne se perd.</p>
+            <p>Lie chaque agent à ses skills, ses workflows et ses serveurs MCP. C'est là que le HUB prend toute sa valeur : <strong>tout est relié, rien ne se perd</strong>.</p>
           </div>
           <div class="step-card" data-reveal style="--d:0.24s;">
             <div class="step-num">4</div>
