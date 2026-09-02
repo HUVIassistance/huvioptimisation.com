@@ -175,20 +175,55 @@
     .hero-note { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; font-size: 0.88rem; color: #7d8aa5; }
     .hero-note svg { width: 16px; height: 16px; color: #F47B20; }
 
-    /* Cover produit */
+    /* Cover produit : aperçu RÉEL du template dans une fenêtre Notion stylisée */
     .hero-cover-wrap { margin-top: 56px; padding: 0 0 70px; }
     .hero-cover {
       position: relative; max-width: 1100px; margin: 0 auto;
-      border: 1px solid #2a3a5c; border-radius: 18px; overflow: hidden;
-      box-shadow: 0 40px 90px rgba(0,0,0,0.55), 0 0 0 1px rgba(244,123,32,0.08), 0 0 80px rgba(244,123,32,0.10);
+      border-radius: 18px; overflow: hidden;
+      background:
+        radial-gradient(640px 320px at 50% 0%, rgba(244,123,32,0.16), transparent 70%),
+        transparent;
+      padding: 34px 30px 30px;
     }
-    .hero-cover img { display: block; width: 100%; height: auto; }
+    .hero-cover::before {
+      content: "";
+      position: absolute; inset: -24px;
+      background: url("assets/hub-cover.png") center / cover no-repeat;
+      filter: blur(14px) saturate(0.7);
+      opacity: 0.07;
+      transform: scale(1.12);
+      pointer-events: none;
+    }
     .hero-cover .cover-tag {
-      position: absolute; top: 14px; left: 14px;
+      position: relative; display: block; text-align: center; margin-bottom: 14px;
       font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase; color: #fff;
-      background: rgba(14,22,38,0.82); border: 1px solid rgba(244,123,32,0.45);
-      padding: 5px 10px; border-radius: 8px; backdrop-filter: blur(4px);
+      letter-spacing: 0.2em; text-transform: uppercase; color: #ff9242;
+    }
+    .hero-window {
+      position: relative; border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #0b1120;
+      box-shadow: 0 40px 90px rgba(0,0,0,0.55), 0 0 80px rgba(244,123,32,0.12);
+    }
+    .hero-window .window-bar { border-radius: 15px 15px 0 0; }
+    .hero-window img { display: block; width: 100%; height: auto; }
+
+    /* Barre de fenêtre stylisée (mockup navigateur/Notion) */
+    .window-bar {
+      display: flex; align-items: center; gap: 10px;
+      height: 34px; padding: 0 14px;
+      background: linear-gradient(180deg, #16233c, #101b30);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .window-dots { display: flex; gap: 6px; flex-shrink: 0; }
+    .window-dots i { width: 10px; height: 10px; border-radius: 50%; display: block; }
+    .window-dots .d-r { background: #ff5f57; }
+    .window-dots .d-y { background: #febc2e; }
+    .window-dots .d-g { background: #28c840; }
+    .window-title {
+      flex: 1; text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em;
+      color: #a8b4cc;
     }
 
     /* Bande stats (compteur animé) */
@@ -254,26 +289,37 @@
     .module-text p { font-size: 0.96rem; color: #a8b4cc; }
     .shot-btn {
       display: block; width: 100%; padding: 0; background: none; border: none; cursor: zoom-in;
-      border-radius: 16px;
+      border-radius: 18px;
+    }
+    .shot-stage {
+      position: relative; display: block;
+      border-radius: 18px; padding: 16px;
+      background:
+        radial-gradient(420px 200px at 50% 0%, rgba(244,123,32,0.10), transparent 70%),
+        linear-gradient(160deg, rgba(23,36,58,0.45), rgba(14,22,38,0.6));
     }
     .shot-frame {
-      position: relative; border: 1px solid #2a3a5c; border-radius: 16px; overflow: hidden;
-      background: #0b1120; box-shadow: 0 26px 60px rgba(0,0,0,0.45);
+      position: relative; display: block; border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px; overflow: hidden;
+      background: #0b1120; box-shadow: 0 26px 60px rgba(0,0,0,0.5);
       transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), border-color 0.3s ease, box-shadow 0.3s ease;
     }
     @media (hover: hover) and (pointer: fine) {
-      .shot-btn:hover .shot-frame { transform: scale(1.018); border-color: rgba(244,123,32,0.6); box-shadow: 0 30px 70px rgba(0,0,0,0.55), 0 0 40px rgba(244,123,32,0.10); }
+      .shot-btn:hover .shot-frame { transform: scale(1.015); border-color: rgba(244,123,32,0.55); box-shadow: 0 30px 70px rgba(0,0,0,0.55), 0 0 44px rgba(244,123,32,0.14); }
     }
-    .shot-frame img { display: block; width: 100%; height: auto; }
+    .shot-frame .window-bar { border-radius: 13px 13px 0 0; }
+    .shot-img-wrap { position: relative; display: block; }
+    .shot-img-wrap img { display: block; width: 100%; height: auto; }
     .shot-zoom {
-      position: absolute; right: 12px; bottom: 12px;
-      display: inline-flex; align-items: center; gap: 6px;
-      font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase; color: #fff;
-      background: rgba(14,22,38,0.85); border: 1px solid rgba(244,123,32,0.45);
-      padding: 5px 10px; border-radius: 8px; backdrop-filter: blur(4px);
+      position: absolute; top: 10px; right: 10px;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 24px; height: 24px;
+      background: rgba(14,22,38,0.72); border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 8px; backdrop-filter: blur(4px);
+      opacity: 0; transition: opacity 0.18s ease;
       pointer-events: none;
     }
+    .shot-btn:hover .shot-zoom, .shot-btn:focus-visible .shot-zoom { opacity: 1; }
     .shot-zoom svg { width: 13px; height: 13px; color: #F47B20; }
 
     /* Comment ça marche (1.5) */
@@ -408,7 +454,7 @@
     .arch-link { stroke-dasharray: 7 7; animation: dashflow 1.6s linear infinite; }
     @keyframes dashflow { to { stroke-dashoffset: -14; } }
 
-    @media (max-width: 640px) { .hero { padding: 56px 0 0; } section { padding: 56px 0; } }
+    @media (max-width: 640px) { .hero { padding: 56px 0 0; } section { padding: 56px 0; } .hero-cover { padding: 22px 12px 16px; } .shot-stage { padding: 10px; } }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -416,7 +462,7 @@
       .sticky-cta { transition: none; }
       details.faq-item summary .chevron { transition: none; }
       .faq-item .faq-answer { transition: none; }
-      .benefit-card, .assurance, .step-card, .shot-frame, .btn, .header-cta, .text-cta-link { transition: none; }
+      .benefit-card, .assurance, .step-card, .shot-frame, .shot-stage, .shot-zoom, .btn, .header-cta, .text-cta-link { transition: none; }
       .arch-link { animation: none; }
       .eyebrow .dot { animation: none; }
     }
@@ -447,8 +493,14 @@
       </div>
       <div class="hero-cover-wrap">
         <div class="hero-cover" data-reveal>
-          <span class="cover-tag">Le produit réel</span>
-          <img src="assets/hub-cover.png" alt="Aperçu du template HUVI agents OS : le tableau de bord central de l'infrastructure IA" width="1976" height="796">
+          <span class="cover-tag">Aperçu réel du template</span>
+          <div class="hero-window">
+            <div class="window-bar">
+              <span class="window-dots"><i class="d-r"></i><i class="d-y"></i><i class="d-g"></i></span>
+              <span class="window-title">Notion — HUVI agents OS</span>
+            </div>
+            <img src="assets/hub-shot-1-accueil.png" alt="Aperçu réel du template HUVI agents OS : la vue d'accueil dans Notion" width="1843" height="886">
+          </div>
         </div>
       </div>
     </section>
@@ -493,77 +545,77 @@
               <!-- Liens : noyau ↔ modules -->
               <g fill="none" stroke="url(#linkGrad)" stroke-width="2">
                 <line class="arch-link" x1="480" y1="196" x2="480" y2="108"/>
-                <line class="arch-link" x1="430" y1="222" x2="222" y2="300"/>
-                <line class="arch-link" x1="530" y1="222" x2="738" y2="300"/>
-                <line class="arch-link" x1="430" y1="338" x2="222" y2="432"/>
-                <line class="arch-link" x1="530" y1="338" x2="738" y2="432"/>
+                <line class="arch-link" x1="430" y1="222" x2="284" y2="300"/>
+                <line class="arch-link" x1="530" y1="222" x2="676" y2="300"/>
+                <line class="arch-link" x1="430" y1="338" x2="284" y2="432"/>
+                <line class="arch-link" x1="530" y1="338" x2="676" y2="432"/>
               </g>
 
               <!-- Noyau : HUVI agents OS -->
               <g>
                 <circle cx="480" cy="280" r="118" fill="rgba(244,123,32,0.06)" stroke="rgba(244,123,32,0.35)" stroke-width="1.5"/>
                 <circle cx="480" cy="280" r="92" fill="#101b30" stroke="url(#coreGrad)" stroke-width="2.5"/>
-                <text x="480" y="270" text-anchor="middle" fill="#fff" font-size="22" font-weight="800" letter-spacing="0.02em">HUVI agents OS</text>
-                <text x="480" y="296" text-anchor="middle" fill="#F47B20" font-size="11" font-family="'JetBrains Mono', monospace" letter-spacing="0.22em">AI AUTOMATION HUB</text>
+                <text x="480" y="270" text-anchor="middle" fill="#fff" font-size="20" font-weight="800" letter-spacing="0.02em">HUVI agents OS</text>
+                <text x="480" y="296" text-anchor="middle" fill="#F47B20" font-size="11" font-family="'JetBrains Mono', monospace" letter-spacing="0.18em">AI AUTOMATION HUB</text>
               </g>
 
               <!-- Module : Agents (haut) -->
               <g>
-                <rect x="408" y="34" width="144" height="74" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
-                <circle cx="448" cy="71" r="14" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
+                <rect x="375" y="34" width="210" height="74" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
+                <circle cx="415" cy="71" r="14" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
                 <g fill="none" stroke="#F47B20" stroke-width="1.8" stroke-linecap="round">
-                  <circle cx="448" cy="65" r="4.2"/>
-                  <path d="M441.5 78c0-3.6 2.9-6.4 6.5-6.4s6.5 2.8 6.5 6.4"/>
+                  <circle cx="415" cy="65" r="4.2"/>
+                  <path d="M408.5 84c0-3.6 2.9-6.4 6.5-6.4s6.5 2.8 6.5 6.4"/>
                 </g>
-                <text x="470" y="70" text-anchor="start" fill="#fff" font-size="15" font-weight="700">Agents</text>
-                <text x="470" y="89" text-anchor="start" fill="#7d8aa5" font-size="9.5" letter-spacing="0.08em">TON INFRASTRUCTURE IA</text>
+                <text x="439" y="70" text-anchor="start" fill="#fff" font-size="15" font-weight="700">Agents</text>
+                <text x="439" y="89" text-anchor="start" fill="#7d8aa5" font-size="9.5" letter-spacing="0.05em">TON INFRASTRUCTURE IA</text>
               </g>
 
               <!-- Module : Prompts (haut gauche) -->
               <g>
-                <rect x="84" y="262" width="138" height="76" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
-                <circle cx="122" cy="300" r="14" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
+                <rect x="54" y="262" width="230" height="76" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
+                <circle cx="92" cy="300" r="14" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
                 <g fill="none" stroke="#F47B20" stroke-width="1.7" stroke-linecap="round">
-                  <path d="M117 296h10M117 300h7M117 304h9"/>
+                  <path d="M87 296h10M88.5 300h7M87.5 304h9"/>
                 </g>
-                <text x="144" y="300" text-anchor="start" fill="#fff" font-size="15" font-weight="700">Prompts</text>
-                <text x="144" y="319" text-anchor="start" fill="#7d8aa5" font-size="9.5" letter-spacing="0.08em">BIBLIOTHÈQUE CENTRALE</text>
+                <text x="116" y="300" text-anchor="start" fill="#fff" font-size="15" font-weight="700">Prompts</text>
+                <text x="116" y="319" text-anchor="start" fill="#7d8aa5" font-size="9.5" letter-spacing="0.05em">BIBLIOTHÈQUE CENTRALE</text>
               </g>
 
               <!-- Module : Skills (haut droite) -->
               <g>
-                <rect x="738" y="262" width="138" height="76" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
-                <circle cx="776" cy="300" r="14" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
+                <rect x="676" y="262" width="230" height="76" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
+                <circle cx="714" cy="300" r="14" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
                 <g fill="none" stroke="#F47B20" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M776 293l4.4 3-1.7 5-2.7-1.8-2.7 1.8-1.7-5z"/>
+                  <path d="M714 297l4.4 3-1.7 5-2.7-1.8-2.7 1.8-1.7-5z"/>
                 </g>
-                <text x="798" y="300" text-anchor="start" fill="#fff" font-size="15" font-weight="700">Skills</text>
-                <text x="798" y="319" text-anchor="start" fill="#7d8aa5" font-size="9.5" letter-spacing="0.08em">ARMOIRE DES CAPACITÉS</text>
+                <text x="738" y="300" text-anchor="start" fill="#fff" font-size="15" font-weight="700">Skills</text>
+                <text x="738" y="319" text-anchor="start" fill="#7d8aa5" font-size="9.5" letter-spacing="0.05em">ARMOIRE DES CAPACITÉS</text>
               </g>
 
               <!-- Module : Workflows (bas gauche) -->
               <g>
-                <rect x="84" y="394" width="138" height="76" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
-                <circle cx="122" cy="432" r="14" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
+                <rect x="54" y="394" width="230" height="76" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
+                <circle cx="92" cy="432" r="14" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
                 <g fill="none" stroke="#F47B20" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="115" y="426" width="6" height="6" rx="1.5"/>
-                  <rect x="125" y="426" width="6" height="6" rx="1.5"/>
-                  <path d="M121 429h4"/>
+                  <rect x="84" y="429" width="6" height="6" rx="1.5"/>
+                  <rect x="94" y="429" width="6" height="6" rx="1.5"/>
+                  <path d="M90 432h4"/>
                 </g>
-                <text x="144" y="432" text-anchor="start" fill="#fff" font-size="15" font-weight="700">Workflows</text>
-                <text x="144" y="451" text-anchor="start" fill="#7d8aa5" font-size="9.5" letter-spacing="0.08em">CE QUI TOURNE TOUT SEUL</text>
+                <text x="116" y="432" text-anchor="start" fill="#fff" font-size="15" font-weight="700">Workflows</text>
+                <text x="116" y="451" text-anchor="start" fill="#7d8aa5" font-size="9.5" letter-spacing="0.05em">CE QUI TOURNE TOUT SEUL</text>
               </g>
 
               <!-- Module : Serveurs MCP (bas droite) -->
               <g>
-                <rect x="738" y="394" width="138" height="76" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
-                <circle cx="776" cy="432" r="14" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
+                <rect x="676" y="394" width="230" height="76" rx="16" fill="#0e1626" stroke="rgba(244,123,32,0.65)" stroke-width="1.5"/>
+                <circle cx="714" cy="432" r="14" fill="rgba(244,123,32,0.14)" stroke="rgba(244,123,32,0.6)" stroke-width="1.2"/>
                 <g fill="none" stroke="#F47B20" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="770" y="424" width="13" height="6" rx="1.5"/>
-                  <rect x="770" y="434" width="13" height="6" rx="1.5"/>
+                  <rect x="708" y="424" width="13" height="6" rx="1.5"/>
+                  <rect x="708" y="434" width="13" height="6" rx="1.5"/>
                 </g>
-                <text x="798" y="432" text-anchor="start" fill="#fff" font-size="15" font-weight="700">Serveurs MCP</text>
-                <text x="798" y="451" text-anchor="start" fill="#7d8aa5" font-size="9.5" letter-spacing="0.08em">LES CONNEXIONS AUX OUTILS</text>
+                <text x="738" y="432" text-anchor="start" fill="#fff" font-size="15" font-weight="700">Serveurs MCP</text>
+                <text x="738" y="451" text-anchor="start" fill="#7d8aa5" font-size="9.5" letter-spacing="0.05em">LES CONNEXIONS AUX OUTILS</text>
               </g>
             </svg>
             <p class="diagram-cap">Le HUB, l'OS central de ton infrastructure IA</p>
@@ -578,17 +630,17 @@
           </div>
           <div class="benefit-card" data-reveal style="--d:0.06s;">
             <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg></div>
-            <h3><span class="kw">PROMPTS CENTRALISÉS</span></h3>
+            <h3>PROMPTS <span class="kw">CENTRALISÉS</span></h3>
             <p>Ta bibliothèque de prompts avec état, catégorie, objectif et dernier test. Fini de chercher ton meilleur system prompt dans 14 fichiers.</p>
           </div>
           <div class="benefit-card" data-reveal style="--d:0.12s;">
             <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg></div>
-            <h3><span class="kw">WORKFLOWS</span> reliés aux <span class="kw">AGENTS</span></h3>
+            <h3><span class="kw">WORKFLOWS</span> reliés aux AGENTS</h3>
             <p>Chaque workflow montre sa fréquence, son trigger et l'agent qui l'exécute. Tu vois d'un coup d'oeil ce qui tourne tout seul et ce qui dort.</p>
           </div>
           <div class="benefit-card" data-reveal style="--d:0.18s;">
             <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg></div>
-            <h3><span class="kw">MCP</span> à portée de <span class="kw">MAIN</span></h3>
+            <h3><span class="kw">MCP</span> à portée de MAIN</h3>
             <p>Tes serveurs MCP (les connexions qui donnent à tes agents l'accès à tes outils et tes données) : type, description, lien, agents liés. Rien ne se perd.</p>
           </div>
         </div>
@@ -613,14 +665,22 @@
           <div class="module" data-reveal>
             <div class="module-text">
               <div class="module-num">MODULE 01</div>
-              <h3><span class="kw">LE TABLEAU DE BORD</span> des agents</h3>
+              <h3>LE <span class="kw">TABLEAU DE BORD</span> des agents</h3>
               <p>Chaque agent a un statut clair : À créer, En construction, Actif, Phase de test, Inactif. Tu sais exactement où en est ton infrastructure.</p>
             </div>
             <div class="module-shot">
               <button type="button" class="shot-btn" data-lightbox="assets/hub-shot-6-dashboard.png" data-lightbox-cap="Le tableau de bord des agents" aria-label="Agrandir l'aperçu du tableau de bord des agents">
-                <span class="shot-frame">
-                  <img src="assets/hub-shot-6-dashboard.png" alt="Aperçu du tableau de bord des agents : les statuts de chaque agent" width="1453" height="861" loading="lazy">
-                  <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg> Agrandir</span>
+                <span class="shot-stage">
+                  <span class="shot-frame">
+                    <span class="window-bar">
+                      <span class="window-dots"><i class="d-r"></i><i class="d-y"></i><i class="d-g"></i></span>
+                      <span class="window-title">Notion — Tableau de bord des agents</span>
+                    </span>
+                    <span class="shot-img-wrap">
+                      <img src="assets/hub-shot-6-dashboard.png" alt="Aperçu du tableau de bord des agents : les statuts de chaque agent" width="1453" height="861" loading="lazy">
+                      <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></span>
+                    </span>
+                  </span>
                 </span>
               </button>
             </div>
@@ -630,14 +690,22 @@
           <div class="module flip" data-reveal>
             <div class="module-text">
               <div class="module-num">MODULE 02</div>
-              <h3><span class="kw">TA BIBLIOTHÈQUE</span> DE PROMPTS</h3>
+              <h3>TA <span class="kw">BIBLIOTHÈQUE</span> DE PROMPTS</h3>
               <p>System prompts, objectifs, catégories, dernier test, variables : ta matière grise IA, organisée et archivée. Ton meilleur prompt se retrouve en 10 secondes.</p>
             </div>
             <div class="module-shot">
               <button type="button" class="shot-btn" data-lightbox="assets/hub-shot-5-prompts.png" data-lightbox-cap="La bibliothèque de prompts" aria-label="Agrandir l'aperçu de la bibliothèque de prompts">
-                <span class="shot-frame">
-                  <img src="assets/hub-shot-5-prompts.png" alt="Aperçu de la bibliothèque de prompts : état, catégorie, objectif, dernier test" width="1515" height="298" loading="lazy">
-                  <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg> Agrandir</span>
+                <span class="shot-stage">
+                  <span class="shot-frame">
+                    <span class="window-bar">
+                      <span class="window-dots"><i class="d-r"></i><i class="d-y"></i><i class="d-g"></i></span>
+                      <span class="window-title">Notion — Bibliothèque de prompts</span>
+                    </span>
+                    <span class="shot-img-wrap">
+                      <img src="assets/hub-shot-5-prompts.png" alt="Aperçu de la bibliothèque de prompts : état, catégorie, objectif, dernier test" width="1515" height="298" loading="lazy">
+                      <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></span>
+                    </span>
+                  </span>
                 </span>
               </button>
             </div>
@@ -647,14 +715,22 @@
           <div class="module" data-reveal>
             <div class="module-text">
               <div class="module-num">MODULE 03</div>
-              <h3><span class="kw">TES WORKFLOWS</span> sous CONTRÔLE</h3>
+              <h3>TES <span class="kw">WORKFLOWS</span> sous CONTRÔLE</h3>
               <p>Fréquence, trigger, dernière run, notes : tu vois ce qui tourne tout seul et ce qui a besoin d'attention. Chaque workflow est relié à son agent.</p>
             </div>
             <div class="module-shot">
               <button type="button" class="shot-btn" data-lightbox="assets/hub-shot-4-workflows.png" data-lightbox-cap="Les workflows & processus" aria-label="Agrandir l'aperçu des workflows">
-                <span class="shot-frame">
-                  <img src="assets/hub-shot-4-workflows.png" alt="Aperçu des workflows : fréquence, trigger, dernière run, agents liés" width="1711" height="837" loading="lazy">
-                  <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg> Agrandir</span>
+                <span class="shot-stage">
+                  <span class="shot-frame">
+                    <span class="window-bar">
+                      <span class="window-dots"><i class="d-r"></i><i class="d-y"></i><i class="d-g"></i></span>
+                      <span class="window-title">Notion — Workflows & processus</span>
+                    </span>
+                    <span class="shot-img-wrap">
+                      <img src="assets/hub-shot-4-workflows.png" alt="Aperçu des workflows : fréquence, trigger, dernière run, agents liés" width="1711" height="837" loading="lazy">
+                      <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></span>
+                    </span>
+                  </span>
                 </span>
               </button>
             </div>
@@ -664,14 +740,22 @@
           <div class="module flip" data-reveal>
             <div class="module-text">
               <div class="module-num">MODULE 04</div>
-              <h3><span class="kw">TES SERVEURS MCP</span>, RECENSÉS</h3>
+              <h3>TES <span class="kw">SERVEURS MCP</span>, RECENSÉS</h3>
               <p>Chaque connexion est documentée : type, description, lien, agents liés. Fini les serveurs MCP oubliés dans un coin de ta mémoire.</p>
             </div>
             <div class="module-shot">
               <button type="button" class="shot-btn" data-lightbox="assets/hub-shot-3-mcp.png" data-lightbox-cap="Les serveurs MCP" aria-label="Agrandir l'aperçu des serveurs MCP">
-                <span class="shot-frame">
-                  <img src="assets/hub-shot-3-mcp.png" alt="Aperçu des serveurs MCP : type, description, lien, agents liés" width="1753" height="859" loading="lazy">
-                  <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg> Agrandir</span>
+                <span class="shot-stage">
+                  <span class="shot-frame">
+                    <span class="window-bar">
+                      <span class="window-dots"><i class="d-r"></i><i class="d-y"></i><i class="d-g"></i></span>
+                      <span class="window-title">Notion — Serveurs MCP</span>
+                    </span>
+                    <span class="shot-img-wrap">
+                      <img src="assets/hub-shot-3-mcp.png" alt="Aperçu des serveurs MCP : type, description, lien, agents liés" width="1753" height="859" loading="lazy">
+                      <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></span>
+                    </span>
+                  </span>
                 </span>
               </button>
             </div>
@@ -681,14 +765,22 @@
           <div class="module" data-reveal>
             <div class="module-text">
               <div class="module-num">MODULE 05</div>
-              <h3><span class="kw">L'ARMOIRE DES SKILLS</span></h3>
+              <h3>L'ARMOIRE <span class="kw">DES SKILLS</span></h3>
               <p>Les capacités de tes agents, répertoriées avec leur état. Tu sais ce que ton infrastructure sait faire, et ce qui reste à bâtir.</p>
             </div>
             <div class="module-shot">
               <button type="button" class="shot-btn" data-lightbox="assets/hub-shot-2-skills.png" data-lightbox-cap="L'armoire des skills" aria-label="Agrandir l'aperçu de l'armoire des skills">
-                <span class="shot-frame">
-                  <img src="assets/hub-shot-2-skills.png" alt="Aperçu de l'armoire des skills : les capacités de tes agents avec leur état" width="1687" height="894" loading="lazy">
-                  <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg> Agrandir</span>
+                <span class="shot-stage">
+                  <span class="shot-frame">
+                    <span class="window-bar">
+                      <span class="window-dots"><i class="d-r"></i><i class="d-y"></i><i class="d-g"></i></span>
+                      <span class="window-title">Notion — Skills des agents</span>
+                    </span>
+                    <span class="shot-img-wrap">
+                      <img src="assets/hub-shot-2-skills.png" alt="Aperçu de l'armoire des skills : les capacités de tes agents avec leur état" width="1687" height="894" loading="lazy">
+                      <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></span>
+                    </span>
+                  </span>
                 </span>
               </button>
             </div>
