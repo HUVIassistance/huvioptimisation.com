@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pilote toute ton infrastructure IA depuis UN template Notion</title>
-  <meta name="description" content="Télécharge gratuitement le template Notion HUVI agents OS : pilote tes agents IA, prompts, workflows et serveurs MCP depuis UN tableau de bord.">
+  <title>Gère toute ton infrastructure IA depuis UN template Notion</title>
+  <meta name="description" content="Télécharge gratuitement le template Notion HUVI agents OS : gère tes agents IA, prompts, workflows et serveurs MCP depuis UN tableau de bord.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.huvioptimisation.com/huvi-agents-os/">
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -12,8 +12,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.huvioptimisation.com/huvi-agents-os/">
-  <meta property="og:title" content="Pilote toute ton infrastructure IA depuis UN template Notion">
-  <meta property="og:description" content="Télécharge gratuitement le template Notion HUVI agents OS : pilote tes agents IA, prompts, workflows et serveurs MCP depuis UN tableau de bord.">
+  <meta property="og:title" content="Gère toute ton infrastructure IA depuis UN template Notion">
+  <meta property="og:description" content="Télécharge gratuitement le template Notion HUVI agents OS : gère tes agents IA, prompts, workflows et serveurs MCP depuis UN tableau de bord.">
   <meta property="og:image" content="https://www.huvioptimisation.com/og-image.jpg">
   <meta property="og:locale" content="fr_CA">
   <meta property="twitter:card" content="summary_large_image">
@@ -37,7 +37,7 @@
         "name": "Je ne suis pas très techno. Est-ce que je vais suivre ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui. Les termes agents, prompts, workflows et MCP sont expliqués simplement dans le template. T'es pas obligé d'être un techno pour t'y retrouver."
+          "text": "Oui, le template est une base structurée, pas un document technique. Tu remplis les cases avec TA réalité (tes agents, tes outils), et tout est déjà organisé pour toi."
         }
       },
       {
@@ -54,6 +54,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Non, et c'est voulu. Le template t'organise et te relie : chaque agent est lié à ses prompts, ses skills, ses workflows et ses serveurs MCP via les champs Agents liés. C'est toi qui remplis et qui relies, le template te donne la structure pour le faire."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Est-ce que le template vient automatisé ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non, et c'est voulu. On te fournit une base essentielle et solide : le squelette complet de ton infrastructure IA, que tu remplis et customises avec TA réalité. Si tu veux de l'aide pour le mettre en place ou créer tes automatisations, réserve une séance d'optimisation gratuite : on regarde ton infrastructure ensemble."
         }
       },
       {
@@ -104,10 +112,10 @@
     .brand .divider { width: 1px; height: 18px; background: rgba(244,123,32,0.5); }
     .brand .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #F47B20; font-weight: 600; }
     .header-cta {
-      font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase; color: #fff;
+      font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase; color: #fff;
       background: linear-gradient(90deg, #F47B20, #ff9242);
-      padding: 6px 12px; border-radius: 8px; text-decoration: none;
+      padding: 5px 10px; border-radius: 7px; text-decoration: none;
       white-space: nowrap; transition: transform 0.15s ease-out, filter 0.15s ease-out;
     }
     .header-cta:hover { filter: brightness(1.06); }
@@ -149,14 +157,35 @@
     .hero h1 .accent { color: #F47B20; }
     .hero-sub { font-size: 1.08rem; color: #a8b4cc; max-width: 640px; margin: 0 auto 26px; }
     .hero-sub strong { color: #fff; font-weight: 600; }
+    .offer-card {
+      display: inline-flex; flex-direction: column; align-items: center; gap: 12px;
+      background: rgba(10,16,30,0.72);
+      border: 1px solid rgba(244,123,32,0.32);
+      border-radius: 14px;
+      padding: 12px 20px 14px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      max-width: 100%;
+    }
     .offer-badge {
-      display: inline-flex; align-items: center; gap: 8px;
       font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
       letter-spacing: 0.04em; color: #fff;
-      background: linear-gradient(90deg, rgba(244,123,32,0.22), rgba(244,123,32,0.08));
-      border: 1px solid rgba(244,123,32,0.5);
-      padding: 9px 16px; border-radius: 10px; margin-bottom: 30px;
-      box-shadow: 0 6px 24px rgba(244,123,32,0.18);
+    }
+    .offer-badge strong { color: #ff9242; }
+    .countdown { display: flex; align-items: flex-start; gap: 8px; }
+    .cd-block { display: flex; flex-direction: column; align-items: center; min-width: 50px; }
+    .cd-num { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 600; color: #ff9242; line-height: 1.05; font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+    .cd-label { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: #a8b4cc; margin-top: 5px; }
+    .cd-sep { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; line-height: 1.05; color: rgba(244,123,32,0.6); margin-top: 1px; }
+    @media (max-width: 560px) {
+      .offer-card { padding: 10px 12px 12px; gap: 10px; }
+      .offer-badge { font-size: 10.5px; }
+      .cd-block { min-width: 40px; }
+      .cd-num { font-size: 1.2rem; }
+      .cd-label { font-size: 0.52rem; letter-spacing: 0.1em; }
+      .cd-sep { font-size: 1.2rem; }
     }
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -331,8 +360,9 @@
     .shot-zoom svg { width: 13px; height: 13px; color: #F47B20; }
 
     /* Comment ça marche (1.5) */
-    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
-    @media (max-width: 860px) { .steps-grid { grid-template-columns: 1fr; } }
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
+    @media (max-width: 1024px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .steps-grid { grid-template-columns: 1fr; } }
     .step-card {
       position: relative; background: rgba(23,36,58,0.45); border: 1px solid #223352; border-radius: 16px;
       padding: 30px 26px 26px; text-align: center;
@@ -346,7 +376,7 @@
     .step-card h3 .kw { background: none; padding: 0; }
     .step-card p { font-size: 0.9rem; color: #a8b4cc; }
     .step-arrow { position: absolute; top: 50%; right: -16px; transform: translateY(-50%); color: rgba(244,123,32,0.5); width: 20px; height: 20px; z-index: 2; }
-    @media (max-width: 860px) { .step-arrow { display: none; } }
+    @media (max-width: 1024px) { .step-arrow { display: none; } }
     .step-card:last-child .step-arrow { display: none; }
 
     /* Qui suis-je */
@@ -491,9 +521,20 @@
     <section class="hero">
       <div class="container hero-center">
         <span class="eyebrow"><span class="dot"></span> HUVI agents OS</span>
-        <h1>Pilote toute ton infrastructure IA depuis <span class="accent">UN</span> template Notion</h1>
+        <h1>Gère toute ton infrastructure IA depuis <span class="accent">UN</span> template Notion</h1>
         <p class="hero-sub">Le tableau de bord où <strong>TES agents IA</strong> se retrouvent et s'organisent : prompts, workflows, skills et serveurs MCP, tous reliés au même endroit.</p>
-        <div class="offer-badge">🚀 Offre de lancement : <strong>GRATUIT</strong> jusqu'au 31 octobre</div>
+        <div class="offer-card">
+          <p class="offer-badge">🚀 Offre de lancement : <strong>GRATUIT</strong> jusqu'au 31 octobre</p>
+          <div class="countdown" id="countdown" role="timer" aria-label="Temps restant avant la fin de l'offre de lancement">
+            <div class="cd-block"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Jours</span></div>
+            <span class="cd-sep" aria-hidden="true">:</span>
+            <div class="cd-block"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Heures</span></div>
+            <span class="cd-sep" aria-hidden="true">:</span>
+            <div class="cd-block"><span class="cd-num" id="cd-minutes">--</span><span class="cd-label">Minutes</span></div>
+            <span class="cd-sep" aria-hidden="true">:</span>
+            <div class="cd-block"><span class="cd-num" id="cd-seconds">--</span><span class="cd-label">Secondes</span></div>
+          </div>
+        </div>
         <div>
           <a class="btn" href="#formulaire">Je télécharge le template</a>
           <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Gratuit · Zéro engagement · Livraison par courriel</p>
@@ -507,7 +548,7 @@
               <span class="window-dots"><i class="d-r"></i><i class="d-y"></i><i class="d-g"></i></span>
               <span class="window-title">Notion — HUVI agents OS</span>
             </div>
-            <img src="assets/hub-shot-1-accueil.png" alt="Aperçu réel du template HUVI agents OS : la vue d'accueil dans Notion" width="1843" height="886">
+            <img src="assets/apercu-hero.png" alt="Aperçu réel du template HUVI agents OS : plusieurs vues du HUB dans Notion" width="1753" height="859">
           </div>
         </div>
       </div>
@@ -519,6 +560,11 @@
         <div class="stat">
           <span class="stat-num" data-count="5">0</span>
           <span class="stat-label">modules dans le HUB</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="7">0</span>
+          <span class="stat-label">agents répertoriés</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
@@ -724,7 +770,7 @@
         <div class="benefits-grid">
           <div class="benefit-card" data-reveal style="--d:0s;">
             <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
-            <h3>TES AGENTS ont un <span class="kw">QUARTIER GÉNÉRAL</span></h3>
+            <h3>TES AGENTS ONT UN <span class="kw">QUARTIER GÉNÉRAL</span></h3>
             <p>Chaque agent est lié à ses prompts, ses skills, ses workflows et ses serveurs MCP. Tu sais qui utilise quoi, au même endroit.</p>
           </div>
           <div class="benefit-card" data-reveal style="--d:0.06s;">
@@ -734,12 +780,12 @@
           </div>
           <div class="benefit-card" data-reveal style="--d:0.12s;">
             <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg></div>
-            <h3><span class="kw">WORKFLOWS</span> reliés aux AGENTS</h3>
+            <h3><span class="kw">WORKFLOWS</span> RELIÉS AUX AGENTS</h3>
             <p>Chaque workflow montre sa fréquence, son trigger et l'agent qui l'exécute. Tu vois d'un coup d'oeil ce qui tourne tout seul et ce qui dort.</p>
           </div>
           <div class="benefit-card" data-reveal style="--d:0.18s;">
             <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg></div>
-            <h3><span class="kw">MCP</span> à portée de MAIN</h3>
+            <h3><span class="kw">MCP</span> À PORTÉE DE MAIN</h3>
             <p>Tes serveurs MCP (les connexions qui donnent à tes agents l'accès à tes outils et tes données) : type, description, lien, agents liés. Rien ne se perd.</p>
           </div>
         </div>
@@ -768,7 +814,7 @@
               <p>Chaque agent a un statut clair : À créer, En construction, Actif, Phase de test, Inactif. Tu sais exactement où en est ton infrastructure.</p>
             </div>
             <div class="module-shot">
-              <button type="button" class="shot-btn" data-lightbox="assets/hub-shot-6-dashboard.png" data-lightbox-cap="Le tableau de bord des agents" aria-label="Agrandir l'aperçu du tableau de bord des agents">
+              <button type="button" class="shot-btn" data-lightbox="assets/module-tableau-de-bord.png" data-lightbox-cap="Le tableau de bord des agents" aria-label="Agrandir l'aperçu du tableau de bord des agents">
                 <span class="shot-stage">
                   <span class="shot-frame">
                     <span class="window-bar">
@@ -776,7 +822,7 @@
                       <span class="window-title">Notion — Tableau de bord des agents</span>
                     </span>
                     <span class="shot-img-wrap">
-                      <img src="assets/hub-shot-6-dashboard.png" alt="Aperçu du tableau de bord des agents : les statuts de chaque agent" width="1453" height="861" loading="lazy">
+                      <img src="assets/module-tableau-de-bord.png" alt="Aperçu du tableau de bord des agents : les statuts de chaque agent" width="1324" height="595" loading="lazy">
                       <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></span>
                     </span>
                   </span>
@@ -793,7 +839,7 @@
               <p>System prompts, objectifs, catégories, dernier test, variables : ta matière grise IA, organisée et archivée. Ton meilleur prompt se retrouve en 10 secondes.</p>
             </div>
             <div class="module-shot">
-              <button type="button" class="shot-btn" data-lightbox="assets/hub-shot-5-prompts.png" data-lightbox-cap="La bibliothèque de prompts" aria-label="Agrandir l'aperçu de la bibliothèque de prompts">
+              <button type="button" class="shot-btn" data-lightbox="assets/module-prompts.png" data-lightbox-cap="La bibliothèque de prompts" aria-label="Agrandir l'aperçu de la bibliothèque de prompts">
                 <span class="shot-stage">
                   <span class="shot-frame">
                     <span class="window-bar">
@@ -801,7 +847,7 @@
                       <span class="window-title">Notion — Bibliothèque de prompts</span>
                     </span>
                     <span class="shot-img-wrap">
-                      <img src="assets/hub-shot-5-prompts.png" alt="Aperçu de la bibliothèque de prompts : état, catégorie, objectif, dernier test" width="1515" height="298" loading="lazy">
+                      <img src="assets/module-prompts.png" alt="Aperçu de la bibliothèque de prompts : état, catégorie, objectif, dernier test" width="1729" height="434" loading="lazy">
                       <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></span>
                     </span>
                   </span>
@@ -814,11 +860,11 @@
           <div class="module" data-reveal>
             <div class="module-text">
               <div class="module-num">MODULE 03</div>
-              <h3>TES <span class="kw">WORKFLOWS</span> sous CONTRÔLE</h3>
+              <h3>TES <span class="kw">WORKFLOWS</span> SOUS CONTRÔLE</h3>
               <p>Fréquence, trigger, dernière run, notes : tu vois ce qui tourne tout seul et ce qui a besoin d'attention. Chaque workflow est relié à son agent.</p>
             </div>
             <div class="module-shot">
-              <button type="button" class="shot-btn" data-lightbox="assets/hub-shot-4-workflows.png" data-lightbox-cap="Les workflows & processus" aria-label="Agrandir l'aperçu des workflows">
+              <button type="button" class="shot-btn" data-lightbox="assets/module-workflows.png" data-lightbox-cap="Les workflows & processus" aria-label="Agrandir l'aperçu des workflows">
                 <span class="shot-stage">
                   <span class="shot-frame">
                     <span class="window-bar">
@@ -826,7 +872,7 @@
                       <span class="window-title">Notion — Workflows & processus</span>
                     </span>
                     <span class="shot-img-wrap">
-                      <img src="assets/hub-shot-4-workflows.png" alt="Aperçu des workflows : fréquence, trigger, dernière run, agents liés" width="1711" height="837" loading="lazy">
+                      <img src="assets/module-workflows.png" alt="Aperçu des workflows : fréquence, trigger, dernière run, agents liés" width="835" height="402" loading="lazy">
                       <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></span>
                     </span>
                   </span>
@@ -843,7 +889,7 @@
               <p>Chaque connexion est documentée : type, description, lien, agents liés. Fini les serveurs MCP oubliés dans un coin de ta mémoire.</p>
             </div>
             <div class="module-shot">
-              <button type="button" class="shot-btn" data-lightbox="assets/hub-shot-3-mcp.png" data-lightbox-cap="Les serveurs MCP" aria-label="Agrandir l'aperçu des serveurs MCP">
+              <button type="button" class="shot-btn" data-lightbox="assets/module-mcp.png" data-lightbox-cap="Les serveurs MCP" aria-label="Agrandir l'aperçu des serveurs MCP">
                 <span class="shot-stage">
                   <span class="shot-frame">
                     <span class="window-bar">
@@ -851,7 +897,7 @@
                       <span class="window-title">Notion — Serveurs MCP</span>
                     </span>
                     <span class="shot-img-wrap">
-                      <img src="assets/hub-shot-3-mcp.png" alt="Aperçu des serveurs MCP : type, description, lien, agents liés" width="1753" height="859" loading="lazy">
+                      <img src="assets/module-mcp.png" alt="Aperçu des serveurs MCP : type, description, lien, agents liés" width="847" height="451" loading="lazy">
                       <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></span>
                     </span>
                   </span>
@@ -868,7 +914,7 @@
               <p>Les capacités de tes agents, répertoriées avec leur état. Tu sais ce que ton infrastructure sait faire, et ce qui reste à bâtir.</p>
             </div>
             <div class="module-shot">
-              <button type="button" class="shot-btn" data-lightbox="assets/hub-shot-2-skills.png" data-lightbox-cap="L'armoire des skills" aria-label="Agrandir l'aperçu de l'armoire des skills">
+              <button type="button" class="shot-btn" data-lightbox="assets/module-skills.png" data-lightbox-cap="L'armoire des skills" aria-label="Agrandir l'aperçu de l'armoire des skills">
                 <span class="shot-stage">
                   <span class="shot-frame">
                     <span class="window-bar">
@@ -876,7 +922,7 @@
                       <span class="window-title">Notion — Skills des agents</span>
                     </span>
                     <span class="shot-img-wrap">
-                      <img src="assets/hub-shot-2-skills.png" alt="Aperçu de l'armoire des skills : les capacités de tes agents avec leur état" width="1687" height="894" loading="lazy">
+                      <img src="assets/module-skills.png" alt="Aperçu de l'armoire des skills : les capacités de tes agents avec leur état" width="1177" height="370" loading="lazy">
                       <span class="shot-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></span>
                     </span>
                   </span>
@@ -907,9 +953,15 @@
             <p>Ajoute tes agents, tes prompts, tes workflows, tes serveurs MCP. Le squelette est là, tu remplis avec TA réalité.</p>
           </div>
           <div class="step-card" data-reveal style="--d:0.16s;">
+            <svg class="step-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             <div class="step-num">3</div>
             <h3><span class="kw">RELIE</span> tes agents</h3>
             <p>Lie chaque agent à ses skills, ses workflows et ses serveurs MCP. C'est là que le HUB prend toute sa valeur : tout est relié, rien ne se perd.</p>
+          </div>
+          <div class="step-card" data-reveal style="--d:0.24s;">
+            <div class="step-num">4</div>
+            <h3><span class="kw">CRÉE</span> tes workflows &amp; automatisations</h3>
+            <p>Une fois tes agents reliés, monte tes premiers workflows et tes automatisations. Le HUB devient le moteur qui tourne avec toi.</p>
           </div>
         </div>
       </div>
@@ -942,7 +994,7 @@
           </div>
           <div class="assurance" data-reveal style="--d:0.06s;">
             <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <div><h3><span class="kw">ZÉRO</span> jargon</h3><p>« agents », « prompts », « workflows », « MCP » sont expliqués simplement. T'es pas obligé d'être un techno pour t'y retrouver.</p></div>
+            <div><h3>STRUCTURÉ, pas un ramassis de notes</h3><p>Chaque agent, prompt et workflow a SA place dans la base. Rien ne se perd.</p></div>
           </div>
           <div class="assurance" data-reveal style="--d:0.12s;">
             <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
@@ -970,7 +1022,7 @@
           </details>
           <details class="faq-item" data-reveal>
             <summary>Je ne suis pas très techno. Est-ce que je vais suivre ? <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="faq-answer"><div class="faq-answer-inner"><p>Oui. Les termes agents, prompts, workflows et MCP sont expliqués simplement dans le template. T'es pas obligé d'être un techno pour t'y retrouver.</p></div></div>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>Oui, le template est une base structurée, pas un document technique. Tu remplis les cases avec TA réalité (tes agents, tes outils), et tout est déjà organisé pour toi.</p></div></div>
           </details>
           <details class="faq-item" data-reveal>
             <summary>C'est vraiment gratuit ? <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -979,6 +1031,10 @@
           <details class="faq-item" data-reveal>
             <summary>Est-ce que le template connecte mes agents tout seul ? <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
             <div class="faq-answer"><div class="faq-answer-inner"><p>Non, et c'est voulu. Le template t'organise et te relie : chaque agent est lié à ses prompts, ses skills, ses workflows et ses serveurs MCP via les champs Agents liés. C'est toi qui remplis et qui relies, le template te donne la structure pour le faire.</p></div></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Est-ce que le template vient automatisé ? <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq-answer"><div class="faq-answer-inner"><p>Non, et c'est voulu. On te fournit une base essentielle et solide : le squelette complet de ton infrastructure IA, que tu remplis et customises avec TA réalité. Si tu veux de l'aide pour le mettre en place ou créer tes automatisations, <a href="https://www.huvioptimisation.com/calendrier/" target="_blank" rel="noopener noreferrer">réserve une séance d'optimisation gratuite</a>, on regarde ton infrastructure ensemble.</p></div></div>
           </details>
           <details class="faq-item" data-reveal>
             <summary>Qu'est-ce que je reçois après le formulaire ? <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -1056,7 +1112,7 @@
     <section class="section-alt final-cta">
       <div class="container">
         <h2>Prêt à donner un quartier général à tes agents IA ?</h2>
-        <p>Télécharge le template gratuit avant le 31 octobre et pilote toute ton infrastructure IA depuis UN endroit.</p>
+        <p>Télécharge le template gratuit avant le 31 octobre et gère toute ton infrastructure IA depuis UN endroit.</p>
         <a class="btn" href="#formulaire">Je télécharge le template</a>
         <p class="reminder">Jusqu'au 31 octobre, c'est gratuit. Après, ça devient payant.</p>
       </div>
@@ -1075,7 +1131,7 @@
   <!-- Sticky bar CTA -->
   <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
     <div class="container sticky-inner">
-      <span class="sticky-text">Le template gratuit pour piloter ton infrastructure IA</span>
+      <span class="sticky-text">Le template gratuit pour gérer ton infrastructure IA</span>
       <a class="btn btn-sm" href="#formulaire" tabindex="-1">Je télécharge le template</a>
     </div>
   </div>
@@ -1289,6 +1345,37 @@
         } else {
           counters.forEach(function (el) { el.textContent = el.getAttribute("data-count"); });
         }
+      }
+
+      // ===== Countdown interactif : offre de lancement jusqu'au 31 octobre 2026 =====
+      // Cible : minuit le 31 octobre 2026, heure de Montréal (UTC-4, DST).
+      var COUNTDOWN_END = new Date("2026-10-31T23:59:59-04:00").getTime();
+      var cdDays = document.getElementById("cd-days");
+      var cdHours = document.getElementById("cd-hours");
+      var cdMinutes = document.getElementById("cd-minutes");
+      var cdSeconds = document.getElementById("cd-seconds");
+      var cdBadge = document.querySelector(".offer-card .offer-badge");
+      var cdTimer = document.getElementById("countdown");
+
+      function pad2(n) { return String(n).padStart(2, "0"); }
+
+      function updateCountdown() {
+        var diff = COUNTDOWN_END - Date.now();
+        if (diff <= 0) {
+          // Offre terminée : on le dit, on ne prétend plus que c'est gratuit.
+          if (cdBadge) cdBadge.textContent = "🚀 Offre de lancement terminée";
+          if (cdTimer) cdTimer.style.display = "none";
+          return;
+        }
+        if (cdDays) cdDays.textContent = pad2(Math.floor(diff / 86400000));
+        if (cdHours) cdHours.textContent = pad2(Math.floor((diff % 86400000) / 3600000));
+        if (cdMinutes) cdMinutes.textContent = pad2(Math.floor((diff % 3600000) / 60000));
+        if (cdSeconds) cdSeconds.textContent = pad2(Math.floor((diff % 60000) / 1000));
+      }
+
+      if (cdDays && cdTimer) {
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
       }
 
       // ===== Sticky bar CTA : apparaît après ~600 px, disparaît quand le formulaire est visible =====
