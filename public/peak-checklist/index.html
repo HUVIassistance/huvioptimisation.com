@@ -871,6 +871,38 @@
       html.pk-anim [data-reveal], html.pk-anim .pk-tl-card, html.pk-anim .pk-tl-node { opacity: 1 !important; transform: none !important; }
       html.pk-anim .pk-tl-fill { transform: scaleY(1) !important; }
     }
+  
+    /* ===== Type d'entreprise en cartes radio (correctifs 2026-09) ===== */
+    .pk-type-legend { display: block; font-size: 0.84rem; font-weight: 700; color: #C7D1E2; margin: 0 0 8px; }
+    .pk-type-legend .req { color: #F47B20; }
+    .pk-type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 4px; }
+    .pk-type-option { position: relative; }
+    .pk-type-option input.sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0 0 0 0) !important; white-space: nowrap !important; border: 0 !important; background: transparent !important; }
+    .pk-type-option label {
+      display: flex !important; align-items: center; gap: 9px; cursor: pointer;
+      margin: 0 !important; letter-spacing: 0 !important; text-transform: none !important;
+      background: #0A101D; border: 1px solid #2A3A5C; border-radius: 4px;
+      padding: 11px 13px; min-height: 44px;
+      color: #C7D1E2; font-family: 'Manrope', sans-serif; font-size: 0.88rem; font-weight: 600; line-height: 1.35;
+      transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .pk-type-option label::before {
+      content: ""; width: 16px; height: 16px; flex-shrink: 0; border-radius: 50%;
+      border: 2px solid #3A4C6E; background: transparent; box-sizing: border-box;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .pk-type-option label:hover { border-color: rgba(244,123,32,0.55); }
+    .pk-type-option input:checked + label {
+      border-color: #F47B20; background: rgba(244,123,32,0.10); color: #fff;
+      box-shadow: 0 0 0 1px rgba(244,123,32,0.35);
+    }
+    .pk-type-option input:checked + label::before { border-color: #F47B20; box-shadow: inset 0 0 0 4px #F47B20; }
+    .pk-type-option input:focus-visible + label { outline: 2px solid #F47B20; outline-offset: 2px; }
+    .pk-type-option--full { grid-column: 1 / -1; }
+    @media (max-width: 560px) {
+      .pk-type-grid { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -1290,26 +1322,23 @@
                   <input type="text" id="entreprise" name="entreprise" autocomplete="organization" placeholder="Rénovations Tremblay inc." required>
                 </div>
               </div>
-              <div class="pk-form-row">
-                <div class="pk-field">
-                  <label for="typeEntreprise">Type d'entreprise <span class="req">*</span></label>
-                  <select id="typeEntreprise" name="typeEntreprise" required>
-                    <option value="" selected disabled>Choisis une option</option>
-                    <option value="Construction / Rénovation">Construction / Rénovation</option>
-                    <option value="Entreprise de service">Entreprise de service</option>
-                    <option value="Immobilier">Immobilier</option>
-                    <option value="Professionnel (comptable, avocat, etc.)">Professionnel (comptable, avocat, etc.)</option>
-                    <option value="Autre">Autre</option>
-                  </select>
-                </div>
-                <div class="pk-field">
-                  <label for="telephone">Téléphone (optionnel)</label>
-                  <input type="tel" id="telephone" name="telephone" autocomplete="tel" placeholder="514-555-1234">
-                </div>
-              </div>
+                          <div class="pk-field">
+              <span class="pk-type-legend">Type d'entreprise <span class="req">*</span></span>
+              <div class="pk-type-grid" role="radiogroup" aria-label="Type d'entreprise">
+              <div class="pk-type-option"><input type="radio" name="typeEntreprise" value="Construction / Rénovation" id="typeEntreprise-1" class="sr-only" required><label for="typeEntreprise-1" aria-label="Construction / Rénovation">Construction / Rénovation</label></div>
+              <div class="pk-type-option"><input type="radio" name="typeEntreprise" value="Entreprise de service" id="typeEntreprise-2" class="sr-only"><label for="typeEntreprise-2" aria-label="Entreprise de service">Entreprise de service</label></div>
+              <div class="pk-type-option"><input type="radio" name="typeEntreprise" value="Immobilier" id="typeEntreprise-3" class="sr-only"><label for="typeEntreprise-3" aria-label="Immobilier">Immobilier</label></div>
+              <div class="pk-type-option"><input type="radio" name="typeEntreprise" value="Professionnel (comptable, avocat, etc.)" id="typeEntreprise-4" class="sr-only"><label for="typeEntreprise-4" aria-label="Professionnel (comptable, avocat, etc.)">Professionnel (comptable, avocat, etc.)</label></div>
+              <div class="pk-type-option pk-type-option--full"><input type="radio" name="typeEntreprise" value="Autre" id="typeEntreprise-5" class="sr-only"><label for="typeEntreprise-5" aria-label="Autre">Autre</label></div>
+            </div>
+            </div>
+            <div class="pk-field">
+              <label for="telephone">Téléphone (optionnel)</label>
+              <input type="tel" id="telephone" name="telephone" autocomplete="tel" placeholder="514-555-1234">
+            </div>
 
               <label class="pk-consent">
-                <input type="checkbox" id="consentement" name="consentement" value="true">
+                <input type="checkbox" id="consentement" name="consentement" value="true" required>
                 <span>J'accepte de recevoir la P.E.A.K. Checklist et des conseils pratiques de HUVI Optimisation par courriel. Je peux me désabonner en un clic, à tout moment.</span>
               </label>
 
@@ -1431,10 +1460,11 @@
         submitBtn.textContent = BTN_LOADING;
       }
 
-      function redirectToThankYou(prenomCapture) {
+      function redirectToThankYou(prenomCapture, courrielCapture) {
         // Le prénom est conservé pour la personnalisation de la page de confirmation
         // (sessionStorage survit à la redirection dans le même onglet).
         try { sessionStorage.setItem("peak-checklist:prenom", prenomCapture); } catch (e) {}
+        try { sessionStorage.setItem("peak-checklist:courriel", courrielCapture); } catch (e) {}
         window.location.href = THANK_YOU_PATH;
       }
 
@@ -1445,13 +1475,22 @@
         var nom = document.getElementById("nom").value.trim();
         var courriel = document.getElementById("courriel").value.trim();
         var entreprise = document.getElementById("entreprise").value.trim();
-        var typeEntreprise = document.getElementById("typeEntreprise").value;
+        var typeEntrepriseEl = document.querySelector('input[name="typeEntreprise"]:checked');
+        var typeEntreprise = typeEntrepriseEl ? typeEntrepriseEl.value : "";
         var telephone = document.getElementById("telephone").value.trim();
         var consentement = document.getElementById("consentement").checked;
 
         // Validation (double sécurité au-delà des attributs HTML)
-        if (!prenom || !nom || !courriel || !entreprise || !typeEntreprise) {
+        if (!prenom || !nom || !courriel || !entreprise) {
           showError("Tous les champs obligatoires doivent être remplis.");
+          return;
+        }
+        if (!typeEntreprise) {
+          showError("Choisis ton type d'entreprise.");
+          return;
+        }
+        if (!consentement) {
+          showError("Tu dois accepter de recevoir la P.E.A.K. Checklist par courriel pour continuer.");
           return;
         }
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(courriel)) {
@@ -1493,7 +1532,7 @@
         }).then(function (res) {
           if (res.type === "opaqueredirect" || res.ok) {
             // Succès : le lead est capturé (et l'email part chez Make).
-            redirectToThankYou(prenom);
+            redirectToThankYou(prenom, courriel);
           } else {
             showError("L'envoi a échoué (erreur " + res.status + "). Réessaie dans quelques instants.");
           }
