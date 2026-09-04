@@ -769,20 +769,23 @@
 
         setLoading();
 
-        fetch(LEAD_WEBHOOK_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          redirect: "manual",
-          body: JSON.stringify(payload)
-        }).then(function (res) {
-          if (res.type === "opaqueredirect" || res.ok) {
-            redirectToThankYou(prenom, courriel);
-          } else {
-            showError("L'envoi a échoué (erreur " + res.status + "). Réessaie dans quelques instants.");
-          }
-        }).catch(function () {
-          showError("Oups, l'envoi a échoué. Vérifie ta connexion et réessaie.");
-        });
+        // Envoi fire-and-forget : Make traite en arrière-plan.
+        // L'utilisateur ne doit JAMAIS attendre la fin de l'automatisation.
+        var retried = false;
+        function submitToMake() {
+          fetch(LEAD_WEBHOOK_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            redirect: "manual",
+            body: JSON.stringify(payload)
+          }).catch(function () {
+            // 1 seul retry silencieux en cas d'échec réseau ; ensuite on laisse faire
+            // (cas rarissime : lead potentiellement perdu — alertes Make côté backend)
+            if (!retried) { retried = true; submitToMake(); }
+          });
+        }
+        submitToMake();
+        redirectToThankYou(prenom, courriel); // TY immédiate — Make travaille en arrière-plan
       });
 
       // ===== Scroll reveal + timeline (IntersectionObserver, reduced-motion respecté) =====
