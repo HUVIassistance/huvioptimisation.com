@@ -92,6 +92,12 @@
     .footer-inner p { font-size: 0.82rem; color: #7d8aa5; }
     .footer-inner .mono { font-size: 0.78rem; color: #5a6884; letter-spacing: 0.06em; }
 
+    /* Emphases du copy (gras modérés, blanc — cohérent avec titres/emphases existants) */
+    strong { color: #fff; font-weight: 700; }
+
+    /* Note de secours sous la confirmation (texte secondaire discret) */
+    .rescue-note { margin-top: 14px; font-size: 0.84rem; color: #7E8CA6; }
+    .rescue-note a { color: #a8b4cc; text-decoration: underline; text-underline-offset: 2px; text-decoration-color: rgba(244,123,32,0.35); }
     @media (max-width: 560px) {
       .card, .template-block { padding: 24px 20px; }
       .btn { width: 100%; }
@@ -114,6 +120,7 @@
       <div class="confirm-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
       <h1 id="confirmation-title">C'est envoyé ! Ton blueprint S.T.A.N.D.A.R.D. est en route.</h1>
       <p class="sub">Ta copie du blueprint pour reprendre le contrôle de tes opérations vient de partir vers ta boîte courriel. Si tu ne le vois pas dans les prochaines minutes, pense à vérifier tes promotions et tes courriels indésirables. Des fois, il se cache là.</p>
+      <p class="rescue-note">Si tu ne le reçois pas dans les prochaines minutes, écris-nous à <a href="mailto:info@huvioptimisation.com">info@huvioptimisation.com</a>, on s'en occupe.</p>
     </section>
 
     <div class="transition">
@@ -121,16 +128,16 @@
     </div>
 
     <section class="card bilan-card">
-      <h2>Et si t'étais absent deux semaines, est-ce que ta business tournerait ?</h2>
-      <p>2 minutes de questions sur tes opérations. Le bilan calcule ce que tes processus manuels te coûtent chaque année en opportunités, en heures et en argent. Tu repars avec tes gains potentiels, tes 3 priorités immédiates et un rapport PDF personnalisé : ton plan d'action. Gratuit, zéro appel, ça se fait seul.</p>
+      <h2>Et si demain tu prenais deux semaines de vacances, est-ce que la business continuerait de rouler sans toi ?</h2>
+      <p><strong>2 minutes</strong> de questions sur tes opérations. Le bilan calcule ce que tes processus manuels te coûtent chaque année <strong>en opportunités, en heures et en argent</strong>. Tu repars avec tes gains potentiels, tes 3 priorités immédiates et un <strong>rapport PDF personnalisé</strong> : ton plan d'action. Gratuit, zéro appel, ça se fait seul.</p>
       <div class="btn-wrap">
-        <a class="btn" id="bilan-link" href="https://bilan.huvioptimisation.com/" target="_blank" rel="noopener noreferrer">Faire mon Bilan IA</a>
+        <a class="btn" id="bilan-link" href="https://huvi-bilan-ia.zite.so" target="_blank" rel="noopener noreferrer">Faire mon Bilan IA</a>
       </div>
       <p class="micro">Gratuit. Zéro engagement.</p>
     </section>
 
     <section class="rencontre">
-      <a href="https://huvioptimisation.fillout.com/rencontre-doptimisation-exploratoire" target="_blank" rel="noopener noreferrer">Tu préfères qu'on regarde directement ta situation ? Réserve une rencontre d'optimisation de 20 à 30 minutes, on regarde tes opérations ensemble et je te dis quoi standardiser en premier.</a>
+      <a href="https://huvioptimisation.fillout.com/rencontre-doptimisation-exploratoire" target="_blank" rel="noopener noreferrer">Tu préfères qu'on regarde directement ta situation ? Réserve une rencontre d'optimisation de <strong>20 à 30 minutes</strong>, on regarde tes opérations ensemble et je te dis quoi standardiser en premier.</a>
     </section>
   </main>
 
@@ -189,7 +196,7 @@
       // ===== Lien Bilan IA : pré-remplir ?email= quand le courriel est connu =====
       var bilanLink = document.getElementById("bilan-link");
       if (bilanLink && courriel) {
-        bilanLink.href = "https://bilan.huvioptimisation.com/?email=" + encodeURIComponent(courriel);
+        bilanLink.href = "https://huvi-bilan-ia.zite.so/?email=" + encodeURIComponent(courriel);
       }
     })();
   </script>
