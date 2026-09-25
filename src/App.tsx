@@ -1135,6 +1135,15 @@ export default function App() {
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               Les meilleures solutions commencent toujours par de bonnes fondations. CASA est la méthode qu'on utilise pour remettre de l'ordre, étape par étape, avant de laisser la technologie accélérer le reste.
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+              <a href="/ressources/methode-casa-batir-systeme-qui-tourne-sans-toi/" className="text-[#F47B20] hover:text-[#ff9242] text-sm font-semibold transition-colors">
+                Voir la méthode au complet →
+              </a>
+              <span className="text-gray-600 hidden sm:inline">·</span>
+              <a href="/vsl-systeme-complet/" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Voir le système en action (vidéo 14 min)
+              </a>
+            </div>
           </div>
 
           {/* Interactive Layered Architecture Display */}
@@ -2336,6 +2345,7 @@ export default function App() {
             <ul className="space-y-1.5 text-[11px] font-sans text-gray-500">
               <li><a href="#problem" className="hover:text-white transition-colors">Le diagnostic</a></li>
               <li><a href="#architecture" className="hover:text-white transition-colors">La méthode CASA</a></li>
+              <li><a href="/ressources/methode-casa-batir-systeme-qui-tourne-sans-toi/" className="hover:text-white transition-colors">Méthode CASA — le guide complet</a></li>
               <li><a href="#ai-teams" className="hover:text-white transition-colors">Nos assistants IA</a></li>
               <li><a href="#what-we-build" className="hover:text-white transition-colors">Ce qu'on simplifie</a></li>
               <li><a href="https://huvioptimisation.fillout.com/rencontre-doptimisation-exploratoire" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Séance d'optimisation</a></li>
