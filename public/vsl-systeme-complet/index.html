@@ -362,7 +362,7 @@
           var id = f.getAttribute("data-video-id");
           var title = f.getAttribute("data-title") || "Vidéo";
           var iframe = document.createElement("iframe");
-          iframe.setAttribute("src", "https://www.youtube-nocookie.com/embed/" + id + "?controls=0&rel=0&iv_load_policy=3&playsinline=1&autoplay=1");
+          iframe.setAttribute("src", "https://www.youtube-nocookie.com/embed/" + id + "?controls=1&rel=0&iv_load_policy=3&playsinline=1&modestbranding=1&autoplay=1");
           iframe.setAttribute("loading", "lazy");
           iframe.setAttribute("title", title);
           iframe.setAttribute("frameborder", "0");
